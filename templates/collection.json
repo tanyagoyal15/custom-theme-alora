@@ -1,18 +1,83 @@
 {
   "sections": {
-    "banner": {
-      "type": "main-collection-banner",
+    // "banner": {
+    //   "type": "main-collection-banner",
+    //   "settings": {
+    //     "show_collection_description": true,
+    //     "show_collection_image": false,
+    //     "color_scheme": "scheme-1"
+    //   }
+    // },
+    // "header": {
+    //   "type": "header",
+    //   "settings": {
+    //     "logo_position": "middle-left",
+    //     "menu": "main-menu",
+    //     "menu_type_desktop": "dropdown",
+    //     "sticky_header_type": "on-scroll-up",
+    //     "show_line_separator": true,
+    //     "color_scheme": "scheme-1",
+    //     "enable_country_selector": true,
+    //     "enable_language_selector": true,
+    //     "mobile_logo_position": "center",
+    //     "margin_bottom": 0,
+    //     "padding_top": 20,
+    //     "padding_bottom": 20
+    //   }
+    // },
+    "image_with_text_dfWT63": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_MPAcj9": {
+          "type": "heading",
+          "settings": {
+            "heading": "Touche",
+            "heading_size": "h1"
+          }
+        },
+        "text_k7np8Y": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "text_style": "body"
+          }
+        },
+        "button_D8mqjP": {
+          "type": "button",
+          "settings": {
+            "button_label": "View Collection",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_MPAcj9",
+        "text_k7np8Y",
+        "button_D8mqjP"
+      ],
       "settings": {
-        "show_collection_description": true,
-        "show_collection_image": false,
-        "color_scheme": "scheme-1"
+        "section_type": "collection_banner",
+        "image": "shopify://shop_images/Acessories.png",
+        "height": "medium",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "product-grid": {
       "type": "main-collection-product-grid",
       "settings": {
         "products_per_page": 16,
-        "columns_desktop": 4,
+        "columns_desktop": 3,
         "image_ratio": "adapt",
         "show_secondary_image": false,
         "show_vendor": false,
@@ -26,7 +91,9 @@
     }
   },
   "order": [
-    "banner",
+    // "banner",
+    // "header",
+    "image_with_text_dfWT63",
     "product-grid"
   ]
 }
