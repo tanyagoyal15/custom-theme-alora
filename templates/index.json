@@ -9,224 +9,686 @@
  */
 {
   "sections": {
-    "image_banner": {
-      "type": "image-banner",
+    // "image_banner": {
+    //   "type": "image-banner",
+    //   "blocks": {
+    //     "heading": {
+    //       "type": "heading",
+    //       "settings": {
+    //         "heading": "Custom Theme Development",
+    //         "heading_size": "h0"
+    //       }
+    //     },
+    //     "text": {
+    //       "type": "text",
+    //       "settings": {
+    //         "text": "Give customers details about the banner image(s) or content on the template.",
+    //         "text_style": "body"
+    //       }
+    //     },
+    //     "button": {
+    //       "type": "buttons",
+    //       "settings": {
+    //         "button_label_1": "Shop all",
+    //         "button_link_1": "shopify://collections/all",
+    //         "button_style_secondary_1": true,
+    //         "button_label_2": "",
+    //         "button_link_2": "",
+    //         "button_style_secondary_2": false
+    //       }
+    //     }
+    //   },
+    //   "block_order": [
+    //     "heading",
+    //     "text",
+    //     "button"
+    //   ],
+    //   "settings": {
+    //     "image_overlay_opacity": 40,
+    //     "image_height": "large",
+    //     "desktop_content_position": "bottom-center",
+    //     "show_text_box": false,
+    //     "desktop_content_alignment": "center",
+    //     "color_scheme": "scheme-3",
+    //     "image_behavior": "none",
+    //     "mobile_content_alignment": "center",
+    //     "stack_images_on_mobile": false,
+    //     "show_text_below": false
+    //   }
+    // },
+    // "rich_text": {
+    //   "type": "rich-text",
+    //   "blocks": {
+    //     "heading": {
+    //       "type": "heading",
+    //       "settings": {
+    //         "heading": "Talk about your brand",
+    //         "heading_size": "h1"
+    //       }
+    //     },
+    //     "text": {
+    //       "type": "text",
+    //       "settings": {
+    //         "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>"
+    //       }
+    //     }
+    //   },
+    //   "block_order": [
+    //     "heading",
+    //     "text"
+    //   ],
+    //   "settings": {
+    //     "desktop_content_position": "center",
+    //     "content_alignment": "center",
+    //     "color_scheme": "scheme-1",
+    //     "full_width": true,
+    //     "padding_top": 40,
+    //     "padding_bottom": 0
+    //   }
+    // },
+    // "featured_collection": {
+    //   "type": "featured-collection",
+    //   "settings": {
+    //     "title": "Featured products",
+    //     "heading_size": "h2",
+    //     "description": "",
+    //     "show_description": false,
+    //     "description_style": "body",
+    //     "collection": "all",
+    //     "products_to_show": 8,
+    //     "columns_desktop": 4,
+    //     "full_width": false,
+    //     "show_view_all": false,
+    //     "view_all_style": "solid",
+    //     "enable_desktop_slider": false,
+    //     "color_scheme": "scheme-1",
+    //     "image_ratio": "adapt",
+    //     "image_shape": "default",
+    //     "show_secondary_image": true,
+    //     "show_vendor": false,
+    //     "show_rating": false,
+    //     "quick_add": "none",
+    //     "columns_mobile": "2",
+    //     "swipe_on_mobile": false,
+    //     "padding_top": 28,
+    //     "padding_bottom": 36
+    //   }
+    // },
+    // "collage": {
+    //   "type": "collage",
+    //   "blocks": {
+    //     "collection-0": {
+    //       "type": "collection",
+    //       "settings": {
+    //         "collection": ""
+    //       }
+    //     },
+    //     "product": {
+    //       "type": "product",
+    //       "settings": {
+    //         "product": "",
+    //         "second_image": false
+    //       }
+    //     },
+    //     "collection-1": {
+    //       "type": "collection",
+    //       "settings": {
+    //         "collection": ""
+    //       }
+    //     }
+    //   },
+    //   "block_order": [
+    //     "collection-0",
+    //     "product",
+    //     "collection-1"
+    //   ],
+    //   "settings": {
+    //     "heading": "Multimedia collage",
+    //     "heading_size": "h2",
+    //     "desktop_layout": "left",
+    //     "mobile_layout": "collage",
+    //     "card_styles": "product-card-wrapper",
+    //     "color_scheme": "scheme-1",
+    //     "padding_top": 36,
+    //     "padding_bottom": 36
+    //   }
+    // },
+    // "video": {
+    //   "type": "video",
+    //   "settings": {
+    //     "heading": "",
+    //     "heading_size": "h1",
+    //     "enable_video_looping": false,
+    //     "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+    //     "description": "",
+    //     "full_width": false,
+    //     "color_scheme": "scheme-1",
+    //     "padding_top": 36,
+    //     "padding_bottom": 36
+    //   }
+    // },
+    // "multicolumn": {
+    //   "type": "multicolumn",
+    //   "blocks": {
+    //     "column1": {
+    //       "type": "column",
+    //       "settings": {
+    //         "title": "Column",
+    //         "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+    //         "link_label": "",
+    //         "link": ""
+    //       }
+    //     },
+    //     "column2": {
+    //       "type": "column",
+    //       "settings": {
+    //         "title": "Column",
+    //         "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+    //         "link_label": "",
+    //         "link": ""
+    //       }
+    //     },
+    //     "column3": {
+    //       "type": "column",
+    //       "settings": {
+    //         "title": "Column",
+    //         "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+    //         "link_label": "",
+    //         "link": ""
+    //       }
+    //     }
+    //   },
+    //   "block_order": [
+    //     "column1",
+    //     "column2",
+    //     "column3"
+    //   ],
+    //   "settings": {
+    //     "title": "",
+    //     "heading_size": "h1",
+    //     "image_width": "third",
+    //     "image_ratio": "adapt",
+    //     "columns_desktop": 3,
+    //     "column_alignment": "center",
+    //     "background_style": "none",
+    //     "button_label": "",
+    //     "button_link": "",
+    //     "color_scheme": "scheme-1",
+    //     "columns_mobile": "1",
+    //     "swipe_on_mobile": false,
+    //     "padding_top": 36,
+    //     "padding_bottom": 36
+    //   }
+    // },
+    "slideshow_UjnUtF": {
+      "type": "slideshow",
       "blocks": {
-        "heading": {
-          "type": "heading",
+        "slide_tTJb68": {
+          "type": "slide",
           "settings": {
-            "heading": "Custom Theme Development",
-            "heading_size": "h0"
+            "image": "shopify://shop_images/Screenshot_2025-03-07_at_4.18.19_PM.png",
+            "heading": "Image slide",
+            "heading_size": "h1",
+            "subheading": "Tell your brand's story through images",
+            "button_label": "Button label",
+            "link": "",
+            "button_style_secondary": false,
+            "box_align": "middle-center",
+            "show_text_box": true,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "color_scheme": "",
+            "text_alignment_mobile": "center"
           }
         },
-        "text": {
-          "type": "text",
+        "slide_cefGXB": {
+          "type": "slide",
           "settings": {
-            "text": "Give customers details about the banner image(s) or content on the template.",
-            "text_style": "body"
+            "image": "shopify://shop_images/Screenshot_2025-03-07_at_4.15.45_PM.png",
+            "heading": "Image slide",
+            "heading_size": "h1",
+            "subheading": "Tell your brand's story through images",
+            "button_label": "Button label",
+            "link": "",
+            "button_style_secondary": false,
+            "box_align": "middle-center",
+            "show_text_box": true,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "color_scheme": "",
+            "text_alignment_mobile": "center"
           }
         },
-        "button": {
-          "type": "buttons",
+        "slide_cefGXQ": {
+          "type": "slide",
           "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "shopify://collections/all",
-            "button_style_secondary_1": true,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
+            "image": "shopify://shop_images/Screenshot_2025-03-07_at_4.15.16_PM.png",
+            "heading": "Image slide",
+            "heading_size": "h1",
+            "subheading": "Tell your brand's story through images",
+            "button_label": "Button label",
+            "link": "",
+            "button_style_secondary": false,
+            "box_align": "middle-center",
+            "show_text_box": true,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "color_scheme": "",
+            "text_alignment_mobile": "center"
           }
         }
       },
       "block_order": [
-        "heading",
-        "text",
-        "button"
+        "slide_tTJb68",
+        "slide_cefGXB",
+        "slide_cefGXQ",
       ],
       "settings": {
-        "image_overlay_opacity": 40,
-        "image_height": "large",
-        "desktop_content_position": "bottom-center",
-        "show_text_box": false,
-        "desktop_content_alignment": "center",
-        "color_scheme": "scheme-3",
+        "layout": "full_bleed",
+        "slide_height": "large",
+        "slider_visual": "dots",
+        "auto_rotate": true,
+        "change_slides_speed": 3,
         "image_behavior": "none",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": false,
-        "show_text_below": false
+        "show_text_below": true,
+        "accessibility_info": "Slideshow about our brand"
       }
     },
-    "rich_text": {
-      "type": "rich-text",
+    // "image_banner_with_header": {
+    //   "type": "image-banner-slideshow",
+    //   "blocks": {
+    //     "slide_1": {
+    //       "type": "slide",
+    //       "settings": {
+    //         "image": "shopify://shop_images/Screenshot_2025-03-07_at_4.18.19_PM.png",
+    //         "alt_text": "",
+    //         "overlay_text": "Blending beauty with purpose",
+    //         "overlay_text_subtitle": "Handcrafted Luxury",
+    //         "link": ""
+    //       }
+    //     },
+    //     "slide_2": {
+    //       "type": "slide",
+    //       "settings": {
+    //         "image": "shopify://shop_images/Screenshot_2025-03-07_at_4.15.45_PM.png",
+    //         "alt_text": "",
+    //         "overlay_text": "Blending beauty with purpose",
+    //         "overlay_text_subtitle": "Handcrafted Luxury",
+    //         "link": ""
+    //       }
+    //     },
+    //     "slide_3": {
+    //       "type": "slide",
+    //       "settings": {
+    //         "image": "shopify://shop_images/Screenshot_2025-03-07_at_4.15.16_PM.png",
+    //         "alt_text": "",
+    //         "overlay_text": "Blending beauty with purpose",
+    //         "overlay_text_subtitle": "Handcrafted Luxury",
+    //         "link": ""
+    //       }
+    //     }
+    //   },
+    //   "block_order": [
+    //     "slide_1",
+    //     "slide_2",
+    //     "slide_3"
+    //   ],
+    //   "settings": {
+    //     "auto_rotate": false,
+    //     "change_slides_speed": 5
+    //   }
+    // },
+    "image_with_text_dfWT63": {
+      "type": "image-with-text",
       "blocks": {
-        "heading": {
+        "heading_MPAcj9": {
           "type": "heading",
           "settings": {
-            "heading": "Talk about your brand",
+            "heading": "Touche",
             "heading_size": "h1"
           }
         },
-        "text": {
+        "text_k7np8Y": {
           "type": "text",
           "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>"
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "text_style": "body"
+          }
+        },
+        "button_D8mqjP": {
+          "type": "button",
+          "settings": {
+            "button_label": "View Collection",
+            "button_link": "",
+            "button_style_secondary": false
           }
         }
       },
       "block_order": [
-        "heading",
-        "text"
+        "heading_MPAcj9",
+        "text_k7np8Y",
+        "button_D8mqjP"
       ],
       "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
-        "color_scheme": "scheme-1",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 0
-      }
-    },
-    "featured_collection": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "Featured products",
-        "heading_size": "h2",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "collection": "all",
-        "products_to_show": 8,
-        "columns_desktop": 4,
-        "full_width": false,
-        "show_view_all": false,
-        "view_all_style": "solid",
-        "enable_desktop_slider": false,
-        "color_scheme": "scheme-1",
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "none",
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 28,
+        "section_type": "collection_banner",
+        "image": "shopify://shop_images/Acessories.png",
+        "height": "medium",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
         "padding_bottom": 36
       }
     },
-    "collage": {
-      "type": "collage",
+    "products-slider-1": {
+      "type": "products-slider",
+      "settings": {
+        "heading": "Shop our looks",
+        "subheading": "",
+        "collection_handle": "shop_our_looks",
+        "images_per_slide_desktop": 3,
+        "images_per_slide_mobile": 2,
+        "show_product_info": false,
+        "button_label": "Discover More",
+        "button_link": "/",
+        "quick_actions_text" : "SHOP THE LOOK"
+      }
+    },
+    "products-slider-2": {
+      "type": "products-slider",
+      "settings": {
+        "heading": "New Arrivals",
+        "subheading": "Timeless elegance",
+        "collection_handle": "all",
+        "images_per_slide_desktop": 4,
+        "images_per_slide_mobile": 1,
+        "show_product_info": true,
+        "show_slider_bar": false,
+        "button_label": "Discover More",
+        "button_link": "/",
+        "quick_actions_text" : "ADD TO CART"
+      }
+    },
+    "collage-grid-1" : {
+      "type": "collage-grid",
       "blocks": {
-        "collection-0": {
-          "type": "collection",
+        "image_JJ33UF": {
+          "type": "image",
           "settings": {
-            "collection": ""
+            "image": "shopify://shop_images/dresses.png",
+            "alt_text": "",
+            "overlay_text": "Clothing",
+            "link": "shopify://products/product-12"
           }
         },
-        "product": {
-          "type": "product",
+        "image_7JqHW9": {
+          "type": "image",
           "settings": {
-            "product": "",
-            "second_image": false
+            "image": "shopify://shop_images/95b5510c5d72645329e98162f9d1d260_3e13da3a-357d-492f-9073-a5603d2064d9.jpg",
+            "alt_text": "",
+            "overlay_text": "Sunglasses",
+            "link": ""
           }
         },
-        "collection-1": {
-          "type": "collection",
+        "image_xqJPhr": {
+          "type": "image",
           "settings": {
-            "collection": ""
+            "image": "shopify://shop_images/32b453f356df1b4fb7ca83857fda1a3e.jpg",
+            "alt_text": "",
+            "overlay_text": "Shoes",
+            "link": ""
           }
         }
       },
       "block_order": [
-        "collection-0",
-        "product",
-        "collection-1"
+        "image_JJ33UF",
+        "image_7JqHW9",
+        "image_xqJPhr"
       ],
       "settings": {
-        "heading": "Multimedia collage",
-        "heading_size": "h2",
-        "desktop_layout": "left",
-        "mobile_layout": "collage",
-        "card_styles": "product-card-wrapper",
-        "color_scheme": "scheme-1",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "layout_style": "symmetrical",
+        "show_text_block": false
       }
     },
-    "video": {
-      "type": "video",
-      "settings": {
-        "heading": "",
-        "heading_size": "h1",
-        "enable_video_looping": false,
-        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-        "description": "",
-        "full_width": false,
-        "color_scheme": "scheme-1",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "multicolumn": {
-      "type": "multicolumn",
+    // "collage-grid-2" : {
+    //   "type": "collage-grid",
+    //   "blocks": {
+    //     "image_zdHN7r": {
+    //       "type": "image",
+    //       "settings": {
+    //         "image": "shopify://shop_images/dresses.png",
+    //         "alt_text": "",
+    //         "overlay_text": "Collection 1",
+    //         "link": ""
+    //       }
+    //     },
+    //     "image_jWh4jg": {
+    //       "type": "image",
+    //       "settings": {
+    //         "alt_text": "",
+    //         "overlay_text": "Collection 1",
+    //         "link": ""
+    //       }
+    //     },
+    //     "image_jWh4jk": {
+    //       "type": "image",
+    //       "settings": {
+    //         "alt_text": "",
+    //         "overlay_text": "Collection 1",
+    //         "link": ""
+    //       }
+    //     }
+    //   },
+    //   "block_order": [
+    //     "image_zdHN7r",
+    //     "image_jWh4jg",
+    //     "image_jWh4jk"
+    //   ],
+    //   "settings": {
+    //     "layout_style": "asymmetrical"
+    //   }
+    // },
+    "collage-grid-3" : {
+      "type": "collage-grid",
       "blocks": {
-        "column1": {
-          "type": "column",
+        "image_JJ33UF": {
+          "type": "image",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
-            "link_label": "",
+            "image": "shopify://shop_images/dresses.png",
+            "alt_text": "",
+            "overlay_text": "",
+            "link": "shopify://products/product-12"
+          }
+        },
+        "image_7JqHW9": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/95b5510c5d72645329e98162f9d1d260_3e13da3a-357d-492f-9073-a5603d2064d9.jpg",
+            "alt_text": "",
+            "overlay_text": "",
             "link": ""
           }
         },
-        "column2": {
-          "type": "column",
+        "image_xqJPhr": {
+          "type": "image",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
-            "link_label": "",
+            "image": "shopify://shop_images/32b453f356df1b4fb7ca83857fda1a3e.jpg",
+            "alt_text": "",
+            "overlay_text": "",
             "link": ""
           }
         },
-        "column3": {
-          "type": "column",
+        "image_xqJPhq": {
+          "type": "image",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
-            "link_label": "",
+            "image": "shopify://shop_images/32b453f356df1b4fb7ca83857fda1a3e.jpg",
+            "alt_text": "",
+            "overlay_text": "",
+            "link": ""
+          }
+        },
+        "image_xqJPhw": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/32b453f356df1b4fb7ca83857fda1a3e.jpg",
+            "alt_text": "",
+            "overlay_text": "",
+            "link": ""
+          }
+        },
+        "image_xqJPhe": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/32b453f356df1b4fb7ca83857fda1a3e.jpg",
+            "alt_text": "",
+            "overlay_text": "",
             "link": ""
           }
         }
       },
       "block_order": [
-        "column1",
-        "column2",
-        "column3"
+        "image_JJ33UF",
+        "image_7JqHW9",
+        "image_xqJPhr",
+        "image_xqJPhq",
+        "image_xqJPhw",
+        "image_xqJPhe"
       ],
       "settings": {
-        "title": "",
-        "heading_size": "h1",
-        "image_width": "third",
-        "image_ratio": "adapt",
-        "columns_desktop": 3,
-        "column_alignment": "center",
-        "background_style": "none",
-        "button_label": "",
-        "button_link": "",
-        "color_scheme": "scheme-1",
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "layout_style": "text_with_grid",
+        "show_text_block": true
       }
+    },
+    "static-banner-1" : {
+      "type": "static-banner",
+      "settings": {
+        "heading": "Under the Sun",
+        "subheading": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+        "image": "shopify://shop_images/custom_theme_under_the_sun.png",
+        "link": "/"
+      }
+    },
+    "static-banner-2" : {
+      "type": "static-banner",
+      "settings": {
+        "heading": "Collections",
+        "subheading": "Discover handpicked collections crafted for every occasion.",
+        "image": "shopify://shop_images/custom_theme_collections_banner.png",
+        "link": "/"
+      }
+    },
+    "products-slider-3": {
+      "type": "products-slider",
+      "settings": {
+        "heading": "Desse",
+        "subheading": "",
+        "collection_handle": "all",
+        "images_per_slide_desktop": 4,
+        "images_per_slide_mobile": 1,
+        "show_product_info": true,
+        "show_slider_bar": true,
+        "button_label": "Discover More",
+        "button_link": "/",
+        "quick_actions_text" : "ADD TO CART"
+      }
+    },
+    "products-slider-4": {
+      "type": "products-slider",
+      "settings": {
+        "heading": "Runway Looks",
+        "subheading": "",
+        "collection_handle": "all",
+        "images_per_slide_desktop": 3,
+        "images_per_slide_mobile": 1,
+        "show_product_info": false,
+        "show_slider_bar": false,
+        "button_label": "Discover More",
+        "button_link": "/",
+        "quick_actions_text" : "SHOP THE LOOK"
+      }
+    },
+    "testimonials" : {
+      "type": "testimonial",
+      "settings": {
+        "autoplay": true,
+        "slide_duration": 5,
+      },
+      "blocks": {
+        "testimonial_1": {
+          "type": "testimonial",
+          "settings": {
+            "customer_name": "First - Tanya Goyal",
+            "location": "India",
+            "testimonial": "First - Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+            "star_rating": "5",
+            "image": "shopify://shop_images/dresses.png",
+            "cta_text": "Shop the Collection - 1",
+            "cta_link": "/"
+          }
+        },
+        "testimonial_2": {
+          "type": "testimonial",
+          "settings": {
+            "customer_name": "Second - Tanya Goyal",
+            "location": "India",
+            "testimonial": "Second - Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+            "star_rating": "5",
+            "image": "shopify://shop_images/95b5510c5d72645329e98162f9d1d260_3e13da3a-357d-492f-9073-a5603d2064d9.jpg",
+            "cta_text": "Shop the Collection - 2",
+            "cta_link": "/"
+          }
+        },
+        "testimonial_3": {
+          "type": "testimonial",
+          "settings": {
+            "customer_name": "Third - Tanya Goyal",
+            "location": "India",
+            "testimonial": "Third - Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+            "star_rating": "5",
+            "image": "shopify://shop_images/32b453f356df1b4fb7ca83857fda1a3e.jpg",
+            "cta_text": "Shop the Collection - 3",
+            "cta_link": "/"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_1",
+        "testimonial_2",
+        "testimonial_3"
+      ]
     }
   },
   "order": [
-    "image_banner",
-    "rich_text",
-    "featured_collection",
-    "collage",
-    "video",
-    "multicolumn"
+    // "products-slider",
+    // "banner-with-header",
+    "slideshow_UjnUtF",
+    // "image_banner_with_header",
+    "image_with_text_dfWT63",
+    "products-slider-1",
+    "static-banner-1",
+    "products-slider-2",
+    "static-banner-2",
+    "collage-grid-1",
+    "products-slider-3",
+    // "collage-grid-2",
+    "collage-grid-3",
+    "testimonials",
+    "products-slider-4"
   ]
+  // "order": [
+  //   "image_banner",
+  //   "products-slider",
+  //   "rich_text",
+  //   "featured_collection",
+  //   "collage",
+  //   "video",
+  //   "multicolumn",
+  //   "image_with_text_dfWT63"
+  // ]
 }
