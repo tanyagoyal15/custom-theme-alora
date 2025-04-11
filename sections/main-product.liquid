@@ -73,12 +73,12 @@
   {%- endif -%}
 
   {% assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' %}
-  <div class="page-width">
+  <div class="main-product-wrapper">
     <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
       <div class="grid__item product__media-wrapper">
         {% render 'product-media-gallery', variant_images: variant_images %}
       </div>
-      <div class="product__info-wrapper grid__item{% if settings.page_width > 1400 and section.settings.media_size == "small" %} product__info-wrapper--extra-padding{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+      <div class="product__info-wrapper mt-72 grid__item{% if settings.page_width > 1400 and section.settings.media_size == "small" %} product__info-wrapper--extra-padding{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
         <section
           id="ProductInfo-{{ section.id }}"
           class="product__info-container{% if section.settings.enable_sticky_info %} product__column-sticky{% endif %}"
@@ -97,13 +97,80 @@
                   {{- block.settings.text -}}
                 </p>
               {%- when 'title' -%}
-                <div class="product__title" {{ block.shopify_attributes }}>
-                  <h1>{{ product.title | escape }}</h1>
-                  <a href="{{ product.url }}" class="product__title">
-                    <h2 class="h1">
-                      {{ product.title | escape }}
-                    </h2>
-                  </a>
+                <div class="flex-between mx-44">
+                  <div class="product__title m-0" {{ block.shopify_attributes }}>
+                    <h1 class="text-xl m-0">{{ product.title | escape }}</h1>
+                    <a href="{{ product.url }}" class="product__title">
+                      <h2 class="h1">
+                        {{ product.title | escape }}
+                      </h2>
+                    </a>
+                  </div>
+                  {% comment %} {% when 'wishlist' %} {% endcomment %}
+                  <product-form
+                    class="product-form wishlist-product-form"
+                    data-hide-errors="true"
+                    data-section-id="{{ section.id }}"
+                  >
+                    <div class="product-form__error-message-wrapper" role="alert" hidden>
+                      <span class="svg-wrapper">
+                        {{- 'icon-error.svg' | inline_asset_content -}}
+                      </span>
+                      <span class="product-form__error-message"></span>
+                    </div>
+
+                    {%- form 'product',
+                      product,
+                      id: product_form_id,
+                      class: 'form',
+                      novalidate: 'novalidate',
+                      data-type: 'add-to-wishlist-form'
+                    -%}
+                      <input
+                        type="hidden"
+                        name="id"
+                        value="{{ product.selected_or_first_available_variant.id }}"
+                        {% if product.selected_or_first_available_variant.available == false
+                          or quantity_rule_soldout
+                          or product.selected_or_first_available_variant == null
+                        %}
+                          disabled
+                        {% endif %}
+                        class="product-variant-id"
+                      >
+
+                      <div class="product-form__buttons">
+                        {%- liquid
+                          assign check_against_inventory = true
+                          if product.selected_or_first_available_variant.inventory_management != 'shopify' or product.selected_or_first_available_variant.inventory_policy == 'continue'
+                            assign check_against_inventory = false
+                          endif
+                          if product.selected_or_first_available_variant.quantity_rule.min > product.selected_or_first_available_variant.inventory_quantity and check_against_inventory
+                            assign quantity_rule_soldout = true
+                          endif
+                        -%}
+                        <button
+                          id="ProductSubmitButton-{{ section.id }}"
+                          type="submit"
+                          name="add"
+                          class="wishlist-btn pointer product-form__submit pointer"
+                          {% if product.selected_or_first_available_variant.available == false
+                            or quantity_rule_soldout
+                            or product.selected_or_first_available_variant == null
+                          %}
+                            disabled
+                          {% endif %}
+                        >
+                          <span class="svg-wrapper stroke-icon">
+                            {{- 'icon-heart.svg' | inline_asset_content -}}
+                          </span>
+                          <span class="svg-wrapper fill-icon hidden">
+                            {{- 'icon-heart-fill.svg' | inline_asset_content -}}
+                          </span>
+                        </button>
+                      </div>
+                    {%- endform -%}
+                  </product-form>
                 </div>
               {%- when 'price' -%}
                 <div id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
@@ -472,11 +539,13 @@
                   show_pickup_availability: true
                 -%}
               {%- when 'rating' -%}
-                {%- if product.metafields.reviews.rating.value != blank -%}
+                {%- if product.metafields.custom.product_rating.value != blank -%}
                   <div class="rating-wrapper">
                     {% liquid
+                      assign rating_value = product.metafields.custom.product_rating.value | plus: 0
+                      assign rating_max = 5
                       assign rating_decimal = 0
-                      assign decimal = product.metafields.reviews.rating.value.rating | modulo: 1
+                      assign decimal = rating_value | modulo: 1
                       if decimal >= 0.3 and decimal <= 0.7
                         assign rating_decimal = 0.5
                       elsif decimal > 0.7
@@ -486,27 +555,26 @@
                     <div
                       class="rating"
                       role="img"
-                      aria-label="{{ 'accessibility.star_reviews_info' | t: rating_value: product.metafields.reviews.rating.value, rating_max: product.metafields.reviews.rating.value.scale_max }}"
+                      aria-label="{{ 'accessibility.star_reviews_info' | t: rating_value: rating_value, rating_max: rating_max }}"
                     >
                       <span
                         aria-hidden="true"
                         class="rating-star"
-                        style="--rating: {{ product.metafields.reviews.rating.value.rating | floor }}; --rating-max: {{ product.metafields.reviews.rating.value.scale_max }}; --rating-decimal: {{ rating_decimal }};"
+                        style="--rating: {{ rating_value | floor }}; --rating-max: {{ rating_max }}; --rating-decimal: {{ rating_decimal }};"
                       ></span>
                     </div>
                     <p class="rating-text caption">
-                      <span aria-hidden="true">
-                        {{- product.metafields.reviews.rating.value }} /
-                        {{ product.metafields.reviews.rating.value.scale_max -}}
-                      </span>
+                      <span aria-hidden="true"> {{ rating_value }} / {{ rating_max }} </span>
                     </p>
-                    <p class="rating-count caption">
-                      <span aria-hidden="true">({{ product.metafields.reviews.rating_count }})</span>
-                      <span class="visually-hidden">
-                        {{- product.metafields.reviews.rating_count }}
-                        {{ 'accessibility.total_reviews' | t -}}
-                      </span>
-                    </p>
+                    {% comment %}
+                      <p class="rating-count caption">
+                        <span aria-hidden="true">({{ product.metafields.reviews.rating_count }})</span>
+                        <span class="visually-hidden">
+                          {{- product.metafields.reviews.rating_count }}
+                          {{ 'accessibility.total_reviews' | t -}}
+                        </span>
+                      </p>
+                    {% endcomment %}
                   </div>
                 {%- endif -%}
               {%- when 'complementary' -%}
@@ -666,6 +734,25 @@
             {{ 'products.product.view_full_details' | t }}
             {{- 'icon-arrow.svg' | inline_asset_content -}}
           </a>
+
+          {% comment %} Product Metafields Info  {% endcomment %}
+          <div class="product-info">
+            {% if product.metafields.custom.estimated_delivery != blank %}
+              <p><strong>Estimated Delivery:</strong> {{ product.metafields.custom.estimated_delivery }}</p>
+            {% endif %}
+
+            {% if product.metafields.custom.bulk_orders != blank %}
+              <p><strong>Bulk Orders:</strong> {{ product.metafields.custom.bulk_orders }}</p>
+            {% endif %}
+
+            {% if product.metafields.custom.free_shipping != blank %}
+              <p><strong>Free Shipping:</strong> {{ product.metafields.custom.free_shipping }}</p>
+            {% endif %}
+
+            {% if product.metafields.custom.return_policy != blank %}
+              <p><strong>Return Policy:</strong> {{ product.metafields.custom.return_policy }}</p>
+            {% endif %}
+          </div>
         </section>
       </div>
     </div>
@@ -773,6 +860,11 @@
     {
       "type": "price",
       "name": "t:sections.main-product.blocks.price.name",
+      "limit": 1
+    },
+    {
+      "type": "wishlist",
+      "name": "Wishlist Button",
       "limit": 1
     },
     {
