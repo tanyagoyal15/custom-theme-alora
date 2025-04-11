@@ -1,0 +1,461 @@
+<section class="testimonial-section">
+  <div
+    class="testimonial-slider"
+    data-autoplay="{{ section.settings.autoplay }}"
+    data-duration="{{ section.settings.slide_duration }}"
+  >
+    <div class="relative">
+      {% for block in section.blocks %}
+        <div class="testimonial-slide">
+          <div class="testimonial-content flex-between">
+            <div class="testimonial-left flex-column justify-between">
+              {% comment %} <h2 class="testimonial-heading cl-theme">{{ section.settings.heading }}</h2> {% endcomment %}
+              <div class="testimonial-text">
+                <p class="testimonial-message">"{{ block.settings.testimonial }}"</p>
+                <p class="testimonial-name text-base">
+                  — {{ block.settings.customer_name }},
+                  <span class="testimonial-location cl-theme text-base"> {{ block.settings.location }}</span>
+                </p>
+
+                <div class="ating-wrapper">
+                  {% liquid
+                    assign rating_value = block.settings.star_rating | plus: 0
+                    assign rating_max = 5
+                    assign rating_decimal = 0
+                    assign decimal = rating_value | modulo: 1
+                    if decimal >= 0.3 and decimal <= 0.7
+                      assign rating_decimal = 0.5
+                    elsif decimal > 0.7
+                      assign rating_decimal = 1
+                    endif
+                  %}
+                  <div class="rating" role="img" aria-label="{{ rating_value }} out of {{ rating_max }} stars">
+                    <span
+                      class="rating-star"
+                      style="--rating: {{ rating_value | floor }}; --rating-max: {{ rating_max }}; --rating-decimal: {{ rating_decimal }};"
+                    ></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {% if block.settings.image %}
+              <div class="testimonial-image-wrapper flex-column">
+                <img
+                  src="{{ block.settings.image | img_url: 'medium' }}"
+                  alt="{{ block.settings.customer_name }}"
+                  class="testimonial-image"
+                  width="50%"
+                  height="50%"
+                >
+                {% if block.settings.cta_link != blank and block.settings.cta_text != blank %}
+                  <a href="{{ block.settings.cta_link }}" class="testimonial-cta">{{ block.settings.cta_text }}</a>
+                {% endif %}
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="testimonial-nav">
+    <button class="prev-btn">←</button>
+    <button class="next-btn">→</button>
+  </div>
+</section>
+
+<style>
+  .testimonial-section {
+    text-align: center;
+    padding: 60px;
+    background: #f9f9f9;
+    position: relative;
+  }
+
+  .testimonial-heading {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-family: 'Nunito Sans';
+  }
+
+  .testimonial-slider {
+    display: flex;
+    overflow: hidden;
+    gap: 20px;
+    scroll-behavior: smooth;
+    {% comment %} justify-content: center; {% endcomment %}
+  }
+
+  .testimonial-slide {
+    position: absolute; /* Keep all slides at the same position */
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    {% comment %} z-index: 1; {% endcomment %}
+    {% comment %} transition: opacity 0.5s ease-in-out, visibility 0s linear 0.5s; {% endcomment %}
+
+    {% comment %} position: relative; {% endcomment %}
+    transition: opacity 0.6s ease-in-out, visibility 0s 0.6s;
+  }
+
+  .testimonial-slide:first-child {
+    opacity: 1;
+    position: relative;
+    visibility: visible;
+    {% comment %} z-index: 10; {% endcomment %}
+  }
+
+  .testimonial-text,
+  .testimonial-image,
+  .testimonial-cta {
+    transition: opacity 0.6s ease-in-out;
+  }
+
+  .testimonial-image {
+    opacity: 1;
+  }
+
+  .testimonial-cta {
+    opacity: 1;
+  }
+
+  .testimonial-left {
+    {% comment %} background: white; {% endcomment %}
+    {% comment %} padding: 20px; {% endcomment %}
+    {% comment %} border-radius: 12px; {% endcomment %}
+    {% comment %} box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); {% endcomment %}
+    text-align: left;
+    max-width: 55%;
+    flex: 1;
+    padding-left: 50px;
+    {% comment %} margin: auto; {% endcomment %}
+  }
+
+  .testimonial-image-wrapper {
+    width: 40%;
+  }
+
+  .testimonial-image {
+    {% comment %} width: 100%; {% endcomment %}
+    {% comment %} height: 100%; {% endcomment %}
+    object-fit: cover;
+    {% comment %} aspect-ratio: 1/1; {% endcomment %}
+    {% comment %} max-width: 50%; /* Adjust width as needed */ {% endcomment %}
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover;
+  }
+
+  .testimonial-message {
+    font-size: 20px;
+    font-style: italic;
+    color: #333;
+    margin-bottom: 10px;
+    line-height: 1.7;
+  }
+
+  .rating-wrapper {
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+  }
+
+  .rating-star {
+    display: inline-block;
+    font-size: 20px;
+    background: linear-gradient(
+      90deg,
+      gold calc(var(--rating) / var(--rating-max) * 100%),
+      #ddd calc(var(--rating) / var(--rating-max) * 100%)
+    );
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  .testimonial-cta {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #121212;
+    text-align: left;
+  }
+</style>
+
+<script>
+  {% comment %} document.addEventListener('DOMContentLoaded', function () {
+    let testimonials = document.querySelectorAll('.testimonial-slide');
+    let nextBtn = document.querySelector('.next-btn');
+    let prevBtn = document.querySelector('.prev-btn');
+    console.log('TESTIMONIALS: ', testimonials);
+    console.log('NEXT BTN: ', nextBtn);
+    console.log('PREV BTN: ', prevBtn);
+    let index = 0;
+
+    function showSlide(newIndex) {
+      let currentSlide = testimonials[index]; // Current Slide (going out)
+      let nextSlide = testimonials[newIndex]; // Next Slide (coming in)
+
+      if (!currentSlide || !nextSlide) return;
+
+      // Select text and rating elements
+      let currentMessage = currentSlide.querySelector('.testimonial-text');
+      let nextMessage = nextSlide.querySelector('.testimonial-text');
+      let currentImage = currentSlide.querySelector('.testimonial-image');
+      let nextImage = nextSlide.querySelector('.testimonial-image');
+      let currentCta = currentSlide.querySelector('.testimonial-cta');
+      let nextCta = nextSlide.querySelector('.testimonial-cta');
+
+      // Animate Current Slide Out (Move to Left)
+      currentMessage.style.transition = 'transform 0.6s ease-in-out, opacity 0.6s ease-in-out';
+      currentMessage.style.transform = 'translateX(30px)';
+      currentMessage.style.opacity = '0';
+
+      // Wait for animation to complete before switching slides
+      setTimeout(() => {
+        {% comment %} currentSlide.style.opacity = '0'; {% endcomment %}
+        {% comment %} currentSlide.style.visibility = 'hidden'; {% endcomment %}
+
+        // Reset and Animate Next Slide In (Move from Right)
+        nextSlide.style.opacity = '1';
+        nextSlide.style.visibility = 'visible';
+
+        nextMessage.style.transition = 'transform 0.6s ease-in-out, opacity 0.6s ease-in-out';
+        nextMessage.style.transform = 'translateX(-30px)'; // Start from Left
+        nextMessage.style.opacity = '0';
+
+        setTimeout(() => {
+            nextMessage.style.transform = 'translateX(0)';
+            nextMessage.style.opacity = '1';
+        }, 50);
+
+        index = newIndex;
+      }, 500);
+      {% comment %} testimonials.forEach((slide, idx) => {
+        console.log("SLIDE: ", slide);
+        let message = slide.querySelector('.testimonial-message');
+        console.log('Message: ', message);
+
+        if (idx === i) {
+          // Move text slightly to the right and fade out
+          message.style.transform = 'translateX(30px)';
+          {% comment %} rating.style.transform = 'translateX(30px)'; {% endcomment %}
+          message.style.opacity = '0';
+          {% comment %} rating.style.opacity = '0'; {% endcomment %}
+
+          setTimeout(() => {
+              message.style.transition = 'transform 0.6s ease-in-out, opacity 0.6s ease-in-out';
+              {% comment %} rating.style.transition = 'transform 0.6s ease-in-out, opacity 0.6s ease-in-out'; {% endcomment %}
+              message.style.transform = 'translateX(0)';
+              {% comment %} rating.style.transform = 'translateX(0)'; {% endcomment %}
+              message.style.opacity = '1';
+              {% comment %} rating.style.opacity = '1'; {% endcomment %}
+          }, 500);
+        }
+      }); {% endcomment %}
+    }
+
+    nextBtn?.addEventListener('click', function () {
+      console.log('NEXT BUTTON CLICKED');
+      let newIndex = (index + 1) % testimonials.length;
+      showSlide(newIndex);
+    });
+
+    prevBtn?.addEventListener('click', function () {
+      console.log('PREV BUTTON CLICKED');
+      let newIndex = (index - 1 + testimonials.length) % testimonials.length;
+      showSlide(newIndex);
+    });
+
+    // Initialize first slide
+    console.log('TESTIMONIALS: ', testimonials)
+    testimonials.forEach((slide, i) => {
+      slide.style.opacity = i === 0 ? '1' : '0';
+      slide.style.visibility = i === 0 ? 'visible' : 'hidden';
+    });
+
+    showSlide(index);
+  }); {% endcomment %}
+
+
+  document.addEventListener('DOMContentLoaded', function () {
+    let testimonials = document.querySelectorAll('.testimonial-slide');
+    let nextBtn = document.querySelector('.next-btn');
+    let prevBtn = document.querySelector('.prev-btn');
+    let index = 0;
+
+    function showSlide(newIndex) {
+      let currentSlide = testimonials[index]; // Current Slide (going out)
+      let nextSlide = testimonials[newIndex]; // Next Slide (coming in)
+
+      if (!currentSlide || !nextSlide) return;
+
+      // Select elements for both current and next slides
+      let currentMessage = currentSlide.querySelector('.testimonial-text');
+      let nextMessage = nextSlide.querySelector('.testimonial-text');
+      let currentImage = currentSlide.querySelector('.testimonial-image');
+      let nextImage = nextSlide.querySelector('.testimonial-image');
+      let currentCta = currentSlide.querySelector('.testimonial-cta');
+      let nextCta = nextSlide.querySelector('.testimonial-cta');
+
+      // Animate Current Slide Out (Move to Left, Fade Out)
+      currentMessage.style.transition = 'transform 0.6s ease-in-out, opacity 0.6s ease-in-out';
+      currentMessage.style.transform = 'translateX(30px)';
+      currentMessage.style.opacity = '0';
+      currentImage.style.transition = 'opacity 0.6s ease-in-out';
+      currentImage.style.opacity = '0';
+      if (currentCta) {
+        currentCta.style.transition = 'opacity 0.6s ease-in-out';
+        currentCta.style.opacity = '0';
+      }
+
+      // Wait for animation to complete before switching slides
+      setTimeout(() => {
+        {% comment %} currentSlide.style.visibility = 'hidden'; // Hide current slide
+        currentSlide.style.opacity = '0'; // Ensure visibility is reset {% endcomment %}
+
+        // Reset and Animate Next Slide In (Move from Right, Fade In)
+        nextSlide.style.visibility = 'visible';
+        nextSlide.style.opacity = '1';
+
+        nextMessage.style.transition = 'transform 0.6s ease-in-out, opacity 0.6s ease-in-out';
+        nextMessage.style.transform = 'translateX(-30px)';
+        nextMessage.style.opacity = '0';
+        nextImage.style.transition = 'opacity 0.6s ease-in-out';
+        nextImage.style.opacity = '0';
+        if (nextCta) {
+          nextCta.style.transition = 'opacity 0.6s ease-in-out';
+          nextCta.style.opacity = '0';
+        }
+
+        // Start the animation for the next slide
+        setTimeout(() => {
+          nextMessage.style.transform = 'translateX(0)';
+          nextMessage.style.opacity = '1';
+          nextImage.style.opacity = '1';
+          if (nextCta) nextCta.style.opacity = '1';
+        }, 50);
+
+        index = newIndex;
+      }, 600); // Wait for the current slide animation to complete
+    }
+
+    nextBtn?.addEventListener('click', function () {
+      let newIndex = (index + 1) % testimonials.length;
+      showSlide(newIndex);
+    });
+
+    prevBtn?.addEventListener('click', function () {
+      let newIndex = (index - 1 + testimonials.length) % testimonials.length;
+      showSlide(newIndex);
+    });
+
+    // Initialize first slide
+    testimonials.forEach((slide, i) => {
+      slide.style.opacity = i === 0 ? '1' : '0';
+      slide.style.visibility = i === 0 ? 'visible' : 'hidden';
+    });
+
+    showSlide(index);
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Testimonial Section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section Heading",
+      "default": "Customer Reviews"
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay",
+      "label": "Enable Autoplay",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "slide_duration",
+      "label": "Slide Duration (seconds)",
+      "min": 3,
+      "max": 10,
+      "default": 5
+    }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        {
+          "type": "text",
+          "id": "customer_name",
+          "label": "Customer Name",
+          "default": "Adele S"
+        },
+        {
+          "type": "text",
+          "id": "location",
+          "label": "Location",
+          "default": "Toronto"
+        },
+        {
+          "type": "textarea",
+          "id": "testimonial",
+          "label": "Testimonial Message",
+          "default": "I have shopped here to buy swimsuits for my friends and they both love the fit and quality of the suits!"
+        },
+        {
+          "type": "select",
+          "id": "star_rating",
+          "label": "Star Rating",
+          "options": [
+            { "value": "1", "label": "★" },
+            { "value": "2", "label": "★★" },
+            { "value": "3", "label": "★★★" },
+            { "value": "4", "label": "★★★★" },
+            { "value": "5", "label": "★★★★★" }
+          ],
+          "default": "5"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Collection Image"
+        },
+        {
+          "type": "url",
+          "id": "cta_link",
+          "label": "CTA Link"
+        },
+        {
+          "type": "text",
+          "id": "cta_text",
+          "label": "CTA Text",
+          "default": "Shop the Collection"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Testimonials",
+      "blocks": [
+        {
+          "type": "testimonial"
+        },
+        {
+          "type": "testimonial"
+        },
+        {
+          "type": "testimonial"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
