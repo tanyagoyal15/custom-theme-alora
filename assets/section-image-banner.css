@@ -490,3 +490,16 @@
     color: currentColor;
   }
 }
+
+.btn-theme-primary {
+  display: inline-block;
+  background: #FAF9F6;
+  color: #8F7768;
+  padding: 10px 15px;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 10px;
+  width: auto;
+  font-size: 16px;
+  cursor: pointer !important;
+}
