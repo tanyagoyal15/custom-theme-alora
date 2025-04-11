@@ -318,6 +318,12 @@
   background: transparent;
 }
 
+/* For Collection banner background */
+.image-with-text.image-with-text--overlap .backround-transparent,
+.image-with-text:not(.image-with-text--overlap) .background-theme {
+  background: #DCD6D6;
+}
+
 /* Needed for gradient continuity with or without animation, the transform scopes the gradient to its container which happens already when animation are turned on */
 .image-with-text .gradient {
   transform: perspective(0);
