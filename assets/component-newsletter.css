@@ -26,7 +26,6 @@
 
 .newsletter-form__field-wrapper .newsletter-field {
   /* z-index: 0; */
-  /* padding: 10px; */
 }
 
 .newsletter-field .field__label {
@@ -53,15 +52,13 @@
   width: 13.4rem;
   margin: 0;
   right: var(--inputs-border-width);
-  top: 0px;
-  /* height: 100%; */
-  z-index: 2;
+  top: 0;
   height: auto;
+  z-index: 2;
   border-radius: 50px;
   padding: 16px;
   color: #DCD6D6;
   background-color: #8F7768;
-  /* border-radius: 50px; */
 }
 
 .newsletter-form__button:focus-visible {
