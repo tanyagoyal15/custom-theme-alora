@@ -260,7 +260,8 @@
 
   .newsletter-input {
     /* //set this value correctly */
-    width: 295px !important; 
+    width: 80vw !important; 
+    max-width: 300px !important;
   }
 }
 
@@ -533,7 +534,8 @@
 
 .newsletter-input {
   height: 5rem !important;
-  width: 348px;
+  width: 24vw;
+  max-width: 350px;
 }
 
 .newsletter-submit {
