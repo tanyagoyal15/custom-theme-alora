@@ -1176,14 +1176,8 @@ deferred-media {
 
 .button--secondary,
 .button--tertiary {
-  /* --color-button: var(--color-secondary-button);
-  --color-button-text: var(--color-secondary-button-text); */
-  font-size: 16px !important; 
-  padding: 0px 10px !important;
-  font-weight: 700 !important;
-  background-color: #FAF9F6 !important;
-  color: #8F7768 !important;
-  border: 1px solid #8F7768 !important
+  --color-button: var(--color-secondary-button);
+  --color-button-text: var(--color-secondary-button-text);
 }
 
 .button--tertiary {
@@ -1346,7 +1340,7 @@ shopify-accelerated-checkout-cart {
 .customer button.disabled,
 .quantity__button.disabled {
   cursor: not-allowed;
-  opacity: 0.6;
+  opacity: 0.5;
 }
 
 .button--full-width {
@@ -1589,8 +1583,7 @@ details[open] > .share-button__fallback {
   min-height: calc(var(--inputs-border-width) * 2);
   min-width: calc(7rem + (var(--inputs-border-width) * 2));
   position: relative;
-  border: 0 !important;
-  outline: none !important;
+  border: 0;
 }
 
 .field:before,
@@ -2099,11 +2092,6 @@ input[type='checkbox'] {
 /* utility-bar */
 .utility-bar {
   height: 100%;
-  position: fixed;
-  width: 100%;
-  height: auto;
-  background-color: #DCD6D6 !important;
-  color: #000 !important;
 }
 
 .utility-bar--bottom-border {
@@ -2167,7 +2155,6 @@ input[type='checkbox'] {
   flex-wrap: wrap;
   align-content: center;
   grid-area: announcements;
-  margin: 0 30px;
 }
 
 .announcement-bar .slider--everywhere {
@@ -2263,8 +2250,6 @@ input[type='checkbox'] {
   margin: 0;
   letter-spacing: 0.1rem;
   min-height: 3.8rem;
-  color: #000;
-  text-align: center;
 }
 
 .announcement-bar-slider--fade-in-next .announcement-bar__message,
