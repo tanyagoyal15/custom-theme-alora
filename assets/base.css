@@ -2092,6 +2092,11 @@ input[type='checkbox'] {
 /* utility-bar */
 .utility-bar {
   height: 100%;
+  position: fixed;
+  width: 100%;
+  height: auto;
+  background-color: #DCD6D6 !important;
+  color: #000 !important;
 }
 
 .utility-bar--bottom-border {
@@ -2155,6 +2160,7 @@ input[type='checkbox'] {
   flex-wrap: wrap;
   align-content: center;
   grid-area: announcements;
+  margin: 0 30px;
 }
 
 .announcement-bar .slider--everywhere {
@@ -2250,6 +2256,8 @@ input[type='checkbox'] {
   margin: 0;
   letter-spacing: 0.1rem;
   min-height: 3.8rem;
+  color: #000;
+  text-align: center;
 }
 
 .announcement-bar-slider--fade-in-next .announcement-bar__message,
