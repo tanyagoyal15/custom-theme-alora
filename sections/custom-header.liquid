@@ -7,21 +7,21 @@
   <div class="header-container flex-between w-100">
     <div class="logo">
       <a class="no-underline" href="{{ routes.root_url }}">
-        {% comment %} <img src="{{ settings.logo | img_url: '150x' }}" alt="{{ shop.name }}" width="100%" height="100%"> {% endcomment %}
         {%- if settings.logo != blank -%}
-          <img
-            width="100%"
-            height="100%"
-            loading="lazy"
-            class="logo-light"
-            alt="{{ shop.name }}"
-            src="{{ settings.logo | image_url }}"
-          >
+          {% comment %}
+            <img
+              width="100%"
+              height="100%"
+              loading="lazy"
+              class="logo-light"
+              alt="{{ shop.name }}"
+              src="{{ settings.logo | image_url }}"
+            >
+          {% endcomment %}
           <img
             width="50px"
             height="50px"
             loading="lazy"
-            class="logo-dark"
             alt="{{ shop.name }}"
             src="{{ settings.logo | image_url }}"
           >
@@ -35,7 +35,7 @@
               class="logo-light"
             >
           {% endcomment %}
-          <p class="logo-light logo-text m-0">ALORA</p>
+          {% comment %} <p class="logo-light logo-text m-0">ALORA</p> {% endcomment %}
           {% comment %}
             <img
               width="100%"
@@ -45,7 +45,7 @@
               class="logo-dark"
             >
           {% endcomment %}
-          <p class="logo-dark logo-text m-0">ALORA</p>
+          <p class="logo-text m-0">ALORA</p>
         {%- endif -%}
       </a>
     </div>
@@ -95,52 +95,6 @@
     </nav>
 
     <div class="header-icons flex-between">
-      {% comment %}
-        <a href="/search">
-          <img src="{{ 'icon-search.png' | asset_url }}" alt="Search Icon" class="icon-light" width="30px" height="30px">
-          <img
-            src="{{ 'icon-search-black.png' | asset_url }}"
-            alt="Search Icon"
-            class="icon-dark"
-            width="30px"
-            height="30px"
-          >
-        </a>
-        <a href="/wishlist">
-          <img
-            src="{{ 'icon-wishlist.png' | asset_url }}"
-            alt="Wishlist Icon"
-            class="icon-light"
-            width="30px"
-            height="30px"
-          >
-          <img
-            src="{{ 'icon-wishlist-black.png' | asset_url }}"
-            alt="Wishlist Icon"
-            class="icon-dark"
-            width="30px"
-            height="30px"
-          >
-        </a>
-        <a href="/account"
-          ><img
-            src="{{ 'icon-account.png' | asset_url }}"
-            alt="Account Icon"
-            class="icon-light"
-            width="30px"
-            height="30px">
-          <img
-            src="{{ 'icon-account-black.png' | asset_url }}"
-            alt="Account Icon"
-            class="icon-dark"
-            width="30px"
-            height="30px"
-        ></a>
-        <a href="/cart"
-          ><img src="{{ 'icon-cart.png' | asset_url }}" alt="Cart Icon" class="icon-light" width="30px" height="30px">
-          <img src="{{ 'icon-cart-black.png' | asset_url }}" alt="Cart Icon" class="icon-dark" width="30px" height="30px"
-        ></a>
-      {% endcomment %}
       {% render 'header-search', input_id: 'Search-In-Modal' %}
       {%- if shop.customer_accounts_enabled -%}
         <a
@@ -170,27 +124,6 @@
           </span>
         </a>
       {%- endif -%}
-      {% comment %}
-        <a
-          href="/pages/wishlist"
-          class="header__icon header__icon--wishlist link focus-inset"
-          id="wishlist-icon-bubble"
-        >
-          <span class="svg-wrapper">{{ 'icon-heart.svg' | inline_asset_content }}</span>
-
-          <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
-          {%- if wishlist != empty -%}
-            <div class="wishlist-count-bubble">
-              {%- if wishlist.item_count < 100 -%}
-                <span aria-hidden="true">{{ wishlist.item_count }}</span>
-              {%- endif -%}
-              <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: wishlist.item_count }}</span>
-            </div>
-          {%- endif -%}
-        </a>
-      {% endcomment %}
-
-      <!-- Wishlist Icon -->
       <div class="header-wishlist-icon">
         <a href="/pages/wishlist" title="View Wishlist" class="relative">
           <span class="svg-wrapper wishlist-icon stroke-icon">
@@ -311,18 +244,12 @@
     color: #8f7768;
   }
 
-  .icon-light {
-    display: block;
-  }
-  .icon-dark {
-    display: none;
-  }
-  .logo-light {
+  {% comment %} .logo-light {
     display: block;
   }
   .logo-dark {
     display: none;
-  }
+  } {% endcomment %}
 
   .transparent-header.header-white,
   .dark-mode {
@@ -337,22 +264,22 @@
   .dark-mode .logo-text {
     color: #000;
   }
-  .transparent-header.header-white .icon-light,
+  {% comment %} .transparent-header.header-white .icon-light,
   .dark-mode .icon-light {
     display: none;
   }
   .transparent-header.header-white .icon-dark,
   .dark-mode .icon-dark {
     display: block;
-  }
-  .transparent-header.header-white .logo-light,
+  } {% endcomment %}
+  {% comment %} .transparent-header.header-white .logo-light,
   .dark-mode .logo-light {
     display: none;
   }
   .transparent-header.header-white .logo-dark,
   .dark-mode .logo-dark {
     display: block;
-  }
+  } {% endcomment %}
 
   .transparent-header.header-white .header-icons svg,
   .dark-mode .header-icons svg {
