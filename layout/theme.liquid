@@ -220,7 +220,6 @@
         --variant-pills-shadow-horizontal-offset: {{ settings.variant_pills_shadow_horizontal_offset }}px;
         --variant-pills-shadow-vertical-offset: {{ settings.variant_pills_shadow_vertical_offset }}px;
         --variant-pills-shadow-blur-radius: {{ settings.variant_pills_shadow_blur }}px;
-        --header-height: {{ section.settings.header_height | default: '100px' }};
       }
 
       *,
@@ -309,7 +308,6 @@
     {%- endif -%}
 
     {% sections 'header-group' %}
-    {% comment %} {% section 'announcement-bar' %} {% endcomment %}
 
     <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
       {{ content_for_layout }}
@@ -374,10 +372,5 @@
     {%- if settings.cart_type == 'drawer' -%}
       <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
-    <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        updateWishlistCount();
-      });
-    </script>
   </body>
 </html>
