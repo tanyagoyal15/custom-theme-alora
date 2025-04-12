@@ -4,41 +4,6 @@
   "sections": {
     "footer": {
       "type": "footer",
-      // "blocks": {
-      //   "footer-0": {
-      //     "type": "link_list",
-      //     "settings": {
-      //       "heading": "Shop by",
-      //       "menu": "footer"
-      //     }
-      //   },
-      //   "footer-1": {
-      //     "type": "link_list",
-      //     "settings": {
-      //       "heading": "Information",
-      //       "menu": "footer"
-      //     }
-      //   },
-      //   "footer-2": {
-      //     "type": "link_list",
-      //     "settings": {
-      //       "heading": "Customer Service",
-      //       "menu": "footer"
-      //     }
-      //   },
-      //   // "footer-2": {
-      //   //   "type": "text",
-      //   //   "settings": {
-      //   //     "heading": "Our mission",
-      //   //     "subtext": "<p>Share contact information, store details, and brand content with your customers.<\/p>"
-      //   //   }
-      //   // }
-      // },
-      // "block_order": [
-      //   "footer-0",
-      //   "footer-1",
-      //   "footer-2"
-      // ],
       "settings": {
         "color_scheme": "scheme-1",
         "newsletter_enable": true,
