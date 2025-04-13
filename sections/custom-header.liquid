@@ -1,10 +1,22 @@
 <script src="{{ 'cart-notification.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+
+<link rel="stylesheet" href="{{ 'component-list-menu.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'component-search.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'component-menu-drawer.css' | asset_url }}" media="print" onload="this.media='all'">
+<link
+  rel="stylesheet"
+  href="{{ 'component-cart-notification.css' | asset_url }}"
+  media="print"
+  onload="this.media='all'"
+>
+
 <header
   class="{% if template == 'index' %}transparent-header absolute flex-between cl-white{% else %}dark-mode{% endif %}"
   id="custom-header"
 >
   <div class="header-container flex-between w-100">
+    {% render 'header-drawer' %}
     <div class="logo">
       <a class="no-underline" href="{{ routes.root_url }}">
         {%- if settings.logo != blank -%}
@@ -50,7 +62,7 @@
       </a>
     </div>
 
-    <nav class="main-navigation">
+    <nav class="main-navigation small-hide">
       <ul class="menu list-unstyled flex-center">
         {% for link in linklists['main-menu'].links %}
           <li
@@ -99,7 +111,7 @@
       {%- if shop.customer_accounts_enabled -%}
         <a
           href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}"
-          class="header__icon header__icon--account link focus-inset{% if section.settings.menu != blank %} small-hide{% endif %}"
+          class="header__icon header__icon--account link focus-inset small-hide"
           rel="nofollow"
         >
           {%- if section.settings.enable_customer_avatar -%}
@@ -124,7 +136,7 @@
           </span>
         </a>
       {%- endif -%}
-      <div class="header-wishlist-icon">
+      <div class="header-wishlist-icon small-hide">
         <a href="/pages/wishlist" title="View Wishlist" class="relative">
           <span class="svg-wrapper wishlist-icon stroke-icon">
             {{- 'icon-heart.svg' | inline_asset_content -}}
@@ -294,6 +306,12 @@
     .menu-item {
       display: flex;
       flex-direction: column;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .header-container {
+      justify=content: space-around;
     }
   }
 </style>
