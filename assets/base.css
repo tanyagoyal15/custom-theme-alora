@@ -3595,3 +3595,231 @@ details-disclosure > details {
     transform: translateX(100%) scaleX(0);
   }
 }
+
+/* My CSS */
+
+.block {
+  display: block;
+}
+
+/* Flexbox */
+.flex {
+  display: flex;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex-around {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.align-start {
+  align-items: flex-start;
+}
+
+.flex-gap-8 {
+  gap: 8px;
+}
+
+.flex-gap-16 {
+  gap: 16px;
+}
+
+.flex-gap-24 {
+  gap: 24px;
+}
+
+
+/* Margins */
+.m-0 { margin: 0; }
+.m-8 { margin: 8px; }
+.m-16 { margin: 16px; }
+.m-24 { margin: 24px; }
+.m-auto { margin: auto; }
+
+.mt-8 { margin-top: 8px; }
+.mt-16 { margin-top: 16px; }
+.mt-24 { margin-top: 24px; }
+.mt-32 { margin-top: 32px; }
+.mt-72 { margin-top: 72px; }
+
+.mb-8 { margin-bottom: 8px; }
+.mb-16 { margin-bottom: 16px; }
+.mb-24 { margin-bottom: 24px; }
+.mb-32 { margin-bottom: 32px; }
+
+.ml-8 { margin-left: 8px; }
+.ml-16 { margin-left: 16px; }
+.ml-24 { margin-left: 24px; }
+.ml-32 { margin-left: 32px; }
+
+.mr-8 { margin-right: 8px; }
+.mr-16 { margin-right: 16px; }
+.mr-24 { margin-right: 24px; }
+
+/* Padding */
+.p-0 { padding: 0; }
+.p-8 { padding: 8px; }
+.p-16 { padding: 16px; }
+.p-24 { padding: 24px; }
+
+.pt-8 { padding-top: 8px; }
+.pt-16 { padding-top: 16px; }
+.pt-24 { padding-top: 24px; }
+
+.pb-8 { padding-bottom: 8px; }
+.pb-16 { padding-bottom: 16px; }
+.pb-24 { padding-bottom: 24px; }
+
+.pl-8 { padding-left: 8px; }
+.pl-16 { padding-left: 16px; }
+.pl-24 { padding-left: 24px; }
+
+.pr-8 { padding-right: 8px; }
+.pr-16 { padding-right: 16px; }
+.pr-24 { padding-right: 24px; }
+
+.text-left { text-align: left; }
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+
+.text-small { font-size: 12px; }
+.text-base { font-size: 16px; }
+.text-large { font-size: 20px; }
+.text-xl { font-size: 24px; }
+.text-2xl { font-size: 32px; }
+.text-3xl { font-size: 42px; }
+
+.font-light { font-weight: 300; }
+.font-regular { font-weight: 500; }
+.font-medium { font-weight: 600; }
+.font-bold { font-weight: 700; }
+
+.text-primary { color: #121212 }
+.text-secondary { color: #979593 }
+.theme-text-color { color: #563D3D }
+
+.text-uppercase { text-transform: uppercase; }
+.text-lowercase { text-transform: lowercase; }
+.text-capitalize { text-transform: capitalize; }
+
+
+.w-100 { width: 100%; }
+.h-100 { height: 100%; }
+.w-auto { width: auto; }
+.h-auto { height: auto; }
+.w-50 { width: 50%; }
+.strikethrough { text-decoration: line-through; }
+.absolute { position: absolute; }
+.relative { position: relative; }
+.flow-hidden { overflow: hidden; }
+.pointer { cursor: pointer; }
+.brdr-1 { border: 1px solid #000; }
+.underline { text-decoration: underline; }
+.no-underline { text-decoration: none;}
+.cl-theme { color: #121212;}
+.cl-white { color: #fff; }
+
+.mt-section {
+  margin-top: 80px;
+}
+
+.shopify-section-group-header-group .content-for-layout {
+  margin-top: 200px;  /* Adjust this based on header height */
+}
+
+
+/* Make header sticky */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+}
+
+/* Adjust content placement based on header height */
+.dark-mode-page .content-for-layout {
+  padding-top: 104px /* Adjust based on header size */
+}
+
+/* Homepage doesn't need extra padding */
+.homepage .content-for-layout {
+  padding-top: 0;
+}
+
+
+.custom-size-selector {
+  margin-bottom: 1rem;
+}
+
+.custom-size-selector select {
+  border: 1px solid #ddd;
+  padding: 8px;
+  font-size: 16px;
+  width: 100%;
+  cursor: pointer;
+}
+
+select {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  background: white;
+}
+
+.variant-dropdown {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #000;
+}
+
+.variant-dropdown select {
+  padding: 0;
+}
+
+.variant-dropdown-svg {
+  width: 12px;
+}
+
+.btn-disabled {
+  cursor: not-allowed !important;
+  /* opacity: 0.6; */
+}
+
+.mx-44 {
+  max-width: 44rem;
+}
