@@ -92,7 +92,7 @@
                       {% else %}
                         href="{{ block.settings.button_link }}"
                       {% endif %}
-                      class="w-100 button{% if block.settings.button_style_secondary or section.settings.section_type == 'collection_banner' %} button--secondary {% else if %}{% else %} button--primary{% endif %}"
+                      class="w-100 no-underline{% if block.settings.button_style_secondary or section.settings.section_type == 'collection_banner' %} image-with-text__cta flex-center {% else %} button button--primary{% endif %}"
                       {{ block.shopify_attributes }}
                     >
                       {{ block.settings.button_label | escape }}
