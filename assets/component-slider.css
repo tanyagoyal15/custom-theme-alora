@@ -259,12 +259,11 @@ slider-component.slider-component-full-width {
 
 @media screen and (max-width: 749px) {
   .slider-counter__link {
-    padding: 0.7rem;
+    padding: 0.3rem;
   }
 
   .slider-counter__link--dots .rectangle {
-    width: 5rem !important;
-    margin: 0 0.2rem !important;
+    width: 3rem !important;
     height: 1.5px !important;
   }
 
