@@ -158,16 +158,24 @@ slideshow-component:not(.page-width) .slider-buttons {
 
 .slideshow__autoplay {
   position: absolute;
-  right: 0;
+  right: -50px;
   border-left: none;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+.slideshow__autoplay svg {
+  stroke: #fff;
+}
+
 @media screen and (max-width: 749px) {
   slideshow-component.page-width .slideshow__autoplay {
     right: 1.5rem;
+  }
+
+  .slideshow__autoplay {
+    right: -30px;
   }
 }
 
@@ -196,11 +204,13 @@ slideshow-component:not(.page-width) .slider-buttons {
 }
 
 .slideshow__autoplay path {
-  fill: rgba(var(--color-foreground), 0.75);
+  /* fill: rgba(var(--color-foreground), 0.75); */
+  fill: #fff;
 }
 
 .slideshow__autoplay:hover path {
-  fill: rgb(var(--color-foreground));
+  /* fill: rgb(var(--color-foreground)); */
+  fill: #fff;
 }
 
 @media screen and (forced-colors: active) {

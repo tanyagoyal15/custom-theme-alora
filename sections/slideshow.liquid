@@ -178,7 +178,7 @@
                   {% else %}
                     role="link" aria-disabled="true"
                   {% endif %}
-                  class="btn-theme-primary {% if block.settings.button_style_secondary %}button--secondary{% else %}button--primary{% endif %}"
+                  class="btn-theme-primary uppercase font-medium {% if block.settings.button_style_secondary %}button--secondary{% else %}button--primary{% endif %}"
                 >
                   {{- block.settings.button_label | escape -}}
                 </a>

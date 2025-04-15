@@ -261,6 +261,18 @@ slider-component.slider-component-full-width {
   .slider-counter__link {
     padding: 0.7rem;
   }
+
+  .slider-counter__link--dots .rectangle {
+    width: 5rem !important;
+    margin: 0 0.2rem !important;
+    height: 1.5px !important;
+  }
+
+  .slider-counter__link--active.slider-counter__link--dots .rectangle {
+    /* background-color: rgb(var(--color-foreground)); */
+    height: 4px !important;
+  }
+
 }
 
 .slider-counter__link--dots .rectangle {
@@ -270,12 +282,12 @@ slider-component.slider-component-full-width {
   /* border: 0.1rem solid rgba(var(--color-foreground), 0.5); */
   /* padding: 0; */
   /* display: block; */
-  margin: 0 5px;
+  margin: 0 0.5rem;
   background-color: #bbb;
   display: inline-block;
   transition: all 0.4s ease-in-out;
   cursor: pointer;
-  width: 70px;
+  width: 9rem;
   height: 2px;
   background: #dcd6d6;
 }
@@ -358,7 +370,8 @@ slider-component.slider-component-full-width {
 }
 
 .slider-button:not([disabled]):hover {
-  color: rgb(var(--color-foreground));
+  /* color: rgb(var(--color-foreground)); */
+  color: #fff;
 }
 
 .slider-button .icon {
