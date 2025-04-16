@@ -1,6 +1,8 @@
 <div class="static-banner-wrapper text-center h-auto m-auto">
-  <h2 class="text-3xl text-capitalize mb-8">{{ section.settings.heading }}</h2>
-  <h4 class="text-base font-regular mb-32 m-auto banner-subheading">{{ section.settings.subheading }}</h4>
+  <h2 class="static-baner__heading text-3xl text-capitalize mb-8">{{ section.settings.heading }}</h2>
+  <h4 class="static-baner__subheading text-base font-regular mb-32 m-auto banner-subheading">
+    {{ section.settings.subheading }}
+  </h4>
   <div class="static-img relative">
     <!-- Skeleton Loader -->
     <div class="skeleton-banner-loader absolute top-0 left-0 w-100 h-100 bg-gray-200">&nbsp;</div>
@@ -87,6 +89,18 @@
 
   .banner-image.fade-in {
     opacity: 1;
+  }
+
+  @media screen and (max-width: 749px) {
+    .static-baner__heading {
+      font-size: 32px;
+    }
+
+    .static-baner__subheading {
+      font-size: 14px;
+      max-width: 70%;
+      margin-bottom: 16px;
+    }
   }
 </style>
 
