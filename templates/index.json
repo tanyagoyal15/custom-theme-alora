@@ -8,6 +8,71 @@
  * ------------------------------------------------------------
  */
 {
-  "sections": {},
-  "order": []
+  "sections": {
+    "products-slider-1": {
+      "type": "products-slider",
+      "settings": {
+        "heading": "Shop our looks",
+        "subheading": "",
+        "collection_handle": "shop_our_looks",
+        "images_per_slide_desktop": 3,
+        "images_per_slide_mobile": 2,
+        "show_product_info": false,
+        "button_label": "Discover More",
+        "button_link": "/",
+        "quick_actions_text" : "SHOP THE LOOK"
+      }
+    },
+    "products-slider-2": {
+      "type": "products-slider",
+      "settings": {
+        "heading": "New Arrivals",
+        "subheading": "Timeless elegance",
+        "collection_handle": "all",
+        "images_per_slide_desktop": 4,
+        "images_per_slide_mobile": 1,
+        "show_product_info": true,
+        "show_slider_bar": false,
+        "button_label": "Discover More",
+        "button_link": "/",
+        "quick_actions_text" : "ADD TO CART"
+      }
+    },
+    "products-slider-3": {
+      "type": "products-slider",
+      "settings": {
+        "heading": "Desse",
+        "subheading": "",
+        "collection_handle": "all",
+        "images_per_slide_desktop": 4,
+        "images_per_slide_mobile": 1,
+        "show_product_info": false,
+        "show_slider_bar": true,
+        "button_label": "Discover More",
+        "button_link": "/",
+        "quick_actions_text" : "ADD TO CART"
+      }
+    },
+    "products-slider-4": {
+      "type": "products-slider",
+      "settings": {
+        "heading": "Runway Looks",
+        "subheading": "",
+        "collection_handle": "all",
+        "images_per_slide_desktop": 3,
+        "images_per_slide_mobile": 1,
+        "show_product_info": false,
+        "show_slider_bar": false,
+        "button_label": "Discover More",
+        "button_link": "/",
+        "quick_actions_text" : "SHOP THE LOOK"
+      }
+    },
+  },
+  "order": [
+    "products-slider-1",
+    "products-slider-2",
+    "products-slider-3",
+    "products-slider-4",
+  ]
 }

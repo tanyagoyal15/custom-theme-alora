@@ -14,10 +14,10 @@
     data-collection-handle="{{ collection_handle }}"
     data-product-count="{{ products.size }}"
   >
-    <h2 class="text-3xl m-0 mb-16 text-capitalize">{{ section.settings.heading }}</h2>
-    <h4 class="text-large font-regular m-0 mb-16">{{ section.settings.subheading }}</h4>
+    <h2 class="products-slider__heading text-3xl m-0 mb-16 text-capitalize">{{ section.settings.heading }}</h2>
+    <h4 class="products-slider__subheading text-large font-regular m-0 mb-16">{{ section.settings.subheading }}</h4>
     <a
-      class="underline text-base font-regular cl-theme m-0 mb-16"
+      class="products-slider__link_btn underline text-base font-regular cl-theme m-0 mb-16"
       href="{{ section.settings.button_link | default: '/' }}"
     >
       {{- section.settings.button_label -}}
@@ -47,7 +47,7 @@
               class="product-card relative flex-column align-center text-center h-auto flow-hidden no-underline cl-theme"
             >
               <div class="card flex-column pr-8 pl-8 pointer">
-                <div class="relative h-100">
+                <div class="relative h-100 w-100">
                   <!-- Product Image -->
                   <img
                     src="{{ product.featured_image | image_url }}"
@@ -260,7 +260,7 @@
 
     .products-slider-skeleton-wrapper {
       width: 100%;
-      height: 450px;
+      min-height: 500px;
       overflow: hidden;
       background: #f3f3f3;
       position: relative;
@@ -295,6 +295,7 @@
 
     .slider-wrapper .product-card img {
       object-fit: cover;
+      max-height: 500px;
     }
 
       .slider-track-container {
@@ -399,6 +400,40 @@
     position: absolute;
     top: 20px;
     right: 20px;
+  }
+
+  @media screen and (max-width: 749px) {
+    .slider-container {
+      max-width: 95%;
+    }
+
+    .products-slider__heading {
+      font-size: 24px;
+      margin-bottom: 5px;
+    }
+
+    .products-slider__subheading {
+      font-size: 16px;
+      margin-bottom: 5px;
+    }
+
+    .products-slider__link_btn {
+      font-size: 12px;
+    }
+
+    .slider-controls {
+      margin-top: 0 !important;
+    }
+
+    .products-slider-skeleton-wrapper {
+      flex-shrink: 0;
+      width: 46%;
+      min-height: 250px;
+    }
+
+    .products-slider-skeleton-wrapper:nth-child(n+3) {
+      display: none;
+    }
   }
 </style>
 
