@@ -7,6 +7,9 @@
 {% assign step_percentage = 100 | divided_by: max_steps | plus: 1 %}
 {% assign start_position = 0 %}
 {% assign end_position = start_position | plus: step_percentage %}
+{%- assign mobile_skeleton_count = section.settings.images_per_slide_mobile | default: 2 -%}
+{%- assign desktop_skeleton_count = section.settings.images_per_slide_desktop | default: 4 -%}
+
 <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
 {% if collection and products.size > 0 %}
   <section
@@ -29,10 +32,31 @@
         data-images-per-slide-desktop="{{ section.settings.images_per_slide_desktop }}"
         data-images-per-slide-mobile="{{ section.settings.images_per_slide_mobile }}"
       >
-        <!-- Skeleton Loader (Visible Initially) -->
-        <div class="products-slider-skeleton-container">
-          {% for i in (1..4) %}
-            <div class="products-slider-skeleton-wrapper">
+        <!-- Desktop Skeleton Loader (Visible Initially) -->
+        <div class="products-slider-skeleton-container skeleton-desktop">
+          {% for i in (1..desktop_skeleton_count) %}
+            {% assign width = 100 | divided_by: desktop_skeleton_count %}
+            {% if mobile_skeleton_count == 1 %}
+              {% assign min_height = 500 %}
+            {% else %}
+              {% assign min_height = 500 | divided_by: section.settings.images_per_slide_desktop %}
+            {% endif %}
+            <div class="products-slider-skeleton-wrapper" style="width: {{ width }}%; min-height: {{ min_height }}px;">
+              <div class="products-slider-skeleton-loader"></div>
+            </div>
+          {% endfor %}
+        </div>
+
+        <!-- Mobile Skeleton Loader (Visible Initially) -->
+        <div class="products-slider-skeleton-container skeleton-mobile">
+          {% for i in (1..mobile_skeleton_count) %}
+            {% assign width = 100 | divided_by: mobile_skeleton_count | minus: 4 %}
+            {% if mobile_skeleton_count == 1 %}
+              {% assign min_height = 600 %}
+            {% else %}
+              {% assign min_height = 600 | divided_by: section.settings.images_per_slide_mobile %}
+            {% endif %}
+            <div class="products-slider-skeleton-wrapper" style="width: {{ width }}%; min-height: {{ min_height }}px;">
               <div class="products-slider-skeleton-loader"></div>
             </div>
           {% endfor %}
@@ -274,6 +298,14 @@
       animation: skeleton-loading 1.5s infinite ease-in-out;
     }
 
+    .skeleton-desktop {
+      display: flex;
+    }
+
+    .skeleton-mobile {
+      display: none;
+    }
+
     @keyframes skeleton-loading {
       0% {
         background-position: 100% 0;
@@ -295,7 +327,7 @@
 
     .slider-wrapper .product-card img {
       object-fit: cover;
-      max-height: 500px;
+      max-height: 600px;
     }
 
       .slider-track-container {
@@ -427,12 +459,20 @@
 
     .products-slider-skeleton-wrapper {
       flex-shrink: 0;
-      width: 46%;
-      min-height: 250px;
+      max-height: 600px;
     }
 
-    .products-slider-skeleton-wrapper:nth-child(n+3) {
+    .skeleton-desktop {
       display: none;
+    }
+
+    /* Show mobile version by default */
+    .skeleton-mobile {
+      display: flex;
+    }
+
+    .slider-wrapper .product-card img {
+      max-height: 600px;
     }
   }
 </style>
@@ -452,6 +492,8 @@
       const visibleItemsCount = sliderContainer.querySelector(".visible_items_count");
       const totalItemsCount = sliderContainer.querySelector(".total_items_count");
       const productCards = sliderContainer.querySelectorAll(".product-card");
+      const skeletonMobile = document.querySelector(".skeleton-mobile");
+      const skeletonDesktop = document.querySelector(".skeleton-desktop");
       {% comment %} const showSliderBarCheckbox = document.querySelector('#show_slider_bar'); {% endcomment %}
 
       const skeletonContainer = sliderContainer.querySelector(".products-slider-skeleton-container");
@@ -569,6 +611,8 @@
           if (Array.from(images).some((img) => img.complete && img.naturalWidth > 0)) {
               skeletonContainer?.classList.add("hidden");
               productList?.classList.remove("hidden");
+              if (skeletonMobile) skeletonMobile.style.display = "none";
+              if (skeletonDesktop) skeletonDesktop.style.display = "none";
           }
       }
 
@@ -634,17 +678,17 @@
       "type": "range",
       "id": "images_per_slide_desktop",
       "label": "Images per slide (Desktop)",
-      "min": 1,
+      "min": 3,
       "max": 6,
       "step": 1,
-      "default": 5
+      "default": 4
     },
     {
       "type": "range",
       "id": "images_per_slide_mobile",
       "label": "Images per slide (Mobile)",
       "min": 1,
-      "max": 6,
+      "max": 3,
       "step": 1,
       "default": 2
     },
