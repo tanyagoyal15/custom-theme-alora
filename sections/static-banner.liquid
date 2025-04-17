@@ -29,31 +29,24 @@
 </div>
 
 <style>
-  .static-banner-wrapper {
-      {% comment %} display: grid;
-      grid-template-columns: 1fr;
-      grid-template-rows: 1fr; {% endcomment %}
-      {% comment %} min-height: 620px; {% endcomment %}
-      {% comment %} gap: 30px; {% endcomment %}
-  }
   .banner-subheading {
     max-width: 40%;
   }
   .static-img {
-      position: relative;
-      aspect-ratio: 2/1;
-      overflow: hidden;
-      cursor: pointer;
-      width: 100%;
-      aspect-ratio: 2/1;
+    position: relative;
+    aspect-ratio: 2/1;
+    overflow: hidden;
+    cursor: pointer;
+    width: 100%;
+    aspect-ratio: 2/1;
   }
   .static-img a img {
-      transition: 0.4s;
-      transform: scale(1.0);
+    transition: 0.4s;
+    transform: scale(1);
   }
 
   .static-img:hover a img {
-      transform: scale(1.1);
+    transform: scale(1.1);
   }
 
   /* Skeleton Loader Styles */
