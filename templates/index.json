@@ -208,6 +208,118 @@
         "link": "/"
       }
     },
+    "collage-grid-1" : {
+      "type": "collage-grid",
+      "blocks": {
+        "image_JJ33UF": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/dresses.png",
+            "alt_text": "",
+            "overlay_text": "Clothing",
+            "link": "shopify://products/product-12"
+          }
+        },
+        "image_7JqHW9": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/95b5510c5d72645329e98162f9d1d260_3e13da3a-357d-492f-9073-a5603d2064d9.jpg",
+            "alt_text": "",
+            "overlay_text": "Sunglasses",
+            "link": ""
+          }
+        },
+        "image_xqJPhr": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/32b453f356df1b4fb7ca83857fda1a3e.jpg",
+            "alt_text": "",
+            "overlay_text": "Shoes",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_JJ33UF",
+        "image_7JqHW9",
+        "image_xqJPhr"
+      ],
+      "settings": {
+        "layout_style": "symmetrical",
+        "show_text_block": false
+      }
+    },
+    "collage-grid-2" : {
+      "type": "collage-grid",
+      "blocks": {
+        "image_JJ33UF": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/dresses.png",
+            "alt_text": "",
+            "overlay_text": "",
+            "link": "shopify://products/product-12"
+          }
+        },
+        "image_7JqHW9": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/95b5510c5d72645329e98162f9d1d260_3e13da3a-357d-492f-9073-a5603d2064d9.jpg",
+            "alt_text": "",
+            "overlay_text": "",
+            "link": ""
+          }
+        },
+        "image_xqJPhr": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/32b453f356df1b4fb7ca83857fda1a3e.jpg",
+            "alt_text": "",
+            "overlay_text": "",
+            "link": ""
+          }
+        },
+        "image_xqJPhq": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/32b453f356df1b4fb7ca83857fda1a3e.jpg",
+            "alt_text": "",
+            "overlay_text": "",
+            "link": ""
+          }
+        },
+        "image_xqJPhw": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/32b453f356df1b4fb7ca83857fda1a3e.jpg",
+            "alt_text": "",
+            "overlay_text": "",
+            "link": ""
+          }
+        },
+        "image_xqJPhe": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/32b453f356df1b4fb7ca83857fda1a3e.jpg",
+            "alt_text": "",
+            "overlay_text": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_JJ33UF",
+        "image_7JqHW9",
+        "image_xqJPhr",
+        "image_xqJPhq",
+        "image_xqJPhw",
+        "image_xqJPhe"
+      ],
+      "settings": {
+        "layout_style": "text_with_grid",
+        "show_text_block": true
+      }
+    },
   },
   "order": [
     "slideshow",
@@ -218,5 +330,7 @@
     "products-slider-4",
     "static-banner-1",
     "static-banner-2",
+    "collage-grid-1",
+    "collage-grid-2",
   ]
 }
