@@ -107,9 +107,9 @@
       aspect-ratio: 1 / 1.3;
     }
 
-    {% comment %} .collage-grid.collage-asymmetrical .collage-item {
+    .collage-grid.collage-text_with_grid .collage-item {
       aspect-ratio: 1 / 1;
-    } {% endcomment %}
+    }
 
     .collage-grid.collage-asymmetrical .collage-item:nth-child(1) {
       grid-column: 1 / 2;
@@ -231,7 +231,7 @@
     }
 
     .collage-text_with_grid .collage-items .collage-item {
-      {% comment %} aspect-ratio: 1/1.3; {% endcomment %}
+      aspect-ratio: 1/1.3;
     }
 
     /* limit to 4 images on mobile */
@@ -276,7 +276,7 @@
       "id": "layout_style",
       "label": "Layout Style",
       "options": [
-        { "value": "three_column", "label": "Three Column" },
+        { "value": "symmetrical", "label": "Three Column" },
         { "value": "asymmetrical", "label": "Asymmetrical" },
         { "value": "text_with_grid", "label": "Text + 6-Image Grid" }
       ],
