@@ -1,0 +1,161 @@
+<div class="static-banner-wrapper text-center h-auto m-auto">
+  <h2 class="static-baner__heading text-3xl text-capitalize mb-8">{{ section.settings.heading }}</h2>
+  <h4 class="static-baner__subheading text-base font-regular mb-32 m-auto banner-subheading">
+    {{ section.settings.subheading }}
+  </h4>
+  <div class="static-img relative">
+    <!-- Skeleton Loader -->
+    <div class="skeleton-banner-loader absolute top-0 left-0 w-100 h-100 bg-gray-200">&nbsp;</div>
+
+    <a href="{{ section.settings.link | default: '/' }}">
+      {% if section.settings.image != blank %}
+        <img
+          src="{{ section.settings.image | image_url }}"
+          alt="{{ section.settings.alt_text }}"
+          width="100%"
+          height="100%"
+          class="banner-image hidden"
+        >
+      {%- else -%}
+        <img
+          width="100%"
+          height="100%"
+          loading="lazy"
+          src="{{'static-banner-placeholder.jpg' | asset_url }}"
+        >
+      {%- endif -%}
+    </a>
+  </div>
+</div>
+
+<style>
+  .banner-subheading {
+    max-width: 40%;
+  }
+  .static-img {
+    position: relative;
+    aspect-ratio: 2/1;
+    overflow: hidden;
+    cursor: pointer;
+    width: 100%;
+    aspect-ratio: 2/1;
+  }
+  .static-img a img {
+    transition: 0.4s;
+    transform: scale(1);
+  }
+
+  .static-img:hover a img {
+    transform: scale(1.1);
+  }
+
+  /* Skeleton Loader Styles */
+  .skeleton-banner-loader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #e0e0e0 25%, #f5f5f5 50%, #e0e0e0 75%);
+    background-size: 400% 100%;
+    animation: skeleton-loading 1.5s infinite ease-in-out;
+    z-index: 1;
+  }
+
+  /* Skeleton Loading Animation */
+  @keyframes skeleton-loading {
+    0% {
+      background-position: 100% 0;
+    }
+    100% {
+      background-position: -100% 0;
+    }
+  }
+
+  /* Image Fade-in Transition */
+  .banner-image {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    position: relative;
+    z-index: 2;
+  }
+
+  .banner-image.fade-in {
+    opacity: 1;
+  }
+
+  @media screen and (max-width: 749px) {
+    .static-baner__heading {
+      font-size: 32px;
+    }
+
+    .static-baner__subheading {
+      font-size: 14px;
+      max-width: 70%;
+      margin-bottom: 16px;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // Select all static banner wrappers
+    const bannerWrappers = document.querySelectorAll('.static-banner-wrapper');
+
+    bannerWrappers.forEach((wrapper) => {
+      const bannerImage = wrapper.querySelector('.banner-image');
+      const skeletonLoader = wrapper.querySelector('.skeleton-container');
+
+      function handleImageLoad() {
+        if (bannerImage) {
+          bannerImage.classList.remove('hidden');
+          bannerImage.classList.add('fade-in');
+        }
+        if (skeletonLoader) {
+          skeletonLoader.classList.add('hidden');
+        }
+      }
+
+      if (bannerImage && bannerImage.complete && bannerImage.naturalWidth > 0) {
+        handleImageLoad();
+      } else if (bannerImage) {
+        bannerImage.addEventListener('load', handleImageLoad);
+        bannerImage.addEventListener('error', () => console.warn('Banner image failed to load:', bannerImage.src));
+      }
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Static Banner",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Under the Sun"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Sub Heading",
+      "default": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "image",
+      "info": "400 x 120px .png recommended"
+    },
+    { "type": "url", "id": "link", "label": "Link" }
+  ],
+  "blocks": [],
+  "presets": [
+    {
+      "name": "Static Banner"
+    }
+  ]
+}
+{% endschema %}

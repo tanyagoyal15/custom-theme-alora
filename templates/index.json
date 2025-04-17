@@ -190,6 +190,24 @@
         "quick_actions_text" : "SHOP THE LOOK"
       }
     },
+    "static-banner-1" : {
+      "type": "static-banner",
+      "settings": {
+        "heading": "Under the Sun",
+        "subheading": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+        "image": "shopify://shop_images/custom_theme_under_the_sun.png",
+        "link": "/"
+      }
+    },
+    "static-banner-2" : {
+      "type": "static-banner",
+      "settings": {
+        "heading": "Collections",
+        "subheading": "Discover handpicked collections crafted for every occasion.",
+        "image": "shopify://shop_images/custom_theme_collections_banner.png",
+        "link": "/"
+      }
+    },
   },
   "order": [
     "slideshow",
@@ -198,5 +216,7 @@
     "products-slider-2",
     "products-slider-3",
     "products-slider-4",
+    "static-banner-1",
+    "static-banner-2",
   ]
 }
