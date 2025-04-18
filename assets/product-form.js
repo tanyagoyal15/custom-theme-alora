@@ -108,7 +108,7 @@ if (!customElements.get('product-form')) {
 
           fetch(`${routes.cart_add_url}`, config)
             .then((response) => response.json())
-            .then((response) => console.log('Response: ', response))
+            // .then((response) => console.log('Response: ', response))
             .then((response) => {
               if (response.status) {
                 publish(PUB_SUB_EVENTS.cartError, {
@@ -140,14 +140,16 @@ if (!customElements.get('product-form')) {
                 this.querySelector('.product-actions-text').style.visibility = 'visible';
               }
 
-              if (!this.error)
-                publish(PUB_SUB_EVENTS.cartUpdate, {
-                  source: 'product-form',
-                  productVariantId: formData.get('id'),
-                  cartData: response,
-                });
+              if (!this.error) console.log('CALLINGGGGGGGGG CART UPDATE API');
+              publish(PUB_SUB_EVENTS.cartUpdate, {
+                source: 'product-form',
+                productVariantId: formData.get('id'),
+                cartData: response,
+              });
               this.error = false;
+              console.log('CALLINGGGGGGGGG QUICK MODAL');
               const quickAddModal = this.closest('quick-add-modal');
+              console.log('CALLINGGGGGGGGG QUICK MODAL VALUE: ', quickAddModal);
               if (quickAddModal) {
                 document.body.addEventListener(
                   'modalClosed',
