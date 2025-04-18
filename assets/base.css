@@ -886,6 +886,16 @@ summary::-webkit-details-marker {
   row-gap: var(--grid-mobile-vertical-spacing);
 }
 
+.main-collection-products-grid {
+  padding: var(--grid-desktop-vertical-spacing);
+}
+
+@media screen and (max-width: 749px) {
+  .main-collection-products-grid {
+    padding: var(--grid-mobile-vertical-spacing);
+  }
+}
+
 @media screen and (min-width: 750px) {
   .grid {
     column-gap: var(--grid-desktop-horizontal-spacing);
