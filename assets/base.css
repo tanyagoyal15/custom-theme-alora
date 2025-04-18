@@ -2094,7 +2094,8 @@ input[type='checkbox'] {
   height: 100%;
   position: fixed;
   width: 100%;
-  height: auto;
+  /* height: auto; */
+  height: 40px;
   background-color: #DCD6D6 !important;
   color: #000 !important;
 }
@@ -3781,7 +3782,7 @@ header {
 
 /* Adjust content placement based on header height */
 .dark-mode-page .content-for-layout {
-  padding-top: 104px /* Adjust based on header size */
+  padding-top: 99px /* Adjust based on header size */
 }
 
 /* Homepage doesn't need extra padding */
