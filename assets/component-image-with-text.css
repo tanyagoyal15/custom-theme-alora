@@ -15,6 +15,14 @@
 .image-with-text__media {
   min-height: 100%;
   overflow: visible;
+  border: none;
+}
+
+.image-with-text__cta {
+  outline: none !important;
+  border: 1px solid #ADA397;
+  padding: 10px;
+  color: #563D3D;
 }
 
 .image-with-text__media--small {
@@ -316,6 +324,12 @@
 .image-with-text.image-with-text--overlap .backround-transparent,
 .image-with-text:not(.image-with-text--overlap) .background-transparent {
   background: transparent;
+}
+
+/* For Collection banner background */
+.image-with-text.image-with-text--overlap .backround-transparent,
+.image-with-text:not(.image-with-text--overlap) .background-theme {
+  background: #DCD6D6;
 }
 
 /* Needed for gradient continuity with or without animation, the transform scopes the gradient to its container which happens already when animation are turned on */
