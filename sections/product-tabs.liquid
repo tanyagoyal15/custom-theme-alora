@@ -1,7 +1,7 @@
 <div class="product-tabs">
   <div class="tab-links">
     {% for block in section.blocks %}
-      <button class="tab-link" onclick="openTab(event, 'tab-{{ block.id }}')">
+      <button class="tab-link {% if forloop.first %}active{% endif %}" onclick="openTab(event, 'tab-{{ block.id }}')">
         <h2 class="m-0">{{ block.settings.tab_title }}</h2>
         {% comment %} {{ block.settings.tab_title }} {% endcomment %}
       </button>

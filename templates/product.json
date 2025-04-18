@@ -97,10 +97,6 @@
             "share_label": "Share"
           }
         },
-        "wishlist": {
-          "type": "wishlist",
-          "settings": {}
-        },
         "rating": {
           "type": "rating",
           "settings": {}
@@ -108,7 +104,6 @@
       },
       "block_order": [
         "title",
-        "wishlist",
         "rating",
         "caption",
         "price",
