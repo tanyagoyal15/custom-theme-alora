@@ -1,0 +1,197 @@
+<div class="product-tabs">
+  <div class="tab-links">
+    {% for block in section.blocks %}
+      <button class="tab-link" onclick="openTab(event, 'tab-{{ block.id }}')">
+        <h2 class="m-0">{{ block.settings.tab_title }}</h2>
+        {% comment %} {{ block.settings.tab_title }} {% endcomment %}
+      </button>
+    {% endfor %}
+  </div>
+
+  <div class="tab-contents">
+    {% for block in section.blocks %}
+      <div id="tab-{{ block.id }}" class="tab-content flex-column {% if forloop.first %}active{% endif %}">
+        {{ block.settings.tab_content }}
+
+        {% assign image = block.settings.tab_image %}
+        {% if image != blank %}
+          <img
+            src="{{ image | image_url: width: 500 }}"
+            alt="{{ block.settings.tab_title }}"
+            width="100%"
+            height="100%"
+          >
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+<style>
+  .product-tabs {
+    width: 100%;
+    margin: 100px auto;
+    width: 90%;
+  }
+
+  .tabs {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #dcd6d6;
+  }
+
+  .tab-links {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  .tab-link {
+    background: none;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: all 0.4s ease-in-out;
+  }
+
+  .tab-link.active {
+    border-bottom: 2px solid black;
+    font-weight: bold;
+    border-bottom: 2px solid #000;
+    font-weight: 700;
+  }
+
+  .tab-content {
+    display: none;
+    padding: 50px 20px;
+    border-top: 1px solid #dcd6d6;
+    border-bottom: 1px solid #dcd6d6;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.4s ease-in-out;
+  }
+
+  .tab-content.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .tab-content img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+</style>
+
+<script>
+  {% comment %} function openTab(evt, tabName) {
+    var i, tabcontent, tablinks;
+
+    tabcontent = document.getElementsByClassName('tab-content');
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = 'none';
+    }
+
+    tablinks = document.getElementsByClassName('tab-link');
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].classList.remove('active');
+    }
+
+    document.getElementById(tabName).style.display = 'block';
+    evt.currentTarget.classList.add('active');
+  } {% endcomment %}
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const tabLinks = document.querySelectorAll('.tab-link');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabLinks.forEach((link) => {
+      link.addEventListener('click', function (event) {
+        event.preventDefault();
+
+        // Remove active class from all tabs
+        tabLinks.forEach((btn) => btn.classList.remove('active'));
+        tabContents.forEach((content) => {
+          content.classList.remove('active');
+        });
+
+        // Add active class to the clicked tab
+        this.classList.add('active');
+        const tabId = this.getAttribute('onclick').match(/'([^']+)'/)[1];
+        const selectedTab = document.getElementById(tabId);
+
+        if (selectedTab) {
+          selectedTab.classList.add('active');
+        }
+      });
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Product Tabs",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "tab",
+      "name": "Tab",
+      "settings": [
+        {
+          "type": "text",
+          "id": "tab_title",
+          "label": "Tab Title"
+        },
+        {
+          "type": "richtext",
+          "id": "tab_content",
+          "label": "Tab Content"
+        },
+        {
+          "type": "image_picker",
+          "id": "tab_image",
+          "label": "Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Tabs",
+      "blocks": [
+        {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Description",
+            "tab_content": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>",
+            "tab_image": ""
+          }
+        },
+        {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Size & Fit",
+            "tab_content": "<p>Default size & fit content</p>",
+            "tab_image": "shopify://shop_images/69a8de76f5c6be54273b9bf1be558f50.jpg"
+          }
+        },
+        {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Contact & In-store Availability",
+            "tab_content": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>",
+            "tab_image": ""
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
