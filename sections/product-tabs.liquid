@@ -2,8 +2,7 @@
   <div class="tab-links">
     {% for block in section.blocks %}
       <button class="tab-link {% if forloop.first %}active{% endif %}" onclick="openTab(event, 'tab-{{ block.id }}')">
-        <h2 class="m-0">{{ block.settings.tab_title }}</h2>
-        {% comment %} {{ block.settings.tab_title }} {% endcomment %}
+        <h2 class="m-0 tab-title">{{ block.settings.tab_title }}</h2>
       </button>
     {% endfor %}
   </div>
@@ -29,7 +28,6 @@
 
 <style>
   .product-tabs {
-    width: 100%;
     margin: 100px auto;
     width: 90%;
   }
@@ -88,26 +86,47 @@
     height: auto;
     margin-bottom: 10px;
   }
+
+  @media screen and (max-width: 750px) {
+    .product-tabs {
+      margin: 0 auto 32px auto;
+    }
+
+    .tab-title {
+      font-size: 14px;
+    }
+
+    .tab-content {
+      padding: 16px;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .tab-links {
+      display: flex;
+      white-space: nowrap;
+      gap: 16px;
+      padding: 0 16px;
+    }
+
+    .tab-link {
+      flex: 0 0 auto;
+      scroll-snap-align: start;
+      padding: 10px 12px;
+      font-size: 14px;
+      border-bottom: 2px solid transparent;
+      background: none;
+      white-space: nowrap;
+    }
+
+    .tab-link.active .tab-title {
+      border-color: black;
+      font-weight: bold;
+    }
+  }
 </style>
 
 <script>
-  {% comment %} function openTab(evt, tabName) {
-    var i, tabcontent, tablinks;
-
-    tabcontent = document.getElementsByClassName('tab-content');
-    for (i = 0; i < tabcontent.length; i++) {
-      tabcontent[i].style.display = 'none';
-    }
-
-    tablinks = document.getElementsByClassName('tab-link');
-    for (i = 0; i < tablinks.length; i++) {
-      tablinks[i].classList.remove('active');
-    }
-
-    document.getElementById(tabName).style.display = 'block';
-    evt.currentTarget.classList.add('active');
-  } {% endcomment %}
-
   document.addEventListener('DOMContentLoaded', function () {
     const tabLinks = document.querySelectorAll('.tab-link');
     const tabContents = document.querySelectorAll('.tab-content');
@@ -185,7 +204,7 @@
         {
           "type": "tab",
           "settings": {
-            "tab_title": "Contact & In-store Availability",
+            "tab_title": "In-store Availability",
             "tab_content": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>",
             "tab_image": ""
           }

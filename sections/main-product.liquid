@@ -177,8 +177,9 @@
                   {%- render 'price',
                     product: product,
                     use_variant: true,
-                    show_badges: true,
-                    price_class: 'price--large'
+                    show_badges: false,
+                    price_class: 'price--large',
+                    show_regular_price: false
                   -%}
                 </div>
                 {%- if product.quantity_price_breaks_configured? -%}

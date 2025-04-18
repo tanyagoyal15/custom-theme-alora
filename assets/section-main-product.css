@@ -93,6 +93,17 @@ product-info {
   }
 }
 
+@media screen and (max-width: 750px) {
+  .main-product-wrapper {
+    margin: 0 auto;
+    padding: 16px;
+  }
+
+  .product__info-wrapper {
+    margin-top: 24px;
+  }
+}
+
 /* Dynamic checkout */
 
 .shopify-payment-button__button {
