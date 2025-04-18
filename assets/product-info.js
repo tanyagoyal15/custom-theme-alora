@@ -196,10 +196,15 @@ if (!customElements.get('product-info')) {
           this.querySelector(`#Quantity-Rules-${this.dataset.section}`)?.classList.remove('hidden');
           this.querySelector(`#Volume-Note-${this.dataset.section}`)?.classList.remove('hidden');
 
+          let form = this.productForm.querySelector('form');
+          let formType = form?.dataset.type;
+
+          // if (formType === 'add-to-cart-form') {
           this.productForm?.toggleSubmitButton(
             html.getElementById(`ProductSubmitButton-${this.sectionId}`)?.hasAttribute('disabled') ?? true,
             window.variantStrings.soldOut
           );
+          // }
 
           publish(PUB_SUB_EVENTS.variantChange, {
             data: {
@@ -208,10 +213,38 @@ if (!customElements.get('product-info')) {
               variant,
             },
           });
+
+          console.log('PLEASE UPDATE WISHLIST TOGGLE ICON ALSO');
+          const productFormElement = document.querySelector('product-form');
+          console.log('PRODUCT FORM AFTER VARIANT CHANGE: ', productFormElement);
+
+          console.log('THIS.FORM: ', form);
+          console.log('ACTIVE VARIANT: ', variant);
+          const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+
+          const existingIndex = wishlist.findIndex((item) => item.variant_idd == variant?.id);
+          const isInWishlist = existingIndex !== -1;
+
+          const strokeIcon = form.querySelector('.stroke-icon');
+          const fillIcon = form.querySelector('.fill-icon');
+
+          if (isInWishlist) {
+            // false - make stroke icon hidden , show
+            strokeIcon?.classList.add('hidden');
+            fillIcon?.classList.remove('hidden'); // show fill-icon
+          } else {
+            strokeIcon?.classList.remove('hidden'); // show stroke-icon
+            fillIcon?.classList.add('hidden');
+          }
+
+          //take query selcector form - we already have this.form
+          // check if that input with value id .value == wishlist mai vo variant id
+          // if yes then show fill icon otherwise stroke icon
         };
       }
 
       updateVariantInputs(variantId) {
+        console.log('updateVariantInputs called');
         this.querySelectorAll(
           `#product-form-${this.dataset.section}, #product-form-installment-${this.dataset.section}`
         ).forEach((productForm) => {
