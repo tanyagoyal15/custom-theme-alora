@@ -96,12 +96,16 @@ details[open].menu-opening > .menu-drawer__submenu {
 
 .js .menu-drawer__menu li {
   margin-bottom: 0.2rem;
+  text-transform: uppercase;
 }
 
 .menu-drawer__menu-item {
   padding: 1.1rem 3rem;
   text-decoration: none;
-  font-size: 1.8rem;
+  font-size: 1.3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .menu-drawer summary.menu-drawer__menu-item {
@@ -151,7 +155,7 @@ details[open].menu-opening > .menu-drawer__submenu {
 
 .menu-drawer__close-button {
   margin-top: 1.5rem;
-  padding: 1.2rem 2.6rem 1.2rem 3rem;
+  padding: 1.2rem 2.6rem 1.2rem 2rem;
   text-decoration: none;
   display: flex;
   align-items: center;
