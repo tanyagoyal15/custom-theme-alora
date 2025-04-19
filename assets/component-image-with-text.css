@@ -12,6 +12,16 @@
   }
 }
 
+.section-bottom-margin {
+  margin-bottom: var(--spacing-sections-desktop);
+}
+
+@media screen and (max-width: 750px) {
+  .section-bottom-margin {
+    margin-bottom: var(--spacing-sections-mobile);
+  }
+}
+
 .image-with-text__media {
   min-height: 100%;
   overflow: visible;
