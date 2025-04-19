@@ -1281,3 +1281,8 @@ function updateWishlistCount() {
   let wishlistCount = document.querySelector('.wishlist-count');
   if (wishlistCount) wishlistCount.textContent = wishlist.length;
 }
+
+document.addEventListener('DOMContentLoaded', updateWishlistCount);
+
+document.addEventListener('shopify:section:load', updateWishlistCount);
+document.addEventListener('shopify:load', updateWishlistCount);
