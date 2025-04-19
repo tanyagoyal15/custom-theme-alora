@@ -295,6 +295,20 @@
       if (Shopify.designMode) {
         document.documentElement.classList.add('shopify-design-mode');
       }
+
+      if (window.innerWidth <= 768) {
+        const interval = setInterval(function () {
+          const header = document.getElementById('custom-header');
+          if (header) {
+            header.classList.add('header-white');
+            // Add the dark-mode-page class to the body
+            document.body.classList.add('dark-mode-page');
+            clearInterval(interval);
+          }
+        }, 1);
+      } else {
+        document.body.classList.remove('dark-mode-page');
+      }
     </script>
   </head>
 
