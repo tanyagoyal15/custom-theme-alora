@@ -172,18 +172,9 @@
     display: none;
   }
 
-
   .header-icons svg {
     color: #fff;
   }
-
-  {% comment %} .wishlist-icon svg {
-    stroke: #fff;
-  }
-
-  .wishlist-icon svg path {
-    stroke-width: 1; /* or try 0.5, 2, etc. based on what looks right */
-  } {% endcomment %}
 
   .nav-link {
     font-size: 14px;
@@ -238,13 +229,6 @@
     color: #8f7768;
   }
 
-  {% comment %} .logo-light {
-    display: block;
-  }
-  .logo-dark {
-    display: none;
-  } {% endcomment %}
-
   .transparent-header.header-white,
   .dark-mode {
     background: #fff;
@@ -271,29 +255,14 @@
     display: none;
   }
 
-  .transparent-header.header-white .logo-dark, .dark-mode .logo-dark {
-    display: block;
-  }
-  .transparent-header.header-white .logo-light, .dark-mode .logo-light {
-    display: none;
-  }
-
-  {% comment %} .transparent-header.header-white .icon-light,
-  .dark-mode .icon-light {
-    display: none;
-  }
-  .transparent-header.header-white .icon-dark,
-  .dark-mode .icon-dark {
-    display: block;
-  } {% endcomment %}
-  {% comment %} .transparent-header.header-white .logo-light,
-  .dark-mode .logo-light {
-    display: none;
-  }
   .transparent-header.header-white .logo-dark,
   .dark-mode .logo-dark {
     display: block;
-  } {% endcomment %}
+  }
+  .transparent-header.header-white .logo-light,
+  .dark-mode .logo-light {
+    display: none;
+  }
 
   .transparent-header.header-white .header-icons svg,
   .dark-mode .header-icons svg {
@@ -325,7 +294,7 @@
     }
 
     .header-drawer .header__icon {
-      display: flex
+      display: flex;
     }
 
     .header__icon--menu {
@@ -369,8 +338,8 @@
     if (!isMobile) {
       menuItems.forEach((item) => {
         if (!item.classList.contains('has-dropdown')) {
-          item.addEventListener('mouseenter', addHeaderBackground); // Add white background
-          item.addEventListener('mouseleave', removeHeaderBackground); // Remove when leaving
+          item.addEventListener('mouseenter', addHeaderBackground);
+          item.addEventListener('mouseleave', removeHeaderBackground);
         }
       });
 
