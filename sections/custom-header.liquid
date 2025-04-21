@@ -46,7 +46,7 @@
 
     <nav class="main-navigation small-hide">
       <ul class="menu list-unstyled flex-center">
-        {% for link in linklists['main-menu'].links %}
+        {% for link in section.settings.menu.links %}
           <li
             class="menu-item relative {% if link.links != blank %}has-dropdown{% endif %}"
             data-menu="{{ forloop.index }}"
@@ -245,6 +245,12 @@
 
   .logo {
     position: relative;
+    max-height: 60px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    display: flex;
+    align-items: center;
   }
 
   .logo-light {
