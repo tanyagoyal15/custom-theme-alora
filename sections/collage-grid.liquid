@@ -46,124 +46,127 @@
 </div>
 
 <style>
-    .collage-grid {
-      width: 80%;
-    }
+  .collage-grid {
+    width: 80%;
+  }
 
-    .collage-items {
-      display: grid;
-      gap: 16px;
-    }
+  .collage-items {
+    display: grid;
+    gap: 16px;
+  }
 
-    .collage-item {
-      position: relative;
-      overflow: hidden;
-      width: 100%;
-    }
+  .collage-item {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+  }
 
-    .collage-item img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.4s ease-in-out;
-    }
+  .collage-item img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease-in-out;
+  }
 
-    .collage-overlay {
-      position: absolute;
-      bottom: 0px;
-      left: 16px;
-      padding: 15px;
-      font-size: 18px;
-      text-transform: uppercase;
-      width: max-content;
-      text-decoration: none;
-      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
-      color: #fff;
-    }
+  .collage-overlay {
+    position: absolute;
+    bottom: 0px;
+    left: 16px;
+    padding: 15px;
+    font-size: 18px;
+    text-transform: uppercase;
+    width: max-content;
+    text-decoration: none;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+    color: #fff;
+  }
 
-    .collage-symmetrical .collage-items {
-      grid-template-columns: repeat(3, 1fr);
-    }
+  .collage-symmetrical .collage-items {
+    grid-template-columns: repeat(3, 1fr);
+  }
 
-    .collage-asymmetrical .collage-items {
-      grid-template-columns: 2fr 1fr;
-      grid-template-rows: auto;
-    }
+  .collage-asymmetrical .collage-items {
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto;
+  }
 
-    .collage-text_with_grid .collage-items {
-      justify-content: center;
-      grid-template-columns: repeat(4, 260px);
-      grid-template-rows: auto;
-      grid-template-areas:
-          "cta cta img0 img1"
-          "img2 img3 img4 img5";
-    }
+  .collage-text_with_grid .collage-items {
+    justify-content: center;
+    grid-template-columns: repeat(4, 260px);
+    grid-template-rows: auto;
+    grid-template-areas:
+      'cta cta img0 img1'
+      'img2 img3 img4 img5';
+  }
 
-    .collage-item {
-      aspect-ratio: 1 / 1.3;
-    }
+  .collage-item {
+    aspect-ratio: 1 / 1.3;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+  }
 
-    .collage-grid.collage-text_with_grid .collage-item {
-      {% comment %} aspect-ratio: 1 / 1; {% endcomment %}
-      position: relative;
-      overflow: hidden;
-    }
+  .collage-grid.collage-text_with_grid .collage-item {
+    {% comment %} aspect-ratio: 1 / 1; {% endcomment %}
+    position: relative;
+    overflow: hidden;
+  }
 
-    .collage-grid.collage-text_with_grid .collage-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
+  .collage-grid.collage-text_with_grid .collage-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
 
-    .collage-grid.collage-asymmetrical .collage-item:nth-child(1) {
-      grid-column: 1 / 2;
-      grid-row: 1 / 3;
-    }
+  .collage-grid.collage-asymmetrical .collage-item:nth-child(1) {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+  }
 
-    .collage-grid.collage-asymmetrical .collage-item:nth-child(2) {
-      grid-column: 2 / 3;
-      grid-row: 1 / 2;
-    }
+  .collage-grid.collage-asymmetrical .collage-item:nth-child(2) {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+  }
 
-    .collage-grid.collage-asymmetrical .collage-item:nth-child(3) {
-      grid-column: 2 / 3;
-      grid-row: 2 / 3;
-    }
+  .collage-grid.collage-asymmetrical .collage-item:nth-child(3) {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+  }
 
-    /* Text + 6-Image Grid Layout */
-    .collage-text_with_grid {
-      background: #664444;
-      padding: 80px 44px;
-      width: 100% !important;
-    }
-    .collage-text {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      text-align: left;
-      align-self: center;
-      grid-area: cta;
-      max-width: 450px;
-    }
-    .collage-button {
-      display: inline-block;
-      padding: 10px 20px;
-      color: #DCD6D6;
-      border: 1px solid #DCD6D6;
-      text-decoration: none;
-      border-radius: 5px;
-      max-width: 200px
-    }
+  /* Text + 6-Image Grid Layout */
+  .collage-text_with_grid {
+    background: #664444;
+    padding: 80px 44px;
+    width: 100% !important;
+  }
+  .collage-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    align-self: center;
+    grid-area: cta;
+    max-width: 450px;
+  }
+  .collage-button {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #dcd6d6;
+    border: 1px solid #dcd6d6;
+    text-decoration: none;
+    border-radius: 5px;
+    max-width: 200px;
+  }
 
   @media (max-width: 768px) {
     .collage-items {
-        grid-template-columns: 1fr;
+      grid-template-columns: 1fr;
     }
     .collage-text_with_grid {
-        grid-template-columns: 1fr;
-        text-align: center;
+      grid-template-columns: 1fr;
+      text-align: center;
     }
   }
 
@@ -209,10 +212,6 @@
       padding: 18px;
     }
 
-    .collage-item {
-      {% comment %} aspect-ratio: 1/1.3; {% endcomment %}
-    }
-
     .collage-symmetrical .collage-items {
       display: flex;
       flex-direction: column;
@@ -223,9 +222,9 @@
       grid-template-columns: repeat(2, minmax(0, 1fr));
       grid-template-rows: repeat(2, minmax(0, 1fr));
       grid-template-areas:
-          "cta cta"
-          "img0 img1"
-          "img2 img3";
+        'cta cta'
+        'img0 img1'
+        'img2 img3';
       gap: 16px;
       padding: 8px;
     }
@@ -236,7 +235,7 @@
     }
 
     /* limit to 4 images on mobile */
-    .collage-text_with_grid .collage-item:nth-of-type(n+6) {
+    .collage-text_with_grid .collage-item:nth-of-type(n + 6) {
       display: none;
     }
   }
