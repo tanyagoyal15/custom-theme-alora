@@ -21,46 +21,26 @@
     </div>
     <div class="logo">
       <a class="no-underline" href="{{ routes.root_url }}">
-        {%- if settings.logo != blank -%}
-          {% comment %}
-            <img
-              width="100%"
-              height="100%"
-              loading="lazy"
-              class="logo-light"
-              alt="{{ shop.name }}"
-              src="{{ settings.logo | image_url }}"
-            >
-          {% endcomment %}
+        {% if settings.logo_light != blank %}
           <img
-            width="50px"
-            height="50px"
-            loading="lazy"
+            class="logo-image logo-light"
+            src="{{ settings.logo_light | image_url }}"
             alt="{{ shop.name }}"
-            src="{{ settings.logo | image_url }}"
+            width="200"
+            height="auto"
+            loading="lazy"
           >
-        {%- else -%}
-          {% comment %}
-            <img
-              width="100%"
-              height="100%"
-              loading="lazy"
-              src="{{'logo.png' | asset_url }}"
-              class="logo-light"
-            >
-          {% endcomment %}
-          {% comment %} <p class="logo-light logo-text m-0">ALORA</p> {% endcomment %}
-          {% comment %}
-            <img
-              width="100%"
-              height="100%"
-              loading="lazy"
-              src="{{'logo-dark.png' | asset_url }}"
-              class="logo-dark"
-            >
-          {% endcomment %}
-          <p class="logo-text m-0">ALORA</p>
-        {%- endif -%}
+        {% endif %}
+        {% if settings.logo_dark != blank %}
+          <img
+            class="logo-image logo-dark"
+            src="{{ settings.logo_dark | image_url }}"
+            alt="{{ shop.name }}"
+            width="200"
+            height="auto"
+            loading="lazy"
+          >
+        {% endif %}
       </a>
     </div>
 
@@ -192,11 +172,6 @@
     display: none;
   }
 
-  .logo-text {
-    font-size: 32px;
-    text-decoration: none;
-    color: #fff;
-  }
 
   .header-icons svg {
     color: #fff;
@@ -283,6 +258,26 @@
   .dark-mode .logo-text {
     color: #000;
   }
+
+  .logo {
+    position: relative;
+  }
+
+  .logo-light {
+    display: block;
+  }
+
+  .logo-dark {
+    display: none;
+  }
+
+  .transparent-header.header-white .logo-dark, .dark-mode .logo-dark {
+    display: block;
+  }
+  .transparent-header.header-white .logo-light, .dark-mode .logo-light {
+    display: none;
+  }
+
   {% comment %} .transparent-header.header-white .icon-light,
   .dark-mode .icon-light {
     display: none;
@@ -336,6 +331,14 @@
     .header__icon--menu {
       position: relative;
       left: 10px;
+    }
+
+    .logo-dark {
+      display: block;
+    }
+
+    .logo-light {
+      display: none;
     }
   }
 </style>
