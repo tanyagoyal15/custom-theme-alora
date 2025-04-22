@@ -16,55 +16,37 @@
   id="custom-header"
 >
   <div class="header-container flex-between w-100">
-    {% render 'header-drawer' %}
+    <div class="header-drawer">
+      {% render 'header-drawer' %}
+    </div>
     <div class="logo">
       <a class="no-underline" href="{{ routes.root_url }}">
-        {%- if settings.logo != blank -%}
-          {% comment %}
-            <img
-              width="100%"
-              height="100%"
-              loading="lazy"
-              class="logo-light"
-              alt="{{ shop.name }}"
-              src="{{ settings.logo | image_url }}"
-            >
-          {% endcomment %}
+        {% if settings.logo_light != blank %}
           <img
-            width="50px"
-            height="50px"
-            loading="lazy"
+            class="logo-image logo-light"
+            src="{{ settings.logo_light | image_url }}"
             alt="{{ shop.name }}"
-            src="{{ settings.logo | image_url }}"
+            width="200"
+            height="auto"
+            loading="lazy"
           >
-        {%- else -%}
-          {% comment %}
-            <img
-              width="100%"
-              height="100%"
-              loading="lazy"
-              src="{{'logo.png' | asset_url }}"
-              class="logo-light"
-            >
-          {% endcomment %}
-          {% comment %} <p class="logo-light logo-text m-0">ALORA</p> {% endcomment %}
-          {% comment %}
-            <img
-              width="100%"
-              height="100%"
-              loading="lazy"
-              src="{{'logo-dark.png' | asset_url }}"
-              class="logo-dark"
-            >
-          {% endcomment %}
-          <p class="logo-text m-0">ALORA</p>
-        {%- endif -%}
+        {% endif %}
+        {% if settings.logo_dark != blank %}
+          <img
+            class="logo-image logo-dark"
+            src="{{ settings.logo_dark | image_url }}"
+            alt="{{ shop.name }}"
+            width="200"
+            height="auto"
+            loading="lazy"
+          >
+        {% endif %}
       </a>
     </div>
 
     <nav class="main-navigation small-hide">
       <ul class="menu list-unstyled flex-center">
-        {% for link in linklists['main-menu'].links %}
+        {% for link in section.settings.menu.links %}
           <li
             class="menu-item relative {% if link.links != blank %}has-dropdown{% endif %}"
             data-menu="{{ forloop.index }}"
@@ -137,11 +119,11 @@
         </a>
       {%- endif -%}
       <div class="header-wishlist-icon small-hide">
-        <a href="/pages/wishlist" title="View Wishlist" class="relative">
+        <a href="/pages/wishlist" title="View Wishlist" class="flex relative">
           <span class="svg-wrapper wishlist-icon stroke-icon">
             {{- 'icon-heart.svg' | inline_asset_content -}}
           </span>
-          <span class="wishlist-count">0</span>
+          <span class="wishlist-count"></span>
         </a>
       </div>
       <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset" id="cart-icon-bubble">
@@ -186,23 +168,13 @@
     transition: background 0.3s ease-in-out;
   }
 
-  .logo-text {
-    font-size: 32px;
-    text-decoration: none;
-    color: #fff;
+  .header-drawer {
+    display: none;
   }
 
   .header-icons svg {
     color: #fff;
   }
-
-  {% comment %} .wishlist-icon svg {
-    stroke: #fff;
-  }
-
-  .wishlist-icon svg path {
-    stroke-width: 1; /* or try 0.5, 2, etc. based on what looks right */
-  } {% endcomment %}
 
   .nav-link {
     font-size: 14px;
@@ -212,7 +184,7 @@
     color: #8f7768 !important;
   }
 
-  .menu-item {
+  #custom-header .menu-item {
     padding: 15px 20px;
   }
 
@@ -257,13 +229,6 @@
     color: #8f7768;
   }
 
-  {% comment %} .logo-light {
-    display: block;
-  }
-  .logo-dark {
-    display: none;
-  } {% endcomment %}
-
   .transparent-header.header-white,
   .dark-mode {
     background: #fff;
@@ -277,22 +242,33 @@
   .dark-mode .logo-text {
     color: #000;
   }
-  {% comment %} .transparent-header.header-white .icon-light,
-  .dark-mode .icon-light {
-    display: none;
+
+  .logo {
+    position: relative;
+    max-height: 60px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    display: flex;
+    align-items: center;
   }
-  .transparent-header.header-white .icon-dark,
-  .dark-mode .icon-dark {
+
+  .logo-light {
     display: block;
-  } {% endcomment %}
-  {% comment %} .transparent-header.header-white .logo-light,
-  .dark-mode .logo-light {
+  }
+
+  .logo-dark {
     display: none;
   }
+
   .transparent-header.header-white .logo-dark,
   .dark-mode .logo-dark {
     display: block;
-  } {% endcomment %}
+  }
+  .transparent-header.header-white .logo-light,
+  .dark-mode .logo-light {
+    display: none;
+  }
 
   .transparent-header.header-white .header-icons svg,
   .dark-mode .header-icons svg {
@@ -318,6 +294,27 @@
     #custom-header {
       padding: 0;
     }
+
+    .header-drawer {
+      display: block;
+    }
+
+    .header-drawer .header__icon {
+      display: flex;
+    }
+
+    .header__icon--menu {
+      position: relative;
+      left: 10px;
+    }
+
+    .logo-dark {
+      display: block;
+    }
+
+    .logo-light {
+      display: none;
+    }
   }
 </style>
 
@@ -328,6 +325,8 @@
     const dropdownItems = document.querySelectorAll('.menu-item.has-dropdown');
     const megaMenu = document.querySelector('.mega-menu');
     const megaContents = document.querySelectorAll('.mega-menu-content');
+
+    const isMobile = window.innerWidth <= 768;
 
     function addHeaderBackground() {
       header.classList.add('header-white');
@@ -340,45 +339,46 @@
       }
     }
 
-    menuItems.forEach((item) => {
-      if (!item.classList.contains('has-dropdown')) {
-        item.addEventListener('mouseenter', addHeaderBackground); // Add white background
-        item.addEventListener('mouseleave', removeHeaderBackground); // Remove when leaving
-      }
-    });
-
-    dropdownItems.forEach((item) => {
-      item.addEventListener('mouseenter', function () {
-        const menuIndex = item.getAttribute('data-menu');
-
-        addHeaderBackground();
-        setTimeout(() => {
-          megaMenu.style.display = 'block';
-        }, 200);
-
-        megaContents.forEach((content) => {
-          content.style.display = 'none';
-        });
-
-        const activeContent = document.querySelector(`.mega-menu-content[data-content="${menuIndex}"]`);
-        if (activeContent) {
-          activeContent.style.display = 'flex';
+    if (!isMobile) {
+      menuItems.forEach((item) => {
+        if (!item.classList.contains('has-dropdown')) {
+          item.addEventListener('mouseenter', addHeaderBackground);
+          item.addEventListener('mouseleave', removeHeaderBackground);
         }
       });
-    });
 
-    megaMenu.addEventListener('mouseleave', function () {
-      megaMenu.style.display = 'none';
-      removeHeaderBackground();
-    });
+      dropdownItems.forEach((item) => {
+        item.addEventListener('mouseenter', function () {
+          const menuIndex = item.getAttribute('data-menu');
+          addHeaderBackground();
+          setTimeout(() => {
+            megaMenu.style.display = 'block';
+          }, 200);
 
-    window.addEventListener('scroll', function () {
-      if (window.scrollY > 50) {
-        addHeaderBackground();
-      } else {
+          megaContents.forEach((content) => {
+            content.style.display = 'none';
+          });
+
+          const activeContent = document.querySelector(`.mega-menu-content[data-content="${menuIndex}"]`);
+          if (activeContent) {
+            activeContent.style.display = 'flex';
+          }
+        });
+      });
+
+      megaMenu.addEventListener('mouseleave', function () {
+        megaMenu.style.display = 'none';
         removeHeaderBackground();
-      }
-    });
+      });
+
+      window.addEventListener('scroll', function () {
+        if (window.scrollY > 50) {
+          addHeaderBackground();
+        } else {
+          removeHeaderBackground();
+        }
+      });
+    }
   });
 </script>
 

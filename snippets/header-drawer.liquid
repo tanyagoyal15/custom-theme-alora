@@ -23,7 +23,7 @@
       <div class="menu-drawer__inner-container">
         <div class="menu-drawer__navigation-container">
           <nav class="menu-drawer__navigation">
-            <ul class="menu-drawer__menu has-submenu list-menu" role="list">
+            <ul class="menu-drawer__menu has-submenu list-menu list-unstyled" role="list">
               {%- for link in section.settings.menu.links -%}
                 <li>
                   {%- if link.links != blank -%}
@@ -33,9 +33,12 @@
                         class="menu-drawer__menu-item list-menu__item link link--text focus-inset{% if link.child_active %} menu-drawer__menu-item--active{% endif %}"
                       >
                         {{ link.title | escape }}
-                        <span class="svg-wrapper">
-                          {{- 'icon-arrow.svg' | inline_asset_content -}}
-                        </span>
+                        <img
+                          src="{{ 'arrow-right.svg' | asset_url }}"
+                          alt="Right Arrow"
+                          width="24"
+                          height="24"
+                        >
                         <span class="svg-wrapper">
                           {{- 'icon-caret.svg' | inline_asset_content -}}
                         </span>
@@ -46,13 +49,19 @@
                         tabindex="-1"
                       >
                         <div class="menu-drawer__inner-submenu">
-                          <button class="menu-drawer__close-button link link--text focus-inset" aria-expanded="true">
-                            <span class="svg-wrapper">
-                              {{- 'icon-arrow.svg' | inline_asset_content -}}
-                            </span>
+                          <button
+                            class="menu-drawer__close-button link link--text focus-inset uppercase"
+                            aria-expanded="true"
+                          >
+                            <img
+                              src="{{ 'arrow-left.svg' | asset_url }}"
+                              alt="Right Arrow"
+                              width="24"
+                              height="24"
+                            >
                             {{ link.title | escape }}
                           </button>
-                          <ul class="menu-drawer__menu list-menu" role="list" tabindex="-1">
+                          <ul class="menu-drawer__menu list-menu list-unstyled" role="list" tabindex="-1">
                             {%- for childlink in link.links -%}
                               <li>
                                 {%- if childlink.links == blank -%}
@@ -73,9 +82,12 @@
                                       class="menu-drawer__menu-item link link--text list-menu__item focus-inset"
                                     >
                                       {{ childlink.title | escape }}
-                                      <span class="svg-wrapper">
-                                        {{- 'icon-arrow.svg' | inline_asset_content -}}
-                                      </span>
+                                      <img
+                                        src="{{ 'arrow-right.svg' | asset_url }}"
+                                        alt="Right Arrow"
+                                        width="24"
+                                        height="24"
+                                      >
                                       <span class="svg-wrapper">
                                         {{- 'icon-caret.svg' | inline_asset_content -}}
                                       </span>
@@ -85,16 +97,19 @@
                                       class="menu-drawer__submenu has-submenu gradient motion-reduce"
                                     >
                                       <button
-                                        class="menu-drawer__close-button link link--text focus-inset"
+                                        class="menu-drawer__close-button link link--text focus-inset uppercase"
                                         aria-expanded="true"
                                       >
-                                        <span class="svg-wrapper">
-                                          {{- 'icon-arrow.svg' | inline_asset_content -}}
-                                        </span>
+                                        <img
+                                          src="{{ 'arrow-left.svg' | asset_url }}"
+                                          alt="Right Arrow"
+                                          width="24"
+                                          height="24"
+                                        >
                                         {{ childlink.title | escape }}
                                       </button>
                                       <ul
-                                        class="menu-drawer__menu list-menu"
+                                        class="menu-drawer__menu list-menu list-unstyled"
                                         role="list"
                                         tabindex="-1"
                                       >

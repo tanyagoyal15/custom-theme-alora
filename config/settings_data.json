@@ -9,7 +9,9 @@
  */
 {
   "current": {
-    "logo_width": 90,
+    "logo_light": "shopify://shop_images/ALORA__logo-light.png",
+    "logo_dark": "shopify://shop_images/ALORA__logo-dark.png",
+    "logo_width": 200,
     "type_header_font": "amiri_n4",
     "heading_scale": 100,
     "type_body_font": "nunito_sans_n4",

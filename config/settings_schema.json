@@ -12,8 +12,13 @@
     "settings": [
       {
         "type": "image_picker",
-        "id": "logo",
-        "label": "t:settings_schema.logo.settings.logo_image.label"
+        "id": "logo_dark",
+        "label": "Main Logo (used on white/light background)"
+      },
+      {
+        "type": "image_picker",
+        "id": "logo_light",
+        "label": "Logo for Transparent Header (used on homepage before scroll)"
       },
       {
         "type": "range",

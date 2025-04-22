@@ -20,6 +20,11 @@ slideshow-component .slideshow.banner {
   visibility: visible;
 }
 
+.slideshow__slide {
+  min-height: 500px;
+  overflow: hidden;
+}
+
 @media screen and (max-width: 749px) {
   .slideshow--placeholder.banner--mobile-bottom.banner--adapt_image .slideshow__media,
   .slideshow--placeholder.banner--adapt_image:not(.banner--mobile-bottom) {
