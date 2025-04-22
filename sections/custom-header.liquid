@@ -328,14 +328,12 @@
 
     const isMobile = window.innerWidth <= 768;
 
-    let isMegaMenuOpen = false;
-
     function addHeaderBackground() {
       header.classList.add('header-white');
     }
 
     function removeHeaderBackground() {
-      if (window.scrollY < 50 && !isMegaMenuOpen) {
+      if (window.scrollY < 50) {
         // Keep background only if not scrolled
         header.classList.remove('header-white');
       }
@@ -352,7 +350,6 @@
       dropdownItems.forEach((item) => {
         item.addEventListener('mouseenter', function () {
           const menuIndex = item.getAttribute('data-menu');
-          isMegaMenuOpen = true;
           addHeaderBackground();
           setTimeout(() => {
             megaMenu.style.display = 'block';
@@ -371,7 +368,6 @@
 
       megaMenu.addEventListener('mouseleave', function () {
         megaMenu.style.display = 'none';
-        isMegaMenuOpen = false;
         removeHeaderBackground();
       });
 
