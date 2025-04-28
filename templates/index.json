@@ -193,6 +193,8 @@
     "static-banner-1" : {
       "type": "static-banner",
       "settings": {
+        "media_type": "image",
+        "banner_width" : "full_width",
         "heading": "Under the Sun",
         "subheading": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
         "image": "shopify://shop_images/custom_theme_under_the_sun.png",
@@ -202,6 +204,8 @@
     "static-banner-2" : {
       "type": "static-banner",
       "settings": {
+        "media_type": "image",
+        "banner_width" : "full_width",
         "heading": "Collections",
         "subheading": "Discover handpicked collections crafted for every occasion.",
         "image": "shopify://shop_images/custom_theme_collections_banner.png",
