@@ -13,7 +13,7 @@
 <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
 {% if collection and products.size > 0 %}
   <section
-    class="slider-container text-center m-auto relative h-auto shopify-section section {{ section.id }}"
+    class="slider-container flex-column align-center text-center m-auto relative h-auto shopify-section section {{ section.id }}"
     data-collection-handle="{{ collection_handle }}"
     data-product-count="{{ products.size }}"
   >
@@ -434,6 +434,14 @@
     right: 20px;
   }
 
+  .products-slider__subheading {
+    max-width: calc((100vw - (10px * 2)) / 12 * 3);
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: normal;
+    font-size: 1.4rem;
+  }
+
   @media screen and (max-width: 749px) {
     .slider-container {
       max-width: 95%;
@@ -530,7 +538,7 @@
               product.style.width = productCardWidth + "px";
           });
 
-          console.log(`Updated: Showing ${imagesPerSlide} images per slide`);
+          {% comment %} console.log(`Updated: Showing ${imagesPerSlide} images per slide`); {% endcomment %}
       }
 
       // Call the function initially and on window resize
