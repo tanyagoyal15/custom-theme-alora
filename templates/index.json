@@ -116,6 +116,7 @@
       ],
       "settings": {
         "section_type": "collection_banner",
+        "show_top_spacing": false,
         "image": "shopify://shop_images/Acessories.png",
         "height": "medium",
         "desktop_image_width": "medium",
