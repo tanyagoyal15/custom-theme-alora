@@ -1,4 +1,4 @@
-<div class="main-page-wrapper section-{{ section.id }}-padding color-{{ section.settings.color_scheme }} gradient">
+<div class="main-contact-page-wrapper section-{{ section.id }}-padding color-{{ section.settings.color_scheme }} gradient">
   <div class="contact-form">
     {% render 'contact-form' %}
   </div>
@@ -16,7 +16,7 @@
 </div>
 
 <style>
-  .main-page-wrapper {
+  .main-contact-page-wrapper {
     display: flex;
     width: 100vw;
     overflow: hidden;
@@ -46,14 +46,14 @@
   }
 
   @media screen and (max-width: 750px) {
-    .main-page-wrapper {
+    .main-contact-page-wrapper {
       padding: 24px;
       flex-direction: column;
       align-items: flex-start;
       gap: 40px;
     }
 
-    .main-page-wrapper > div {
+    .main-contact-page-wrapper > div {
       width: 100%;
       max-width: 100%;
     }
