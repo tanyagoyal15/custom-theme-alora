@@ -18,20 +18,20 @@
   {%- assign hide_shop_login_button = true -%}
 {%- endif -%}
 
-<div class="main-login-page-wrapper section-{{ section.id }}-padding color-{{ section.settings.color_scheme }} gradient">
-  <div class="login-image flex-start">
+<div class="main-page-wrapper section-{{ section.id }}-padding color-{{ section.settings.color_scheme }} gradient">
+  <div class="page-image flex-start">
     {% if section.settings.side_image %}
       <img
         src="{{ section.settings.side_image | image_url }}"
         width="100%"
         height="100%"
         alt="Create Account"
-        class="login-form-image"
+        class="page-form-image"
       >
     {% endif %}
   </div>
 
-  <div class="login-form customer login section-{{ section.id }}-padding">
+  <div class="page-form customer login section-{{ section.id }}-padding">
     <h1 id="recover" tabindex="-1">
       {{ 'customer.recover_password.title' | t }}
     </h1>
@@ -42,7 +42,7 @@
 
       {%- form 'recover_customer_password' -%}
         {% assign recover_success = form.posted_successfully? %}
-        <div class="field">
+        <div class="field_input">
           <input
             type="email"
             value=""
@@ -56,9 +56,9 @@
               aria-describedby="RecoverEmail-email-error"
               autofocus
             {% endif %}
-            placeholder="{{ 'customer.login_page.email' | t }}"
+            placeholder=""
           >
-          <label for="RecoverEmail">
+          <label for="RecoverEmail" class="field_label">
             {{ 'customer.login_page.email' | t }}
           </label>
         </div>
@@ -83,7 +83,7 @@
 
     <div id="login" tabindex="-1">
       {%- if section.settings.heading != blank -%}
-        <h2 class="login-form-heading title title-wrapper--no-top-margin inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+        <h2 class="page-form-heading title title-wrapper--no-top-margin inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
           {{ section.settings.heading }}
         </h2>
       {%- else -%}
@@ -123,7 +123,7 @@
           </section>
         {%- endif -%}
 
-        <div class="field">
+        <div class="field_input">
           <input
             type="email"
             name="customer[email]"
@@ -134,15 +134,15 @@
             {% if form.errors contains 'form' %}
               aria-invalid="true"
             {% endif %}
-            placeholder="{{ 'customer.login_page.email' | t }}"
+            placeholder=""
           >
-          <label for="CustomerEmail">
+          <label for="CustomerEmail" class="field_label">
             {{ 'customer.login_page.email' | t }}
           </label>
         </div>
 
         {%- if form.password_needed -%}
-          <div class="field">
+          <div class="field_input">
             <input
               type="password"
               value=""
@@ -152,9 +152,9 @@
               {% if form.errors contains 'form' %}
                 aria-invalid="true"
               {% endif %}
-              placeholder="{{ 'customer.login_page.password' | t }}"
+              placeholder=""
             >
-            <label for="CustomerPassword">
+            <label for="CustomerPassword" class="field_label">
               {{ 'customer.login_page.password' | t }}
             </label>
           </div>
@@ -188,54 +188,6 @@
     {%- endif -%}
   </div>
 </div>
-
-<style>
-  .main-login-page-wrapper {
-    display: flex;
-    width: 100vw;
-    overflow: hidden;
-    background-color: #faf9f6;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .login-form {
-    flex: 1;
-    max-width: 50%;
-  }
-
-  .login-image {
-    flex: 1;
-    max-width: 50%;
-    padding: 0;
-    margin: 0;
-  }
-  .login-form-image {
-    width: 100%;
-    max-height: 100vh;
-    object-fit: cover;
-    display: block;
-  }
-
-  .login-form-heading {
-    max-width: 70%;
-    text-align: left;
-  }
-
-  @media screen and (max-width: 750px) {
-    .main-login-page-wrapper {
-      padding: 24px;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 40px;
-    }
-
-    .main-login-page-wrapper > div {
-      width: 100%;
-      max-width: 100%;
-    }
-  }
-</style>
 
 {% schema %}
 {
