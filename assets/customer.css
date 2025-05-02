@@ -329,13 +329,13 @@
 }
 
 /* Login */
-.login a {
+.login a, .register .login-route {
   display: block;
   margin: 0 auto;
   width: fit-content;
 }
 
-.login a[href='#recover'] {
+.login a[href='#recover'] , .register a {
   margin-left: 0;
   margin-right: 0;
 }
@@ -782,7 +782,7 @@ li[data-address] > h2 {
 }
 
 .page-form-heading {
-  max-width: 70%;
+  /* max-width: 70%; */
   text-align: left;
 }
 
@@ -802,8 +802,8 @@ form .field_input input {
   font-size: 16px !important;
   color: #1a1a1a !important;
   transition: border-color 0.3s ease !important;
-  max-width: 90%; /* just gave it because the inputs were looking too long */
-  display: flex;
+  /* max-width: 90%; TODO: just gave it because the inputs were looking too long */
+  /* display: flex; */
 }
 
 form .field_label {

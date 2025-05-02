@@ -135,6 +135,10 @@
           {{ 'customer.register.password' | t }}
         </label>
       </div>
+      {% comment %} TODO: add variable for routes {% endcomment %}
+      <a href="{{ routes.account_login_url }}" class="login-route">
+        Already have and account? {{ 'customer.log_in' | t }}
+      </a>
       {%- if form.errors contains 'password' -%}
         <span id="RegisterForm-password-error" class="form__message">
           <span class="svg-wrapper">
