@@ -844,4 +844,8 @@ form .field_input input:focus {
     width: 100%;
     max-width: 100%;
   }
+
+  .page-image {
+    order: 1;
+  }
 }
