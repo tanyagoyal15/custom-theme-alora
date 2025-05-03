@@ -6,9 +6,11 @@
 {{ 'component-list-social.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
-  .footer {
-    margin-top: {{ section.settings.margin_top | times: 0.75 | round: 0 }}px;
-  }
+  {% unless template.name == 'page' and template.suffix == 'login' or template.suffix == 'register' or template.suffix == 'reset-password' or template.suffix == 'contact'  %}
+    .footer {
+      margin-top: {{ section.settings.margin_top | times: 0.75 | round: 0 }}px;
+    }
+  {% endunless %}
 
   .section-{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
@@ -16,9 +18,11 @@
   }
 
   @media screen and (min-width: 750px) {
-    .footer {
-      margin-top: {{ section.settings.margin_top }}px;
-    }
+    {% unless template.name == 'page' and template.suffix == 'login' or template.suffix == 'register' or template.suffix == 'reset-password' or template.suffix == 'contact'  %}
+      .footer {
+        margin-top: {{ section.settings.margin_top }}px;
+      }
+    {% endunless %}
 
     .section-{{ section.id }}-padding {
       padding-top: {{ section.settings.padding_top }}px;
