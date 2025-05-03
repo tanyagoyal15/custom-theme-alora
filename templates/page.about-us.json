@@ -50,36 +50,6 @@
       "padding_bottom": 36
     }
   },
-  // "rich_text_1": {
-  //   "type": "rich-text",
-  //   "blocks": {
-  //     "heading": {
-  //       "type": "heading",
-  //       "settings": {
-  //         "heading": "Our Story",
-  //         "heading_size": "h1"
-  //       }
-  //     },
-  //     "text": {
-  //       "type": "text",
-  //       "settings": {
-  //         "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>"
-  //       }
-  //     }
-  //   },
-  //   "block_order": [
-  //     "heading",
-  //     "text"
-  //   ],
-  //   "settings": {
-  //     "desktop_content_position": "center",
-  //     "content_alignment": "center",
-  //     "color_scheme": "scheme-1",
-  //     "full_width": true,
-  //     "padding_top": 40,
-  //     "padding_bottom": 0
-  //   }
-  // },
   "static-banner-1" : {
     "type": "static-banner",
     "settings": {
@@ -309,6 +279,5 @@
     "products-slider-1",
     "image_with_text_2",
     "collage-grid-1",
-    // "collage-grid-2",
     ] 
   }
