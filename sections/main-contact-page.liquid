@@ -1,7 +1,4 @@
 <div class="main-contact-page-wrapper section-{{ section.id }}-padding color-{{ section.settings.color_scheme }} gradient">
-  <div class="contact-form">
-    {% render 'contact-form' %}
-  </div>
   <div class="contact-image flex-start">
     {% if section.settings.side_image %}
       <img
@@ -12,6 +9,9 @@
         class="contact-form-image"
       >
     {% endif %}
+  </div>
+  <div class="contact-form">
+    {% render 'contact-form' %}
   </div>
 </div>
 
@@ -43,7 +43,7 @@
   }
   .contact-form-image {
     width: 100%;
-    height: 100vh;
+    height: 90vh;
     object-fit: cover;
     display: block;
   }

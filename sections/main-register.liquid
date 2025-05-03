@@ -58,37 +58,42 @@
           {%- endfor -%}
         </ul>
       {%- endif -%}
-      <div class="field_input">
-        <input
-          type="text"
-          name="customer[first_name]"
-          id="RegisterForm-FirstName"
-          {% if form.first_name %}
-            value="{{ form.first_name }}"
-          {% endif %}
-          autocomplete="given-name"
-          placeholder=""
-        >
-        <label for="RegisterForm-FirstName" class="field_label">
-          {{ 'customer.register.first_name' | t }}
-        </label>
+      <div class="flex-between name">
+        <div class="field_input w-50">
+          <label for="RegisterForm-FirstName" class="field_label">
+            {{ 'customer.register.first_name' | t }}
+          </label>
+          <input
+            type="text"
+            name="customer[first_name]"
+            id="RegisterForm-FirstName"
+            {% if form.first_name %}
+              value="{{ form.first_name }}"
+            {% endif %}
+            autocomplete="given-name"
+            placeholder="{{ 'customer.register.first_name' | t }}"
+          >
+        </div>
+        <div class="field_input w-50">
+          <label for="RegisterForm-LastName" class="field_label">
+            {{ 'customer.register.last_name' | t }}
+          </label>
+          <input
+            type="text"
+            name="customer[last_name]"
+            id="RegisterForm-LastName"
+            {% if form.last_name %}
+              value="{{ form.last_name }}"
+            {% endif %}
+            autocomplete="family-name"
+            placeholder="{{ 'customer.register.last_name' | t }}"
+          >
+        </div>
       </div>
       <div class="field_input">
-        <input
-          type="text"
-          name="customer[last_name]"
-          id="RegisterForm-LastName"
-          {% if form.last_name %}
-            value="{{ form.last_name }}"
-          {% endif %}
-          autocomplete="family-name"
-          placeholder=""
-        >
-        <label for="RegisterForm-LastName" class="field_label">
-          {{ 'customer.register.last_name' | t }}
+        <label for="RegisterForm-email" class="field_label">
+          {{ 'customer.register.email' | t }}
         </label>
-      </div>
-      <div class="field_input">
         <input
           type="email"
           name="customer[email]"
@@ -104,11 +109,8 @@
             aria-invalid="true"
             aria-describedby="RegisterForm-email-error"
           {% endif %}
-          placeholder=""
+          placeholder="{{ 'customer.register.email' | t }}"
         >
-        <label for="RegisterForm-email" class="field_label">
-          {{ 'customer.register.email' | t }}
-        </label>
       </div>
       {%- if form.errors contains 'email' -%}
         <span id="RegisterForm-email-error" class="form__message">
@@ -120,6 +122,9 @@
         </span>
       {%- endif -%}
       <div class="field_input">
+        <label for="RegisterForm-password" class="field_label">
+          {{ 'customer.register.password' | t }}
+        </label>
         <input
           type="password"
           name="customer[password]"
@@ -129,15 +134,12 @@
             aria-invalid="true"
             aria-describedby="RegisterForm-password-error"
           {% endif %}
-          placeholder=""
+          placeholder="{{ 'customer.register.password' | t }}"
         >
-        <label for="RegisterForm-password" class="field_label">
-          {{ 'customer.register.password' | t }}
-        </label>
       </div>
       {% comment %} TODO: add variable for routes {% endcomment %}
-      <a href="{{ routes.account_login_url }}" class="login-route">
-        Already have and account? {{ 'customer.log_in' | t }}
+      <a href="{{ routes.account_login_url }}" class="route">
+        Already have and account? <span> {{ 'customer.log_in' | t }}</span>
       </a>
       {%- if form.errors contains 'password' -%}
         <span id="RegisterForm-password-error" class="form__message">

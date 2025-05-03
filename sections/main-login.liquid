@@ -124,6 +124,9 @@
         {%- endif -%}
 
         <div class="field_input">
+          <label for="CustomerEmail" class="field_label">
+            {{ 'customer.login_page.email' | t }}
+          </label>
           <input
             type="email"
             name="customer[email]"
@@ -134,15 +137,15 @@
             {% if form.errors contains 'form' %}
               aria-invalid="true"
             {% endif %}
-            placeholder=""
+            placeholder="{{ 'customer.login_page.email' | t }}"
           >
-          <label for="CustomerEmail" class="field_label">
-            {{ 'customer.login_page.email' | t }}
-          </label>
         </div>
 
         {%- if form.password_needed -%}
           <div class="field_input">
+            <label for="CustomerPassword" class="field_label">
+              {{ 'customer.login_page.password' | t }}
+            </label>
             <input
               type="password"
               value=""
@@ -152,25 +155,24 @@
               {% if form.errors contains 'form' %}
                 aria-invalid="true"
               {% endif %}
-              placeholder=""
+              placeholder="{{ 'customer.login_page.password' | t }}"
             >
-            <label for="CustomerPassword" class="field_label">
-              {{ 'customer.login_page.password' | t }}
-            </label>
           </div>
 
-          <a href="#recover">
-            {{ 'customer.login_page.forgot_password' | t }}
-          </a>
+          <div class="flex-between">
+            <a href="{{ routes.account_register_url }}" class="route">
+              <span> {{ 'customer.login_page.create_account' | t }}</span>
+            </a>
+
+            <a href="#recover" class="route">
+              {{ 'customer.login_page.forgot_password' | t }}
+            </a>
+          </div>
         {%- endif -%}
 
         <button>
           {{ 'customer.login_page.sign_in' | t }}
         </button>
-
-        <a href="{{ routes.account_register_url }}">
-          {{ 'customer.login_page.create_account' | t }}
-        </a>
       {%- endform -%}
     </div>
 
