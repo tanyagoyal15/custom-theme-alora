@@ -342,7 +342,15 @@
     if (!isMobile) {
       menuItems.forEach((item) => {
         if (!item.classList.contains('has-dropdown')) {
-          item.addEventListener('mouseenter', addHeaderBackground);
+          item.addEventListener('mouseenter', function () {
+            // Remove mega menu and hide contents
+            megaMenu.style.display = 'none';
+            megaContents.forEach((content) => {
+              content.style.display = 'none';
+            });
+
+            addHeaderBackground();
+          });
           item.addEventListener('mouseleave', removeHeaderBackground);
         }
       });
