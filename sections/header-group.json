@@ -29,6 +29,28 @@
     },
     "custom-header": {
       "type": "custom-header",
+      "blocks": {
+        "new_arrivals": {
+          "type": "promo_image",
+          "settings": {
+            "image": "shopify://shop_images/Acessories.png",
+            "caption": "New Arrivals",
+            "link": ""
+          }
+        },
+        "bestsellers": {
+          "type": "promo_image",
+          "settings": {
+            "image": "shopify://shop_images/Acessories.png",
+            "caption": "Bestsellers",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "new_arrivals",
+        "bestsellers"
+      ],
       "settings": {}
     }
   },

@@ -85,6 +85,23 @@
             {% endif %}
           {% endfor %}
         </div>
+        <div class="mega-menu-images flex justify-between w-100">
+          {% for block in section.blocks %}
+            {% if block.type == 'promo_image' %}
+              <a href="{{ block.settings.link }}">
+                <img
+                  src="{{ block.settings.image | image_url }}"
+                  alt="{{ block.settings.caption }}"
+                  width="100%"
+                  height="100%"
+                  class="header-images"
+                  fetchpriority="auto"
+                >
+                <p class="m-0">{{ block.settings.caption }}</p>
+              </a>
+            {% endif %}
+          {% endfor %}
+        </div>
       </div>
     </nav>
 
@@ -195,9 +212,26 @@
     width: 100vw;
     background: white;
     padding: 40px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    border-top: 2px solid #eaeaea;
+    {% comment %} box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); {% endcomment %}
+    border-top: 1px solid #eaeaea;
     display: none;
+    gap: 40px;
+    max-height: 330px;
+  }
+
+  .mega-menu-images {
+    display: flex;
+    gap: 40px;
+    width: 40%;
+    {% comment %} max-height: 250px; {% endcomment %}
+  }
+
+  .mega-menu-images p {
+
+  }
+
+  .header-images {
+    aspect-ratio: 1/1;
   }
 
   .mega-menu-inner {
@@ -218,14 +252,16 @@
     color: #666;
   }
 
-  .nested-menu li a {
+  .nested-menu li a,
+  .mega-menu-images a {
     font-size: 12px;
     color: #000;
     transition: color 0.3s ease-in-out;
   }
 
   .mega-menu-heading li a:hover,
-  .nested-menu li a:hover {
+  .nested-menu li a:hover,
+  .mega-menu-images a:hover {
     color: #8f7768;
   }
 
@@ -360,7 +396,7 @@
           const menuIndex = item.getAttribute('data-menu');
           addHeaderBackground();
           setTimeout(() => {
-            megaMenu.style.display = 'block';
+            megaMenu.style.display = 'flex';
           }, 200);
 
           megaContents.forEach((content) => {
@@ -590,6 +626,35 @@
   "blocks": [
     {
       "type": "@app"
+    },
+    {
+      "type": "promo_image",
+      "name": "Promo Image Block",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Image Link"
+        },
+        {
+          "type": "text",
+          "id": "caption",
+          "label": "Image Caption",
+          "default": "New Arrivals"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "custom Header",
+      "category": "Custom Header",
+      "blocks": []
     }
   ]
 }
