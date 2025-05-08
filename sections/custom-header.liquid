@@ -18,6 +18,9 @@
   <div class="header-container flex-between w-100">
     <div class="header-drawer">
       {% render 'header-drawer' %}
+      <div class="full-hide">
+        {% render 'header-search', input_id: 'Search-In-Modal' %}
+      </div>
     </div>
     <div class="logo">
       <a class="no-underline" href="{{ routes.root_url }}">
@@ -106,11 +109,13 @@
     </nav>
 
     <div class="header-icons flex-between">
-      {% render 'header-search', input_id: 'Search-In-Modal' %}
+      <div class="small-hide">
+        {% render 'header-search', input_id: 'Search-In-Modal' %}
+      </div>
       {%- if shop.customer_accounts_enabled -%}
         <a
           href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}"
-          class="header__icon header__icon--account link focus-inset small-hide"
+          class="header__icon header__icon--account link focus-inset"
           rel="nofollow"
         >
           {%- if section.settings.enable_customer_avatar -%}
@@ -287,6 +292,7 @@
     object-fit: contain;
     display: flex;
     align-items: center;
+    justify-content: center;
   }
 
   .logo-light {
@@ -327,12 +333,17 @@
       justify-content: space-around;
     }
 
+    .header-container > div {
+      width: 33.3%;
+    }
+
     #custom-header {
       padding: 0;
     }
 
     .header-drawer {
-      display: block;
+      display: flex;
+      justify-content: space-around;
     }
 
     .header-drawer .header__icon {
@@ -341,7 +352,7 @@
 
     .header__icon--menu {
       position: relative;
-      left: 10px;
+      left: 20px;
     }
 
     .logo-dark {
@@ -350,6 +361,10 @@
 
     .logo-light {
       display: none;
+    }
+
+    .header-icons {
+      justify-content: space-evenly;
     }
   }
 </style>

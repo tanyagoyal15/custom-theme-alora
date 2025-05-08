@@ -122,6 +122,10 @@ body:has(.section-header .drawer-menu) .announcement-bar-section .page-width {
   .page-width-tablet {
     padding: 0 5rem;
   }
+
+  .full-hide {
+    display: none !important;
+  }
 }
 
 @media screen and (min-width: 990px) {
@@ -1685,6 +1689,15 @@ details[open] > .share-button__fallback {
   width: 100%;
 }
 
+.logout-link {
+  padding: 1.1rem 3rem;
+  text-decoration: none;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  color: #121212;
+}
+
 /* Select */
 
 .select .svg-wrapper,
@@ -2567,8 +2580,8 @@ input[type='checkbox'] {
 }
 
 .header__icon .svg-wrapper {
-  width: 44px;
-  height: 44px;
+  width: 40px;
+  height: 40px;
 }
 
 .header__icon::after {

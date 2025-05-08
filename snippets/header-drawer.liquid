@@ -22,7 +22,7 @@
     >
       <div class="menu-drawer__inner-container">
         <div class="menu-drawer__navigation-container">
-          <nav class="menu-drawer__navigation">
+          <nav class="menu-drawer__navigation flex-column justify-between">
             <ul class="menu-drawer__menu has-submenu list-menu list-unstyled" role="list">
               {%- for link in section.settings.menu.links -%}
                 <li>
@@ -152,6 +152,14 @@
                 </li>
               {%- endfor -%}
             </ul>
+            <a href="{{ routes.account_logout_url }}" class="logout-link">
+              {% comment %}
+                <span class="svg-wrapper">
+                  {{- 'icon-account.svg' | inline_asset_content -}}
+                </span>
+              {% endcomment %}
+              {{ 'customer.log_out' | t }}
+            </a>
           </nav>
           <div class="menu-drawer__utility-links">
             {%- if shop.customer_accounts_enabled -%}
