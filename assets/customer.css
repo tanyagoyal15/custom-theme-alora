@@ -553,9 +553,9 @@
 }
 
 .order .fulfillment {
-  width: fit-content;
-  border: 0.01rem solid rgba(var(--color-foreground), 0.2);
-  padding: 1rem;
+  /* width: fit-content; */
+  /* border: 0.01rem solid rgba(var(--color-foreground), 0.2); */
+  padding: 1rem 0;
   margin-top: 1rem;
   font-size: 1.4rem;
   text-align: left;
