@@ -1,6 +1,39 @@
 {{ 'customer.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
+  .orders {
+    padding-left: 0 !important;
+  }
+
+  .orders li {
+    margin-bottom: 72px;
+    gap: 30px;
+  }
+
+  .details {
+    gap: 40px;
+  }
+
+  .gap-8 {
+    gap: 8px;
+  }
+
+  .view-order-btn {
+    border: 1px solid #121212 !important;
+    padding: 1rem 6rem;
+    font-size: 14px !important;
+    line-height: 1;
+    display: flex !important;
+    align-items: center;
+    text-decoration: none;
+  }
+
+  .orders .images {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+  }
+
   .section-{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
@@ -16,76 +49,111 @@
 
 <div class="customer account section-{{ section.id }}-padding">
   <div>
-    <h1 class="customer__title">{{ 'customer.account.title' | t }}</h1>
-    <a href="{{ routes.account_logout_url }}">
-      <span class="svg-wrapper">
-        {{- 'icon-account.svg' | inline_asset_content -}}
-      </span>
-      {{ 'customer.log_out' | t }}
-    </a>
+    <h1 class="customer__title">{{ 'customer.orders.title' | t }}</h1>
+    {% comment %}
+      <a href="{{ routes.account_logout_url }}">
+        <span class="svg-wrapper">
+          {{- 'icon-account.svg' | inline_asset_content -}}
+        </span>
+        {{ 'customer.log_out' | t }}
+      </a>
+    {% endcomment %}
   </div>
 
   <div>
     <div>
-      <h2>{{ 'customer.orders.title' | t }}</h2>
+      {% comment %} <h2>{{ 'customer.orders.title' | t }}</h2> {% endcomment %}
 
       {% paginate customer.orders by 20 %}
         {%- if customer.orders.size > 0 -%}
-          <table role="table" class="order-history">
-            <caption class="visually-hidden">
-              {{ 'customer.orders.title' | t }}
-            </caption>
-            <thead role="rowgroup">
-              <tr role="row">
-                <th id="ColumnOrder" scope="col" role="columnheader">{{ 'customer.orders.order_number' | t }}</th>
-                <th id="ColumnDate" scope="col" role="columnheader">{{ 'customer.orders.date' | t }}</th>
-                <th id="ColumnPayment" scope="col" role="columnheader">{{ 'customer.orders.payment_status' | t }}</th>
-                <th id="ColumnFulfillment" scope="col" role="columnheader">
-                  {{ 'customer.orders.fulfillment_status' | t }}
-                </th>
-                <th id="ColumnTotal" scope="col" role="columnheader">{{ 'customer.orders.total' | t }}</th>
-              </tr>
-            </thead>
-            <tbody role="rowgroup">
-              {%- for order in customer.orders -%}
+          {% comment %}
+            <table role="table" class="order-history">
+              <caption class="visually-hidden">
+                {{ 'customer.orders.title' | t }}
+              </caption>
+              <thead role="rowgroup">
                 <tr role="row">
-                  <td
-                    id="RowOrder"
-                    role="cell"
-                    headers="ColumnOrder"
-                    data-label="{{ 'customer.orders.order_number' | t }}"
-                  >
-                    <a
-                      href="{{ order.customer_url }}"
-                      aria-label="{{ 'customer.orders.order_number_link' | t: number: order.name }}"
-                    >
-                      {{ order.name }}
-                    </a>
-                  </td>
-                  <td headers="RowOrder ColumnDate" role="cell" data-label="{{ 'customer.orders.date' | t }}">
-                    {{ order.created_at | time_tag: format: 'date' }}
-                  </td>
-                  <td
-                    headers="RowOrder ColumnPayment"
-                    role="cell"
-                    data-label="{{ 'customer.orders.payment_status' | t }}"
-                  >
-                    {{ order.financial_status_label }}
-                  </td>
-                  <td
-                    headers="RowOrder ColumnFulfillment"
-                    role="cell"
-                    data-label="{{ 'customer.orders.fulfillment_status' | t }}"
-                  >
-                    {{ order.fulfillment_status_label }}
-                  </td>
-                  <td headers="RowOrder ColumnTotal" role="cell" data-label="{{ 'customer.orders.total' | t }}">
-                    {{ order.total_net_amount | money_with_currency }}
-                  </td>
+                  <th id="ColumnOrder" scope="col" role="columnheader">{{ 'customer.orders.order_number' | t }}</th>
+                  <th id="ColumnDate" scope="col" role="columnheader">{{ 'customer.orders.date' | t }}</th>
+                  <th id="ColumnPayment" scope="col" role="columnheader">{{ 'customer.orders.payment_status' | t }}</th>
+                  <th id="ColumnFulfillment" scope="col" role="columnheader">
+                    {{ 'customer.orders.fulfillment_status' | t }}
+                  </th>
+                  <th id="ColumnTotal" scope="col" role="columnheader">{{ 'customer.orders.total' | t }}</th>
                 </tr>
-              {%- endfor -%}
-            </tbody>
-          </table>
+              </thead>
+              <tbody role="rowgroup">
+                {%- for order in customer.orders -%}
+                  <tr role="row">
+                    <td
+                      id="RowOrder"
+                      role="cell"
+                      headers="ColumnOrder"
+                      data-label="{{ 'customer.orders.order_number' | t }}"
+                    >
+                      <a
+                        href="{{ order.customer_url }}"
+                        aria-label="{{ 'customer.orders.order_number_link' | t: number: order.name }}"
+                      >
+                        {{ order.name }}
+                      </a>
+                    </td>
+                    <td headers="RowOrder ColumnDate" role="cell" data-label="{{ 'customer.orders.date' | t }}">
+                      {{ order.created_at | time_tag: format: 'date' }}
+                    </td>
+                    <td
+                      headers="RowOrder ColumnPayment"
+                      role="cell"
+                      data-label="{{ 'customer.orders.payment_status' | t }}"
+                    >
+                      {{ order.financial_status_label }}
+                    </td>
+                    <td
+                      headers="RowOrder ColumnFulfillment"
+                      role="cell"
+                      data-label="{{ 'customer.orders.fulfillment_status' | t }}"
+                    >
+                      {{ order.fulfillment_status_label }}
+                    </td>
+                    <td headers="RowOrder ColumnTotal" role="cell" data-label="{{ 'customer.orders.total' | t }}">
+                      {{ order.total_net_amount | money_with_currency }}
+                    </td>
+                  </tr>
+                {%- endfor -%}
+              </tbody>
+            </table>
+          {% endcomment %}
+
+          <ul class="orders p-0 list-unstyled pl-0">
+            {%- for order in customer.orders -%}
+              <li class="flex-column">
+                <div class="flex-column justify-between details cl-theme">
+                  <div class="flex-column gap-8">
+                    <span>Order: {{ order.name }}</span>
+                    <span class="font-bold">{{ order.fulfillment_status_label }}</span>
+                  </div>
+                  <div class="flex w-100 justify-between">
+                    <div class="flex-column gap-8">
+                      <span>{{ order.created_at | time_tag: format: 'date' }}</span>
+                      <span class="font-bold">{{ order.total_net_amount | money_with_currency }}</span>
+                    </div>
+                    <a href="{{ order.customer_url }}" class="view-order-btn"> View Order </a>
+                  </div>
+                </div>
+                <div class="images">
+                  {% for line_item in order.line_items %}
+                    <img
+                      src="{{ line_item.image | img_url: 'medium' }}"
+                      alt="{{ line_item.title }}"
+                      width="100%"
+                      height="100%"
+                    >
+                  {% endfor %}
+                </div>
+                <div></div>
+              </li>
+            {% endfor %}
+          </ul>
         {%- else -%}
           <p>{{ 'customer.orders.none' | t }}</p>
         {%- endif -%}
@@ -138,15 +206,17 @@
       {% endpaginate %}
     </div>
 
-    <div>
-      <h2>{{ 'customer.account.details' | t }}</h2>
+    {% comment %}
+      <div>
+        <h2>{{ 'customer.account.details' | t }}</h2>
 
-      {{ customer.default_address | format_address }}
+        {{ customer.default_address | format_address }}
 
-      <a href="{{ routes.account_addresses_url }}">
-        {{ 'customer.account.view_addresses' | t }} ({{ customer.addresses_count }})
-      </a>
-    </div>
+        <a href="{{ routes.account_addresses_url }}">
+          {{ 'customer.account.view_addresses' | t }} ({{ customer.addresses_count }})
+        </a>
+      </div>
+    {% endcomment %}
   </div>
 </div>
 
