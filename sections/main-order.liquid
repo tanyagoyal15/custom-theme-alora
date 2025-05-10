@@ -134,6 +134,12 @@
                 {%- else -%}
                   <p>{{ line_item.title | escape }}</p>
                 {%- endif -%}
+                <img
+                  src="{{ line_item.image | img_url: 'medium' }}"
+                  alt="{{ line_item.title }}"
+                  width="100%"
+                  height="100%"
+                >
                 {%- assign property_size = line_item.properties | size -%}
                 {%- unless line_item.selling_plan_allocation == null and property_size == 0 -%}
                   <div class="properties">
@@ -301,7 +307,7 @@
           </tr>
         {%- endfor -%}
       </tbody>
-      <tfoot role="rowgroup" class="order-details-summary">
+      <tfoot role="rowgroup">
         <tr role="row">
           <td class="table-value" id="RowSubtotal" role="rowheader" scope="row" colspan="4">
             {{ 'customer.order.subtotal' | t }}
