@@ -136,17 +136,37 @@
             >
               <div>
                 <div class="order-item">
+                  <div>
+                    <img
+                      src="{{ line_item.image | img_url: 'medium' }}"
+                      alt="{{ line_item.title }}"
+                      width="100%"
+                      height="100%"
+                    >
+                    {%- if line_item.fulfillment -%}
+                      <div class="fulfillment">
+                        {%- assign created_at = line_item.fulfillment.created_at | time_tag: format: 'date' -%}
+                        <span>{{ 'customer.order.fulfilled_at_html' | t: date: created_at }}</span>
+
+                        {%- if line_item.fulfillment.tracking_url -%}
+                          <a href="{{ line_item.fulfillment.tracking_url }}">
+                            {{ 'customer.order.track_shipment' | t }}
+                          </a>
+                        {%- endif -%}
+                        <span>
+                          {{ line_item.fulfillment.tracking_company }}
+                          {%- if line_item.fulfillment.tracking_number -%}
+                            #{{ line_item.fulfillment.tracking_number }}
+                          {%- endif -%}
+                        </span>
+                      </div>
+                    {%- endif -%}
+                  </div>
                   {%- if line_item.url != blank -%}
                     <a href="{{ line_item.url }}">{{ line_item.title | escape }}</a>
                   {%- else -%}
                     <p>{{ line_item.title | escape }}</p>
                   {%- endif -%}
-                  <img
-                    src="{{ line_item.image | img_url: 'medium' }}"
-                    alt="{{ line_item.title }}"
-                    width="100%"
-                    height="100%"
-                  >
                 </div>
                 {%- assign property_size = line_item.properties | size -%}
                 {%- unless line_item.selling_plan_allocation == null and property_size == 0 -%}
@@ -192,25 +212,6 @@
                       </li>
                     {%- endfor -%}
                   </ul>
-                {%- endif -%}
-
-                {%- if line_item.fulfillment -%}
-                  <div class="fulfillment">
-                    {%- assign created_at = line_item.fulfillment.created_at | time_tag: format: 'date' -%}
-                    <span>{{ 'customer.order.fulfilled_at_html' | t: date: created_at }}</span>
-
-                    {%- if line_item.fulfillment.tracking_url -%}
-                      <a href="{{ line_item.fulfillment.tracking_url }}">
-                        {{ 'customer.order.track_shipment' | t }}
-                      </a>
-                    {%- endif -%}
-                    <span>
-                      {{ line_item.fulfillment.tracking_company }}
-                      {%- if line_item.fulfillment.tracking_number -%}
-                        #{{ line_item.fulfillment.tracking_number }}
-                      {%- endif -%}
-                    </span>
-                  </div>
                 {%- endif -%}
               </div>
             </td>
