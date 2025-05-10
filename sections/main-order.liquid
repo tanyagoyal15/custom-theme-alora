@@ -16,6 +16,17 @@
     line-height: 1;
   }
 
+  .order-details > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  .order-details > p {
+    margin-bottom: 0;
+  }
+
   .gap-8 {
     gap: 8px;
   }
@@ -46,7 +57,7 @@
 
   <div class="flex-column order-details-wrapper">
     <div class="order-details">
-      <div class="flex-column justify-between">
+      <div>
         <div class="flex-column gap-8">
           <span>Order: {{ order.name }}</span>
           <span class="font-bold">{{ order.fulfillment_status_label }}</span>
