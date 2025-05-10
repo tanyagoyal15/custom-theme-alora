@@ -6,7 +6,9 @@
   }
 
   .order-details {
-    gap: 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: flex-start;
   }
 
   .order-details > *, .table-value {
@@ -43,8 +45,8 @@
   </div>
 
   <div class="flex-column order-details-wrapper">
-    <div class="flex-between">
-      <div class="order-details flex-between">
+    <div class="order-details">
+      <div class="flex-column justify-between">
         <div class="flex-column gap-8">
           <span>Order: {{ order.name }}</span>
           <span class="font-bold">{{ order.fulfillment_status_label }}</span>
@@ -65,18 +67,22 @@
       </div>
       <div>
         <h2>{{ 'customer.order.billing_address' | t }}</h2>
-        <p>
-          <strong>{{ 'customer.order.payment_status' | t }}:</strong>
-          {{ order.financial_status_label }}
-        </p>
+        {% comment %}
+          <p>
+            <strong>{{ 'customer.order.payment_status' | t }}:</strong>
+            {{ order.financial_status_label }}
+          </p>
+        {% endcomment %}
         {{ order.billing_address | format_address }}
       </div>
       <div>
         <h2>{{ 'customer.order.shipping_address' | t }}</h2>
-        <p>
-          <strong>{{ 'customer.order.fulfillment_status' | t }}:</strong>
-          {{ order.fulfillment_status_label }}
-        </p>
+        {% comment %}
+          <p>
+            <strong>{{ 'customer.order.fulfillment_status' | t }}:</strong>
+            {{ order.fulfillment_status_label }}
+          </p>
+        {% endcomment %}
         {{ order.shipping_address | format_address }}
       </div>
     </div>
