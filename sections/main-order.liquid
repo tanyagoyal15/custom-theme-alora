@@ -24,7 +24,7 @@
     gap: 10px;
   }
 
-  .order-details > p {
+  .order-details .shipping-address p, .order-details .billing-address p {
     margin-bottom: 0 !important;
   }
 
@@ -78,24 +78,28 @@
         {%- endif -%}
       </div>
       <div>
-        <div class="uppercase">{{ 'customer.order.billing_address' | t }}</div>
+        <div class="font-bold uppercase">{{ 'customer.order.billing_address' | t }}</div>
         {% comment %}
           <p>
             <strong>{{ 'customer.order.payment_status' | t }}:</strong>
             {{ order.financial_status_label }}
           </p>
         {% endcomment %}
-        {{ order.billing_address | format_address }}
+        <div class="billing-address">
+          {{ order.billing_address | format_address }}
+        </div>
       </div>
       <div>
-        <div class="uppercase">{{ 'customer.order.shipping_address' | t }}</div>
+        <div class="font-bold uppercase">{{ 'customer.order.shipping_address' | t }}</div>
         {% comment %}
           <p>
             <strong>{{ 'customer.order.fulfillment_status' | t }}:</strong>
             {{ order.fulfillment_status_label }}
           </p>
         {% endcomment %}
-        {{ order.shipping_address | format_address }}
+        <div class="shipping-address">
+          {{ order.shipping_address | format_address }}
+        </div>
       </div>
     </div>
 
