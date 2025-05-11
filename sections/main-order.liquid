@@ -130,7 +130,7 @@
       <caption class="visually-hidden">
         {{ 'customer.order.title' | t: name: order.name }}
       </caption>
-      <div role="rowgroup table-head">
+      <div role="rowgroup" class="table-head">
         <div role="row">
           <div id="ColumnProduct" scope="col" role="columnheader">{{ 'customer.order.product' | t }}</div>
           {% comment %} <div id="ColumnSku" scope="col" role="columnheader">{{ 'customer.order.sku' | t }}</div> {% endcomment %}
@@ -139,7 +139,7 @@
           <div id="ColumnTotal" scope="col" role="columnheader">{{ 'customer.order.total' | t }}</div>
         </div>
       </div>
-      <div role="rowgroup table-body">
+      <div role="rowgroup" class="table-body">
         {%- for line_item in order.line_items -%}
           <div role="row">
             <div
