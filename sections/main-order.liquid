@@ -11,7 +11,7 @@
     align-items: flex-start;
   }
 
-  .order-details > *, .table-value, .table-head .row > div, .table-body.row > div {
+  .order-details > *, .table-value, .table-head .row > div, .table-body .row > div {
     font-size: 14px !important;
     line-height: 1;
   }
@@ -46,12 +46,19 @@
     border-top: 1px solid #ebebed;
   }
 
+  .table-body {
+    padding: 16px 0;
+    display: grid;
+    justify-content: space-between;
+    gap: 40px;
+  }
+
   .table-head .row, .table-body.row {
     display: grid;
     grid-template-columns: 5fr 1fr 1fr 1fr;
   }
 
-  .table-head .row > div:nth-child(n + 1),  .table-body .row > div:nth-child(n + 1){
+  .table-head .row > div:nth-child(n + 2),  .table-body .row > div:nth-child(n + 2){
     text-align: right;
   }
 
