@@ -59,9 +59,10 @@
     grid-template-columns: 5fr 1fr 1fr 1fr;
   }
 
-  /* .table-body .row .order  {
+  .table-body .row:first-child  {
     display: flex;
-  } */
+    padding: 0;
+  }
 
   .table-body .order-item-details {
     display: flex;
@@ -167,7 +168,6 @@
               role="rowheader"
               scope="row"
               data-label="{{ 'customer.order.product' | t }}"
-              class="order"
             >
               <div>
                 <div class="order-item">
