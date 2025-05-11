@@ -130,8 +130,8 @@
       <caption class="visually-hidden">
         {{ 'customer.order.title' | t: name: order.name }}
       </caption>
-      <div role="rowgroup" class="table-head">
-        <div role="row">
+      <div class="table-head">
+        <div class="row">
           <div id="ColumnProduct" scope="col" role="columnheader">{{ 'customer.order.product' | t }}</div>
           {% comment %} <div id="ColumnSku" scope="col" role="columnheader">{{ 'customer.order.sku' | t }}</div> {% endcomment %}
           <div id="ColumnPrice" scope="col" role="columnheader">{{ 'customer.order.price' | t }}</div>
@@ -139,9 +139,9 @@
           <div id="ColumnTotal" scope="col" role="columnheader">{{ 'customer.order.total' | t }}</div>
         </div>
       </div>
-      <div role="rowgroup" class="table-body">
+      <div class="table-body">
         {%- for line_item in order.line_items -%}
-          <div role="row">
+          <div class="row">
             <div
               id="Row{{ line_item.key }}"
               headers="ColumnProduct"
@@ -333,8 +333,8 @@
           </div>
         {%- endfor -%}
       </div>
-      <div role="rowgroup">
-        <div role="row">
+      <div class="table-footer">
+        <div class="row">
           <div class="table-value" id="RowSubtotal" role="rowheader" scope="row" colspan="4">
             {{ 'customer.order.subtotal' | t }}
           </div>
