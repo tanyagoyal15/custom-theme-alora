@@ -30,6 +30,10 @@
     line-height: 1;
   }
 
+  .order-item-wrapper {
+    width: 70%;
+  }
+
   .order-item {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -147,9 +151,11 @@
     </div>
 
     <div role="table">
-      <caption class="visually-hidden">
-        {{ 'customer.order.title' | t: name: order.name }}
-      </caption>
+      {% comment %}
+        <caption class="visually-hidden">
+          {{ 'customer.order.title' | t: name: order.name }}
+        </caption>
+      {% endcomment %}
       <div class="table-head">
         <div class="row">
           <div id="ColumnProduct" scope="col" role="columnheader">{{ 'customer.order.product' | t }}</div>
@@ -169,9 +175,9 @@
               scope="row"
               data-label="{{ 'customer.order.product' | t }}"
             >
-              <div>
+              <div class="order-item-wrapper">
                 <div class="order-item">
-                  <div class="grid">
+                  <div class="grid mb-0">
                     <div class="order-item-img-wrapper">
                       <img
                         src="{{ line_item.image | img_url: 'medium' }}"
