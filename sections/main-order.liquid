@@ -11,7 +11,7 @@
     align-items: flex-start;
   }
 
-  .order-details > *, .table-value {
+  .order-details > *, .table-value, .table-head .row > div, .table-body.row > div {
     font-size: 14px !important;
     line-height: 1;
   }
@@ -38,6 +38,21 @@
 
   .gap-8 {
     gap: 8px;
+  }
+
+  .table-head {
+    padding: 16px 0;
+    border-bottom: 1px solid #ebebed;
+    border-top: 1px solid #ebebed;
+  }
+
+  .table-head .row, .table-body.row {
+    display: grid;
+    grid-template-columns: 5fr 1fr 1fr 1fr;
+  }
+
+  .table-head .row > div:nth-child(n + 1),  .table-body .row > div:nth-child(n + 1){
+    text-align: right;
   }
 
   .order-details-summary {
@@ -115,7 +130,7 @@
       <caption class="visually-hidden">
         {{ 'customer.order.title' | t: name: order.name }}
       </caption>
-      <div role="rowgroup">
+      <div role="rowgroup table-head">
         <div role="row">
           <div id="ColumnProduct" scope="col" role="columnheader">{{ 'customer.order.product' | t }}</div>
           {% comment %} <div id="ColumnSku" scope="col" role="columnheader">{{ 'customer.order.sku' | t }}</div> {% endcomment %}
@@ -124,7 +139,7 @@
           <div id="ColumnTotal" scope="col" role="columnheader">{{ 'customer.order.total' | t }}</div>
         </div>
       </div>
-      <div role="rowgroup">
+      <div role="rowgroup table-body">
         {%- for line_item in order.line_items -%}
           <div role="row">
             <div
@@ -137,12 +152,14 @@
               <div>
                 <div class="order-item">
                   <div class="grid">
-                    <img
-                      src="{{ line_item.image | img_url: 'medium' }}"
-                      alt="{{ line_item.title }}"
-                      width="100%"
-                      height="100%"
-                    >
+                    <div class="order-item-img-wrapper">
+                      <img
+                        src="{{ line_item.image | img_url: 'medium' }}"
+                        alt="{{ line_item.title }}"
+                        width="100%"
+                        height="100%"
+                      >
+                    </div>
                     {%- if line_item.fulfillment -%}
                       <div class="fulfillment">
                         {%- assign created_at = line_item.fulfillment.created_at | time_tag: format: 'date' -%}
