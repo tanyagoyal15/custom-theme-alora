@@ -95,6 +95,7 @@
     display: flex;
     width: 40%;
     justify-content: space-between;
+    gap: 16px;
     /* border: 1px solid; */
   }
 
@@ -485,11 +486,11 @@
           </div>
         {%- endif -%}
         <div role="row">
-          <div class="table-value" id="RowTotal" role="rowheader" scope="row" colspan="3">
+          <div class="table-value font-bold" id="RowTotal" role="rowheader" scope="row" colspan="3">
             {{ 'customer.order.total' | t }}
           </div>
           <div
-            class="table-value"
+            class="table-value font-bold"
             headers="RowTotal"
             role="cell"
             colspan="2"
