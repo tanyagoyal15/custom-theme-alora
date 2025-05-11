@@ -135,6 +135,20 @@
     .table-footer > div {
       width: 100%;
     }
+
+    .table-head .row, .table-body .row {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    .order-details > *, .table-value, .table-head .row > div, .table-body .row > div {
+      font-size: 10px !important;
+      line-height: 1;
+    }
+
+    .order-item {
+      grid-template-columns: 1fr;
+    }
   }
 {%- endstyle -%}
 
