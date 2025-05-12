@@ -3650,10 +3650,6 @@ details-disclosure > details {
   display: block;
 }
 
-.grid {
-  display: grid;
-}
-
 /* Flexbox */
 .flex {
   display: flex;
