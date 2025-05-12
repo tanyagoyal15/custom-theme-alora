@@ -19,13 +19,11 @@
   }
 
   .view-order-btn {
-    border: 1px solid #121212 !important;
-    padding: 1rem 6rem;
-    font-size: 14px !important;
-    line-height: 1;
+    font-size: 12px !important;
     display: flex !important;
-    align-items: center;
+    align-items: flex-end;
     text-decoration: none;
+    line-height: calc(1 + .6 / var(--font-body-scale));
   }
 
   .orders .images {
@@ -35,14 +33,14 @@
   }
 
   .section-{{ section.id }}-padding {
-    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
   }
 
-  @media screen and (min-width: 750px) {
+  @media screen and (max-width: 750px) {
     .section-{{ section.id }}-padding {
-      padding-top: {{ section.settings.padding_top }}px;
-      padding-bottom: {{ section.settings.padding_bottom }}px;
+      padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+      padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
     }
   }
 {%- endstyle -%}
