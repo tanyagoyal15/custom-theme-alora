@@ -138,7 +138,7 @@
 
     .table-head .row, .table-body .row {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
     }
 
     .order-details > *, .table-value, .table-head .row > div, .table-body .row > div {
@@ -215,8 +215,12 @@
         <div class="row">
           <div id="ColumnProduct" scope="col" role="columnheader">{{ 'customer.order.product' | t }}</div>
           {% comment %} <div id="ColumnSku" scope="col" role="columnheader">{{ 'customer.order.sku' | t }}</div> {% endcomment %}
-          <div id="ColumnPrice" scope="col" role="columnheader">{{ 'customer.order.price' | t }}</div>
-          <div id="ColumnQuantity" scope="col" role="columnheader">{{ 'customer.order.quantity' | t }}</div>
+          <div id="ColumnPrice" scope="col" role="columnheader" class="small-hide">
+            {{ 'customer.order.price' | t }}
+          </div>
+          <div id="ColumnQuantity" scope="col" role="columnheader" class="small-hide">
+            {{ 'customer.order.quantity' | t }}
+          </div>
           <div id="ColumnTotal" scope="col" role="columnheader">{{ 'customer.order.total' | t }}</div>
         </div>
       </div>
@@ -330,7 +334,7 @@
               headers="Row{{ line_item.key }} ColumnPrice"
               role="cell"
               data-label="{{ 'customer.order.price' | t }}"
-              class="table-value"
+              class="table-value small-hide"
             >
               {%- if line_item.original_price != line_item.final_price or line_item.unit_price_measurement -%}
                 <dl>
@@ -386,7 +390,7 @@
               headers="Row{{ line_item.key }} ColumnQuantity"
               role="cell"
               data-label="{{ 'customer.order.quantity' | t }}"
-              class="table-value"
+              class="table-value small-hide"
             >
               {{ line_item.quantity }}
             </div>
