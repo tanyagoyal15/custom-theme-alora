@@ -267,6 +267,32 @@
                       {{ line_item.sku }}
                     </div>
 
+                    <div class="table-value small-hide"><span class="mr-8">Qty :</span> {{ line_item.quantity }}</div>
+
+                    <div class="table-value small-hide flex">
+                      <span class="mr-8">Total :</span>
+                      <span>
+                        {%- if line_item.original_line_price != line_item.final_line_price -%}
+                          <dl>
+                            <dt>
+                              <span class="visually-hidden">{{ 'products.product.price.regular_price' | t }}</span>
+                            </dt>
+                            <dd class="regular-price">
+                              <s>{{ line_item.original_line_price | money }}</s>
+                            </dd>
+                            <dt>
+                              <span class="visually-hidden">{{ 'products.product.price.sale_price' | t }}</span>
+                            </dt>
+                            <dd>
+                              <span>{{ line_item.final_line_price | money }}</span>
+                            </dd>
+                          </dl>
+                        {%- else -%}
+                          {{ line_item.original_line_price | money }}
+                        {%- endif -%}
+                      </span>
+                    </div>
+
                     {% comment %} See all these properties {% endcomment %}
                     {%- assign property_size = line_item.properties | size -%}
                     {%- unless line_item.selling_plan_allocation == null and property_size == 0 -%}
@@ -317,20 +343,24 @@
                   <div>
                     {%- if line_item.fulfillment -%}
                       <div class="fulfillment">
-                        {%- assign created_at = line_item.fulfillment.created_at | time_tag: format: 'date' -%}
-                        <span>{{ 'customer.order.fulfilled_at_html' | t: date: created_at }}</span>
+                        {% comment %}
+                          {%- assign created_at = line_item.fulfillment.created_at | time_tag: format: 'date' -%}
+                          <span>{{ 'customer.order.fulfilled_at_html' | t: date: created_at }}</span>
+                        {% endcomment %}
 
                         {%- if line_item.fulfillment.tracking_url -%}
-                          <a href="{{ line_item.fulfillment.tracking_url }}">
+                          <a href="{{ line_item.fulfillment.tracking_url }}" class="table-value">
                             {{ 'customer.order.track_shipment' | t }}
                           </a>
                         {%- endif -%}
-                        <span>
-                          {{ line_item.fulfillment.tracking_company }}
-                          {%- if line_item.fulfillment.tracking_number -%}
-                            #{{ line_item.fulfillment.tracking_number }}
-                          {%- endif -%}
-                        </span>
+                        {% comment %}
+                          <span>
+                            {{ line_item.fulfillment.tracking_company }}
+                            {%- if line_item.fulfillment.tracking_number -%}
+                              #{{ line_item.fulfillment.tracking_number }}
+                            {%- endif -%}
+                          </span>
+                        {% endcomment %}
                       </div>
                     {%- endif -%}
                   </div>
