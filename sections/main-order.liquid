@@ -138,16 +138,22 @@
 
     .table-head .row, .table-body .row {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr;
     }
 
     .order-details > *, .table-value, .table-head .row > div, .table-body .row > div {
-      font-size: 10px !important;
+      font-size: 12px !important;
       line-height: 1;
     }
 
     .order-item {
-      grid-template-columns: 1fr;
+      display: flex;
+    }
+
+    .order-details .shipping-address p, .order-details .billing-address p {
+      margin-bottom: 0 !important;
+      font-size: 12px !important;
+      line-height: 1;
     }
   }
 {%- endstyle -%}
@@ -221,7 +227,9 @@
           <div id="ColumnQuantity" scope="col" role="columnheader" class="small-hide">
             {{ 'customer.order.quantity' | t }}
           </div>
-          <div id="ColumnTotal" scope="col" role="columnheader">{{ 'customer.order.total' | t }}</div>
+          <div id="ColumnTotal" scope="col" role="columnheader" class="small-hide">
+            {{ 'customer.order.total' | t }}
+          </div>
         </div>
       </div>
       <div class="table-body">
@@ -398,7 +406,7 @@
               headers="Row{{ line_item.key }} ColumnTotal"
               role="cell"
               data-label="{{ 'customer.order.total' | t }}"
-              class="table-value"
+              class="table-value small-hide"
             >
               {%- if line_item.original_line_price != line_item.final_line_price -%}
                 <dl>
