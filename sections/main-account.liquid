@@ -57,16 +57,14 @@
 {%- endstyle -%}
 
 <div class="customer account section-{{ section.id }}-padding">
-  <div>
+  <div class="flex-between align-start">
     <h1 class="customer__title">{{ 'customer.orders.title' | t }}</h1>
-    {% comment %}
-      <a href="{{ routes.account_logout_url }}">
-        <span class="svg-wrapper">
-          {{- 'icon-account.svg' | inline_asset_content -}}
-        </span>
-        {{ 'customer.log_out' | t }}
-      </a>
-    {% endcomment %}
+    <a href="{{ routes.account_logout_url }}" class="logout-account">
+      <span class="svg-wrapper">
+        {{- 'icon-account.svg' | inline_asset_content -}}
+      </span>
+      {{ 'customer.log_out' | t }}
+    </a>
   </div>
 
   <div>
