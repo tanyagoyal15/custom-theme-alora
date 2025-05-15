@@ -103,6 +103,12 @@
     padding-bottom: {{ section.settings.padding_bottom }}px;
   }
 
+  .order-item-details > div {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
   @media screen and (max-width: 750px) {
     .section-{{ section.id }}-padding {
       padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
@@ -158,12 +164,6 @@
       margin-bottom: 0 !important;
       font-size: 12px !important;
       line-height: 1;
-    }
-
-    .order-item-details > div {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
     }
   }
 {%- endstyle -%}
