@@ -168,12 +168,16 @@
   </div>
 </header>
 
-{%- if settings.cart_type == 'notification' -%}
-  {%- render 'cart-notification',
-    color_scheme: section.settings.color_scheme,
-    desktop_menu_type: section.settings.menu_type_desktop
-  -%}
-{%- endif -%}
+{% comment %} TODO: Removed cart notification for now - will add in v2 {% endcomment %}
+
+{% comment %}
+  {%- if settings.cart_type == 'notification' -%}
+    {%- render 'cart-notification',
+      color_scheme: section.settings.color_scheme,
+      desktop_menu_type: section.settings.menu_type_desktop
+    -%}
+  {%- endif -%}
+{% endcomment %}
 
 <style>
   #custom-header {
