@@ -661,11 +661,6 @@
   margin-right: 0.5rem;
 }
 
-.addresses li > button + button,
-.addresses form button + button {
-  margin-top: 0rem;
-}
-
 @media screen and (min-width: 750px) {
   .addresses li > button:first-of-type {
     margin-top: 3rem;
@@ -701,6 +696,8 @@ label[for='AddressProvinceNew'] {
 
 li[data-address] {
   margin-top: 5rem;
+  border: 1px solid #ddd;
+  padding: 10px;
 }
 
 .addresses [aria-expanded='false'] ~ div[id] {
@@ -709,10 +706,6 @@ li[data-address] {
 
 .addresses [aria-expanded='true'] ~ div[id] {
   display: block;
-}
-
-.addresses h2 {
-  text-align: left;
 }
 
 li[data-address] > h2 {
@@ -852,5 +845,9 @@ form .field_input input:focus {
 
   .page-image {
     order: 1;
+  }
+
+  li[data-address] {
+    margin-top: 0;
   }
 }

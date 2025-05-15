@@ -2,9 +2,9 @@ const selectors = {
   customerAddresses: '[data-customer-addresses]',
   addressCountrySelect: '[data-address-country-select]',
   addressContainer: '[data-address]',
-  toggleAddressButton: 'button[aria-expanded]',
+  toggleAddressButton: '[aria-expanded]',
   cancelAddressButton: 'button[type="reset"]',
-  deleteAddressButton: 'button[data-confirm-message]',
+  deleteAddressButton: '[data-confirm-message]',
 };
 
 const attributes = {
@@ -63,7 +63,15 @@ class CustomerAddresses {
   }
 
   _toggleExpanded(target) {
-    target.setAttribute(attributes.expanded, (target.getAttribute(attributes.expanded) === 'false').toString());
+    const isExpanded = target.getAttribute(attributes.expanded) === 'true';
+    const form = document.getElementById(target.getAttribute('aria-controls'));
+
+    target.setAttribute(attributes.expanded, (!isExpanded).toString());
+
+    if (form) {
+      form.style.display = isExpanded ? 'none' : 'block';
+    }
+    // target.setAttribute(attributes.expanded, (target.getAttribute(attributes.expanded) === 'false').toString());
   }
 
   _handleAddEditButtonClick = ({ currentTarget }) => {
