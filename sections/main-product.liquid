@@ -131,7 +131,6 @@
                         name="id"
                         value="{{ product.selected_or_first_available_variant.id }}"
                         {% if product.selected_or_first_available_variant.available == false
-                          or quantity_rule_soldout
                           or product.selected_or_first_available_variant == null
                         %}
                           disabled
@@ -798,13 +797,16 @@
       <script src="{{ 'product-model.js' | asset_url }}" defer></script>
     {%- endif -%}
 
-    {%- liquid
-      if product.selected_or_first_available_variant.featured_media
-        assign seo_media = product.selected_or_first_available_variant.featured_media
-      else
-        assign seo_media = product.featured_media
-      endif
-    -%}
+    {% comment %} TODO: VARIABLE WAS NOT USED ANYWHERE SO COMMENTED THIS CODE OUT FOR NOW {% endcomment %}
+    {% comment %}
+      {%- liquid
+        if product.selected_or_first_available_variant.featured_media
+          assign seo_media = product.selected_or_first_available_variant.featured_media
+        else
+          assign seo_media = product.featured_media
+        endif
+      -%}
+    {% endcomment %}
 
     <script type="application/ld+json">
       {{ product | structured_data }}

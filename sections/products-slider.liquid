@@ -83,7 +83,6 @@
                   {% comment %} <div class="product-card-actions">{{ section.settings.quick_actions_text }}</div> {% endcomment %}
                   {%- liquid
                     assign gift_card_recipient_feature_active = false
-                    assign show_dynamic_checkout = true
                   -%}
                   <product-form
                     class="product-form"
@@ -109,7 +108,6 @@
                         name="id"
                         value="{{ product.selected_or_first_available_variant.id }}"
                         {% if product.selected_or_first_available_variant.available == false
-                          or quantity_rule_soldout
                           or product.selected_or_first_available_variant == null
                         %}
                           disabled
@@ -157,11 +155,6 @@
                           {% comment %} <span>{{ section.settings.quick_actions_text }}</span> {% endcomment %}
                           {%- render 'loading-spinner' -%}
                         </button>
-                        {% comment %}
-                          {%- if show_dynamic_checkout -%}
-                            {{ form | payment_button }}
-                          {%- endif -%}
-                        {% endcomment %}
                       </div>
                     {%- endform -%}
                   </product-form>

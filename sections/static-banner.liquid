@@ -49,7 +49,7 @@
             height="100%"
             class="banner-video hidden"
           >
-            <source src="{{ section.settings.video | video_url }}" type="video/mp4">
+            <source src="{{ section.settings.video | asset_url }}" type="video/mp4">
             Your browser does not support the video tag.
           </video>
         {% elsif section.settings.image != blank %}
