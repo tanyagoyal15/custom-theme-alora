@@ -256,11 +256,10 @@
               <div class="order-item">
                 <div class="order-item-img">
                   <img
-                    src="{{ line_item.image | image_url }}"
+                    src="{{ line_item.image | image_url: 'medium' }}"
                     alt="{{ line_item.title }}"
                     width="100%"
                     height="100%"
-                    loading="eager"
                   >
                 </div>
                 <div class="order-item-details">

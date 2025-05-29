@@ -150,11 +150,10 @@
                 <div class="images">
                   {% for line_item in order.line_items %}
                     <img
-                      src="{{ line_item.image | image_url }}"
+                      src="{{ line_item.image | image_url: 'medium' }}"
                       alt="{{ line_item.title }}"
                       width="100%"
                       height="100%"
-                      loading="eager"
                     >
                   {% endfor %}
                 </div>
