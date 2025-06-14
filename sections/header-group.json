@@ -51,7 +51,9 @@
         "new_arrivals",
         "bestsellers"
       ],
-      "settings": {}
+      "settings": {
+        "color_scheme" : "scheme-10"
+      }
     }
   },
   "order": [

@@ -168,7 +168,7 @@
   }
 {%- endstyle -%}
 
-<div class="customer order section-{{ section.id }}-padding">
+<div class="customer order color-{{ section.settings.color_scheme }} section-{{ section.id }}-padding">
   <div>
     <h1 class="customer__title">{{ 'customer.account.title' | t }}</h1>
     <a href="{{ routes.account_url }}">{{ 'customer.account.return' | t }}</a>
@@ -598,6 +598,12 @@
 {
   "name": "t:sections.main-order.name",
   "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-7"
+    },
     {
       "type": "header",
       "content": "t:sections.all.padding.section_padding_heading"

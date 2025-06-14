@@ -174,7 +174,8 @@
     ],
     "settings": {
       "layout_style": "text_with_grid",
-      "show_text_block": true
+      "show_text_block": true,
+      "color_scheme": "scheme-6"
     }
   },
   "static-banner-1" : {

@@ -517,8 +517,7 @@
 
 .btn-theme-primary {
   display: inline-block;
-  /* background: #FAF9F6; */
-  color: #FAF9F6;
+  color: rgb(var(--color-foreground));
   padding: 10px 15px;
   text-decoration: none;
   border-radius: 5px;

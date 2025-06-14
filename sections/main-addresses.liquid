@@ -80,7 +80,10 @@
 {%- endstyle -%}
 
 {%- paginate customer.addresses by 5 -%}
-  <div class="customer addresses section-{{ section.id }}-padding" data-customer-addresses>
+  <div
+    class="customer addresses color-{{ section.settings.color_scheme }} section-{{ section.id }}-padding"
+    data-customer-addresses
+  >
     <div class="address-top-section flex-between align-start">
       <div>
         <h1>{{ 'customer.addresses.title' | t }}</h1>
@@ -466,6 +469,12 @@
 {
   "name": "t:sections.main-addresses.name",
   "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-7"
+    },
     {
       "type": "header",
       "content": "t:sections.all.padding.section_padding_heading"

@@ -155,7 +155,9 @@
         "tab_2",
         "tab_3"
       ],
-      "settings": {}
+      "settings": {
+        "color_scheme" : "scheme-6"
+      }
     },
     "products-slider-1": {
       "type": "products-slider",

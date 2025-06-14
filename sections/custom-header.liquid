@@ -12,7 +12,7 @@
 >
 
 <header
-  class="{% if template == 'index' %}transparent-header absolute flex-between cl-white{% else %}dark-mode{% endif %}"
+  class="color-{{ section.settings.color_scheme }} {% if template == 'index' %}transparent-header absolute flex-between cl-white{% else %}dark-mode{% endif %}"
   id="custom-header"
 >
   <div class="header-container flex-between w-100">
@@ -208,7 +208,7 @@
     transition: color 0.4s ease;
   }
   .nav-link:hover {
-    color: #8f7768 !important;
+    color: rgba(var(--color-foreground)) !important;
   }
 
   #custom-header .menu-item {
@@ -272,14 +272,14 @@
   .mega-menu-heading li a:hover,
   .nested-menu li a:hover,
   .mega-menu-images a:hover {
-    color: #8f7768;
+    color: rgba(var(--color-foreground));
   }
 
   .transparent-header.header-white,
   .dark-mode {
     background: #fff;
     color: #000;
-    border-bottom: 1px solid #dcd6d6;
+    border-bottom: 1px solid rgba(var(--color-background));
   }
 
   .transparent-header.header-white .nav-link,
@@ -542,7 +542,7 @@
       "type": "color_scheme",
       "id": "color_scheme",
       "label": "t:sections.all.colors.label",
-      "default": "scheme-1"
+      "default": "scheme-10"
     },
     {
       "type": "color_scheme",

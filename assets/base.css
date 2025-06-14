@@ -2135,8 +2135,8 @@ input[type='checkbox'] {
   width: 100%;
   /* height: auto; */
   height: 40px;
-  background-color: #DCD6D6 !important;
-  color: #000 !important;
+  background-color: rgb(var(--color-background)) !important;
+  color: rgb(var(--color-foreground)) !important;
 }
 
 .utility-bar--bottom-border {

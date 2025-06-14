@@ -14,7 +14,7 @@
   }
 {%- endstyle -%}
 
-<div class="customer activate section-{{ section.id }}-padding">
+<div class="customer activate color-{{ section.settings.color_scheme }} section-{{ section.id }}-padding">
   <h1>
     {{ 'customer.activate_account.title' | t }}
   </h1>
@@ -110,6 +110,12 @@
 {
   "name": "t:sections.main-activate-account.name",
   "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-7"
+    },
     {
       "type": "header",
       "content": "t:sections.all.padding.section_padding_heading"
