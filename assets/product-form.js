@@ -182,17 +182,13 @@ if (!customElements.get('product-form')) {
         }
 
         localStorage.setItem('wishlist', JSON.stringify(wishlist));
-        console.log('IS IN WISHLIST: ', existingIndex);
 
         // Update icon based on wishlist status
         this.updateWishlistIcon(variantId, !isInWishlist); // if added now, then it's in wishlist
         this.updateWishlistCount();
-
-        console.log('Wishlist updated:', wishlist);
       }
 
       updateWishlistIcon(variantId, isInWishlist) {
-        console.log('UPdate WISHLIST ICONS CALLED', isInWishlist);
         const productForm = document.querySelector('product-form');
         if (!productForm) return;
 
@@ -213,7 +209,6 @@ if (!customElements.get('product-form')) {
       }
 
       updateWishlistCount() {
-        console.log('Update wishlist count called');
         let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
         let wishlistCount = document.querySelector('.wishlist-count');
         if (wishlistCount) {

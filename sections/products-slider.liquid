@@ -536,8 +536,6 @@
           productCards.forEach((product) => {
               product.style.width = productCardWidth + "px";
           });
-
-          {% comment %} console.log(`Updated: Showing ${imagesPerSlide} images per slide`); {% endcomment %}
       }
 
       // Call the function initially and on window resize
@@ -554,7 +552,6 @@
 
       // Function to update the slider position and progress bar
       function updateSlider(value) {
-          console.log("update slider value: ", value);
 
           // Calculate translateX for slider movement
           const translateX = -value * stepSize * productCardWidth;
