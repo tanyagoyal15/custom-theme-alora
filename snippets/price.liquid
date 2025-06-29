@@ -8,6 +8,7 @@
   - show_badges: {Boolean} Renders 'Sale' and 'Sold Out' tags if the product matches the condition (optional)
   - price_class: {String} Adds a price class to the price element (optional)
   - show_compare_at_price: {Boolean} Renders the compare at price if the product matches the condition (optional)
+  - show_regular_price: {Boolean} Renders the regular price if the product matches the condition (optional)
 
   Usage:
   {% render 'price', product: product %}
@@ -91,22 +92,24 @@
         {%- endif -%}
       </div>
       <div class="price__sale">
-        {%- unless product.price_varies == false and product.compare_at_price_varies %}
-          <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
-          <span>
-            <s class="price-item price-item--regular">
-              {% if settings.currency_code_enabled %}
-                {{ compare_at_price | money_with_currency }}
-              {% else %}
-                {{ compare_at_price | money }}
-              {% endif %}
-            </s>
-          </span>
-        {%- endunless -%}
         <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.sale_price' | t }}</span>
         <span class="price-item price-item--sale price-item--last">
           {{ money_price }}
         </span>
+        {%- unless product.price_varies == false and product.compare_at_price_varies %}
+          <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
+          {% if show_regular_price %}
+            <span>
+              <s class="price-item price-item--regular">
+                {% if settings.currency_code_enabled %}
+                  {{ compare_at_price | money_with_currency }}
+                {% else %}
+                  {{ compare_at_price | money }}
+                {% endif %}
+              </s>
+            </span>
+          {% endif %}
+        {%- endunless -%}
       </div>
       <small class="unit-price caption{% if product.selected_or_first_available_variant.unit_price_measurement == nil %} hidden{% endif %}">
         <span class="visually-hidden">{{ 'products.product.price.unit_price' | t }}</span>

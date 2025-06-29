@@ -12,9 +12,27 @@
   }
 }
 
+.section-bottom-margin {
+  margin-bottom: var(--spacing-sections-desktop);
+}
+
+@media screen and (max-width: 750px) {
+  .section-bottom-margin {
+    margin-bottom: var(--spacing-sections-mobile);
+  }
+}
+
 .image-with-text__media {
   min-height: 100%;
   overflow: visible;
+  border: none;
+}
+
+.image-with-text__cta {
+  outline: none !important;
+  border: 1px solid #ADA397;
+  padding: 10px;
+  color: #563D3D;
 }
 
 .image-with-text__media--small {
@@ -317,6 +335,7 @@
 .image-with-text:not(.image-with-text--overlap) .background-transparent {
   background: transparent;
 }
+
 
 /* Needed for gradient continuity with or without animation, the transform scopes the gradient to its container which happens already when animation are turned on */
 .image-with-text .gradient {

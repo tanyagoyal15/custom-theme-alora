@@ -1,3 +1,7 @@
+.main-product-wrapper {
+  margin: 72px 30px 0 30px;
+}
+
 product-info {
   display: block;
 }
@@ -89,6 +93,17 @@ product-info {
   }
 }
 
+@media screen and (max-width: 750px) {
+  .main-product-wrapper {
+    margin: 0 auto;
+    padding: 16px;
+  }
+
+  .product__info-wrapper {
+    margin-top: 24px;
+  }
+}
+
 /* Dynamic checkout */
 
 .shopify-payment-button__button {
@@ -150,6 +165,10 @@ product-info {
   display: block;
 }
 
+.wishlist-product-form {
+  margin: 0 !important;
+}
+
 .product-form__error-message-wrapper:not([hidden]) {
   display: flex;
   align-items: flex-start;
@@ -196,7 +215,7 @@ product-info {
 .product-form__submit[aria-disabled='true'] + .shopify-payment-button .shopify-payment-button__button[disabled],
 .product-form__submit[disabled] + .shopify-payment-button .shopify-payment-button__button[disabled] {
   cursor: not-allowed;
-  opacity: 0.5;
+  opacity: 0.6;
 }
 
 @media screen and (forced-colors: active) {
@@ -247,7 +266,7 @@ a.product__text {
 
 .product__title {
   word-break: break-word;
-  margin-bottom: 1.5rem;
+  /* margin-bottom: 1.5rem; */
 }
 
 .product__title > * {
@@ -427,6 +446,10 @@ a.product__text {
 
   .product__media-list {
     padding-right: calc(var(--media-shadow-horizontal-offset) * var(--media-shadow-visible));
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
   }
 
   .product--thumbnail .product__media-item:not(.is-active),
@@ -532,7 +555,7 @@ a.product__text {
     max-width: calc(50% - var(--grid-desktop-horizontal-spacing) / 2);
   }
 
-  .product:not(.product--columns) .product__media-list .product__media-item:first-child,
+  .product:not(.product--columns) .product__media-list .product__media-item,
   .product:not(.product--columns) .product__media-list .product__media-item--full {
     width: 100%;
     max-width: 100%;
@@ -1308,7 +1331,8 @@ a.product__text {
 
 .product-media-container.constrain-height.media-fit-contain {
   --contained-width: calc(var(--constrained-height) * var(--aspect-ratio));
-  width: min(var(--contained-width), 100%);
+  /* width: min(var(--contained-width), 100%); */
+  width: 100%;
 }
 
 .product-media-container .media {
@@ -1491,4 +1515,9 @@ a.product__text {
   .recipient-form > input[type='checkbox']:checked + label .icon-checkmark {
     border: none;
   }
+}
+
+.wishlist-btn {
+  all: unset;
+  cursor: pointer;
 }

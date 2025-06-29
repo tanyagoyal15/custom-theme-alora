@@ -1,0 +1,14 @@
+{
+    "sections": {
+      "main": {
+        "type": "main-login",
+        "settings": {
+          "side_image" : "shopify://shop_images/dresses.png",
+          "heading_size": "h0"
+        }
+      },
+    },
+    "order": [
+      "main",
+    ]
+  }

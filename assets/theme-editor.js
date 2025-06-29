@@ -52,3 +52,20 @@ document.addEventListener('shopify:section:deselect', () => hideProductModal());
 document.addEventListener('shopify:inspector:activate', () => hideProductModal());
 
 document.addEventListener('shopify:inspector:deactivate', () => hideProductModal());
+
+document.addEventListener('DOMContentLoaded', function () {
+  const sizeDropdown = document.getElementById('Size-{{ section.id }}');
+
+  sizeDropdown.addEventListener('change', function () {
+    const selectedSize = this.value;
+    const variantSelects = document.querySelector('variant-selects');
+
+    // Simulate variant selection change
+    variantSelects.querySelectorAll('select').forEach((select) => {
+      if (select.name.includes('Size')) {
+        select.value = selectedSize;
+        select.dispatchEvent(new Event('change'));
+      }
+    });
+  });
+});

@@ -27,26 +27,37 @@
       ],
       "settings": {}
     },
-    "header": {
-      "type": "header",
+    "custom-header": {
+      "type": "custom-header",
+      "blocks": {
+        "new_arrivals": {
+          "type": "promo_image",
+          "settings": {
+            "image": "shopify://shop_images/Acessories.png",
+            "caption": "New Arrivals",
+            "link": ""
+          }
+        },
+        "bestsellers": {
+          "type": "promo_image",
+          "settings": {
+            "image": "shopify://shop_images/Acessories.png",
+            "caption": "Bestsellers",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "new_arrivals",
+        "bestsellers"
+      ],
       "settings": {
-        "logo_position": "middle-left",
-        "menu": "main-menu",
-        "menu_type_desktop": "dropdown",
-        "sticky_header_type": "on-scroll-up",
-        "show_line_separator": true,
-        "color_scheme": "scheme-1",
-        "enable_country_selector": true,
-        "enable_language_selector": true,
-        "mobile_logo_position": "center",
-        "margin_bottom": 0,
-        "padding_top": 20,
-        "padding_bottom": 20
+        "color_scheme" : "scheme-10"
       }
     }
   },
   "order": [
     "announcement-bar",
-    "header"
+    "custom-header"
   ]
 }

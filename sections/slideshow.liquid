@@ -26,7 +26,7 @@
 {%- endif -%}
 
 <slideshow-component
-  class="slider-mobile-gutter{% if section.settings.layout == 'grid' %} page-width{% endif %}{% if section.settings.show_text_below %} mobile-text-below{% endif %}"
+  class="color-{{ section.settings.color_scheme }} slider-mobile-gutter{% if section.settings.layout == 'grid' %} page-width{% endif %}{% if section.settings.show_text_below %} mobile-text-below{% endif %}"
   role="region"
   aria-roledescription="{{ 'sections.slideshow.carousel' | t }}"
   aria-label="{{ section.settings.accessibility_info | escape }}"
@@ -61,7 +61,7 @@
                 {%- if section.settings.slider_visual == 'numbers' -%}
                   {{ forloop.index -}}
                 {%- else -%}
-                  <span class="dot"></span>
+                  <span class="rectangle"></span>
                 {%- endif -%}
               </button>
             {%- endfor -%}
@@ -159,9 +159,9 @@
           {%- endif -%}
         </div>
         <div class="slideshow__text-wrapper banner__content banner__content--{{ block.settings.box_align }} page-width{% if block.settings.show_text_box == false %} banner--desktop-transparent{% endif %}{% if settings.animations_reveal_on_scroll and forloop.index == 1 %} scroll-trigger animate--slide-in{% endif %}">
-          <div class="slideshow__text banner__box content-container content-container--full-width-mobile color-{{ block.settings.color_scheme }} gradient slideshow__text--{{ block.settings.text_alignment }} slideshow__text-mobile--{{ block.settings.text_alignment_mobile }}">
+          <div class="slideshow__text banner__box content-container content-container--full-width-mobile cl-white slideshow__text--{{ block.settings.text_alignment }} slideshow__text-mobile--{{ block.settings.text_alignment_mobile }}">
             {%- if block.settings.heading != blank -%}
-              <h2 class="banner__heading inline-richtext {{ block.settings.heading_size }}">
+              <h2 class="banner__heading inline-richtext cl-white {{ block.settings.heading_size }}">
                 {{ block.settings.heading }}
               </h2>
             {%- endif -%}
@@ -178,7 +178,7 @@
                   {% else %}
                     role="link" aria-disabled="true"
                   {% endif %}
-                  class="button {% if block.settings.button_style_secondary %}button--secondary{% else %}button--primary{% endif %}"
+                  class="btn-theme-primary uppercase font-medium {% if block.settings.button_style_secondary %}button--secondary{% else %}button--primary{% endif %}"
                 >
                   {{- block.settings.button_label | escape -}}
                 </a>
@@ -220,7 +220,7 @@
                 {%- if section.settings.slider_visual == 'numbers' -%}
                   {{ forloop.index -}}
                 {%- else -%}
-                  <span class="dot"></span>
+                  <span class="rectangle"></span>
                 {%- endif -%}
               </button>
             {%- endfor -%}
@@ -386,6 +386,12 @@
       "label": "t:sections.slideshow.settings.accessibility.label",
       "info": "t:sections.slideshow.settings.accessibility.info",
       "default": "t:sections.slideshow.settings.accessibility.default"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-9"
     }
   ],
   "blocks": [
@@ -542,7 +548,7 @@
           "type": "color_scheme",
           "id": "color_scheme",
           "label": "t:sections.all.colors.label",
-          "default": "scheme-1"
+          "default": "scheme-6"
         },
         {
           "type": "header",

@@ -21,10 +21,16 @@
 
 .newsletter-form__field-wrapper .field__input {
   padding-right: 5rem;
+  border-radius: 50px;
 }
 
-.newsletter-form__field-wrapper .field {
-  z-index: 0;
+.newsletter-form__field-wrapper .newsletter-field {
+  /* z-index: 0; */
+}
+
+.newsletter-field .field__label {
+  top: 15px;
+  font-size: 12px;
 }
 
 .newsletter-form__message {
@@ -43,27 +49,34 @@
 }
 
 .newsletter-form__button {
-  width: 4.4rem;
+  width: 13.4rem;
   margin: 0;
   right: var(--inputs-border-width);
   top: 0;
-  height: 100%;
+  height: auto;
   z-index: 2;
+  border-radius: 50px;
+  padding: 16px;
+  color: rgba(var(--color-background));
+  background-color: rgb(var(--color-foreground));
 }
 
 .newsletter-form__button:focus-visible {
-  box-shadow: 0 0 0 0.3rem rgb(var(--color-background)), 0 0 0 0.4rem rgba(var(--color-foreground));
-  background-color: rgb(var(--color-background));
+  box-shadow: 0 0 0 0.3rem rgb(var(--color-foreground)), 0 0 0 0.4rem rgba(var(--color-background));
+  background-color: rgb(var(--color-foreground));
 }
 
 .newsletter-form__button:focus {
-  box-shadow: 0 0 0 0.3rem rgb(var(--color-background)), 0 0 0 0.4rem rgba(var(--color-foreground));
-  background-color: rgb(var(--color-background));
+  box-shadow: 0 0 0 0.3rem rgb(var(--color-foreground)), 0 0 0 0.4rem rgba(var(--color-background));
+  background-color: rgb(var(--color-foreground));
 }
 
 .newsletter-form__button:not(:focus-visible):not(.focused) {
   box-shadow: inherit;
   background-color: inherit;
+  color: rgba(var(--color-background));
+  background-color: rgb(var(--color-foreground));
+  border-radius: 50px;
 }
 
 .newsletter-form__button .icon {

@@ -1,0 +1,129 @@
+<div class="main-contact-page-wrapper section-{{ section.id }}-padding color-{{ section.settings.color_scheme }} gradient">
+  <div class="contact-image flex-start">
+    {% if section.settings.side_image %}
+      <img
+        src="{{ section.settings.side_image | image_url }}"
+        width="100%"
+        height="100%"
+        alt="Contact"
+        class="contact-form-image"
+        loading="eager"
+      >
+    {% endif %}
+  </div>
+  <div class="contact-form">
+    {% render 'contact-form' %}
+  </div>
+</div>
+
+<style>
+  .main-contact-page-wrapper {
+    display: flex;
+    width: 100vw;
+    overflow: hidden;
+    {% comment %} padding: 40px 82px; {% endcomment %}
+    {% comment %} gap: 82px; {% endcomment %}
+    background-color: rgb(var(--color-background));
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .contact-form {
+    flex: 1;
+    {% comment %} max-width: 50%; {% endcomment %}
+    max-width: 47.8rem;
+    margin: auto;
+    {% comment %} padding: 5rem 9rem; {% endcomment %}
+  }
+
+  .contact-image {
+    flex: 1;
+    max-width: 50%;
+    padding: 0;
+    margin: 0;
+  }
+  .contact-form-image {
+    width: 100%;
+    height: 90vh;
+    object-fit: cover;
+    display: block;
+  }
+
+  @media screen and (max-width: 750px) {
+    .main-contact-page-wrapper {
+      padding: 24px;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 40px;
+    }
+
+    .main-contact-page-wrapper > div {
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .contact-image {
+      order: 1;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Main Contact Page",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "side_image",
+      "label": "Side Image"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Form Heading",
+      "default": "Contact"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "h2",
+          "label": "t:sections.all.heading_size.options__1.label"
+        },
+        {
+          "value": "h1",
+          "label": "t:sections.all.heading_size.options__2.label"
+        },
+        {
+          "value": "h0",
+          "label": "t:sections.all.heading_size.options__3.label"
+        },
+        {
+          "value": "hxl",
+          "label": "t:sections.all.heading_size.options__4.label"
+        },
+        {
+          "value": "hxxl",
+          "label": "t:sections.all.heading_size.options__5.label"
+        }
+      ],
+      "default": "h1",
+      "label": "t:sections.all.heading_size.label"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-7"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Main Contact Page"
+    }
+  ]
+}
+{% endschema %}

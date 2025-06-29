@@ -96,22 +96,19 @@
           "settings": {
             "share_label": "Share"
           }
+        },
+        "rating": {
+          "type": "rating",
+          "settings": {}
         }
       },
       "block_order": [
-        "vendor",
         "title",
+        "rating",
         "caption",
         "price",
         "variant_picker",
-        "quantity_selector",
-        "buy_buttons",
-        "description",
-        "collapsible-row-0",
-        "collapsible-row-1",
-        "collapsible-row-2",
-        "collapsible-row-3",
-        "share"
+        "buy_buttons"
       ],
       "settings": {
         "enable_sticky_info": true,
@@ -125,105 +122,76 @@
         "padding_bottom": 12
       }
     },
-    "image-with-text": {
-      "type": "image-with-text",
+    "product-tabs": {
+      "type": "product-tabs",
       "blocks": {
-        "image-with-text-0": {
-          "type": "heading",
+        "tab_1": {
+          "type": "tab",
           "settings": {
-            "heading": "Image with text",
-            "heading_size": "h1"
+            "tab_title": "Description",
+            "tab_content": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>",
+            "tab_image": ""
           }
         },
-        "image-with-text-1": {
-          "type": "text",
+        "tab_2": {
+          "type": "tab",
           "settings": {
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
-            "text_style": "body"
+            "tab_title": "Size & Fit",
+            "tab_content": "<h1>SIZE CHART</h1>",
+            "tab_image": "shopify://shop_images/69a8de76f5c6be54273b9bf1be558f50.jpg"
+          }
+        },
+        "tab_3": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "In-store Availability",
+            "tab_content": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>",
+            "tab_image": ""
           }
         }
       },
       "block_order": [
-        "image-with-text-0",
-        "image-with-text-1"
+        "tab_1",
+        "tab_2",
+        "tab_3"
       ],
       "settings": {
-        "height": "small",
-        "desktop_image_width": "medium",
-        "layout": "text_first",
-        "desktop_content_position": "top",
-        "desktop_content_alignment": "left",
-        "content_layout": "no-overlap",
-        "color_scheme": "scheme-2",
-        "mobile_content_alignment": "left",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "color_scheme" : "scheme-6"
       }
     },
-    "multicolumn": {
-      "type": "multicolumn",
-      "blocks": {
-        "column-0": {
-          "type": "column",
-          "settings": {
-            "title": "Free Shipping",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column-1": {
-          "type": "column",
-          "settings": {
-            "title": "Hassle-Free Exchanges",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
-            "link_label": "",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "column-0",
-        "column-1"
-      ],
-      "settings": {
-        "title": "",
-        "heading_size": "h1",
-        "image_width": "full",
-        "image_ratio": "adapt",
-        "columns_desktop": 2,
-        "column_alignment": "left",
-        "background_style": "none",
-        "button_label": "",
-        "button_link": "",
-        "color_scheme": "scheme-1",
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "related-products": {
-      "type": "related-products",
+    "products-slider-1": {
+      "type": "products-slider",
       "settings": {
         "heading": "You may also like",
-        "heading_size": "h2",
-        "columns_desktop": 4,
-        "color_scheme": "scheme-1",
-        "image_ratio": "square",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "columns_mobile": "2",
-        "padding_top": 36,
-        "padding_bottom": 28
+        "subheading": "",
+        "button_label": "Discover More",
+        "button_link": "/",
+        "collection_handle": "all",
+        "images_per_slide_desktop": 4,
+        "images_per_slide_mobile": 1,
+        "show_product_info": true,
+        "show_slider_bar": false
+      }
+    },
+    "products-slider-2": {
+      "type": "products-slider",
+      "settings": {
+        "heading": "Recently Viewed",
+        "subheading": "",
+        "button_label": "Discover More",
+        "button_link": "/",
+        "collection_handle": "all",
+        "images_per_slide_desktop": 4,
+        "images_per_slide_mobile": 1,
+        "show_product_info": true,
+        "show_slider_bar": false
       }
     }
   },
   "order": [
     "main",
-    "image-with-text",
-    "multicolumn",
-    "related-products"
+    "product-tabs",
+    "products-slider-1",
+    "products-slider-2"
   ]
 }

@@ -1,9 +1,9 @@
 [
   {
     "name": "theme_info",
-    "theme_name": "Dawn",
-    "theme_version": "15.2.0",
-    "theme_author": "Shopify",
+    "theme_name": "Alora",
+    "theme_version": "1.0.0",
+    "theme_author": "Digital Threads",
     "theme_documentation_url": "https://help.shopify.com/manual/online-store/themes",
     "theme_support_url": "https://support.shopify.com/"
   },
@@ -12,8 +12,13 @@
     "settings": [
       {
         "type": "image_picker",
-        "id": "logo",
-        "label": "t:settings_schema.logo.settings.logo_image.label"
+        "id": "logo_dark",
+        "label": "Main Logo (used on white/light background)"
+      },
+      {
+        "type": "image_picker",
+        "id": "logo_light",
+        "label": "Logo for Transparent Header (used on homepage before scroll)"
       },
       {
         "type": "range",
@@ -111,7 +116,7 @@
       {
         "type": "font_picker",
         "id": "type_header_font",
-        "default": "assistant_n4",
+        "default": "amiri_n4",
         "label": "t:settings_schema.typography.settings.type_header_font.label",
         "info": "t:settings_schema.typography.settings.type_header_font.info"
       },
@@ -132,7 +137,7 @@
       {
         "type": "font_picker",
         "id": "type_body_font",
-        "default": "assistant_n4",
+        "default": "nunito_sans_n4",
         "label": "t:settings_schema.typography.settings.type_body_font.label",
         "info": "t:settings_schema.typography.settings.type_body_font.info"
       },

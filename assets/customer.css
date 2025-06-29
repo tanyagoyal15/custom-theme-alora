@@ -22,7 +22,8 @@
 }
 
 .customer button {
-  margin: 4rem 0 1.5rem;
+  display: flex !important;
+  margin: 3rem 0 1.5rem;
 }
 
 .customer ul {
@@ -30,6 +31,9 @@
   padding-left: 4.4rem;
   text-align: left;
   margin-bottom: 4rem;
+  font-size: 12px;
+  color: red;
+  list-style: none;
 }
 
 .customer ul a {
@@ -329,13 +333,12 @@
 }
 
 /* Login */
-.login a {
+.login a, .register .route {
   display: block;
-  margin: 0 auto;
   width: fit-content;
 }
 
-.login a[href='#recover'] {
+.login a[href='#recover'] , .register .route {
   margin-left: 0;
   margin-right: 0;
 }
@@ -550,16 +553,16 @@
 }
 
 .order .fulfillment {
-  width: fit-content;
-  border: 0.01rem solid rgba(var(--color-foreground), 0.2);
-  padding: 1rem;
+  /* width: fit-content; */
+  /* border: 0.01rem solid rgba(var(--color-foreground), 0.2); */
+  /* padding: 1rem 0; */
   margin-top: 1rem;
   font-size: 1.4rem;
   text-align: left;
 }
 
 .order .fulfillment a {
-  margin: 0.7rem 0;
+  margin: 1rem 0;
 }
 
 .order .fulfillment span {
@@ -658,11 +661,6 @@
   margin-right: 0.5rem;
 }
 
-.addresses li > button + button,
-.addresses form button + button {
-  margin-top: 0rem;
-}
-
 @media screen and (min-width: 750px) {
   .addresses li > button:first-of-type {
     margin-top: 3rem;
@@ -698,6 +696,8 @@ label[for='AddressProvinceNew'] {
 
 li[data-address] {
   margin-top: 5rem;
+  border: 1px solid #ddd;
+  padding: 10px;
 }
 
 .addresses [aria-expanded='false'] ~ div[id] {
@@ -706,10 +706,6 @@ li[data-address] {
 
 .addresses [aria-expanded='true'] ~ div[id] {
   display: block;
-}
-
-.addresses h2 {
-  text-align: left;
 }
 
 li[data-address] > h2 {
@@ -752,4 +748,106 @@ li[data-address] > h2 {
 .addresses form > div:nth-of-type(7),
 .addresses form > div:nth-of-type(7) + div[id] {
   margin-top: 1.5rem;
+}
+
+.main-page-wrapper {
+  display: flex;
+  width: 100vw;
+  overflow: hidden;
+  background-color: rgb(var(--color-background));
+  justify-content: space-between;
+  align-items: center;
+}
+
+.page-form {
+  flex: 1;
+  max-width: 50%;
+}
+
+.page-image {
+  flex: 1;
+  max-width: 50%;
+  padding: 0;
+  margin: 0;
+}
+.page-form-image {
+  width: 100%;
+  max-height: 90vh;
+  object-fit: cover;
+  display: block;
+}
+
+.page-form-heading {
+  /* max-width: 70%; */
+  text-align: left;
+}
+
+.main-page-wrapper .name {
+  gap: 20px;
+}
+
+.main-page-wrapper .route {
+  text-transform: uppercase;
+  font-size: 10px;
+}
+
+form .form__message {
+  min-height: 1.5rem;
+  margin: 0.5rem;
+  font-size: 12px;
+}
+
+form .field_input input {
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #ccc;
+  background-color: transparent;
+  padding: 12px 0;
+  width: 100%;
+  font-family: 'Nunito Sans';
+  font-size: 14px;
+  letter-spacing: 0.06rem;
+  color: #1a1a1a;
+  transition: border-color 0.3s ease;
+}
+
+form .field_label {
+  display: flex;
+  width: 100%;
+  text-transform: uppercase;
+  color: #000;
+  font-size: 10px !important;
+  letter-spacing: 0.1rem;
+  pointer-events: none !important;
+  font-family: 'Nunito Sans';
+}
+
+form .field_input input:focus {
+  outline: none !important;
+  border-bottom: 1px solid #000 !important;
+  box-shadow: none !important;
+}
+
+
+
+@media screen and (max-width: 750px) {
+  .main-page-wrapper {
+    padding: 24px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+  }
+
+  .main-page-wrapper > div {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .page-image {
+    order: 1;
+  }
+
+  li[data-address] {
+    margin-top: 0;
+  }
 }

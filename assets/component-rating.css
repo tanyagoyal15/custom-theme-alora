@@ -2,6 +2,10 @@
   text-align: center;
 }
 
+.rating-wrapper {
+  margin: 0 !important;
+}
+
 .rating {
   display: inline-block;
   margin: 0;

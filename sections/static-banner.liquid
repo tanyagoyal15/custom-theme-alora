@@ -1,0 +1,300 @@
+<div class="static-banner-wrapper text-center h-auto m-auto scroll-trigger animate--slide-in {% if section.settings.banner_width == 'default' %}w-90{% endif %}">
+  {% if section.settings.heading != blank %}
+    <h2 class="static-banner__heading text-3xl text-capitalize mb-8">{{ section.settings.heading }}</h2>
+  {% endif %}
+
+  {% if section.settings.subheading != blank %}
+    <h4 class="static-baner__subheading text-base font-regular mb-32 m-auto banner-subheading">
+      {{ section.settings.subheading }}
+    </h4>
+  {% endif %}
+
+  <div class="static-img relative">
+    <!-- Skeleton Loader -->
+    <div class="skeleton-banner-loader absolute top-0 left-0 w-100 h-100 bg-gray-200">&nbsp;</div>
+
+    <a href="{{ section.settings.link | default: '/' }}">
+      {% if section.settings.media_type == 'image' %}
+        {% if section.settings.image != blank %}
+          <img
+            src="{{ section.settings.image | image_url }}"
+            alt="{{ section.settings.heading | escape }}"
+            width="100%"
+            height="100%"
+            class="banner-image hidden"
+            loading="eager"
+          >
+        {% else %}
+          <img
+            src="{{ 'static-banner-placeholder.jpg' | asset_url }}"
+            alt="Placeholder Image"
+            width="100%"
+            height="100%"
+            loading="eager"
+          >
+        {% endif %}
+
+      {% elsif section.settings.media_type == 'video' %}
+        {% if section.settings.video != blank %}
+          <video
+            {% if section.settings.autoplay %}
+              autoplay
+            {% endif %}
+            {% if section.settings.loop %}
+              loop
+            {% endif %}
+            {% if section.settings.muted %}
+              muted
+            {% endif %}
+            playsinline
+            width="100%"
+            height="100%"
+            class="banner-video hidden"
+          >
+            <source src="{{ section.settings.video | asset_url }}" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        {% elsif section.settings.image != blank %}
+          {%- comment -%} Fallback to image if video not uploaded {%- endcomment -%}
+          <img
+            src="{{ section.settings.image | image_url }}"
+            alt="{{ section.settings.heading | escape }}"
+            width="100%"
+            height="100%"
+            class="banner-image hidden"
+            loading="eager"
+          >
+        {% else %}
+          <img
+            src="{{ 'static-banner-placeholder.jpg' | asset_url }}"
+            alt="Placeholder Image"
+            width="100%"
+            height="100%"
+            loading="eager"
+          >
+        {% endif %}
+      {% endif %}
+    </a>
+  </div>
+</div>
+
+<style>
+  .w-90 {
+    width: 90%;
+  }
+
+  .banner-subheading {
+    max-width: 40%;
+  }
+
+  .static-baner__subheading {
+    margin-bottom: 32px;
+    font-weight: 400;
+    line-height: 25px;
+    letter-spacing: normal;
+    font-size: 1.4rem;
+    max-width: calc((100vw - (40px * 2)) / 12 * 5);
+    font-family: 'Nunito Sans';
+  }
+
+  .static-img {
+    position: relative;
+    aspect-ratio: 2/1;
+    overflow: hidden;
+    cursor: pointer;
+    width: 100%;
+  }
+  .static-img a img {
+    transition: 0.4s;
+    transform: scale(1);
+  }
+
+  .static-img:hover a img {
+    transform: scale(1.1);
+  }
+
+  /* Skeleton Loader Styles */
+  .skeleton-banner-loader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #e0e0e0 25%, #f5f5f5 50%, #e0e0e0 75%);
+    background-size: 400% 100%;
+    animation: skeleton-loading 1.5s infinite ease-in-out;
+    z-index: 1;
+  }
+
+  /* Skeleton Loading Animation */
+  @keyframes skeleton-loading {
+    0% {
+      background-position: 100% 0;
+    }
+    100% {
+      background-position: -100% 0;
+    }
+  }
+
+  /* Image Fade-in Transition */
+  .banner-image {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    position: relative;
+    z-index: 2;
+  }
+
+  .banner-image.fade-in {
+    opacity: 1;
+  }
+
+  @media screen and (max-width: 749px) {
+    .static-banner__heading {
+      font-size: 24px;
+    }
+
+    .static-baner__subheading {
+      margin-bottom: 16px;
+      font-weight: 400;
+      line-height: 25px;
+      letter-spacing: normal;
+      font-size: 1.4rem;
+      max-width: calc((100vw - (40px * 2)) / 12 * 12);
+    }
+
+    .static-img {
+      aspect-ratio: 1/1;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const bannerWrappers = document.querySelectorAll('.static-banner-wrapper');
+
+    bannerWrappers.forEach((wrapper) => {
+      const bannerImage = wrapper.querySelector('.banner-image');
+      const bannerVideo = wrapper.querySelector('.banner-video');
+      const skeletonLoader = wrapper.querySelector('.skeleton-banner-loader');
+
+      function handleMediaLoad(mediaElement) {
+        if (mediaElement) {
+          mediaElement.classList.remove('hidden');
+          mediaElement.classList.add('fade-in');
+        }
+        if (skeletonLoader) {
+          skeletonLoader.classList.add('hidden');
+        }
+      }
+
+      // Handle Images
+      if (bannerImage && bannerImage.src) {
+        if (bannerImage.complete && bannerImage.naturalWidth !== 0) {
+          bannerImage
+            .decode()
+            .then(() => {
+              handleMediaLoad(bannerImage);
+            })
+            .catch((error) => {
+              handleMediaLoad(bannerImage); // fallback
+            });
+        } else {
+          bannerImage.addEventListener('load', function () {
+            handleMediaLoad(bannerImage);
+          });
+          bannerImage.addEventListener('error', () => console.warn('Banner image failed to load:', bannerImage.src));
+        }
+      }
+
+      // Handle Videos
+      if (bannerVideo) {
+        bannerVideo.addEventListener('loadeddata', function () {
+          handleMediaLoad(bannerVideo);
+        });
+      }
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Static Banner",
+  "class": "section",
+  "settings": [
+    {
+      "type": "select",
+      "id": "banner_width",
+      "label": "Banner Width",
+      "options": [
+        {
+          "value": "default",
+          "label": "Default"
+        },
+        {
+          "value": "full_width",
+          "label": "Full Width"
+        }
+      ],
+      "default": "default"
+    },
+    {
+      "type": "select",
+      "id": "media_type",
+      "label": "Media Type",
+      "options": [
+        { "value": "image", "label": "Image" },
+        { "value": "video", "label": "Video" }
+      ],
+      "default": "image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "image",
+      "info": "Recommended size: 400 x 120px"
+    },
+    {
+      "type": "video",
+      "id": "video",
+      "label": "Video"
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay",
+      "label": "Autoplay Video",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "loop",
+      "label": "Loop Video",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "muted",
+      "label": "Mute Video",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Under the Sun"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Sub Heading",
+      "default": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
+    },
+    { "type": "url", "id": "link", "label": "Link" }
+  ],
+  "blocks": [],
+  "presets": [
+    {
+      "name": "Static Banner"
+    }
+  ]
+}
+{% endschema %}

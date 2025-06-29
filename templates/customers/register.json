@@ -11,7 +11,10 @@
   "sections": {
     "main": {
       "type": "main-register",
-      "settings": {}
+      "settings": {
+        "side_image" : "shopify://shop_images/dresses.png",
+        "heading_size": "h0"
+      }
     }
   },
   "order": [

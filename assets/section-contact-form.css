@@ -14,6 +14,55 @@
   margin-bottom: 1.5rem;
 }
 
+.contact-form-wrapper {
+  background-color: #ffffff;
+}
+
+.contact-form-heading {
+  margin-bottom: 5rem;
+}
+
+.contact-form-wrapper .field_input {
+  margin-bottom: 24px;
+}
+
+.contact-form-wrapper .field_input input, .contact-form-wrapper .field_input textarea {
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #ccc;
+  background-color: transparent;
+  padding: 12px 0;
+  width: 100%;
+  font-family: 'Nunito Sans';
+  font-size: 14px;
+  letter-spacing: 0.06rem;
+  color: #1a1a1a;
+  transition: border-color 0.3s ease;
+}
+
+.contact-form-wrapper .field_label {
+  display: flex;
+  width: 100%;
+  text-transform: uppercase;
+  color: #000;
+  font-size: 10px !important;
+  letter-spacing: 0.1rem;
+  pointer-events: none !important;
+  font-family: 'Nunito Sans';
+}
+
+.contact-form-wrapper .field_input input:focus {
+  outline: none !important;
+  border-bottom: 1px solid #000 !important;
+  box-shadow: none !important;
+}
+
+.contact-form-wrapper .field_input textarea:focus {
+  outline: none !important;
+  border-bottom: 1px solid #000 !important;
+  box-shadow: none !important;
+}
+
 @media screen and (min-width: 750px) {
   .contact .field {
     margin-bottom: 2rem;
