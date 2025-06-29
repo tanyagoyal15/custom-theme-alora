@@ -1,30 +1,24 @@
-# System & OS files
-.DS_Store
-Thumbs.db
-
-# Node & package management
+# Node & config files
 node_modules/
 package.json
 package-lock.json
-
-# Config files
-webpack.config.js
 tailwind.config.js
+webpack.config.js
 postcss.config.js
-theme-check.yml
-.prettierrc.json
 
-# Dev tools & metadata
+# System files
+.DS_Store
+Thumbs.db
 .vscode/
 .git/
 .gitignore
 
-# Docs
+# Docs & metadata
 README.md
 LICENSE.md
 release-notes.md
 translation.yml
 
-# Compressed or backup files
-*.zip
-*.tar
+# Shopify CLI config
+theme-check.yml
+.prettierrc.json
