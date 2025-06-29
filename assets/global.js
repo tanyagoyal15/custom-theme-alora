@@ -1276,7 +1276,6 @@ if (!customElements.get('bulk-add')) {
 }
 
 function updateWishlistCount() {
-  console.log('Update wishlist count called');
   let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
   let wishlistCount = document.querySelector('.wishlist-count');
   if (wishlistCount) wishlistCount.textContent = wishlist.length;

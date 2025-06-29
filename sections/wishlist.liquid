@@ -156,7 +156,6 @@
       wishlistContainer.innerHTML = '<p>Your wishlist is empty.</p>';
     } else {
       wishlist.forEach((product) => {
-        console.log('Product added in wishlist: ', product)
         wishlistContainer.innerHTML += `
           <a href="${product.url}" class="wishlist-item no-underline">
             <img src="${product.image}" width="100%" height="100%" loading="lazy">
@@ -177,7 +176,6 @@
   });
 
   function removeFromWishlist(id, e) {
-    console.log("Remove from Wishlist Called")
     e.preventDefault();
     let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
     wishlist = wishlist.filter((product) => product.variant_idd !== id);
@@ -188,12 +186,9 @@
 
   function addToCartFromWishlist(product, e) {
     e.preventDefault();
-    console.log('Add to cart from wishlist called')
     if (typeof product === "string") {
       product = JSON.parse(product);
     }
-
-    console.log('PRODUCT GOT FROM WISHLIST:', product);
 
     let button = event.currentTarget;
     let spinner = button.querySelector('.loading-spinner');
@@ -226,7 +221,6 @@
       });
     })
     .then((response) => {
-      console.log("Hello from then")
       this.removeFromWishlist(product.variant_idd, e)
     })
     .catch((e) => {

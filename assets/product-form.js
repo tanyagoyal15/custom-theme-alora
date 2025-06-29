@@ -3,7 +3,6 @@ if (!customElements.get('product-form')) {
     'product-form',
     class ProductForm extends HTMLElement {
       constructor() {
-        console.log('Product Form.js called');
         super();
 
         this.form = this.querySelector('form');
@@ -14,13 +13,11 @@ if (!customElements.get('product-form')) {
         this.submitButtonText = this.submitButton.querySelector('span');
         this.productInfoElement = document.querySelector('product-info');
         if (!this.productInfoElement) return;
-        console.log('PRODUCT INFO: ', this.productInfoElement);
 
         const selectedVariantRaw = this.productInfoElement.querySelector(
           'variant-selects [data-selected-variant]'
         )?.innerHTML;
         if (!selectedVariantRaw) return;
-        console.log('SELECTED VARIANT RAWWWWW: ', JSON.parse(selectedVariantRaw));
 
         if (document.querySelector('cart-drawer')) this.submitButton.setAttribute('aria-haspopup', 'dialog');
 
@@ -28,44 +25,30 @@ if (!customElements.get('product-form')) {
       }
 
       connectedCallback() {
-        console.log('HELLO FROM CONNECTED CALLBACK');
         const productInfoElement = document.querySelector('product-info');
         if (!productInfoElement) return;
-        console.log('PRoduct INFO: ', productInfoElement);
 
         const selectedVariantRaw = productInfoElement.querySelector(
           'variant-selects [data-selected-variant]'
         )?.innerHTML;
         if (!selectedVariantRaw) return;
-        console.log('SELECTED VARIANT RAW: ', JSON.parse(selectedVariantRaw));
 
         const selectedVariant = JSON.parse(selectedVariantRaw);
-        console.log('SELECTED VARIANT ID: ', selectedVariant.id);
 
         const isInWishlist = this.isVariantInWishlist(selectedVariant.id);
         this.updateWishlistIcon(selectedVariant.id, isInWishlist);
       }
 
       isVariantInWishlist(variantId) {
-        console.log('VARIANT ID IN ISVARIANTINWISHLIST: ', variantId);
         const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
-        console.log('WISHLIST IS: ', wishlist);
-        wishlist.forEach((item) => {
-          console.log('ITEM VARIANT ID', item.variant_idd);
-          console.log('VARIANT ID PASSED', variantId);
-        });
         return wishlist.some((item) => item.variant_idd == variantId);
       }
 
       onSubmitHandler(evt) {
-        console.log('On submit handler called');
         evt.preventDefault();
 
-        console.log('FORMDATA IN ELEMENT FORM: ', this.form);
         const formType = this.form.dataset.type; // Get data-type (wishlist or cart)
-        console.log('Form type:', formType);
         const formData = new FormData(this.form);
-        console.log('FORMDATA: ', formData);
 
         if (formType === 'add-to-wishlist-form') {
           const variantId = this.form.querySelector('input[name="id"]')?.value;
@@ -103,12 +86,9 @@ if (!customElements.get('product-form')) {
             this.cart.setActiveElement(document.activeElement);
           }
           config.body = formData;
-          console.log('FORMDATAAAA: ', formData);
-          console.log('config: ', config);
 
           fetch(`${routes.cart_add_url}`, config)
             .then((response) => response.json())
-            // .then((response) => console.log('Response: ', response))
             .then((response) => {
               if (response.status) {
                 publish(PUB_SUB_EVENTS.cartError, {
@@ -140,16 +120,13 @@ if (!customElements.get('product-form')) {
                 this.querySelector('.product-actions-text').style.visibility = 'visible';
               }
 
-              if (!this.error) console.log('CALLINGGGGGGGGG CART UPDATE API');
               publish(PUB_SUB_EVENTS.cartUpdate, {
                 source: 'product-form',
                 productVariantId: formData.get('id'),
                 cartData: response,
               });
               this.error = false;
-              console.log('CALLINGGGGGGGGG QUICK MODAL');
               const quickAddModal = this.closest('quick-add-modal');
-              console.log('CALLINGGGGGGGGG QUICK MODAL VALUE: ', quickAddModal);
               if (quickAddModal) {
                 document.body.addEventListener(
                   'modalClosed',
@@ -178,9 +155,6 @@ if (!customElements.get('product-form')) {
       }
 
       handleWishlistSubmit(formData, variantId, productId) {
-        console.log('VARIANT ID RECEIVED IN HANDLE WISHLIST: ', variantId);
-        console.log('PRODUCT ID RECEIVED IN HANDLE WISHLIST: ', productId);
-
         const productForm = this.form;
         const container = productForm.closest('.product, .product-card, .product-wrapper');
 

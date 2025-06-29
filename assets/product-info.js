@@ -214,12 +214,8 @@ if (!customElements.get('product-info')) {
             },
           });
 
-          console.log('PLEASE UPDATE WISHLIST TOGGLE ICON ALSO');
           const productFormElement = document.querySelector('product-form');
-          console.log('PRODUCT FORM AFTER VARIANT CHANGE: ', productFormElement);
 
-          console.log('THIS.FORM: ', form);
-          console.log('ACTIVE VARIANT: ', variant);
           const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
 
           const existingIndex = wishlist.findIndex((item) => item.variant_idd == variant?.id);
@@ -244,7 +240,6 @@ if (!customElements.get('product-info')) {
       }
 
       updateVariantInputs(variantId) {
-        console.log('updateVariantInputs called');
         this.querySelectorAll(
           `#product-form-${this.dataset.section}, #product-form-installment-${this.dataset.section}`
         ).forEach((productForm) => {
