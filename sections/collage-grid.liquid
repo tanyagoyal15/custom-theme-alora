@@ -1,4 +1,4 @@
-<div class="collage-grid collage-{{ section.settings.layout_style }} m-auto h-auto mt-32">
+<div class="color-{{ section.settings.color_scheme }} collage-grid collage-{{ section.settings.layout_style }} m-auto h-auto mt-32">
   <div class="collage-items">
     {% if section.settings.layout_style == 'text_with_grid' and section.settings.show_text_block %}
       <div class="collage-text">
@@ -155,8 +155,8 @@
   .collage-button {
     display: inline-block;
     padding: 10px 20px;
-    color: #dcd6d6;
-    border: 1px solid #dcd6d6;
+    color: rgba(var(--color-background));
+    border: 1px solid rgba(var(--color-background));
     text-decoration: none;
     border-radius: 5px;
     max-width: 200px;
@@ -273,6 +273,12 @@
   "name": "Collage Grid",
   "class": "section",
   "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-6"
+    },
     {
       "type": "select",
       "id": "layout_style",

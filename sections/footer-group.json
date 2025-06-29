@@ -5,7 +5,7 @@
     "footer": {
       "type": "footer",
       "settings": {
-        "color_scheme": "scheme-1",
+        "color_scheme": "scheme-10",
         "newsletter_enable": true,
         "newsletter_heading": "Sign up for newsletter",
         "show_social": true,

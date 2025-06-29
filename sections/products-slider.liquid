@@ -13,12 +13,14 @@
 <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
 {% if collection and products.size > 0 %}
   <section
-    class="slider-container flex-column align-center text-center m-auto relative h-auto shopify-section section {{ section.id }}"
+    class="slider-container color-{{ section.settings.color_scheme }} flex-column align-center text-center m-auto relative h-auto shopify-section section {{ section.id }}"
     data-collection-handle="{{ collection_handle }}"
     data-product-count="{{ products.size }}"
   >
-    <h2 class="products-slider__heading text-3xl m-0 mb-16 text-capitalize">{{ section.settings.heading }}</h2>
-    <h4 class="products-slider__subheading text-large font-regular m-0 mb-16">{{ section.settings.subheading }}</h4>
+    <h2 class="products-slider__heading text-3xl m-0 mb-16 text-capitalize cl-theme">{{ section.settings.heading }}</h2>
+    <h4 class="products-slider__subheading text-large font-regular m-0 mb-16 cl-theme">
+      {{ section.settings.subheading }}
+    </h4>
     <a
       class="products-slider__link_btn underline text-base font-regular cl-theme m-0 mb-16"
       href="{{ section.settings.button_link | default: '/' }}"
@@ -386,8 +388,8 @@
     bottom: -50px; /* Start below the visible area */
     left: 50%;
     transform: translateX(-50%);
-    background: #FAF9F6;
-    color: #8F7768;
+    background: rgb(var(--color-background));
+    color: rgb(var(--color-foreground));
     {% comment %} border-radius: 20px; {% endcomment %}
     padding: 12px;
     font-size: 12px;
@@ -400,7 +402,7 @@
     font-size: 14px;
     min-width: 250px !important;
     line-height: calc(1 + 0.2 / var(--font-body-scale));
-    border: 1px solid #8F7768 !important;
+    border: 1px solid rgb(var(--color-foreground)) !important;
     {% comment %} z-index: 1; {% endcomment %}
   }
 
@@ -420,8 +422,8 @@
     font-size: 12px;
     padding: 0px 10px;
     font-weight: 700;
-    background-color: #FAF9F6;
-    color: #8F7768;
+    background-color: rgb(var(--color-background));
+    color: rgb(var(--color-foreground));
   }
 
   .product-quick-view {
@@ -644,6 +646,12 @@
   "name": "products-slider",
   "class": "section",
   "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-7"
+    },
     {
       "type": "text",
       "id": "heading",

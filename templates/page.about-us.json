@@ -203,7 +203,8 @@
     ],
     "settings": {
       "layout_style": "symmetrical",
-      "show_text_block": false
+      "show_text_block": false,
+      "color_scheme": "scheme-6"
     }
   },
   "products-slider-1": {

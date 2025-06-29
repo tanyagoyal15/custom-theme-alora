@@ -754,7 +754,7 @@ li[data-address] > h2 {
   display: flex;
   width: 100vw;
   overflow: hidden;
-  background-color: #faf9f6;
+  background-color: rgb(var(--color-background));
   justify-content: space-between;
   align-items: center;
 }

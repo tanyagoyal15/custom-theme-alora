@@ -63,7 +63,7 @@
           {%- if section.settings.newsletter_enable -%}
             <div class="footer-block__newsletter">
               {%- if section.settings.newsletter_heading != blank -%}
-                <h2 class="footer-block__heading inline-richtext text-left">
+                <h2 class="footer-block__heading inline-richtext text-left cl-theme uppercase">
                   {{ section.settings.newsletter_heading }}
                 </h2>
               {%- endif -%}
@@ -254,7 +254,7 @@
       </div>
     </div>
     <div class="footer__content-bottom-wrapper page-width{% if section.settings.enable_country_selector == false and section.settings.enable_language_selector == false %} footer__content-bottom-wrapper--center{% endif %}">
-      <div class="footer__copyright caption w-100">
+      <div class="footer__copyright caption w-100 cl-theme">
         <small class="copyright__content"
           >&copy; {{ 'now' | date: '%Y' }}, {{ shop.name | link_to: routes.root_url -}}
         </small>
@@ -370,7 +370,7 @@
       "type": "color_scheme",
       "id": "color_scheme",
       "label": "t:sections.all.colors.label",
-      "default": "scheme-1"
+      "default": "scheme-10"
     },
     {
       "type": "link_list",

@@ -3,7 +3,14 @@
   "name": "Wishlist",
   "tag": "section",
   "class": "section",
-  "settings": [],
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-7"
+    }
+  ],
   "presets": [
     {
       "name": "Wishlist"
@@ -54,8 +61,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #FAF9F6;
-    color: #8F7768;
+    background: rgb(var(--color-background));
+    color: rgb(var(--color-foreground));
     transform: scale(0);
     transition: transform 0.3s ease, all 0.3s ease;
   }
@@ -81,8 +88,8 @@
     bottom: 120px;
     left: 50%;
     transform: translateX(-50%);
-    background: #FAF9F6;
-    color: #8F7768;
+    background: rgb(var(--color-background));
+    color: rgb(var(--color-foreground));
     {% comment %} border-radius: 20px; {% endcomment %}
     padding: 12px;
     font-size: 12px;
@@ -95,7 +102,7 @@
     font-size: 14px;
     min-width: 250px !important;
     line-height: calc(1 + 0.2 / var(--font-body-scale));
-    border: 1px solid #8F7768 !important;
+    border: 1px solid rgb(var(--color-foreground)); !important;
     text-align: center;
     width: 90%;
     {% comment %} z-index: 1; {% endcomment %}
@@ -134,7 +141,7 @@
   }
 </style>
 
-<div class="wishlist-wrapper">
+<div class="wishlist-wrapper color-{{ section.settings.color_scheme }}">
   <h1>My Wishlist</h1>
   <div id="wishlist-items"></div>
 </div>

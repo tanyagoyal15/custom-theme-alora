@@ -1,6 +1,6 @@
 .footer {
   border-top: 0.1rem solid rgba(var(--color-foreground), 0.08);
-  background-color: #DCD6D6;
+  background-color: rgba(var(--color-background));
 }
 
 .footer:not(.color-scheme-1) {
@@ -164,7 +164,7 @@
 
 .footer-block__heading {
   font-family: 'Nunito Sans';
-  font-size: 20px !important;
+  font-size: 16px !important;
   margin-bottom: 3.5rem;
   margin-top: 0;
   font-size: calc(var(--font-heading-scale) * 1.6rem);
@@ -537,6 +537,7 @@
   height: 5rem !important;
   width: 24vw;
   max-width: 350px;
+  border: 1px solid rgb(var(--color-foreground));
 }
 
 .newsletter-submit {
@@ -554,5 +555,5 @@
 }
 
 .footer-mega-menu-heading:hover {
-  color: #8f7768;
+  color: rgb(var(--color-foreground));
 }

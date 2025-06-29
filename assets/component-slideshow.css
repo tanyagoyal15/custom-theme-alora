@@ -115,21 +115,6 @@ slideshow-component .slideshow.banner {
   transform: translateX(-50%);
 }
 
-.rectangle {
-  /* margin: 0 5px;
-  background-color: #bbb;
-  display: inline-block;
-  transition: all 0.4s ease;
-  cursor: pointer;
-  width: 70px;
-  height: 2px;
-  background: #dcd6d6; */
-}
-
-/* .rectangle.active {
-  height: 6px;
-} */
-
 .slideshow__controls--top {
   order: 2;
   z-index: 1;
