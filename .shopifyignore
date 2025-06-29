@@ -1,18 +1,30 @@
-# System files
+# System & OS files
 .DS_Store
 Thumbs.db
+
+# Node & package management
 node_modules/
-.vscode/
-.git/
-.gitignore
-README.md
 package.json
 package-lock.json
+
+# Config files
 webpack.config.js
 tailwind.config.js
 postcss.config.js
 theme-check.yml
 .prettierrc.json
-translation.yml
+
+# Dev tools & metadata
+.vscode/
+.git/
+.gitignore
+
+# Docs
+README.md
 LICENSE.md
 release-notes.md
+translation.yml
+
+# Compressed or backup files
+*.zip
+*.tar
