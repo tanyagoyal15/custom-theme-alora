@@ -13,7 +13,7 @@
 <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
 {% if collection and products.size > 0 %}
   <section
-    class="slider-container color-{{ section.settings.color_scheme }} flex-column align-center text-center m-auto relative h-auto shopify-section section {{ section.id }}"
+    class="slider-container color-scheme-{{ section.settings.color_scheme }} flex-column align-center text-center m-auto relative h-auto shopify-section section {{ section.id }}"
     data-collection-handle="{{ collection_handle }}"
     data-product-count="{{ products.size }}"
   >
