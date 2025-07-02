@@ -1,8 +1,12 @@
 {% assign collection_handle = section.settings.collection_handle %}
 {% assign collection = collections[collection_handle] %}
-{% assign products = collection.products %}
-{% assign total_product_count = products.size %}
-{% if total_product_count == 0 %}
+{% if collection %}
+  {% assign products = collection.products %}
+  {% assign total_product_count = products.size %}
+  {% if total_product_count == 0 %}
+    {% assign total_product_count = 6 %}
+  {% endif %}
+{% else %}
   {% assign total_product_count = 6 %}
 {% endif %}
 {% assign visible_product_count = section.settings.images_per_slide_desktop %}
