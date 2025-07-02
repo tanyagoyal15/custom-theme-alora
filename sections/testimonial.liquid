@@ -5,57 +5,87 @@
     data-duration="{{ section.settings.slide_duration }}"
   >
     <div class="relative">
-      {% for block in section.blocks %}
+      {% if section.blocks.size > 0 %}
+        {% for block in section.blocks %}
+          <div class="testimonial-slide">
+            <div class="testimonial-content flex-between flex-wrap">
+              <div class="testimonial-left flex-column justify-between">
+                <h2 class="testimonial-heading cl-theme">{{ section.settings.heading }}</h2>
+                <div class="testimonial-text">
+                  <p class="testimonial-message">"{{ block.settings.testimonial }}"</p>
+                  <p class="testimonial-name text-base">
+                    — {{ block.settings.customer_name }},
+                    <span class="testimonial-location cl-theme text-base"> {{ block.settings.location }}</span>
+                  </p>
+
+                  <div class="rating-wrapper">
+                    {% liquid
+                      assign rating_value = block.settings.star_rating | plus: 0
+                      assign rating_max = 5
+                      assign rating_decimal = 0
+                      assign decimal = rating_value | modulo: 1
+                      if decimal >= 0.3 and decimal <= 0.7
+                        assign rating_decimal = 0.5
+                      elsif decimal > 0.7
+                        assign rating_decimal = 1
+                      endif
+                    %}
+                    <div class="rating" role="img" aria-label="{{ rating_value }} out of {{ rating_max }} stars">
+                      <span
+                        class="rating-star"
+                        style="--rating: {{ rating_value | floor }}; --rating-max: {{ rating_max }}; --rating-decimal: {{ rating_decimal }};"
+                      ></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {% if block.settings.image %}
+                <div class="testimonial-image-wrapper flex-column flex-center">
+                  <img
+                    src="{{ block.settings.image | image_url }}"
+                    alt="{{ block.settings.customer_name }}"
+                    class="testimonial-image"
+                    width="100%"
+                    height="100%"
+                    loading="eager"
+                  >
+                  {% if block.settings.cta_link != blank and block.settings.cta_text != blank %}
+                    <a href="{{ block.settings.cta_link }}" class="testimonial-cta">{{ block.settings.cta_text }}</a>
+                  {% endif %}
+                </div>
+              {% endif %}
+            </div>
+          </div>
+        {% endfor %}
+      {% else %}
         <div class="testimonial-slide">
           <div class="testimonial-content flex-between flex-wrap">
             <div class="testimonial-left flex-column justify-between">
               <h2 class="testimonial-heading cl-theme">{{ section.settings.heading }}</h2>
               <div class="testimonial-text">
-                <p class="testimonial-message">"{{ block.settings.testimonial }}"</p>
-                <p class="testimonial-name text-base">
-                  — {{ block.settings.customer_name }},
-                  <span class="testimonial-location cl-theme text-base"> {{ block.settings.location }}</span>
+                <p class="testimonial-message">
+                  "This is a sample testimonial. Add your customer feedback from the Theme Editor to replace this text."
                 </p>
-
+                <p class="testimonial-name text-base">
+                  — Jane Doe,
+                  <span class="testimonial-location cl-theme text-base">New York</span>
+                </p>
                 <div class="rating-wrapper">
-                  {% liquid
-                    assign rating_value = block.settings.star_rating | plus: 0
-                    assign rating_max = 5
-                    assign rating_decimal = 0
-                    assign decimal = rating_value | modulo: 1
-                    if decimal >= 0.3 and decimal <= 0.7
-                      assign rating_decimal = 0.5
-                    elsif decimal > 0.7
-                      assign rating_decimal = 1
-                    endif
-                  %}
-                  <div class="rating" role="img" aria-label="{{ rating_value }} out of {{ rating_max }} stars">
+                  <div class="rating" role="img" aria-label="5 out of 5 stars">
                     <span
                       class="rating-star"
-                      style="--rating: {{ rating_value | floor }}; --rating-max: {{ rating_max }}; --rating-decimal: {{ rating_decimal }};"
+                      style="--rating: 5; --rating-max: 5; --rating-decimal: 0;"
                     ></span>
                   </div>
                 </div>
               </div>
             </div>
-            {% if block.settings.image %}
-              <div class="testimonial-image-wrapper flex-column flex-center">
-                <img
-                  src="{{ block.settings.image | image_url }}"
-                  alt="{{ block.settings.customer_name }}"
-                  class="testimonial-image"
-                  width="100%"
-                  height="100%"
-                  loading="eager"
-                >
-                {% if block.settings.cta_link != blank and block.settings.cta_text != blank %}
-                  <a href="{{ block.settings.cta_link }}" class="testimonial-cta">{{ block.settings.cta_text }}</a>
-                {% endif %}
-              </div>
-            {% endif %}
+            <div class="testimonial-image-wrapper flex-column flex-center">
+              {{ 'image' | placeholder_svg_tag: 'placeholder' }}
+            </div>
           </div>
         </div>
-      {% endfor %}
+      {% endif %}
     </div>
   </div>
 
