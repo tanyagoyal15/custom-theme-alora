@@ -27,7 +27,11 @@
             >
             <div class="skeleton-loader">&nbsp;</div>
           {% else %}
-            {{ 'collection-apparel-3' | placeholder_svg_tag: 'collage-image fade-in placeholder' }}
+            {% if section.settings.layout_style == 'text_with_grid' %}
+              {{ 'product-apparel-1' | placeholder_svg_tag: 'collage-image fade-in placeholder' }}
+            {% else %}
+              {{ 'collection-apparel-1' | placeholder_svg_tag: 'collage-image fade-in placeholder' }}
+            {% endif %}
           {% endif %}
         </a>
 
