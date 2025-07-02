@@ -1,7 +1,10 @@
 {% assign collection_handle = section.settings.collection_handle %}
 {% assign collection = collections[collection_handle] %}
 {% assign products = collection.products %}
-{% assign total_product_count = products.size || 6 %}
+{% assign total_product_count = products.size %}
+{% if total_product_count == 0 %}
+  {% assign total_product_count = 6 %}
+{% endif %}
 {% assign visible_product_count = section.settings.images_per_slide_desktop %}
 {% assign max_steps = section.settings.images_per_slide_desktop | minus: 1 %}
 {% assign step_percentage = 100 | divided_by: max_steps | plus: 1 %}
@@ -14,7 +17,7 @@
 <section
   class="slider-container color-scheme-{{ section.settings.color_scheme }} flex-column align-center text-center m-auto relative h-auto shopify-section section {{ section.id }}"
   data-collection-handle="{{ collection_handle }}"
-  data-product-count="{{ products.size }}"
+  data-product-count="{{ total_product_count }}"
 >
   <h2 class="products-slider__heading text-3xl m-0 mb-16 text-capitalize cl-theme">{{ section.settings.heading }}</h2>
   <h4 class="products-slider__subheading text-large font-regular m-0 mb-16 cl-theme">
