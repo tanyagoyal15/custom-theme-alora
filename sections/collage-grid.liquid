@@ -27,10 +27,20 @@
             >
             <div class="skeleton-loader">&nbsp;</div>
           {% else %}
+            {% liquid
+              assign ridx = forloop.rindex
+              case ridx
+                when 5
+                  assign ridx = 1
+                when 6
+                  assign ridx = 2
+              endcase
+            %}
+            {%- assign placeholder_image = 'product-apparel-' | append: ridx -%}
             {% if section.settings.layout_style == 'text_with_grid' %}
-              {{ 'product-apparel-1' | placeholder_svg_tag: 'collage-image fade-in placeholder' }}
+              {{ placeholder_image | placeholder_svg_tag: 'placeholder-svg' }}
             {% else %}
-              {{ 'collection-apparel-1' | placeholder_svg_tag: 'collage-image fade-in placeholder' }}
+              {{ 'collection-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
             {% endif %}
           {% endif %}
         </a>
