@@ -1,7 +1,7 @@
 {% assign collection_handle = section.settings.collection_handle %}
 {% assign collection = collections[collection_handle] %}
 {% assign products = collection.products %}
-{% assign total_product_count = products.size %}
+{% assign total_product_count = products.size || 6 %}
 {% assign visible_product_count = section.settings.images_per_slide_desktop %}
 {% assign max_steps = section.settings.images_per_slide_desktop | minus: 1 %}
 {% assign step_percentage = 100 | divided_by: max_steps | plus: 1 %}
