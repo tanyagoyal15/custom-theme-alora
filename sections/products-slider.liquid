@@ -33,39 +33,39 @@
       data-images-per-slide-desktop="{{ section.settings.images_per_slide_desktop }}"
       data-images-per-slide-mobile="{{ section.settings.images_per_slide_mobile }}"
     >
-      <!-- Desktop Skeleton Loader (Visible Initially) -->
-      <div class="products-slider-skeleton-container skeleton-desktop">
-        {% for i in (1..desktop_skeleton_count) %}
-          {% assign width = 100 | divided_by: desktop_skeleton_count %}
-          {% if mobile_skeleton_count == 1 %}
-            {% assign min_height = 500 %}
-          {% else %}
-            {% assign min_height = 500 | divided_by: section.settings.images_per_slide_desktop %}
-          {% endif %}
-          <div class="products-slider-skeleton-wrapper" style="width: {{ width }}%; min-height: {{ min_height }}px;">
-            <div class="products-slider-skeleton-loader"></div>
-          </div>
-        {% endfor %}
-      </div>
+      {% if collection and products.size > 0 %}
+        <!-- Desktop Skeleton Loader (Visible Initially) -->
+        <div class="products-slider-skeleton-container skeleton-desktop">
+          {% for i in (1..desktop_skeleton_count) %}
+            {% assign width = 100 | divided_by: desktop_skeleton_count %}
+            {% if mobile_skeleton_count == 1 %}
+              {% assign min_height = 500 %}
+            {% else %}
+              {% assign min_height = 500 | divided_by: section.settings.images_per_slide_desktop %}
+            {% endif %}
+            <div class="products-slider-skeleton-wrapper" style="width: {{ width }}%; min-height: {{ min_height }}px;">
+              <div class="products-slider-skeleton-loader"></div>
+            </div>
+          {% endfor %}
+        </div>
 
-      <!-- Mobile Skeleton Loader (Visible Initially) -->
-      <div class="products-slider-skeleton-container skeleton-mobile">
-        {% for i in (1..mobile_skeleton_count) %}
-          {% assign width = 100 | divided_by: mobile_skeleton_count | minus: 4 %}
-          {% if mobile_skeleton_count == 1 %}
-            {% assign min_height = 600 %}
-          {% else %}
-            {% assign min_height = 600 | divided_by: section.settings.images_per_slide_mobile %}
-          {% endif %}
-          <div class="products-slider-skeleton-wrapper" style="width: {{ width }}%; min-height: {{ min_height }}px;">
-            <div class="products-slider-skeleton-loader"></div>
-          </div>
-        {% endfor %}
-      </div>
+        <!-- Mobile Skeleton Loader (Visible Initially) -->
+        <div class="products-slider-skeleton-container skeleton-mobile">
+          {% for i in (1..mobile_skeleton_count) %}
+            {% assign width = 100 | divided_by: mobile_skeleton_count | minus: 4 %}
+            {% if mobile_skeleton_count == 1 %}
+              {% assign min_height = 600 %}
+            {% else %}
+              {% assign min_height = 600 | divided_by: section.settings.images_per_slide_mobile %}
+            {% endif %}
+            <div class="products-slider-skeleton-wrapper" style="width: {{ width }}%; min-height: {{ min_height }}px;">
+              <div class="products-slider-skeleton-loader"></div>
+            </div>
+          {% endfor %}
+        </div>
 
-      <!-- Products slider (Visible Initially) -->
-      <div class="product-list flex hidden">
-        {% if collection and products.size > 0 %}
+        <!-- Products slider (Visible Initially) -->
+        <div class="product-list flex hidden">
           {% assign product_form_id = 'product-form-' | append: section.id -%}
           {% for product in products %}
             <a
@@ -192,28 +192,38 @@
               </div>
             </a>
           {% endfor %}
-        {% else %}
-          {% for i in (1..6) %}
-            <a class="product-card">
-              <div class="card">
-                <div class="relative h-100 w-100">
-                  {{ 'image' | placeholder_svg_tag: 'placeholder' }}
-                </div>
-                {% if section.settings.show_product_info %}
-                  <div class="product-info text-left w-100 h-auto mt-8 pointer">
-                    <p class="m-0 font-medium">Placeholder Title</p>
-                    <div class="m-0 text-secondary product-description">This is a sample product description.</div>
-                    <p class="m-0 product-price">
-                      <span class="mr-16">₹0.00</span>
-                      <span class="strikethrough">₹0.00</span>
-                    </p>
-                  </div>
-                {% endif %}
+        </div>
+      {% else %}
+        {% for i in (1..6) %}
+          <a class="product-card">
+            <div class="card">
+              <div class="relative h-100 w-100">
+                {% liquid
+                  assign ridx = forloop.rindex
+                  case ridx
+                    when 5
+                      assign ridx = 1
+                    when 6
+                      assign ridx = 2
+                  endcase
+                %}
+                {%- assign placeholder_image = 'product-apparel-' | append: ridx -%}
+                {{ placeholder_image | placeholder_svg_tag: 'placeholder-svg' }}
               </div>
-            </a>
-          {% endfor %}
-        {% endif %}
-      </div>
+              {% if section.settings.show_product_info %}
+                <div class="product-info text-left w-100 h-auto mt-8 pointer">
+                  <p class="m-0 font-medium">Placeholder Title</p>
+                  <div class="m-0 text-secondary product-description">This is a sample product description.</div>
+                  <p class="m-0 product-price">
+                    <span class="mr-16">₹0.00</span>
+                    <span class="strikethrough">₹0.00</span>
+                  </p>
+                </div>
+              {% endif %}
+            </div>
+          </a>
+        {% endfor %}
+      {% endif %}
     </div>
   </div>
 
