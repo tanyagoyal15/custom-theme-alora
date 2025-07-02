@@ -36,12 +36,12 @@
                   assign ridx = 2
               endcase
             %}
-            {%- assign placeholder_image = 'product-apparel-' | append: ridx -%}
             {% if section.settings.layout_style == 'text_with_grid' %}
-              {{ placeholder_image | placeholder_svg_tag: 'placeholder-svg' }}
+              {%- assign placeholder_image = 'product-apparel-' | append: ridx -%}
             {% else %}
-              {{ 'collection-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
+              {%- assign placeholder_image = 'collection-apparel-' | append: ridx -%}
             {% endif %}
+            {{ placeholder_image | placeholder_svg_tag: 'placeholder-svg' }}
           {% endif %}
         </a>
 
