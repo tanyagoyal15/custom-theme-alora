@@ -1,5 +1,5 @@
 <script src="{{ 'cart-notification.js' | asset_url }}" defer="defer"></script>
-<script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'product-form.js' | asthset_url }}" defer="defer"></script>
 
 <link rel="stylesheet" href="{{ 'component-list-menu.css' | asset_url }}" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="{{ 'component-search.css' | asset_url }}" media="print" onload="this.media='all'">
@@ -43,6 +43,24 @@
             height="auto"
             loading="lazy"
           >
+        {% endif %}
+
+        {% if settings.logo_light == blank and settings.logo_dark == blank %}
+          <!-- SVG Placeholder -->
+          <svg
+            class="logo-placeholder"
+            width="200"
+            height="40"
+            viewBox="0 0 200 40"
+            xmlns="http://www.w3.org/2000/svg"
+            role="img"
+            aria-label="{{ shop.name }}"
+          >
+            <rect width="200" height="40" fill="#ddd"/>
+            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#555" font-size="16" font-family="Arial, sans-serif">
+              {{ shop.name }}
+            </text>
+          </svg>
         {% endif %}
       </a>
     </div>
