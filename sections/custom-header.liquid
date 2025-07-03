@@ -45,10 +45,28 @@
           >
         {% endif %}
 
-        {% if settings.logo_light == blank and settings.logo_dark == blank %}
+        {% if settings.logo_light == blank %}
           <!-- SVG Placeholder -->
           <svg
-            class="logo-placeholder flex items-center"
+            class="logo-placeholder flex items-center logo-image logo-light"
+            width="200"
+            height="40"
+            viewBox="0 0 200 40"
+            xmlns="http://www.w3.org/2000/svg"
+            role="img"
+            aria-label="{{ shop.name }}"
+          >
+            <rect width="200" height="40" fill="none"/>
+            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#fff" font-size="16" font-family="Arial, sans-serif">
+              {{ shop.name }}
+            </text>
+          </svg>
+        {% endif %}
+
+        {% if settings.logo_dark == blank %}
+          <!-- SVG Placeholder -->
+          <svg
+            class="logo-placeholder flex items-center logo-image logo-dark"
             width="200"
             height="40"
             viewBox="0 0 200 40"
