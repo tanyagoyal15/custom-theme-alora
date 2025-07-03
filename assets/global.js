@@ -1278,7 +1278,15 @@ if (!customElements.get('bulk-add')) {
 function updateWishlistCount() {
   let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
   let wishlistCount = document.querySelector('.wishlist-count');
-  if (wishlistCount) wishlistCount.textContent = wishlist.length;
+  if (wishlistCount) {
+    if (wishlist.length > 0) {
+      wishlistCount.textContent = wishlist.length;
+      wishlistCount.style.display = 'flex';
+    } else {
+      wishlistCount.textContent = '';
+      wishlistCount.style.display = 'none';
+    }
+  }
 }
 
 document.addEventListener('DOMContentLoaded', updateWishlistCount);
