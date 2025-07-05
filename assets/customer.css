@@ -753,7 +753,6 @@ li[data-address] > h2 {
 .main-page-wrapper {
   display: flex;
   width: 100vw;
-  height: 100vh;
   overflow: hidden;
   background-color: rgb(var(--color-background));
   justify-content: space-between;
@@ -770,6 +769,7 @@ li[data-address] > h2 {
   max-width: 50%;
   padding: 0;
   margin: 0;
+  height: 100vh;
 }
 .page-form-image {
   width: 100%;
