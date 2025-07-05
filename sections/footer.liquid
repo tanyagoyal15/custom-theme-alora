@@ -257,8 +257,9 @@
       <div class="footer__copyright caption w-100 cl-theme flex-center">
         <small class="copyright__content"
           >&copy; {{ 'now' | date: '%Y' }}, {{ shop.name | link_to: routes.root_url -}}
+          ,
         </small>
-        <small class="copyright__content">{{ powered_by_link }}</small>
+        <small class="copyright__content" style="margin-left: 4px;">{{ powered_by_link }}</small>
         {%- if section.settings.show_policy -%}
           <ul class="policies list-unstyled">
             {%- for policy in shop.policies -%}
