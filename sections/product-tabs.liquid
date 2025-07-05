@@ -94,30 +94,41 @@
     }
 
     .tab-title {
-      font-size: 14px;
+      font-size: 12px;
+      line-height: 1.3;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-height: calc(1.3em * 2);
+      word-break: break-word;
+      white-space: normal;
     }
 
     .tab-content {
       padding: 16px 0;
-      font-size: 15px;
+      font-size: 12px;
       line-height: 1.6;
     }
 
     .tab-links {
       display: flex;
-      white-space: nowrap;
-      gap: 16px;
-      padding: 0 16px;
+      justify-content: space-between;
+      align-items: stretch;
+      flex-wrap: nowrap;
+      gap: 12px;
+      padding: 0 12px;
     }
 
     .tab-link {
       flex: 0 0 auto;
-      scroll-snap-align: start;
-      padding: 10px 12px;
-      font-size: 14px;
-      border-bottom: 2px solid transparent;
+      text-align: center;
+      min-width: 90px;
+      max-width: 120px;
+      padding: 8px 10px;
+      border: none;
       background: none;
-      white-space: nowrap;
     }
 
     .tab-link.active .tab-title {
