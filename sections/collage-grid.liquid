@@ -11,31 +11,40 @@
         </a>
       </div>
     {% endif %}
+
     {% for block in section.blocks %}
       <div class="collage-item collage-item-{{ forloop.index }}" id="block-{{ block.id }}">
-        <div class="skeleton-loader">&nbsp;</div>
-        <!-- Skeleton Loader -->
         <a href="{{ block.settings.link | default: '/' }}">
           {% if block.settings.image != blank %}
             <img
               src="{{ block.settings.image | image_url }}"
-              alt="{{ block.settings.alt_text }}"
+              alt="{{ block.settings.alt_text | default: 'Collage image' }}"
               width="100%"
               height="100%"
               class="collage-image hidden"
               style="grid-area: img{{ forloop.index0 }};"
               loading="eager"
             >
-          {%- else -%}
-            <img
-              width="100%"
-              height="100%"
-              loading="lazy"
-              src="{{ 'collage-placeholder.jpg' | asset_url }}"
-              loading="eager"
-            >
-          {%- endif %}
+            <div class="skeleton-loader">&nbsp;</div>
+          {% else %}
+            {% liquid
+              assign ridx = forloop.rindex
+              case ridx
+                when 5
+                  assign ridx = 1
+                when 6
+                  assign ridx = 2
+              endcase
+            %}
+            {% if section.settings.layout_style == 'text_with_grid' %}
+              {%- assign placeholder_image = 'product-apparel-' | append: ridx -%}
+            {% else %}
+              {%- assign placeholder_image = 'collection-apparel-' | append: ridx -%}
+            {% endif %}
+            {{ placeholder_image | placeholder_svg_tag: 'placeholder-svg' }}
+          {% endif %}
         </a>
+
         {% if block.settings.overlay_text != blank %}
           <div class="collage-overlay pointer">{{ block.settings.overlay_text }}</div>
         {% endif %}
@@ -61,6 +70,7 @@
     position: relative;
     overflow: hidden;
     width: 100%;
+    aspect-ratio: 1 / 1.3;
   }
 
   .collage-item img {
@@ -82,6 +92,7 @@
     text-decoration: none;
     text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
     color: #fff;
+    z-index: 10;
   }
 
   .collage-symmetrical .collage-items {
@@ -102,15 +113,7 @@
       'img2 img3 img4 img5';
   }
 
-  .collage-item {
-    aspect-ratio: 1 / 1.3;
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-  }
-
   .collage-grid.collage-text_with_grid .collage-item {
-    {% comment %} aspect-ratio: 1 / 1; {% endcomment %}
     position: relative;
     overflow: hidden;
   }
@@ -137,12 +140,12 @@
     grid-row: 2 / 3;
   }
 
-  /* Text + 6-Image Grid Layout */
   .collage-text_with_grid {
     background: #664444;
     padding: 80px 44px;
     width: 100% !important;
   }
+
   .collage-text {
     display: flex;
     flex-direction: column;
@@ -152,6 +155,7 @@
     grid-area: cta;
     max-width: 450px;
   }
+
   .collage-button {
     display: inline-block;
     padding: 10px 20px;
@@ -166,57 +170,10 @@
     .collage-items {
       grid-template-columns: 1fr;
     }
+
     .collage-text_with_grid {
       grid-template-columns: 1fr;
       text-align: center;
-    }
-  }
-
-  /* Skeleton Loader */
-  .skeleton-loader {
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, #e0e0e0 25%, #f5f5f5 50%, #e0e0e0 75%);
-    background-size: 400% 100%;
-    animation: skeleton-loading 1.5s infinite ease-in-out;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-  }
-
-  /* Skeleton Animation */
-  @keyframes skeleton-loading {
-    0% {
-      background-position: 100% 0;
-    }
-    100% {
-      background-position: -100% 0;
-    }
-  }
-
-  /* Image Fade-in Transition */
-  .collage-image {
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-    position: relative;
-    z-index: 2;
-  }
-
-  .collage-image.fade-in {
-    opacity: 1;
-  }
-
-  @media screen and (max-width: 749px) {
-    .collage-grid {
-      width: 100%;
-      height: 100%;
-      padding: 18px;
-    }
-
-    .collage-symmetrical .collage-items {
-      display: flex;
-      flex-direction: column;
     }
 
     .collage-text_with_grid .collage-items {
@@ -236,33 +193,77 @@
       margin-bottom: 1rem;
     }
 
-    /* limit to 4 images on mobile */
     .collage-text_with_grid .collage-item:nth-of-type(n + 6) {
       display: none;
     }
+
+    .collage-grid {
+      width: 100%;
+      height: 100%;
+      padding: 18px;
+    }
+
+    .collage-symmetrical .collage-items {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  .skeleton-loader {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #e0e0e0 25%, #f5f5f5 50%, #e0e0e0 75%);
+    background-size: 400% 100%;
+    animation: skeleton-loading 1.5s infinite ease-in-out;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+  @keyframes skeleton-loading {
+    0% {
+      background-position: 100% 0;
+    }
+    100% {
+      background-position: -100% 0;
+    }
+  }
+
+  .collage-image {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    position: relative;
+    z-index: 2;
+  }
+
+  .collage-image.fade-in {
+    opacity: 1;
   }
 </style>
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    const collageImages = document.querySelectorAll('.collage-image');
+    const images = document.querySelectorAll('.collage-image');
 
-    collageImages.forEach((image) => {
-      const skeleton = image.closest('.collage-item').querySelector('.skeleton-loader');
+    images.forEach((img) => {
+      const wrapper = img.closest('.collage-item');
+      const loader = wrapper.querySelector('.skeleton-loader');
 
-      function handleImageLoad() {
-        image.classList.remove('hidden');
-        image.classList.add('fade-in');
-        if (skeleton) {
-          skeleton.style.display = 'none';
-        }
+      function handleLoad() {
+        img.classList.remove('hidden');
+        img.classList.add('fade-in');
+        if (loader) loader.style.display = 'none';
       }
 
-      if (image.complete && image.naturalWidth > 0) {
-        handleImageLoad();
+      if (img.complete && img.naturalWidth > 0) {
+        handleLoad();
       } else {
-        image.addEventListener('load', handleImageLoad);
-        image.addEventListener('error', () => console.warn('Collage image failed to load:', image.src));
+        img.addEventListener('load', handleLoad);
+        img.addEventListener('error', () => {
+          console.warn('Image failed to load:', img.src);
+          if (loader) loader.style.display = 'none';
+        });
       }
     });
   });

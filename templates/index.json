@@ -327,56 +327,6 @@
         "show_text_block": true,
         "color_scheme": "scheme-6",
       }
-    },
-    "testimonials" : {
-      "type": "testimonial",
-      "settings": {
-        "autoplay": true,
-        "slide_duration": 5,
-      },
-      "blocks": {
-        "testimonial_1": {
-          "type": "testimonial",
-          "settings": {
-            "customer_name": "First - Tanya Goyal",
-            "location": "India",
-            "testimonial": "First - Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-            "star_rating": "5",
-            "image": "shopify://shop_images/dresses.png",
-            "cta_text": "Shop the Collection - 1",
-            "cta_link": "/"
-          }
-        },
-        "testimonial_2": {
-          "type": "testimonial",
-          "settings": {
-            "customer_name": "Second - Tanya Goyal",
-            "location": "India",
-            "testimonial": "Second - Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-            "star_rating": "5",
-            "image": "shopify://shop_images/95b5510c5d72645329e98162f9d1d260_3e13da3a-357d-492f-9073-a5603d2064d9.jpg",
-            "cta_text": "Shop the Collection - 2",
-            "cta_link": "/"
-          }
-        },
-        "testimonial_3": {
-          "type": "testimonial",
-          "settings": {
-            "customer_name": "Third - Tanya Goyal",
-            "location": "India",
-            "testimonial": "Third - Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-            "star_rating": "5",
-            "image": "shopify://shop_images/32b453f356df1b4fb7ca83857fda1a3e.jpg",
-            "cta_text": "Shop the Collection - 3",
-            "cta_link": "/"
-          }
-        }
-      },
-      "block_order": [
-        "testimonial_1",
-        "testimonial_2",
-        "testimonial_3"
-      ]
     }
   },
   "order": [
@@ -389,7 +339,6 @@
     "collage-grid-1",
     "products-slider-3",
     "collage-grid-2",
-    "testimonials",
     "products-slider-4",
   ]
 }

@@ -9,6 +9,8 @@
         class="contact-form-image"
         loading="eager"
       >
+    {% else %}
+      {{ 'hero-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
     {% endif %}
   </div>
   <div class="contact-form">
@@ -41,6 +43,7 @@
     max-width: 50%;
     padding: 0;
     margin: 0;
+    height: 100vh;
   }
   .contact-form-image {
     width: 100%;
@@ -71,6 +74,9 @@
 {% schema %}
 {
   "name": "Main Contact Page",
+  "enabled_on": {
+    "templates": ["page"]
+  },
   "tag": "section",
   "class": "section",
   "settings": [

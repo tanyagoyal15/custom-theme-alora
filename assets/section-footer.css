@@ -246,6 +246,7 @@
     flex: 1 1 100%;
     align-items: center;
     gap: 3rem;
+    width: 100%;
   }
 
   .footer__list-social.list-social,
@@ -257,6 +258,7 @@
 
   .footer-block__newsletter {
     flex-direction: column;
+    width: 100%;
   }
 
   .newsletter-input {
@@ -538,6 +540,11 @@
   width: 24vw;
   max-width: 350px;
   border: 1px solid rgb(var(--color-foreground));
+  cursor: pointer;
+}
+
+.newsletter-input:focus {
+  border: none;
 }
 
 .newsletter-submit {
