@@ -25,7 +25,7 @@
 }
 
 .newsletter-form__field-wrapper .newsletter-field {
-  /* z-index: 0; */
+  display: flex;
 }
 
 .newsletter-field .field__label {
