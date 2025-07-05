@@ -485,6 +485,9 @@
 {% schema %}
 {
   "name": "t:sections.header.name",
+  "disabled_on": {
+    "templates": ["index"]
+  },
   "class": "section-header",
   "max_blocks": 3,
   "settings": [
@@ -708,7 +711,7 @@
   ],
   "presets": [
     {
-      "name": "custom Header",
+      "name": "Custom Header",
       "category": "Custom Header",
       "blocks": []
     }
