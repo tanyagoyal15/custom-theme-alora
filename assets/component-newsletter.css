@@ -74,6 +74,11 @@
 .newsletter-form__button:not(:focus-visible):not(.focused) {
   box-shadow: inherit;
   background-color: inherit;
+}
+
+.newsletter-submit-btn:not(:focus-visible):not(.focused) {
+  box-shadow: inherit;
+  background-color: inherit;
   color: rgba(var(--color-background));
   background-color: rgb(var(--color-foreground));
   border-radius: 50px;
