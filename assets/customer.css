@@ -753,6 +753,7 @@ li[data-address] > h2 {
 .main-page-wrapper {
   display: flex;
   width: 100vw;
+  height: 100vh;
   overflow: hidden;
   background-color: rgb(var(--color-background));
   justify-content: space-between;
