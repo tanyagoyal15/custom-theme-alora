@@ -50,7 +50,7 @@
 
 .newsletter-form__button {
   width: 13.4rem;
-  /* margin: 0;
+  margin: 0;
   right: var(--inputs-border-width);
   top: 0;
   height: auto;
@@ -58,33 +58,31 @@
   border-radius: 50px;
   padding: 16px;
   color: rgba(var(--color-background));
-  background-color: rgb(var(--color-foreground)); */
+  background-color: rgb(var(--color-foreground));
 }
 
 .newsletter-form__button:focus-visible {
-  /* box-shadow: 0 0 0 0.3rem rgb(var(--color-foreground)), 0 0 0 0.4rem rgba(var(--color-background));
-  background-color: rgb(var(--color-foreground)); */
+  box-shadow: 0 0 0 0.3rem rgb(var(--color-foreground)), 0 0 0 0.4rem rgba(var(--color-background));
+  background-color: rgb(var(--color-foreground));
 }
 
 .newsletter-form__button:focus {
-  /* box-shadow: 0 0 0 0.3rem rgb(var(--color-foreground)), 0 0 0 0.4rem rgba(var(--color-background));
-  background-color: rgb(var(--color-foreground)); */
+  box-shadow: 0 0 0 0.3rem rgb(var(--color-foreground)), 0 0 0 0.4rem rgba(var(--color-background));
+  background-color: rgb(var(--color-foreground));
 }
 
 .newsletter-form__button:not(:focus-visible):not(.focused) {
-  /* box-shadow: inherit;
-  background-color: inherit;
-  color: rgba(var(--color-background)); */
-  /* background-color: rgb(var(--color-foreground)); */
-  /* border-radius: 50px; */
+  box-shadow: inherit;
+  /* background-color: inherit; */
 }
 
-.newsletter-submit-btn:not(:focus-visible):not(.focused) {
-  /* box-shadow: inherit;
+.newsletter-submit-btn {
+  box-shadow: inherit;
   background-color: inherit;
   color: rgba(var(--color-background));
   background-color: rgb(var(--color-foreground));
-  border-radius: 50px; */
+  border-radius: 50px;
+  cursor: pointer;
 }
 
 .newsletter-form__button .icon {
