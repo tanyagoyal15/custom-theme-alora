@@ -769,6 +769,7 @@ li[data-address] > h2 {
   max-width: 50%;
   padding: 0;
   margin: 0;
+  height: 100vh;
 }
 .page-form-image {
   width: 100%;

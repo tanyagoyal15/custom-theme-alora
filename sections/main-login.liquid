@@ -20,7 +20,7 @@
 
 <div class="main-page-wrapper section-{{ section.id }}-padding color-{{ section.settings.color_scheme }} gradient">
   <div class="page-image flex-start">
-    {% if section.settings.side_image %}
+    {% if section.settings.side_image != blank %}
       <img
         src="{{ section.settings.side_image | image_url }}"
         width="100%"
@@ -29,6 +29,8 @@
         class="page-form-image"
         loading="eager"
       >
+    {% else %}
+      {{ 'hero-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
     {% endif %}
   </div>
 
@@ -201,6 +203,9 @@
 {% schema %}
 {
   "name": "Main Login Page",
+  "enabled_on": {
+    "templates": ["customers/login"]
+  },
   "tag": "section",
   "class": "section",
   "settings": [
@@ -213,7 +218,7 @@
       "type": "text",
       "id": "heading",
       "label": "Form Heading",
-      "default": "Enter the world of Alora"
+      "default": "Enter the world of Aeries"
     },
     {
       "type": "checkbox",

@@ -25,6 +25,8 @@
         class="page-form-image"
         loading="eager"
       >
+    {% else %}
+      {{ 'hero-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
     {% endif %}
   </div>
 
@@ -170,6 +172,9 @@
 {% schema %}
 {
   "name": "Main Create Account Page",
+  "enabled_on": {
+    "templates": ["customers/register"]
+  },
   "tag": "section",
   "class": "section",
   "settings": [
@@ -182,7 +187,7 @@
       "type": "text",
       "id": "heading",
       "label": "Form Heading",
-      "default": "Join the world of Alora"
+      "default": "Join the world of Aeries"
     },
     {
       "type": "select",

@@ -1,0 +1,24 @@
+# Node & config files
+node_modules/
+package.json
+package-lock.json
+tailwind.config.js
+webpack.config.js
+postcss.config.js
+
+# System files
+.DS_Store
+Thumbs.db
+.vscode/
+.git/
+.gitignore
+
+# Docs & metadata
+README.md
+LICENSE.md
+release-notes.md
+translation.yml
+
+# Shopify CLI config
+theme-check.yml
+.prettierrc.json

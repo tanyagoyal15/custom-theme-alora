@@ -1,7 +1,14 @@
 {% assign collection_handle = section.settings.collection_handle %}
 {% assign collection = collections[collection_handle] %}
-{% assign products = collection.products %}
-{% assign total_product_count = products.size %}
+{% if collection %}
+  {% assign products = collection.products %}
+  {% assign total_product_count = products.size %}
+  {% if total_product_count == 0 %}
+    {% assign total_product_count = 6 %}
+  {% endif %}
+{% else %}
+  {% assign total_product_count = 6 %}
+{% endif %}
 {% assign visible_product_count = section.settings.images_per_slide_desktop %}
 {% assign max_steps = section.settings.images_per_slide_desktop | minus: 1 %}
 {% assign step_percentage = 100 | divided_by: max_steps | plus: 1 %}
@@ -11,29 +18,29 @@
 {%- assign desktop_skeleton_count = section.settings.images_per_slide_desktop | default: 4 -%}
 
 <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
-{% if collection and products.size > 0 %}
-  <section
-    class="slider-container color-{{ section.settings.color_scheme }} flex-column align-center text-center m-auto relative h-auto shopify-section section {{ section.id }}"
-    data-collection-handle="{{ collection_handle }}"
-    data-product-count="{{ products.size }}"
+<section
+  class="slider-container color-scheme-{{ section.settings.color_scheme }} flex-column align-center text-center m-auto relative h-auto shopify-section section {{ section.id }}"
+  data-collection-handle="{{ collection_handle }}"
+  data-product-count="{{ total_product_count }}"
+>
+  <h2 class="products-slider__heading text-3xl m-0 mb-16 text-capitalize cl-theme">{{ section.settings.heading }}</h2>
+  <h4 class="products-slider__subheading text-large font-regular m-0 mb-16 cl-theme">
+    {{ section.settings.subheading }}
+  </h4>
+  <a
+    class="products-slider__link_btn underline text-base font-regular cl-theme m-0 mb-16"
+    href="{{ section.settings.button_link | default: '/' }}"
   >
-    <h2 class="products-slider__heading text-3xl m-0 mb-16 text-capitalize cl-theme">{{ section.settings.heading }}</h2>
-    <h4 class="products-slider__subheading text-large font-regular m-0 mb-16 cl-theme">
-      {{ section.settings.subheading }}
-    </h4>
-    <a
-      class="products-slider__link_btn underline text-base font-regular cl-theme m-0 mb-16"
-      href="{{ section.settings.button_link | default: '/' }}"
-    >
-      {{- section.settings.button_label -}}
-    </a>
+    {{- section.settings.button_label -}}
+  </a>
 
-    <div class="slider w-100 flow-hidden mt-16">
-      <div
-        class="slider-wrapper flex justify-between h-auto"
-        data-images-per-slide-desktop="{{ section.settings.images_per_slide_desktop }}"
-        data-images-per-slide-mobile="{{ section.settings.images_per_slide_mobile }}"
-      >
+  <div class="slider w-100 flow-hidden mt-16">
+    <div
+      class="slider-wrapper flex justify-between h-auto"
+      data-images-per-slide-desktop="{{ section.settings.images_per_slide_desktop }}"
+      data-images-per-slide-mobile="{{ section.settings.images_per_slide_mobile }}"
+    >
+      {% if collection and products.size > 0 %}
         <!-- Desktop Skeleton Loader (Visible Initially) -->
         <div class="products-slider-skeleton-container skeleton-desktop">
           {% for i in (1..desktop_skeleton_count) %}
@@ -193,55 +200,83 @@
             </a>
           {% endfor %}
         </div>
-      </div>
-    </div>
-
-    <div class="slider-controls flex-center mt-16 w-100" data-show-slider-bar="{{ section.settings.show_slider_bar }}">
-      <!-- Arrows -->
-      <div class="slider-arrows flex align-center">
-        <img
-          src="{{ 'arrow-left.svg' | asset_url }}"
-          alt="Left Arrow"
-          class="slider-left pointer"
-          width="50"
-          height="50"
-          loading="eager"
-        >
-        <p class="m-0 flex">
-          <span class="visible_items_count">{{ visible_product_count }}</span>/
-          <span class="total_items_count">{{ total_product_count }}</span>
-        </p>
-        <img
-          src="{{ 'arrow-right.svg' | asset_url }}"
-          alt="Right Arrow"
-          class="slider-right pointer"
-          width="50"
-          height="50"
-          loading="eager"
-        >
-      </div>
-
-      {% if section.settings.show_slider_bar %}
-        <!-- Custom Range Slider with Progress Bar -->
-        <div class="slider-track-container relative flow-hidden pointer">
-          <div
-            class="slider-progress"
-            style="width: {{ end_position | minus: start_position }}%; left: {{ start_position }}%;"
-          ></div>
-          <!-- Rectangular progress indicator -->
-          <input
-            type="range"
-            min="0"
-            value="0"
-            class="slider-input absolute h-100 pointer"
-            max="{{ collections['all'].products.size | minus: 3 | divided_by: 3 }}"
-            step="3"
-          >
-        </div>
+      {% else %}
+        {% for i in (1..6) %}
+          <a class="product-card relative flex-column align-center text-center h-auto flow-hidden no-underline cl-theme">
+            <div class="card flex-column pr-8 pl-8 pointer">
+              <div class="relative h-100 w-100">
+                {% liquid
+                  assign ridx = forloop.rindex
+                  case ridx
+                    when 5
+                      assign ridx = 1
+                    when 6
+                      assign ridx = 2
+                  endcase
+                %}
+                {%- assign placeholder_image = 'product-apparel-' | append: ridx -%}
+                {{ placeholder_image | placeholder_svg_tag: 'placeholder-svg' }}
+              </div>
+              <div class="product-info text-left w-100 h-auto mt-8 pointer">
+                <p class="m-0 font-medium">Example product title</p>
+                <div class="m-0 text-secondary product-description">This is a sample product description.</div>
+                <p class="m-0 product-price">
+                  <span class="mr-16">₹19.99</span>
+                  <span class="strikethrough">₹39.99</span>
+                </p>
+              </div>
+            </div>
+          </a>
+        {% endfor %}
       {% endif %}
     </div>
-  </section>
-{% endif %}
+  </div>
+
+  <div class="slider-controls flex-center mt-16 w-100" data-show-slider-bar="{{ section.settings.show_slider_bar }}">
+    <!-- Arrows -->
+    <div class="slider-arrows flex align-center">
+      <img
+        src="{{ 'arrow-left.svg' | asset_url }}"
+        alt="Left Arrow"
+        class="slider-left pointer"
+        width="50"
+        height="50"
+        loading="eager"
+      >
+      <p class="m-0 flex">
+        <span class="visible_items_count">{{ visible_product_count }}</span>/
+        <span class="total_items_count">{{ total_product_count }}</span>
+      </p>
+      <img
+        src="{{ 'arrow-right.svg' | asset_url }}"
+        alt="Right Arrow"
+        class="slider-right pointer"
+        width="50"
+        height="50"
+        loading="eager"
+      >
+    </div>
+
+    {% if section.settings.show_slider_bar %}
+      <!-- Custom Range Slider with Progress Bar -->
+      <div class="slider-track-container relative flow-hidden pointer">
+        <div
+          class="slider-progress"
+          style="width: {{ end_position | minus: start_position }}%; left: {{ start_position }}%;"
+        ></div>
+        <!-- Rectangular progress indicator -->
+        <input
+          type="range"
+          min="0"
+          value="0"
+          class="slider-input absolute h-100 pointer"
+          max="{{ collections['all'].products.size | minus: 3 | divided_by: 3 }}"
+          step="3"
+        >
+      </div>
+    {% endif %}
+  </div>
+</section>
 
 <style>
     /* General container styling */
@@ -536,8 +571,6 @@
           productCards.forEach((product) => {
               product.style.width = productCardWidth + "px";
           });
-
-          {% comment %} console.log(`Updated: Showing ${imagesPerSlide} images per slide`); {% endcomment %}
       }
 
       // Call the function initially and on window resize
@@ -554,7 +587,6 @@
 
       // Function to update the slider position and progress bar
       function updateSlider(value) {
-          console.log("update slider value: ", value);
 
           // Calculate translateX for slider movement
           const translateX = -value * stepSize * productCardWidth;
@@ -643,7 +675,7 @@
 
 {% schema %}
 {
-  "name": "products-slider",
+  "name": "Products Slider",
   "class": "section",
   "settings": [
     {
@@ -720,7 +752,7 @@
   ],
   "presets": [
     {
-      "name": "products-slider"
+      "name": "Products Slider"
     }
   ]
 }
