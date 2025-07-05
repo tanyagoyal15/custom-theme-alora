@@ -9,6 +9,8 @@
         class="contact-form-image"
         loading="eager"
       >
+    {% else %}
+      {{ 'hero-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
     {% endif %}
   </div>
   <div class="contact-form">
