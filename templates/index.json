@@ -199,8 +199,9 @@
         "image_JJ33UF": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/aiony-haust-K0DxxljcRv0-unsplash.jpg",
             "alt_text": "",
-            "overlay_text": "Clothing",
+            "overlay_text": "",
             "link": "shopify://products/product-12",
             "link_label": ""
           }
@@ -208,8 +209,9 @@
         "image_7JqHW9": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/alison-erickson-jPDRE3C4MbY-unsplash.jpg",
             "alt_text": "",
-            "overlay_text": "Sunglasses",
+            "overlay_text": "",
             "link": "",
             "link_label": ""
           }
@@ -217,8 +219,9 @@
         "image_xqJPhr": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/ivan-kazlouskij-aO5ZNYA4nwY-unsplash.jpg",
             "alt_text": "",
-            "overlay_text": "Shoes",
+            "overlay_text": "",
             "link": "",
             "link_label": ""
           }
