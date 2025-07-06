@@ -184,6 +184,7 @@
       "settings": {
         "banner_width": "full_width",
         "media_type": "image",
+        "image": "shopify://shop_images/441j75a8986x2065_1440_1200.png",
         "autoplay": true,
         "loop": true,
         "muted": true,
