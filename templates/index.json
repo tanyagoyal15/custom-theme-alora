@@ -118,7 +118,7 @@
       "settings": {
         "section_type": "collection_banner",
         "show_top_spacing": false,
-        "image": "shopify://shop_images/aiony-haust-K0DxxljcRv0-unsplash.jpg",
+        "image": "shopify://shop_images/Acessories.png",
         "height": "medium",
         "desktop_image_width": "medium",
         "layout": "image_first",
@@ -154,6 +154,7 @@
       "settings": {
         "banner_width": "full_width",
         "media_type": "image",
+        "image": "shopify://shop_images/Screenshot_2025-07-06_at_2.33.38_PM.png",
         "autoplay": true,
         "loop": true,
         "muted": true,
