@@ -343,7 +343,7 @@
         "button_label": "Discover More",
         "button_link": "/",
         "quick_actions_text": "SHOP THE LOOK",
-        "collection_handle": "all",
+        "collection_handle": "runway-looks",
         "images_per_slide_desktop": 3,
         "images_per_slide_mobile": 1,
         "show_product_info": false,
