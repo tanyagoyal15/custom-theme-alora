@@ -152,7 +152,7 @@
     "static-banner-1": {
       "type": "static-banner",
       "settings": {
-        "banner_width": "full_width",
+        "banner_width": "default",
         "media_type": "image",
         "image": "shopify://shop_images/Screenshot_2025-07-06_at_2.33.38_PM.png",
         "autoplay": true,
