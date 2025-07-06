@@ -118,6 +118,7 @@
       "settings": {
         "section_type": "collection_banner",
         "show_top_spacing": false,
+        "image": "shopify://shop_images/aiony-haust-K0DxxljcRv0-unsplash.jpg",
         "height": "medium",
         "desktop_image_width": "medium",
         "layout": "image_first",
