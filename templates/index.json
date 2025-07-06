@@ -15,11 +15,11 @@
         "slide_1": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/Screenshot_2025-03-07_at_4.18.19_PM.png",
-            "heading": "Image slide",
+            "image": "shopify://shop_images/Screenshot_2025-07-06_at_2.30.30_PM.png",
+            "heading": "",
             "heading_size": "h1",
-            "subheading": "Tell your brand's story through images",
-            "button_label": "Button label",
+            "subheading": "",
+            "button_label": "",
             "link": "",
             "button_style_secondary": false,
             "box_align": "middle-center",
@@ -33,7 +33,6 @@
         "slide_2": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/Screenshot_2025-03-07_at_4.15.45_PM.png",
             "heading": "Image slide",
             "heading_size": "h1",
             "subheading": "Tell your brand's story through images",
@@ -51,7 +50,6 @@
         "slide_3": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/Screenshot_2025-03-07_at_4.15.16_PM.png",
             "heading": "Image slide",
             "heading_size": "h1",
             "subheading": "Tell your brand's story through images",
@@ -70,7 +68,7 @@
       "block_order": [
         "slide_1",
         "slide_2",
-        "slide_3",
+        "slide_3"
       ],
       "settings": {
         "layout": "full_bleed",
@@ -80,8 +78,8 @@
         "change_slides_speed": 3,
         "image_behavior": "none",
         "show_text_below": true,
-        "color_scheme": "scheme-9",
-        "accessibility_info": "Slideshow about our brand"
+        "accessibility_info": "Slideshow about our brand",
+        "color_scheme": "scheme-9"
       }
     },
     "image_with_text": {
@@ -105,7 +103,7 @@
           "type": "button",
           "settings": {
             "button_label": "View Collection",
-            "button_link": "/collections/all", // add this through shopify panel
+            "button_link": "/collections/all",
             "button_style_secondary": false
           }
         }
@@ -118,7 +116,6 @@
       "settings": {
         "section_type": "collection_banner",
         "show_top_spacing": false,
-        "image": "shopify://shop_images/Acessories.png",
         "height": "medium",
         "desktop_image_width": "medium",
         "layout": "image_first",
@@ -136,112 +133,89 @@
     "products-slider-1": {
       "type": "products-slider",
       "settings": {
+        "color_scheme": "",
         "heading": "Shop our looks",
         "subheading": "",
+        "button_label": "Discover More",
+        "button_link": "/",
+        "quick_actions_text": "SHOP THE LOOK",
         "collection_handle": "shop_our_looks",
         "images_per_slide_desktop": 3,
         "images_per_slide_mobile": 2,
         "show_product_info": false,
-        "button_label": "Discover More",
-        "button_link": "/",
-        "quick_actions_text" : "SHOP THE LOOK"
+        "show_slider_bar": true
+      }
+    },
+    "static-banner-1": {
+      "type": "static-banner",
+      "settings": {
+        "banner_width": "full_width",
+        "media_type": "image",
+        "autoplay": true,
+        "loop": true,
+        "muted": true,
+        "heading": "Under the Sun",
+        "subheading": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+        "link": "/"
       }
     },
     "products-slider-2": {
       "type": "products-slider",
       "settings": {
+        "color_scheme": "",
         "heading": "New Arrivals",
         "subheading": "Timeless elegance",
+        "button_label": "Discover More",
+        "button_link": "/",
+        "quick_actions_text": "ADD TO CART",
         "collection_handle": "all",
         "images_per_slide_desktop": 4,
         "images_per_slide_mobile": 1,
         "show_product_info": true,
-        "show_slider_bar": false,
-        "button_label": "Discover More",
-        "button_link": "/",
-        "quick_actions_text" : "ADD TO CART"
+        "show_slider_bar": false
       }
     },
-    "products-slider-3": {
-      "type": "products-slider",
-      "settings": {
-        "heading": "Desse",
-        "subheading": "",
-        "collection_handle": "all",
-        "images_per_slide_desktop": 4,
-        "images_per_slide_mobile": 1,
-        "show_product_info": false,
-        "show_slider_bar": true,
-        "button_label": "Discover More",
-        "button_link": "/",
-        "quick_actions_text" : "ADD TO CART"
-      }
-    },
-    "products-slider-4": {
-      "type": "products-slider",
-      "settings": {
-        "heading": "Runway Looks",
-        "subheading": "",
-        "collection_handle": "all",
-        "images_per_slide_desktop": 3,
-        "images_per_slide_mobile": 1,
-        "show_product_info": false,
-        "show_slider_bar": false,
-        "button_label": "Discover More",
-        "button_link": "/",
-        "quick_actions_text" : "SHOP THE LOOK"
-      }
-    },
-    "static-banner-1" : {
+    "static-banner-2": {
       "type": "static-banner",
       "settings": {
+        "banner_width": "full_width",
         "media_type": "image",
-        "banner_width" : "full_width",
-        "heading": "Under the Sun",
-        "subheading": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-        "image": "shopify://shop_images/custom_theme_under_the_sun.png",
-        "link": "/"
-      }
-    },
-    "static-banner-2" : {
-      "type": "static-banner",
-      "settings": {
-        "media_type": "image",
-        "banner_width" : "full_width",
+        "autoplay": true,
+        "loop": true,
+        "muted": true,
         "heading": "Collections",
         "subheading": "Discover handpicked collections crafted for every occasion.",
-        "image": "shopify://shop_images/custom_theme_collections_banner.png",
         "link": "/"
       }
     },
-    "collage-grid-1" : {
+    "collage-grid-1": {
       "type": "collage-grid",
       "blocks": {
         "image_JJ33UF": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/dresses.png",
             "alt_text": "",
             "overlay_text": "Clothing",
-            "link": "shopify://products/product-12"
+            "link": "shopify://products/product-12",
+            "link_label": ""
           }
         },
         "image_7JqHW9": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/95b5510c5d72645329e98162f9d1d260_3e13da3a-357d-492f-9073-a5603d2064d9.jpg",
             "alt_text": "",
             "overlay_text": "Sunglasses",
-            "link": ""
+            "link": "",
+            "link_label": ""
           }
         },
         "image_xqJPhr": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/32b453f356df1b4fb7ca83857fda1a3e.jpg",
             "alt_text": "",
             "overlay_text": "Shoes",
-            "link": ""
+            "link": "",
+            "link_label": ""
           }
         }
       },
@@ -251,66 +225,86 @@
         "image_xqJPhr"
       ],
       "settings": {
+        "color_scheme": "scheme-6",
         "layout_style": "symmetrical",
         "show_text_block": false,
-        "color_scheme": "scheme-6",
+        "heading": "Discover your next bestseller",
+        "subtext": "See what retailers from across the globe are loving on Aeries",
+        "button_text": "Shop all bestsellers",
+        "button_link": ""
       }
     },
-    "collage-grid-2" : {
+    "products-slider-3": {
+      "type": "products-slider",
+      "settings": {
+        "color_scheme": "",
+        "heading": "Desse",
+        "subheading": "",
+        "button_label": "Discover More",
+        "button_link": "/",
+        "quick_actions_text": "ADD TO CART",
+        "collection_handle": "all",
+        "images_per_slide_desktop": 4,
+        "images_per_slide_mobile": 1,
+        "show_product_info": false,
+        "show_slider_bar": true
+      }
+    },
+    "collage-grid-2": {
       "type": "collage-grid",
       "blocks": {
         "image_JJ33UF": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/dresses.png",
             "alt_text": "",
             "overlay_text": "",
-            "link": "shopify://products/product-12"
+            "link": "shopify://products/product-12",
+            "link_label": ""
           }
         },
         "image_7JqHW9": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/95b5510c5d72645329e98162f9d1d260_3e13da3a-357d-492f-9073-a5603d2064d9.jpg",
             "alt_text": "",
             "overlay_text": "",
-            "link": ""
+            "link": "",
+            "link_label": ""
           }
         },
         "image_xqJPhr": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/32b453f356df1b4fb7ca83857fda1a3e.jpg",
             "alt_text": "",
             "overlay_text": "",
-            "link": ""
+            "link": "",
+            "link_label": ""
           }
         },
         "image_xqJPhq": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/32b453f356df1b4fb7ca83857fda1a3e.jpg",
             "alt_text": "",
             "overlay_text": "",
-            "link": ""
+            "link": "",
+            "link_label": ""
           }
         },
         "image_xqJPhw": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/32b453f356df1b4fb7ca83857fda1a3e.jpg",
             "alt_text": "",
             "overlay_text": "",
-            "link": ""
+            "link": "",
+            "link_label": ""
           }
         },
         "image_xqJPhe": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/32b453f356df1b4fb7ca83857fda1a3e.jpg",
             "alt_text": "",
             "overlay_text": "",
-            "link": ""
+            "link": "",
+            "link_label": ""
           }
         }
       },
@@ -323,9 +317,29 @@
         "image_xqJPhe"
       ],
       "settings": {
+        "color_scheme": "scheme-6",
         "layout_style": "text_with_grid",
         "show_text_block": true,
-        "color_scheme": "scheme-6",
+        "heading": "Discover your next bestseller",
+        "subtext": "See what retailers from across the globe are loving on Aeries",
+        "button_text": "Shop all bestsellers",
+        "button_link": ""
+      }
+    },
+    "products-slider-4": {
+      "type": "products-slider",
+      "settings": {
+        "color_scheme": "",
+        "heading": "Runway Looks",
+        "subheading": "",
+        "button_label": "Discover More",
+        "button_link": "/",
+        "quick_actions_text": "SHOP THE LOOK",
+        "collection_handle": "all",
+        "images_per_slide_desktop": 3,
+        "images_per_slide_mobile": 1,
+        "show_product_info": false,
+        "show_slider_bar": false
       }
     }
   },
@@ -339,6 +353,6 @@
     "collage-grid-1",
     "products-slider-3",
     "collage-grid-2",
-    "products-slider-4",
+    "products-slider-4"
   ]
 }
