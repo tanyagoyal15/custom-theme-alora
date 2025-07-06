@@ -1,275 +1,347 @@
-{ "name": "Our World", "sections": { 
-  "main": { 
-    "type": "about-us" 
-  },
-  "image_with_text_1": {
-    "type": "image-with-text",
-    "blocks": {
-      "heading_MPAcj9": {
-        "type": "heading",
-        "settings": {
-          "heading": "Crafted with Intention.",
-          "heading_size": "hxxl"
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "about-us",
+      "settings": {}
+    },
+    "image_with_text_1": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_MPAcj9": {
+          "type": "heading",
+          "settings": {
+            "heading": "Crafted with Intention.",
+            "heading_size": "hxxl"
+          }
+        },
+        "text_k7np8Y": {
+          "type": "text",
+          "settings": {
+            "text": "<h1>Styled with Soul.<h1>",
+            "text_style": "caption-with-letter-spacing"
+          }
+        },
+        "button_D8mqjP": {
+          "type": "button",
+          "settings": {
+            "button_label": "",
+            "button_link": "",
+            "button_style_secondary": false
+          }
         }
       },
-      "text_k7np8Y": {
-        "type": "text",
-        "settings": {
-          "text": "<h1>Styled with Soul.<h1>",
-          "text_style": "caption-with-letter-spacing"
-        }
-      },
-      "button_D8mqjP": {
-        "type": "button",
-        "settings": {
-          "button_label": "",
-          "button_link": "",
-          "button_style_secondary": false
-        }
+      "block_order": [
+        "heading_MPAcj9",
+        "text_k7np8Y",
+        "button_D8mqjP"
+      ],
+      "settings": {
+        "section_type": "collection_banner",
+        "show_top_spacing": true,
+        "image": "shopify://shop_images/thomas-ae-KRPCwGCzUJs-unsplash.jpg",
+        "height": "medium",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
-    "block_order": [
-      "heading_MPAcj9",
-      "text_k7np8Y",
-      "button_D8mqjP"
-    ],
-    "settings": {
-      "section_type": "collection_banner",
-      "image": "shopify://shop_images/f914c28a48ab00b2636d8b7ab3f38bbc.jpg",
-      "height": "medium",
-      "desktop_image_width": "medium",
-      "layout": "text_first",
-      "desktop_content_position": "middle",
-      "desktop_content_alignment": "left",
-      "content_layout": "no-overlap",
-      "section_color_scheme": "",
-      "color_scheme": "",
-      "image_behavior": "none",
-      "mobile_content_alignment": "left",
-      "padding_top": 36,
-      "padding_bottom": 36
-    }
-  },
-  "static-banner-1" : {
-    "type": "static-banner",
-    "settings": {
-      "media_type": "image",
-      "banner_width" : "default",
-      "heading": "Our Story",
-      "subheading": "Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-      "image": "shopify://shop_images/custom_theme_under_the_sun.png",
-      "link": "/"
-    }
-  },
-  "multicolumn": {
-    "type": "multicolumn",
-    "blocks": {
-      "column1": {
-        "type": "column",
-        "settings": {
-          "image": "shopify://shop_images/ALORA__logo-dark.png",
-          "title": "Handcrafted",
-          "text": "<p>Rooted in indian artistry, every thread carries legacy.</p>",
-          "link_label": "",
-          "link": ""
-        }
-      },
-      "column2": {
-        "type": "column",
-        "settings": {
-          "image": "shopify://shop_images/ALORA__logo-dark.png",
-          "title": "Timeless Design",
-          "text": "<p>Classic pieces made to last beyond the search.</p>",
-          "link_label": "",
-          "link": ""
-        }
-      },
-      "column3": {
-        "type": "column",
-        "settings": {
-          "image": "shopify://shop_images/ALORA__logo-dark.png",
-          "title": "Sustainability",
-          "text": "<p>Committed to responsible, ethical production.</p>",
-          "link_label": "",
-          "link": ""
-        }
+    "static-banner-1": {
+      "type": "static-banner",
+      "settings": {
+        "banner_width": "default",
+        "media_type": "image",
+        "image": "shopify://shop_images/ben-iwara-GLNXgxV1_vM-unsplash.jpg",
+        "autoplay": true,
+        "loop": true,
+        "muted": true,
+        "heading": "Our Story",
+        "subheading": "Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+        "link": "/"
       }
     },
-    "block_order": [
-      "column1",
-      "column2",
-      "column3"
-    ],
-    "settings": {
-      "title": "",
-      "heading_size": "h1",
-      "image_width": "third",
-      "image_ratio": "adapt",
-      "columns_desktop": 3,
-      "column_alignment": "center",
-      "background_style": "none",
-      "button_label": "",
-      "button_link": "",
-      "color_scheme": "scheme-1",
-      "columns_mobile": "1",
-      "swipe_on_mobile": false,
-      "padding_top": 36,
-      "padding_bottom": 36
-    }
-  },
-  "image_with_text_2": {
-    "type": "image-with-text",
-    "blocks": {
-      "heading_MPAcj9": {
-        "type": "heading",
-        "settings": {
-          "heading": "The Atelier",
-          "heading_size": "h1"
+    "multicolumn": {
+      "type": "multicolumn",
+      "blocks": {
+        "column1": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/ALORA__logo-dark.png",
+            "title": "Handcrafted",
+            "text": "<p>Rooted in indian artistry, every thread carries legacy.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column2": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/ALORA__logo-dark.png",
+            "title": "Timeless Design",
+            "text": "<p>Classic pieces made to last beyond the search.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column3": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/ALORA__logo-dark.png",
+            "title": "Sustainability",
+            "text": "<p>Committed to responsible, ethical production.</p>",
+            "link_label": "",
+            "link": ""
+          }
         }
       },
-      "text_k7np8Y": {
-        "type": "text",
-        "settings": {
-          "text": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>",
-          "text_style": "body"
-        }
-      },
-      "button_D8mqjP": {
-        "type": "button",
-        "settings": {
-          "button_label": "Get Directions",
-          "button_link": "/pages/about-us",
-          "button_style_secondary": false
-        }
+      "block_order": [
+        "column1",
+        "column2",
+        "column3"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "third",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "center",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "scheme-1",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
-    "block_order": [
-      "heading_MPAcj9",
-      "text_k7np8Y",
-      "button_D8mqjP"
-    ],
-    "settings": {
-      "section_type": "collection_banner",
-      "image": "shopify://shop_images/Acessories.png",
-      "height": "medium",
-      "desktop_image_width": "medium",
-      "layout": "text_first",
-      "desktop_content_position": "middle",
-      "desktop_content_alignment": "left",
-      "content_layout": "no-overlap",
-      "section_color_scheme": "",
-      "color_scheme": "",
-      "image_behavior": "none",
-      "mobile_content_alignment": "left",
-      "padding_top": 36,
-      "padding_bottom": 36
-    }
-  },
-  "collage-grid-1" : {
-    "type": "collage-grid",
-    "blocks": {
-      "image_JJ33UF": {
-        "type": "image",
-        "settings": {
-          "image": "shopify://shop_images/dresses.png",
-          "alt_text": "",
-          "overlay_text": "Clothing",
-          "link": "shopify://products/product-12"
+    "image_with_text_3": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_MPAcj9": {
+          "type": "heading",
+          "settings": {
+            "heading": "About the Designer",
+            "heading_size": "h1"
+          }
+        },
+        "text_k7np8Y": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Tanya Goyal, the visionary behind Alora, has always harbored a deep fascination with textiles, fabrics, and fashion. Her passion for exploring the intricacies of materials and design, combined with a creative mind, has guided her journey into the world of fashion. With a wealth of knowledge in fabric construction and a keen eye for detail, Tanya is dedicated to bringing value through each piece of clothing she designs. Her work reflects a unique blend of modern aesthetics and traditional craftsmanship, making Aeries a label that exudes elegance, innovation, and timeless style.</p>",
+            "text_style": "body"
+          }
+        },
+        "button_D8mqjP": {
+          "type": "button",
+          "settings": {
+            "button_label": "",
+            "button_link": "",
+            "button_style_secondary": false
+          }
         }
       },
-      "image_7JqHW9": {
-        "type": "image",
-        "settings": {
-          "image": "shopify://shop_images/95b5510c5d72645329e98162f9d1d260_3e13da3a-357d-492f-9073-a5603d2064d9.jpg",
-          "alt_text": "",
-          "overlay_text": "Sunglasses",
-          "link": ""
-        }
-      },
-      "image_xqJPhr": {
-        "type": "image",
-        "settings": {
-          "image": "shopify://shop_images/32b453f356df1b4fb7ca83857fda1a3e.jpg",
-          "alt_text": "",
-          "overlay_text": "Shoes",
-          "link": ""
-        }
+      "block_order": [
+        "heading_MPAcj9",
+        "text_k7np8Y",
+        "button_D8mqjP"
+      ],
+      "settings": {
+        "section_type": "collection_banner",
+        "show_top_spacing": true,
+        "image": "shopify://shop_images/shutter-speed-rHcA7lFbdV4-unsplash.jpg",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
-    "block_order": [
-      "image_JJ33UF",
-      "image_7JqHW9",
-      "image_xqJPhr"
-    ],
-    "settings": {
-      "layout_style": "symmetrical",
-      "show_text_block": false,
-      "color_scheme": "scheme-6"
-    }
-  },
-  "products-slider-1": {
-    "type": "products-slider",
-    "settings": {
-      "heading": "Behind the Scenes",
-      "subheading": "Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.",
-      "collection_handle": "shop_our_looks",
-      "images_per_slide_desktop": 3,
-      "images_per_slide_mobile": 2,
-      "show_product_info": false,
-      "show_slider_bar" : false,
-      "button_label": "",
-      "button_link": "/",
-      "quick_actions_text" : "SHOP THE LOOK"
-    }
-  },
-  "image_with_text_3": {
-    "type": "image-with-text",
-    "blocks": {
-      "heading_MPAcj9": {
-        "type": "heading",
-        "settings": {
-          "heading": "About the Designer",
-          "heading_size": "h1"
-        }
-      },
-      "text_k7np8Y": {
-        "type": "text",
-        "settings": {
-          "text": "<p>Tanya Goyal, the visionary behind Alora, has always harbored a deep fascination with textiles, fabrics, and fashion. Her passion for exploring the intricacies of materials and design, combined with a creative mind, has guided her journey into the world of fashion. With a wealth of knowledge in fabric construction and a keen eye for detail, Tanya is dedicated to bringing value through each piece of clothing she designs. Her work reflects a unique blend of modern aesthetics and traditional craftsmanship, making Aeries a label that exudes elegance, innovation, and timeless style.</p>",
-          "text_style": "body"
-        }
-      },
-      "button_D8mqjP": {
-        "type": "button",
-        "settings": {
-          "button_label": "",
-          "button_link": "",
-          "button_style_secondary": false
-        }
+    "products-slider-1": {
+      "type": "products-slider",
+      "disabled": true,
+      "settings": {
+        "color_scheme": "",
+        "heading": "Behind the Scenes",
+        "subheading": "Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.",
+        "button_label": "",
+        "button_link": "/",
+        "quick_actions_text": "SHOP THE LOOK",
+        "collection_handle": "runway-looks",
+        "images_per_slide_desktop": 3,
+        "images_per_slide_mobile": 2,
+        "show_product_info": false,
+        "show_slider_bar": false
       }
     },
-    "block_order": [
-      "heading_MPAcj9",
-      "text_k7np8Y",
-      "button_D8mqjP"
-    ],
-    "settings": {
-      "section_type": "collection_banner",
-      "image": "shopify://shop_images/Remove_background_project_10.png",
-      "height": "adapt",
-      "desktop_image_width": "medium",
-      "layout": "image_first",
-      "desktop_content_position": "middle",
-      "desktop_content_alignment": "left",
-      "content_layout": "no-overlap",
-      "section_color_scheme": "",
-      "color_scheme": "",
-      "image_behavior": "none",
-      "mobile_content_alignment": "left",
-      "padding_top": 36,
-      "padding_bottom": 36
+    "collage_grid_wEVywx": {
+      "type": "collage-grid",
+      "blocks": {
+        "image_m9Py8e": {
+          "type": "image",
+          "settings": {
+            "alt_text": "",
+            "overlay_text": "",
+            "link": "",
+            "link_label": ""
+          }
+        },
+        "image_aYmkFH": {
+          "type": "image",
+          "settings": {
+            "alt_text": "",
+            "overlay_text": "",
+            "link": "",
+            "link_label": ""
+          }
+        },
+        "image_hT6bgV": {
+          "type": "image",
+          "settings": {
+            "alt_text": "",
+            "overlay_text": "",
+            "link": "",
+            "link_label": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_m9Py8e",
+        "image_aYmkFH",
+        "image_hT6bgV"
+      ],
+      "name": "Collage Grid",
+      "settings": {
+        "color_scheme": "",
+        "layout_style": "symmetrical",
+        "show_text_block": false,
+        "heading": "Discover your next bestseller",
+        "subtext": "See what retailers from across the globe are loving on Aeries",
+        "button_text": "Shop all bestsellers",
+        "button_link": ""
+      }
+    },
+    "image_with_text_2": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_MPAcj9": {
+          "type": "heading",
+          "settings": {
+            "heading": "The Atelier",
+            "heading_size": "h1"
+          }
+        },
+        "text_k7np8Y": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>",
+            "text_style": "body"
+          }
+        },
+        "button_D8mqjP": {
+          "type": "button",
+          "settings": {
+            "button_label": "Get Directions",
+            "button_link": "/pages/about-us",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_MPAcj9",
+        "text_k7np8Y",
+        "button_D8mqjP"
+      ],
+      "settings": {
+        "section_type": "collection_banner",
+        "show_top_spacing": true,
+        "image": "shopify://shop_images/jana-shnipelson-UX92F65da6Y-unsplash.jpg",
+        "height": "medium",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "collage-grid-1": {
+      "type": "collage-grid",
+      "blocks": {
+        "image_JJ33UF": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/mr-great-heart-w-CBDrNRRkE-unsplash.jpg",
+            "alt_text": "",
+            "overlay_text": "Clothing",
+            "link": "shopify://products/product-12",
+            "link_label": ""
+          }
+        },
+        "image_7JqHW9": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/mr-great-heart-WyVi1MAAd-8-unsplash.jpg",
+            "alt_text": "",
+            "overlay_text": "Sunglasses",
+            "link": "",
+            "link_label": ""
+          }
+        },
+        "image_xqJPhr": {
+          "type": "image",
+          "settings": {
+            "alt_text": "",
+            "overlay_text": "Shoes",
+            "link": "",
+            "link_label": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_JJ33UF",
+        "image_7JqHW9",
+        "image_xqJPhr"
+      ],
+      "settings": {
+        "color_scheme": "scheme-6",
+        "layout_style": "symmetrical",
+        "show_text_block": false,
+        "heading": "Discover your next bestseller",
+        "subtext": "See what retailers from across the globe are loving on Aeries",
+        "button_text": "Shop all bestsellers",
+        "button_link": ""
+      }
     }
-  },
   },
   "order": [
     "main",
@@ -278,7 +350,8 @@
     "multicolumn",
     "image_with_text_3",
     "products-slider-1",
+    "collage_grid_wEVywx",
     "image_with_text_2",
-    "collage-grid-1",
-    ] 
-  }
+    "collage-grid-1"
+  ]
+}
