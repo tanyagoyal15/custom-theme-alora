@@ -211,9 +211,9 @@
           "settings": {
             "image": "shopify://shop_images/alison-erickson-jPDRE3C4MbY-unsplash.jpg",
             "alt_text": "",
-            "overlay_text": "",
-            "link": "",
-            "link_label": ""
+            "overlay_text": "The Bridal Edit",
+            "link": "shopify://collections/the-bridal-edit-pure-whites-and-gowns",
+            "link_label": "the bridal edit"
           }
         },
         "image_xqJPhr": {
