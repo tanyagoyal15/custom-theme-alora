@@ -105,7 +105,7 @@
           "type": "button",
           "settings": {
             "button_label": "View Collection",
-            "button_link": "shopify://collections/touche",
+            "button_link": "shopify://collections",
             "button_style_secondary": false
           }
         }
