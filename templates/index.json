@@ -221,9 +221,9 @@
           "settings": {
             "image": "shopify://shop_images/ivan-kazlouskij-aO5ZNYA4nwY-unsplash.jpg",
             "alt_text": "",
-            "overlay_text": "",
-            "link": "",
-            "link_label": ""
+            "overlay_text": "Effortless Luxe",
+            "link": "shopify://collections/frere",
+            "link_label": "effortless luxe"
           }
         }
       },
