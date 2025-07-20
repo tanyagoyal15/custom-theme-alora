@@ -202,12 +202,13 @@
       "settings": {
         "banner_width": "default",
         "media_type": "image",
+        "image": "shopify://shop_images/filipp-romanovski-Ey0daypzVBo-unsplash-3-2-rectangle.jpg",
         "autoplay": true,
         "loop": true,
         "muted": true,
         "heading": "Our World",
-        "subheading": "Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-        "link": "/"
+        "subheading": "More than a brand, Aeries is a way of seeing. Our world is shaped by nuance — by the flicker of light on silk, the poetry of restraint, the quiet confidence in a well-cut jacket. We draw inspiration from architecture, cinema, literature, and the women who live unapologetically in their truth. Rooted in craftsmanship and elevated by emotion, our collections are born from a belief that fashion should invite reflection, not just reaction. We honour the power of presence — of dressing with intention, of choosing quality over excess. Our world is one where luxury feels lived-in. Where garments are made to move, not just to be admired. Where beauty is found not in embellishment, but in balance, it’s not just what we make. It’s how we make you feel.",
+        "link": ""
       }
     },
     "image_with_text_2": {
