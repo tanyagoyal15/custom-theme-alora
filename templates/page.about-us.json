@@ -82,6 +82,7 @@
         "column1": {
           "type": "column",
           "settings": {
+            "image": "shopify://shop_images/victoria-priessnitz-T7Lqna9-nJI-unsplash.jpg",
             "title": "Handcrafted",
             "text": "<p>Rooted in indian artistry, every thread carries legacy.</p>",
             "link_label": "",
