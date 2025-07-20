@@ -53,7 +53,7 @@
     or section.settings.enable_follow_on_shop
   -%}
     {%- unless only_empty_brand -%}
-      <div class="footer__content-top page-width flex justify-between align-start">
+      <div class="footer__content-top page-width flex justify-between align-start flex-center">
         <div
           class="footer-block--newsletter{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
           {% if settings.animations_reveal_on_scroll %}
@@ -144,7 +144,65 @@
             {%- render 'social-icons', class: 'footer__list-social' -%}
           {%- endif -%}
         </div>
-        
+        {%- assign menu_links = linklists[section.settings.menu].links -%}
+        {%- if menu_links.size > 0 -%}
+          {%- liquid
+            if section.blocks.size == 9
+              assign footer_grid_class = 'grid--3-col-tablet'
+            elsif section.blocks.size > 6
+              assign footer_grid_class = 'grid--4-col-desktop'
+            elsif section. blocks.size > 4
+              assign footer_grid_class = 'grid--3-col-tablet'
+            endif
+          -%}
+          <div
+            class="footer__blocks-wrapper grid grid--1-col grid--2-col grid--4-col-tablet {{ footer_grid_class }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+            {% if settings.animations_reveal_on_scroll %}
+              data-cascade
+            {% endif %}
+          >
+            <ul class="footer-block__details-content list-unstyled flex justify-between w-100">
+              {%- for link in menu_links -%}
+                <li
+                  class="menu-item relative"
+                  data-menu="{{ forloop.index }}"
+                >
+                  <a href="{{ link.url }}" class="nav-link no-underline font-medium cl-theme text-uppercase">
+                    {{- link.title -}}
+                  </a>
+                  {%- if link.links != blank -%}
+                    <ul
+                      class="p-0 mt-24 footer-mega-menu-column flex-column list-unstyled"
+                      data-content="{{ forloop.index }}"
+                    >
+                      {% for child_link in link.links %}
+                        <li class="mb-8">
+                          <a
+                            href="{{ child_link.url }}"
+                            class="footer-mega-menu-heading no-underline font-regular text-uppercase"
+                          >
+                            {{- child_link.title -}}
+                          </a>
+                          {% if child_link.links != blank %}
+                            <ul class="nested-menu p-0 m-0 mt-8 list-unstyled flex flex-column">
+                              {% for grandchild_link in child_link.links %}
+                                <li>
+                                  <a href="{{ grandchild_link.url }}" class="no-underline font-regular text-uppercase">
+                                    {{- grandchild_link.title -}}
+                                  </a>
+                                </li>
+                              {% endfor %}
+                            </ul>
+                          {% endif %}
+                        </li>
+                      {% endfor %}
+                    </ul>
+                  {%- endif -%}
+                </li>
+              {%- endfor -%}
+            </ul>
+          </div>
+        {%- endif -%}
       </div>
     {%- endunless -%}
   {%- endif -%}
