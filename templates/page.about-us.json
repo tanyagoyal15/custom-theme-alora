@@ -82,7 +82,6 @@
         "column1": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/ALORA__logo-dark.png",
             "title": "Handcrafted",
             "text": "<p>Rooted in indian artistry, every thread carries legacy.</p>",
             "link_label": "",
@@ -92,7 +91,6 @@
         "column2": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/ALORA__logo-dark.png",
             "title": "Timeless Design",
             "text": "<p>Classic pieces made to last beyond the search.</p>",
             "link_label": "",
@@ -102,7 +100,6 @@
         "column3": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/ALORA__logo-dark.png",
             "title": "Sustainability",
             "text": "<p>Committed to responsible, ethical production.</p>",
             "link_label": "",
