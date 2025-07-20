@@ -141,8 +141,9 @@
         "image_xqJPhr": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/emmanuel-boldo-3FUXXzpNx3o-unsplash.jpg",
             "alt_text": "",
-            "overlay_text": "Shoes",
+            "overlay_text": "",
             "link": "",
             "link_label": ""
           }
@@ -150,17 +151,19 @@
         "image_JJ33UF4": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/alexander-mass-dN9WDOt0pNs-unsplash.jpg",
             "alt_text": "",
-            "overlay_text": "Clothing",
-            "link": "shopify://products/product-12",
+            "overlay_text": "",
+            "link": "",
             "link_label": ""
           }
         },
         "image_7JqHW95": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/bbc-creative-DeYfkesUXcc-unsplash.jpg",
             "alt_text": "",
-            "overlay_text": "Sunglasses",
+            "overlay_text": "",
             "link": "",
             "link_label": ""
           }
@@ -168,8 +171,9 @@
         "image_xqJPhr6": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/test-elek-_hq0DZ6d8bw-unsplash_05750a74-0326-4458-9538-e3b4e52ab325.jpg",
             "alt_text": "",
-            "overlay_text": "Shoes",
+            "overlay_text": "",
             "link": "",
             "link_label": ""
           }
