@@ -144,7 +144,7 @@
             {%- render 'social-icons', class: 'footer__list-social' -%}
           {%- endif -%}
         </div>
-        {{ section.settings.menu.footer | json }}
+        {{ section.settings.menu | json }}
         {%- if section.settings.menu.links > 0 -%}
           {%- liquid
             if section.blocks.size == 9
