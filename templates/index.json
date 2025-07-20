@@ -97,7 +97,7 @@
         "text_k7np8Y": {
           "type": "text",
           "settings": {
-            "text": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>",
+            "text": "<p>A tribute to refined femininity and modern edge, <strong>Touché</strong> blends structure with sensuality. This latest collection captures silhouettes that move like poetry and textures that speak in whispers — effortlessly luxurious, strikingly understated.<br/><br/>From tailored classics to fluid drapes, each piece is designed to leave a mark, subtle yet unforgettable. Touché isn’t just worn — it’s felt.</p>",
             "text_style": "body"
           }
         },
@@ -105,7 +105,7 @@
           "type": "button",
           "settings": {
             "button_label": "View Collection",
-            "button_link": "shopify://collections",
+            "button_link": "shopify://collections/touche",
             "button_style_secondary": false
           }
         }
