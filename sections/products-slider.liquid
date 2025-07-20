@@ -170,10 +170,15 @@
                       </div>
                     {%- endform -%}
                   </product-form>
-                  <div class="product-badges">
-                    <div class="product-badge">SALE</div>
-                    {% comment %} <div>20% OFF</div> {% endcomment %}
-                  </div>
+                  {% if product.compare_at_price > product.price %}
+                    <div class="product-badges">
+                      <div class="product-badge">SALE</div>
+                      {%- comment -%}
+                      Optionally, you could also show % off like:
+                      <div>{{ ((product.compare_at_price - product.price) / product.compare_at_price) | times: 100 | round }}% OFF</div>
+                      {%- endcomment -%}
+                    </div>
+                  {% endif %}
                   {% comment %}
                     <div class="product-quick-view">
                       <img
