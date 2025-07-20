@@ -261,6 +261,7 @@
     },
     "products-slider-1": {
       "type": "products-slider",
+      "disabled": true,
       "settings": {
         "color_scheme": "",
         "heading": "Backstage",
@@ -274,6 +275,56 @@
         "show_product_info": false,
         "show_slider_bar": true
       }
+    },
+    "collage_grid_PttpVm": {
+      "type": "collage-grid",
+      "blocks": {
+        "image_M36R7k": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/temitayo-olatoke-WLHcTOjoKhI-unsplash.jpg",
+            "alt_text": "",
+            "overlay_text": "",
+            "link": "",
+            "link_label": ""
+          }
+        },
+        "image_rkGa7k": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/vitor-monthay-eUI0PFWAT5M-unsplash.jpg",
+            "alt_text": "",
+            "overlay_text": "",
+            "link": "",
+            "link_label": ""
+          }
+        },
+        "image_kHkPwy": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/liza-williams-o0n4UqFpC4k-unsplash.jpg",
+            "alt_text": "",
+            "overlay_text": "",
+            "link": "",
+            "link_label": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_M36R7k",
+        "image_rkGa7k",
+        "image_kHkPwy"
+      ],
+      "name": "Collage Grid",
+      "settings": {
+        "color_scheme": "",
+        "layout_style": "symmetrical",
+        "show_text_block": false,
+        "heading": "",
+        "subtext": "",
+        "button_text": "",
+        "button_link": ""
+      }
     }
   },
   "order": [
@@ -283,6 +334,7 @@
     "collage-grid",
     "static-banner-1",
     "image_with_text_2",
-    "products-slider-1"
+    "products-slider-1",
+    "collage_grid_PttpVm"
   ]
 }
