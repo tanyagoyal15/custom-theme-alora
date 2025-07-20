@@ -145,7 +145,8 @@
           {%- endif -%}
         </div>
         <!-- {{ section.settings.menu | json }} -->
-        <!-- {%- if section.settings.menu.links > 0 -%} -->
+        {%- assign menu_links = linklists[section.settings.menu].links -%}
+        {%- if menu_links.size > 0 -%}
           {%- liquid
             if section.blocks.size == 9
               assign footer_grid_class = 'grid--3-col-tablet'
@@ -162,7 +163,7 @@
             {% endif %}
           >
             <ul class="footer-block__details-content list-unstyled flex justify-between w-100">
-              {%- for link in section.settings.menu.links -%}
+              {%- for link in menu_links -%}
                 <li
                   class="menu-item relative"
                   data-menu="{{ forloop.index }}"
@@ -202,7 +203,7 @@
               {%- endfor -%}
             </ul>
           </div>
-        <!-- {%- endif -%} -->
+        {%- endif -%}
       </div>
     {%- endunless -%}
   {%- endif -%}
