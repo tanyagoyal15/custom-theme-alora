@@ -92,6 +92,7 @@
         "column2": {
           "type": "column",
           "settings": {
+            "image": "shopify://shop_images/mihaela-claudia-puscas-gJna2drRWxA-unsplash.jpg",
             "title": "Timeless Design",
             "text": "<p>Classic pieces made to last beyond the search.</p>",
             "link_label": "",
@@ -101,6 +102,7 @@
         "column3": {
           "type": "column",
           "settings": {
+            "image": "shopify://shop_images/filip-rankovic-grobgaard-jRnlo-Uu0Kc-unsplash.jpg",
             "title": "Sustainability",
             "text": "<p>Committed to responsible, ethical production.</p>",
             "link_label": "",
