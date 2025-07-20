@@ -46,14 +46,15 @@
       assign only_empty_brand = true
     endif
   -%}
+  {%- assign menu_links = linklists[section.settings.menu].links -%}
   {%- if section.blocks.size > 0
     or section.settings.newsletter_enable
     or section.settings.show_social
     and has_social_icons == true
     or section.settings.enable_follow_on_shop
   -%}
-    {%- unless only_empty_brand -%}
-      <div class="footer__content-top page-width flex justify-between align-start flex-center">
+    {%- unless only_empty_brand -%} 
+      <div class="footer__content-top page-width flex justify-between align-start{% if menu_links.size == 0 %} flex-center {% endif %}}">
         <div
           class="footer-block--newsletter{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
           {% if settings.animations_reveal_on_scroll %}
@@ -144,7 +145,6 @@
             {%- render 'social-icons', class: 'footer__list-social' -%}
           {%- endif -%}
         </div>
-        {%- assign menu_links = linklists[section.settings.menu].links -%}
         {%- if menu_links.size > 0 -%}
           {%- liquid
             if section.blocks.size == 9
