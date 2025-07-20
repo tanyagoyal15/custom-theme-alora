@@ -145,7 +145,7 @@
           {%- endif -%}
         </div>
         {{ section.settings.menu | json }}
-        {%- if section.settings.menu.links > 0 -%}
+        <!-- {%- if section.settings.menu.links > 0 -%} -->
           {%- liquid
             if section.blocks.size == 9
               assign footer_grid_class = 'grid--3-col-tablet'
@@ -202,7 +202,7 @@
               {%- endfor -%}
             </ul>
           </div>
-        {%- endif -%}
+        <!-- {%- endif -%} -->
       </div>
     {%- endunless -%}
   {%- endif -%}
