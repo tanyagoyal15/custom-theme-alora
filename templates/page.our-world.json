@@ -217,14 +217,14 @@
         "heading_MPAcj9": {
           "type": "heading",
           "settings": {
-            "heading": "About the Designer",
+            "heading": "The Studio",
             "heading_size": "h1"
           }
         },
         "text_k7np8Y": {
           "type": "text",
           "settings": {
-            "text": "<p>Tanya Goyal, the visionary behind Alora, has always harbored a deep fascination with textiles, fabrics, and fashion. Her passion for exploring the intricacies of materials and design, combined with a creative mind, has guided her journey into the world of fashion. With a wealth of knowledge in fabric construction and a keen eye for detail, Tanya is dedicated to bringing value through each piece of clothing she designs. Her work reflects a unique blend of modern aesthetics and traditional craftsmanship, making Aeries a label that exudes elegance, innovation, and timeless style.</p>",
+            "text": "<p>From early moodboards to hand-finished touches, our pieces are brought to life through an intimate studio process rooted in detail, emotion, and intent. Each garment reflects a moment — carefully considered and consciously crafted.</p><p>Our studio isn’t just a workspace — it’s a sanctuary of exploration, chaos, and calm. This is where silhouettes are sculpted, textures are chosen, and visions take tangible form. A place of ideas, ritual, and rhythm.</p>",
             "text_style": "body"
           }
         },
@@ -245,6 +245,7 @@
       "settings": {
         "section_type": "collection_banner",
         "show_top_spacing": true,
+        "image": "shopify://shop_images/mr-great-heart-WyVi1MAAd-8-unsplash.jpg",
         "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "image_first",
