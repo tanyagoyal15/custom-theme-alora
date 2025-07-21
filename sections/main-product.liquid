@@ -577,10 +577,10 @@
                     {% endcomment %}
                   </div>
                 {%- endif -%}
-              {%- when 'long_description' -%}
-                {% if product.metafields.custom.long_description != blank %}
+              {%- when 'long_product_description' -%}
+                {% if product.metafields.custom.long_product_description != blank %}
                   <div class="product-long-description rte">
-                    {{ product.metafields.custom.long_description | metafield_tag }}
+                    {{ product.metafields.custom.long_product_description | metafield_tag }}
                   </div>
                 {% endif %}
               {%- when 'complementary' -%}
@@ -1290,12 +1290,12 @@
       ]
     },
     {
-      "type": "long_description",
-      "name": "t:sections.main-product.blocks.long_description.name",
+      "type": "long_product_description",
+      "name": "t:sections.main-product.blocks.long_product_description.name",
       "settings": [
         {
           "type": "paragraph",
-          "content": "t:sections.main-product.blocks.long_description.settings.paragraph.content"
+          "content": "t:sections.main-product.blocks.long_product_description.settings.paragraph.content"
         }
       ]
     },
