@@ -101,8 +101,8 @@
           "type": "rating",
           "settings": {}
         },
-        "long_description": {
-          "type": "long_description",
+        "long_product_description": {
+          "type": "long_product_description",
           "settings": {}
         }
       },
@@ -110,7 +110,7 @@
         "title",
         "rating",
         "caption",
-        "long_description",
+        "long_product_description",
         "price",
         "variant_picker",
         "buy_buttons"
