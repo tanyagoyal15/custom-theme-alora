@@ -100,12 +100,17 @@
         "rating": {
           "type": "rating",
           "settings": {}
+        },
+        "long_description": {
+          "type": "long_description",
+          "settings": {}
         }
       },
       "block_order": [
         "title",
         "rating",
         "caption",
+        "long_description",
         "price",
         "variant_picker",
         "buy_buttons"
