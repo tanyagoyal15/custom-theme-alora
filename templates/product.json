@@ -111,9 +111,9 @@
         "rating",
         "caption",
         "price",
+        "long_product_description",
         "variant_picker",
         "buy_buttons",
-        "long_product_description",
       ],
       "settings": {
         "enable_sticky_info": true,
