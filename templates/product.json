@@ -12,15 +12,12 @@
     "main": {
       "type": "main-product",
       "blocks": {
-        "vendor": {
-          "type": "text",
-          "settings": {
-            "text": "{{ product.vendor }}",
-            "text_style": "uppercase"
-          }
-        },
         "title": {
           "type": "title",
+          "settings": {}
+        },
+        "rating": {
+          "type": "rating",
           "settings": {}
         },
         "caption": {
@@ -37,12 +34,9 @@
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
-            "picker_type": "button"
+            "picker_type": "button",
+            "swatch_shape": "circle"
           }
-        },
-        "quantity_selector": {
-          "type": "quantity_selector",
-          "settings": {}
         },
         "buy_buttons": {
           "type": "buy_buttons",
@@ -50,56 +44,6 @@
             "show_dynamic_checkout": true,
             "show_gift_card_recipient": true
           }
-        },
-        "description": {
-          "type": "description",
-          "settings": {}
-        },
-        "collapsible-row-0": {
-          "type": "collapsible_tab",
-          "settings": {
-            "heading": "Materials",
-            "icon": "leather",
-            "content": "",
-            "page": ""
-          }
-        },
-        "collapsible-row-1": {
-          "type": "collapsible_tab",
-          "settings": {
-            "heading": "Shipping & Returns",
-            "icon": "truck",
-            "content": "",
-            "page": ""
-          }
-        },
-        "collapsible-row-2": {
-          "type": "collapsible_tab",
-          "settings": {
-            "heading": "Dimensions",
-            "icon": "ruler",
-            "content": "",
-            "page": ""
-          }
-        },
-        "collapsible-row-3": {
-          "type": "collapsible_tab",
-          "settings": {
-            "heading": "Care Instructions",
-            "icon": "heart",
-            "content": "",
-            "page": ""
-          }
-        },
-        "share": {
-          "type": "share",
-          "settings": {
-            "share_label": "Share"
-          }
-        },
-        "rating": {
-          "type": "rating",
-          "settings": {}
         },
         "long_product_description": {
           "type": "long_product_description",
@@ -113,13 +57,17 @@
         "price",
         "variant_picker",
         "buy_buttons",
-        "long_product_description",
+        "long_product_description"
       ],
       "settings": {
         "enable_sticky_info": true,
+        "color_scheme": "",
         "media_size": "large",
         "constrain_to_viewport": true,
+        "media_fit": "contain",
         "gallery_layout": "stacked",
+        "media_position": "left",
+        "image_zoom": "lightbox",
         "mobile_thumbnails": "hide",
         "hide_variants": true,
         "enable_video_looping": false,
@@ -134,24 +82,21 @@
           "type": "tab",
           "settings": {
             "tab_title": "Description",
-            "tab_content": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>",
-            "tab_image": ""
+            "tab_content": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>"
           }
         },
         "tab_2": {
           "type": "tab",
           "settings": {
             "tab_title": "Size & Fit",
-            "tab_content": "<h1>SIZE CHART</h1>",
-            "tab_image": "shopify://shop_images/69a8de76f5c6be54273b9bf1be558f50.jpg"
+            "tab_content": "<h1>SIZE CHART</h1>"
           }
         },
         "tab_3": {
           "type": "tab",
           "settings": {
             "tab_title": "In-store Availability",
-            "tab_content": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>",
-            "tab_image": ""
+            "tab_content": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>"
           }
         }
       },
@@ -160,17 +105,20 @@
         "tab_2",
         "tab_3"
       ],
+      "disabled": true,
       "settings": {
-        "color_scheme" : "scheme-6"
+        "color_scheme": "scheme-6"
       }
     },
     "products-slider-1": {
       "type": "products-slider",
       "settings": {
+        "color_scheme": "",
         "heading": "You may also like",
         "subheading": "",
         "button_label": "Discover More",
         "button_link": "/",
+        "quick_actions_text": "ADD TO CART",
         "collection_handle": "all",
         "images_per_slide_desktop": 4,
         "images_per_slide_mobile": 1,
@@ -181,10 +129,12 @@
     "products-slider-2": {
       "type": "products-slider",
       "settings": {
+        "color_scheme": "",
         "heading": "Recently Viewed",
         "subheading": "",
         "button_label": "Discover More",
         "button_link": "/",
+        "quick_actions_text": "ADD TO CART",
         "collection_handle": "all",
         "images_per_slide_desktop": 4,
         "images_per_slide_mobile": 1,
