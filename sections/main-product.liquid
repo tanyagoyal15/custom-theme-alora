@@ -577,6 +577,12 @@
                     {% endcomment %}
                   </div>
                 {%- endif -%}
+              {%- when 'long_description' -%}
+                {% if product.metafields.custom.long_description != blank %}
+                  <div class="product-long-description rte">
+                    {{ product.metafields.custom.long_description | metafield_tag }}
+                  </div>
+                {% endif %}
               {%- when 'complementary' -%}
                 <product-recommendations
                   class="complementary-products quick-add-hidden{% if block.settings.make_collapsible_row %} is-accordion{% endif %}{% if block.settings.enable_quick_add %} complementary-products-contains-quick-add{% endif %}"
