@@ -61,8 +61,7 @@
         "price",
         "variant_picker",
         "buy_buttons",
-        "long_product_description",
-        "description"
+        "long_product_description"
       ],
       "settings": {
         "enable_sticky_info": true,
