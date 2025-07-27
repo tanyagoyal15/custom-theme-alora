@@ -170,7 +170,7 @@
         "heading": "New Arrivals",
         "subheading": "Timeless elegance",
         "button_label": "Discover More",
-        "button_link": "/",
+        "button_link": "shopify://collections/all",
         "quick_actions_text": "ADD TO CART",
         "collection_handle": "all",
         "images_per_slide_desktop": 4,
