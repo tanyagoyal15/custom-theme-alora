@@ -1574,11 +1574,12 @@ a.product__text {
 .size-guide-modal {
   display: none;
   position: fixed;
-  z-index: 9999;
   inset: 0;
-  background: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.8);
   justify-content: center;
   align-items: center;
+  padding: 0;
 }
 
 .size-guide-modal.active {
