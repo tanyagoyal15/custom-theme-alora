@@ -31,6 +31,10 @@
           "type": "price",
           "settings": {}
         },
+        "description": {
+          "type": "description",
+          "settings": {}
+        },
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
@@ -57,7 +61,8 @@
         "price",
         "variant_picker",
         "buy_buttons",
-        "long_product_description"
+        "long_product_description",
+        "description"
       ],
       "settings": {
         "enable_sticky_info": true,
