@@ -140,7 +140,7 @@
         "heading": "Shop our looks",
         "subheading": "",
         "button_label": "Discover More",
-        "button_link": "/",
+        "button_link": "shopify://collections/touche",
         "quick_actions_text": "SHOP THE LOOK",
         "collection_handle": "touche",
         "images_per_slide_desktop": 3,
