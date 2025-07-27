@@ -4,8 +4,8 @@
     "theme_name": "Aeries",
     "theme_version": "1.0.0",
     "theme_author": "Digital Threads",
-    "theme_documentation_url": "https://help.shopify.com/manual/online-store/themes",
-    "theme_support_url": "https://support.shopify.com/"
+    "theme_documentation_url": "https://aeries-documentation.framer.website",
+    "theme_support_url": "https://aeries-documentation.framer.website/contact"
   },
   {
     "name": "t:settings_schema.logo.name",
