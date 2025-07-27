@@ -56,20 +56,9 @@
         </fieldset>
       {%- else -%}
         <div class="product-form__input product-form__input--dropdown">
-          <div class="size-guide-block">
-            <label class="form__label" for="Option-{{ section.id }}-{{ forloop.index0 }}">
-              {{ option.name }}
-            </label>
-            <!-- <div class="open-size-guide" type="button">Size Guide</div>
-
-            <div id="size-guide-modal" class="size-guide-modal">
-              <div class="size-guide-overlay"></div>
-              <div class="size-guide-modal-content">
-                <button class="size-guide-close" aria-label="Close">×</button>
-                <img src="https://cdn.shopify.com/s/files/1/0757/5755/1846/files/Size_Chart.png?v=1753621068" alt="Size Chart" width="500" height="500" />
-              </div>
-            </div> -->
-          </div>
+          <label class="form__label" for="Option-{{ section.id }}-{{ forloop.index0 }}">
+            {{ option.name }}
+          </label>
           <div class="variant-dropdown">
             {%- if picker_type == 'swatch_dropdown' -%}
               <span
