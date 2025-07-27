@@ -399,27 +399,14 @@
       transition: transform 0.4s ease-in-out;
       min-height: 80px;
       z-index: 1000000;
-      min-height: auto;
-      height: auto;
     }
 
     .product-description {
-      /* font-size: 12px;
+      font-size: 12px;
       opacity: 0;
       transform: translateY(-5px);
       transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
-      height: 0; */
-
-
-      font-size: 12px;
-      line-height: 1.4;
-      height: auto;
-      opacity: 1;
-      transform: none;
-      overflow: hidden;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;  /* Show max 2 lines */
-      -webkit-box-orient: vertical;
+      height: 0;
   }
 
   .product-price {
@@ -430,17 +417,14 @@
   /* 🖱️ Hover Effect: Show description */
   .product-card:hover .product-description {
       opacity: 1;
-      /* transform: translateY(-2px); */
-      transform: none;
+      transform: translateY(-2px);
   }
 
   .product-card:hover .product-price {
-      /* transform: translateY(15px); /* Moves below the description */ */
-      transform: none;
+      transform: translateY(15px); /* Moves below the description */
   }
 
   .product-card-actions {
-    z-index: 10;
     position: absolute;
     bottom: -50px; /* Start below the visible area */
     left: 50%;
