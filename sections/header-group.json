@@ -25,7 +25,15 @@
       "block_order": [
         "announcement-bar-0"
       ],
-      "settings": {}
+      "settings": {
+        "color_scheme": "",
+        "show_line_separator": true,
+        "show_social": false,
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "enable_country_selector": false,
+        "enable_language_selector": false
+      }
     },
     "custom-header": {
       "type": "custom-header",
@@ -33,17 +41,17 @@
         "new_arrivals": {
           "type": "promo_image",
           "settings": {
-            "image": "shopify://shop_images/Acessories.png",
-            "caption": "New Arrivals",
-            "link": ""
+            "image": "shopify://shop_images/jay-soundo-CMfuMBPfVS8-unsplash_7544e396-4a09-4f09-b06e-81f03b8ba2a4.jpg",
+            "link": "shopify://collections/touche",
+            "caption": "New Arrivals"
           }
         },
         "bestsellers": {
           "type": "promo_image",
           "settings": {
-            "image": "shopify://shop_images/Acessories.png",
-            "caption": "Bestsellers",
-            "link": ""
+            "image": "shopify://shop_images/alexander-mass-We5TvX5gRSo-unsplash.jpg",
+            "link": "shopify://collections/elegante",
+            "caption": "The Wedding Edit"
           }
         }
       },
@@ -52,7 +60,20 @@
         "bestsellers"
       ],
       "settings": {
-        "color_scheme" : "scheme-10"
+        "logo_position": "middle-left",
+        "menu": "main-menu",
+        "menu_type_desktop": "dropdown",
+        "sticky_header_type": "on-scroll-up",
+        "show_line_separator": true,
+        "color_scheme": "scheme-10",
+        "search_color_scheme": "",
+        "enable_country_selector": true,
+        "enable_language_selector": true,
+        "enable_customer_avatar": true,
+        "mobile_logo_position": "center",
+        "margin_bottom": 0,
+        "padding_top": 20,
+        "padding_bottom": 20
       }
     }
   },
