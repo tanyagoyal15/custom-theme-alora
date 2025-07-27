@@ -174,7 +174,7 @@
                     {% assign discount_difference = product.compare_at_price | minus: product.price %}
                     {% assign discount_percentage = discount_difference | times: 100 | divided_by: product.compare_at_price | round %}
                     <div class="product-badges">
-                      <div class="product-badge">SALE</div>
+                      <!-- <div class="product-badge">SALE</div> -->
                       <div class="product-badge">{{ discount_percentage }}% OFF</div>
                     </div>
                   {% endif %}
