@@ -1521,3 +1521,32 @@ a.product__text {
   all: unset;
   cursor: pointer;
 }
+
+.feature-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  align-self: stretch;
+  list-style: none;
+  padding: 0;
+  margin: 0 !important;
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    .text {
+      width: auto;
+      height: 23px;
+      color: #424242;
+      font-family: "Nunito Sans";
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      letter-spacing: 0.56px;
+    }
+  }
+}
