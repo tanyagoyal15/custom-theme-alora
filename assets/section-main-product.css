@@ -1587,13 +1587,19 @@ a.product__text {
 }
 
 .size-guide-modal-content {
+  position: relative;
+  width: 90vw;
+  height: 90vh;
+  max-width: none;
+  max-height: none;
   background: #fff;
   padding: 20px;
-  max-width: 500px;
-  max-height: 80vh;
   overflow: auto;
-  border-radius: 8px;
-  position: relative;
+  border-radius: 0;
+  box-shadow: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   box-shadow: 0 0 20px rgba(0,0,0,0.3);
 }
 
