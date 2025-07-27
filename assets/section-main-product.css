@@ -1604,9 +1604,10 @@ a.product__text {
 }
 
 .size-guide-modal-content img {
-  width: 100%;
-  height: auto;
-  display: block;
+  width: auto;
+  height: 100%;
+  max-width: 100%;
+  object-fit: contain;
 }
 
 .size-guide-close {
