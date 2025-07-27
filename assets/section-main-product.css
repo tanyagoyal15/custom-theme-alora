@@ -1553,7 +1553,8 @@ a.product__text {
 
 .size-guide-block {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
 }
 
