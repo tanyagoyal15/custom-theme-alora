@@ -435,10 +435,12 @@
   }
 
   .product-card:hover .product-price {
-      transform: translateY(15px); /* Moves below the description */
+      /* transform: translateY(15px); /* Moves below the description */ */
+      transform: none;
   }
 
   .product-card-actions {
+    z-index: 10;
     position: absolute;
     bottom: -50px; /* Start below the visible area */
     left: 50%;
