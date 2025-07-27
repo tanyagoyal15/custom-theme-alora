@@ -208,15 +208,6 @@
                     {{ form | payment_terms }}
                   {%- endform -%}
                 </div>
-              <div class="open-size-guide" type="button">Size Guide</div>
-
-              <div id="size-guide-modal" class="size-guide-modal">
-                <div class="size-guide-overlay"></div>
-                <div class="size-guide-modal-content">
-                  <button class="size-guide-close" aria-label="Close">×</button>
-                  <img src="https://cdn.shopify.com/s/files/1/0757/5755/1846/files/Size_Chart.png?v=1753621068" alt="Size Chart" width="500" height="500" />
-                </div>
-              </div>
               {%- when 'inventory' -%}
                 <p
                   class="product__inventory{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}{% if product.selected_or_first_available_variant.inventory_management != 'shopify' %} visibility-hidden{% endif %}"
