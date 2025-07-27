@@ -583,6 +583,26 @@
                     {{ product.metafields.custom.long_product_description | metafield_tag }}
                   </div>
                 {% endif %}
+
+                {% assign features = product.metafields.custom.features_list.value %}
+                  {% if features != blank %}
+                    <ul class="feature-list">
+                      {% for feature in features %}
+                        <li class="feature-item">
+                          {% if feature.icon != blank %}
+                            <img
+                              src="{{ feature.icon | image_url: width: 24 }}"
+                              alt="Feature icon"
+                              class="icon"
+                              width="24"
+                              height="24"
+                            />
+                          {% endif %}
+                          <span class="text">{{ feature.text }}</span>
+                        </li>
+                      {% endfor %}
+                    </ul>
+                {% endif %}
               {%- when 'complementary' -%}
                 <product-recommendations
                   class="complementary-products quick-add-hidden{% if block.settings.make_collapsible_row %} is-accordion{% endif %}{% if block.settings.enable_quick_add %} complementary-products-contains-quick-add{% endif %}"
