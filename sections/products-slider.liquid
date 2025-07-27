@@ -399,14 +399,27 @@
       transition: transform 0.4s ease-in-out;
       min-height: 80px;
       z-index: 1000000;
+      min-height: auto;
+      height: auto;
     }
 
     .product-description {
-      font-size: 12px;
+      /* font-size: 12px;
       opacity: 0;
       transform: translateY(-5px);
       transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
-      height: 0;
+      height: 0; */
+
+
+      font-size: 12px;
+      line-height: 1.4;
+      height: auto;
+      opacity: 1;
+      transform: none;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;  /* Show max 2 lines */
+      -webkit-box-orient: vertical;
   }
 
   .product-price {
