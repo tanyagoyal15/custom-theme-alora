@@ -1551,7 +1551,7 @@ a.product__text {
   }
 }
 
-.size-guide block {
+.size-guide-block {
   display: flex;
   justify-content: center;
   width: 100%;
