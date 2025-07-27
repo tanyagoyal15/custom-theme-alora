@@ -1622,3 +1622,11 @@ a.product__text {
   cursor: pointer;
   z-index: 10;
 }
+
+.size-guide-modal {
+  transition: opacity 0.3s ease;
+}
+.size-guide-modal:not(.active) {
+  opacity: 0;
+  pointer-events: none;
+}
