@@ -41,15 +41,15 @@
         "new_arrivals": {
           "type": "promo_image",
           "settings": {
-            "image": "shopify://shop_images/jay-soundo-CMfuMBPfVS8-unsplash_7544e396-4a09-4f09-b06e-81f03b8ba2a4.jpg",
-            "link": "shopify://collections/touche",
-            "caption": "New Arrivals"
+            "image": "shopify://shop_images/jay-soundo-CMfuMBPfVS8-unsplash_1_-1-1-square.jpg",
+            "link": "shopify://collections/deese",
+            "caption": "The Statement Edit"
           }
         },
         "bestsellers": {
           "type": "promo_image",
           "settings": {
-            "image": "shopify://shop_images/alexander-mass-We5TvX5gRSo-unsplash.jpg",
+            "image": "shopify://shop_images/alexander-mass-AGh7TK0jmiE-unsplash-1-1-square.jpg",
             "link": "shopify://collections/elegante",
             "caption": "The Wedding Edit"
           }
