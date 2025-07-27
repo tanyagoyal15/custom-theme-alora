@@ -56,10 +56,12 @@
         </fieldset>
       {%- else -%}
         <div class="product-form__input product-form__input--dropdown">
-          <label class="form__label" for="Option-{{ section.id }}-{{ forloop.index0 }}">
-            {{ option.name }}
-          </label>
-          <div class="open-size-guide" type="button">Size Guide</div>
+          <div class="size-guide-block">
+            <label class="form__label" for="Option-{{ section.id }}-{{ forloop.index0 }}">
+              {{ option.name }}
+            </label>
+            <div class="open-size-guide" type="button">Size Guide</div>
+          </div>
           <div class="variant-dropdown">
             {%- if picker_type == 'swatch_dropdown' -%}
               <span
