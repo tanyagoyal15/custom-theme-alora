@@ -815,6 +815,13 @@ a.product__text {
   border-width: var(--popup-border-width);
   box-shadow: var(--popup-shadow-horizontal-offset) var(--popup-shadow-vertical-offset) var(--popup-shadow-blur-radius)
     rgba(var(--color-shadow), var(--popup-shadow-opacity));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  h2 {
+    display: none;
+  }
 }
 
 .product-popup-modal__content.focused {
