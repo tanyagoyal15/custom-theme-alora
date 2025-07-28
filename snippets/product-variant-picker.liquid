@@ -95,7 +95,8 @@
 
           {% assign size_popup = null %}
           {% for block in section.blocks %}
-            {% if block.type == 'popup' and block.settings.text and block.settings.text | downcase == 'size chart' %}
+            {% assign block_text = block.settings.text | downcase %}
+            {% if block.type == 'popup' and block_text == 'size chart' %}
               {% assign size_popup = block %}
               {% break %}
             {% endif %}
