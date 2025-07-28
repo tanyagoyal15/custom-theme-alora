@@ -83,9 +83,13 @@
           <!-- Size Guide Modal Trigger -->
           <button
             type="button"
-            class="size-guide-trigger"
             data-modal="#size-guide"
             style="margin-bottom: 1.4rem;"
+            class="size-guide-trigger"
+            type="button"
+            aria-controls="PopupModal-{{ section.id }}-size-guide"
+            aria-expanded="false"
+            data-modal-toggle
           >
             Size Guide
           </button>
