@@ -31,15 +31,11 @@
           "type": "price",
           "settings": {}
         },
-        "description": {
-          "type": "description",
-          "settings": {}
-        },
         "popup": {
           "type": "popup",
           "settings": {
             "text": "Size Chart",
-            "page": "size_chart"
+            "page": "size-chart"
           }
         },
         "variant_picker": {
