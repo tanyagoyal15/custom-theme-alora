@@ -56,8 +56,8 @@
         </fieldset>
       {%- elsif option.name == 'Size' -%}
         <div class="product-form__input product-form__input--dropdown size-picker-wrapper">
-          <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 12px; width: 100%;">
-            <div>
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
               <label class="form__label" for="Option-{{ section.id }}-{{ forloop.index0 }}">
                 {{ option.name }}
               </label>
@@ -82,7 +82,7 @@
                 </modal-opener>
               {%- endif -%}
             </div>
-            <div class="variant-dropdown">
+            <div class="variant-dropdown" style="width: 100%;">
               <select
                 id="Option-{{ section.id }}-{{ forloop.index0 }}"
                 class="select__select custom-select"
