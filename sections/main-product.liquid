@@ -509,6 +509,20 @@
                   {%- endif -%}
                 </div>
               {%- when 'popup' -%}
+                {%- assign size_popup = section.blocks | where: "type", "popup" | where: "settings.text", "Size Chart" | first -%}
+                {%- if size_popup -%}
+                  <modal-opener class="product-popup-modal__opener quick-add-hidden" data-modal="#PopupModal-{{ size_popup.id }}">
+                    <button
+                      id="ProductPopup-{{ size_popup.id }}"
+                      class="product-popup-modal__button link size-guide-trigger"
+                      type="button"
+                      aria-haspopup="dialog"
+                    >
+                      Size Guide
+                    </button>
+                  </modal-opener>
+                {%- endif -%}
+                {% else %}
                 <modal-opener
                   class="product-popup-modal__opener quick-add-hidden"
                   data-modal="#PopupModal-{{ block.id }}"
