@@ -94,6 +94,7 @@
           
 
           {%- assign size_popup = section.blocks | where: "type", "popup" | where: "settings.text", "Size Chart" | first -%}
+          {{ size_popup }}
           {%- if size_popup -%}
             <modal-opener class="product-popup-modal__opener quick-add-hidden" data-modal="#PopupModal-{{ size_popup.id }}">
               <button
