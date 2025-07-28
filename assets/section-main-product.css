@@ -801,14 +801,14 @@ a.product__text {
   border-radius: var(--popup-corner-radius);
   background-color: rgb(var(--color-background));
   overflow: auto;
-  height: 80%;
+  height: auto;
   margin: 0 auto;
   left: 50%;
   transform: translateX(-50%);
   margin-top: 5rem;
   width: 92%;
   position: absolute;
-  top: 0;
+  top: 35%;
   padding: 0 1.5rem 0 3rem;
   border-color: rgba(var(--color-foreground), var(--popup-border-opacity));
   border-style: solid;
