@@ -55,31 +55,31 @@
           %}
         </fieldset>
       {%- elsif option.name == 'Size' -%}
-        <div class="product-form__input product-form__input--dropdown size-picker-wrapper" style="display: flex; align-items: flex-start; gap: 12px;">
-          <div style="flex: 1;">
+        <div class="product-form__input product-form__input--dropdown size-picker-wrapper">
+          <div style="display: flex; align-items: flex-start; gap: 12px;">
             <label class="form__label" for="Option-{{ section.id }}-{{ forloop.index0 }}">
               {{ option.name }}
             </label>
             {% assign size_popup = null %}
-          {% for block in section.blocks %}
-            {% assign block_text = block.settings.text | downcase %}
-            {% if block.type == 'popup' and block_text == 'size chart' %}
-              {% assign size_popup = block %}
-              {% break %}
-            {% endif %}
-          {% endfor %}
-          {%- if size_popup -%}
-            <modal-opener class="product-popup-modal__opener quick-add-hidden" data-modal="#PopupModal-{{ size_popup.id }}">
-              <button
-                id="ProductPopup-{{ size_popup.id }}"
-                class="product-popup-modal__button link size-guide-trigger"
-                type="button"
-                aria-haspopup="dialog"
-              >
-                Size Guide
-              </button>
-            </modal-opener>
-          {%- endif -%}
+            {% for block in section.blocks %}
+              {% assign block_text = block.settings.text | downcase %}
+              {% if block.type == 'popup' and block_text == 'size chart' %}
+                {% assign size_popup = block %}
+                {% break %}
+              {% endif %}
+            {% endfor %}
+            {%- if size_popup -%}
+              <modal-opener class="product-popup-modal__opener quick-add-hidden" data-modal="#PopupModal-{{ size_popup.id }}">
+                <button
+                  id="ProductPopup-{{ size_popup.id }}"
+                  class="product-popup-modal__button link size-guide-trigger"
+                  type="button"
+                  aria-haspopup="dialog"
+                >
+                  Size Guide
+                </button>
+              </modal-opener>
+            {%- endif -%}
             <div class="variant-dropdown">
               <select
                 id="Option-{{ section.id }}-{{ forloop.index0 }}"
