@@ -54,6 +54,42 @@
             picker_type: picker_type
           %}
         </fieldset>
+      {%- elsif option.name == 'Size' -%}
+        <div class="product-form__input product-form__input--dropdown size-picker-wrapper" style="display: flex; align-items: flex-end; gap: 12px;">
+          <div style="flex: 1;">
+            <label class="form__label" for="Option-{{ section.id }}-{{ forloop.index0 }}">
+              {{ option.name }}
+            </label>
+            <div class="variant-dropdown">
+              <select
+                id="Option-{{ section.id }}-{{ forloop.index0 }}"
+                class="select__select custom-select"
+                name="options[{{ option.name | escape }}]"
+                form="{{ product_form_id }}"
+              >
+                {% render 'product-variant-options',
+                  product: product,
+                  option: option,
+                  block: block,
+                  picker_type: picker_type
+                %}
+              </select>
+              <span class="svg-wrapper variant-dropdown-svg">
+                {{- 'icon-caret.svg' | inline_asset_content -}}
+              </span>
+            </div>
+          </div>
+      
+          <!-- Size Guide Modal Trigger -->
+          <button
+            type="button"
+            class="size-guide-trigger"
+            data-modal="#size-guide"
+            style="margin-bottom: 1.4rem;"
+          >
+            Size Guide
+          </button>
+        </div>
       {%- else -%}
         <div class="product-form__input product-form__input--dropdown">
           <label class="form__label" for="Option-{{ section.id }}-{{ forloop.index0 }}">
