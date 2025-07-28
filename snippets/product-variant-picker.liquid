@@ -79,20 +79,7 @@
               </span>
             </div>
           </div>
-      
-          <!-- Size Guide Modal Trigger -->
-          <!-- <button
-            type="button"
-            data-modal="#size-guide"
-            style="margin-bottom: 1.4rem;"
-            class="size-guide-trigger"
-            type="button"
-            aria-controls="PopupModal-{{ section.id }}-size-guide"
-            aria-expanded="false"
-            data-modal-toggle
-          >SG</button> -->
-          
-
+        
           {% assign size_popup = null %}
           {% for block in section.blocks %}
             {% assign block_text = block.settings.text | downcase %}
