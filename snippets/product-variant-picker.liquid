@@ -60,27 +60,7 @@
             <label class="form__label" for="Option-{{ section.id }}-{{ forloop.index0 }}">
               {{ option.name }}
             </label>
-            <div class="variant-dropdown">
-              <select
-                id="Option-{{ section.id }}-{{ forloop.index0 }}"
-                class="select__select custom-select"
-                name="options[{{ option.name | escape }}]"
-                form="{{ product_form_id }}"
-              >
-                {% render 'product-variant-options',
-                  product: product,
-                  option: option,
-                  block: block,
-                  picker_type: picker_type
-                %}
-              </select>
-              <span class="svg-wrapper variant-dropdown-svg">
-                {{- 'icon-caret.svg' | inline_asset_content -}}
-              </span>
-            </div>
-          </div>
-        
-          {% assign size_popup = null %}
+            {% assign size_popup = null %}
           {% for block in section.blocks %}
             {% assign block_text = block.settings.text | downcase %}
             {% if block.type == 'popup' and block_text == 'size chart' %}
@@ -100,6 +80,25 @@
               </button>
             </modal-opener>
           {%- endif -%}
+            <div class="variant-dropdown">
+              <select
+                id="Option-{{ section.id }}-{{ forloop.index0 }}"
+                class="select__select custom-select"
+                name="options[{{ option.name | escape }}]"
+                form="{{ product_form_id }}"
+              >
+                {% render 'product-variant-options',
+                  product: product,
+                  option: option,
+                  block: block,
+                  picker_type: picker_type
+                %}
+              </select>
+              <span class="svg-wrapper variant-dropdown-svg">
+                {{- 'icon-caret.svg' | inline_asset_content -}}
+              </span>
+            </div>
+          </div>
         </div>
       {%- else -%}
         <div class="product-form__input product-form__input--dropdown">
