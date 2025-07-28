@@ -1563,3 +1563,7 @@ a.product__text {
 .size-guide-hidden {
   display: none;
 }
+
+.size-guide-trigger {
+  min-height: 0;
+}
