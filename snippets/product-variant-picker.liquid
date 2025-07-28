@@ -81,7 +81,7 @@
           </div>
       
           <!-- Size Guide Modal Trigger -->
-          <button
+          <!-- <button
             type="button"
             data-modal="#size-guide"
             style="margin-bottom: 1.4rem;"
@@ -90,12 +90,22 @@
             aria-controls="PopupModal-{{ section.id }}-size-guide"
             aria-expanded="false"
             data-modal-toggle
-          >SG</button>
+          >SG</button> -->
           
 
-            <button id="ProductPopup-popup" class="product-popup-modal__button link" type="button" aria-haspopup="dialog">
-              Size Chart
-            </button>
+          {%- assign size_popup = section.blocks | where: "type", "popup" | where: "settings.text", "Size Chart" | first -%}
+          {%- if size_popup -%}
+            <modal-opener class="product-popup-modal__opener quick-add-hidden" data-modal="#PopupModal-{{ size_popup.id }}">
+              <button
+                id="ProductPopup-{{ size_popup.id }}"
+                class="product-popup-modal__button link size-guide-trigger"
+                type="button"
+                aria-haspopup="dialog"
+              >
+                Size Guide
+              </button>
+            </modal-opener>
+          {%- endif -%}
         </div>
       {%- else -%}
         <div class="product-form__input product-form__input--dropdown">
