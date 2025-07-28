@@ -35,6 +35,13 @@
           "type": "description",
           "settings": {}
         },
+        "popup": {
+          "type": "popup",
+          "settings": {
+            "text": "Size Chart",
+            "page": "size_chart"
+          }
+        },
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
@@ -59,6 +66,7 @@
         "rating",
         "caption",
         "price",
+        "popup",
         "variant_picker",
         "buy_buttons",
         "long_product_description"
