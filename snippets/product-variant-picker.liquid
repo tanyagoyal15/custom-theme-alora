@@ -14,7 +14,6 @@
     data-section="{{ section.id }}"
     {{ block.shopify_attributes }}
   >
-    {{ block }}
     {%- for option in product.options_with_values -%}
       {%- liquid
         assign swatch_count = option.values | map: 'swatch' | compact | size
