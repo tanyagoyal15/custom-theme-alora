@@ -819,7 +819,7 @@ a.product__text {
   flex-direction: column;
   justify-content: center;
 
-  h2 {
+  h1 {
     display: none;
   }
 }
