@@ -511,7 +511,7 @@
               {%- when 'popup' -%}
   {% assign block_text = block.settings.text | downcase %}
   {% if block_text == 'size chart' %}
-    <modal-opener class="product-popup-modal__opener" data-modal="#PopupModal-{{ block.id }}" style:"display: none;">
+    <modal-opener class="product-popup-modal__opener" data-modal="#PopupModal-{{ block.id }}" style="display: none;">
       <button
         id="ProductPopup-{{ block.id }}"
         class="product-popup-modal__button link size-guide-trigger"
