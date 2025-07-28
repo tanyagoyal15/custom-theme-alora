@@ -1559,3 +1559,7 @@ a.product__text {
     }
   }
 }
+
+.size-guide-hidden {
+  display: none;
+}
