@@ -808,7 +808,7 @@ a.product__text {
   margin-top: 5rem;
   width: 92%;
   position: absolute;
-  top: 0;
+  top: 35%;
   padding: 0 1.5rem 0 3rem;
   border-color: rgba(var(--color-foreground), var(--popup-border-opacity));
   border-style: solid;
@@ -844,6 +844,7 @@ a.product__text {
     margin-top: 10rem;
     width: 80%;
     padding: 0 3rem;
+    top: 0;
   }
 
   .product-media-modal__dialog .global-media-settings--no-shadow {
