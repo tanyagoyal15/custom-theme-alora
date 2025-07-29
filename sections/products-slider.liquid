@@ -45,11 +45,8 @@
         <div class="products-slider-skeleton-container skeleton-desktop">
           {% for i in (1..desktop_skeleton_count) %}
             {% assign width = 100 | divided_by: desktop_skeleton_count %}
-            {% if desktop_skeleton_count == 1 %}
-              {% assign min_height = 500 %}
-            {% else %}
-              {% assign min_height = 500 | divided_by: section.settings.images_per_slide_desktop %}
-            {% endif %}
+            {% assign min_height = 500 %}
+            
             <div class="products-slider-skeleton-wrapper" style="width: {{ width }}%; min-height: {{ min_height }}px;">
               <div class="products-slider-skeleton-loader"></div>
             </div>
