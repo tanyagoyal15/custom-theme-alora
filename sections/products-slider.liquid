@@ -45,7 +45,7 @@
         <div class="products-slider-skeleton-container skeleton-desktop">
           {% for i in (1..desktop_skeleton_count) %}
             {% assign width = 100 | divided_by: desktop_skeleton_count %}
-            {% if mobile_skeleton_count == 1 %}
+            {% if desktop_skeleton_count == 1 %}
               {% assign min_height = 500 %}
             {% else %}
               {% assign min_height = 500 | divided_by: section.settings.images_per_slide_desktop %}
