@@ -251,7 +251,7 @@
     }
   },
   "presets": {
-    "Minimal": {
+    "Couture Luxe": {
       "logo_width": 90,
       "color_schemes": {
         "scheme-1": {
@@ -490,7 +490,7 @@
         }
       }
     },
-    "Bold": {
+    "Wellness Glow": {
       "logo_width": 90,
       "color_schemes": {
         "scheme-1": {
@@ -729,7 +729,7 @@
         }
       }
     },
-    "Elegant": {
+    "Modern Tech": {
       "logo_width": 90,
       "color_schemes": {
         "scheme-1": {
