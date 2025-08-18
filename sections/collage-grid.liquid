@@ -166,6 +166,17 @@
     max-width: fit-content;
   }
 
+  @media (max-width: 1500px) {
+    .collage-text_with_grid .collage-items {
+      justify-content: center;
+      grid-template-columns: repeat(4, 192px);
+      grid-template-rows: auto;
+      grid-template-areas:
+        'cta cta img0 img1'
+        'img2 img3 img4 img5';
+    }
+  }
+
   @media (max-width: 768px) {
     .collage-items {
       grid-template-columns: 1fr;
