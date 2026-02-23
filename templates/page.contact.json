@@ -12,14 +12,12 @@
     "main": {
       "type": "main-contact-page",
       "settings": {
-        "side_image": "shopify://shop_images/mr-great-heart-w-CBDrNRRkE-unsplash.jpg",
-        "heading": "Contact",
-        "heading_size": "hxxl",
-        "color_scheme": ""
+        "side_image" : "shopify://shop_images/dresses.png",
+        "heading_size": "hxxl"
       }
-    }
+    },
   },
   "order": [
-    "main"
+    "main",
   ]
 }

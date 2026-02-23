@@ -25,15 +25,7 @@
       "block_order": [
         "announcement-bar-0"
       ],
-      "settings": {
-        "color_scheme": "",
-        "show_line_separator": true,
-        "show_social": false,
-        "auto_rotate": false,
-        "change_slides_speed": 5,
-        "enable_country_selector": false,
-        "enable_language_selector": false
-      }
+      "settings": {}
     },
     "custom-header": {
       "type": "custom-header",
@@ -41,17 +33,17 @@
         "new_arrivals": {
           "type": "promo_image",
           "settings": {
-            "image": "shopify://shop_images/jay-soundo-CMfuMBPfVS8-unsplash_1_-1-1-square.jpg",
-            "link": "shopify://collections/deese",
-            "caption": "The Statement Edit"
+            "image": "shopify://shop_images/Acessories.png",
+            "caption": "New Arrivals",
+            "link": ""
           }
         },
         "bestsellers": {
           "type": "promo_image",
           "settings": {
-            "image": "shopify://shop_images/alexander-mass-AGh7TK0jmiE-unsplash-1-1-square.jpg",
-            "link": "shopify://collections/elegante",
-            "caption": "The Wedding Edit"
+            "image": "shopify://shop_images/Acessories.png",
+            "caption": "Bestsellers",
+            "link": ""
           }
         }
       },
@@ -60,20 +52,7 @@
         "bestsellers"
       ],
       "settings": {
-        "logo_position": "middle-left",
-        "menu": "main-menu",
-        "menu_type_desktop": "dropdown",
-        "sticky_header_type": "on-scroll-up",
-        "show_line_separator": true,
-        "color_scheme": "scheme-10",
-        "search_color_scheme": "",
-        "enable_country_selector": true,
-        "enable_language_selector": true,
-        "enable_customer_avatar": true,
-        "mobile_logo_position": "center",
-        "margin_bottom": 0,
-        "padding_top": 20,
-        "padding_bottom": 20
+        "color_scheme" : "scheme-10"
       }
     }
   },

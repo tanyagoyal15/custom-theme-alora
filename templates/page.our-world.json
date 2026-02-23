@@ -46,8 +46,7 @@
       ],
       "settings": {
         "section_type": "collection_banner",
-        "show_top_spacing": true,
-        "image": "shopify://shop_images/jeff-trierweiler-nq_Nab9Mfuc-unsplash.jpg",
+        "image": "shopify://shop_images/f914c28a48ab00b2636d8b7ab3f38bbc.jpg",
         "height": "medium",
         "desktop_image_width": "medium",
         "layout": "text_first",
@@ -68,6 +67,7 @@
         "column1": {
           "type": "column",
           "settings": {
+            "image": "shopify://shop_images/ALORA__logo-dark.png",
             "title": "Handcrafted",
             "text": "<p>Rooted in indian artistry, every thread carries legacy.</p>",
             "link_label": "",
@@ -77,6 +77,7 @@
         "column2": {
           "type": "column",
           "settings": {
+            "image": "shopify://shop_images/ALORA__logo-dark.png",
             "title": "Timeless Design",
             "text": "<p>Classic pieces made to last beyond the search.</p>",
             "link_label": "",
@@ -86,6 +87,7 @@
         "column3": {
           "type": "column",
           "settings": {
+            "image": "shopify://shop_images/ALORA__logo-dark.png",
             "title": "Sustainability",
             "text": "<p>Committed to responsible, ethical production.</p>",
             "link_label": "",
@@ -121,61 +123,55 @@
         "image_JJ33UF": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/irena-carpaccio-A5TzbpPezUc-unsplash.jpg",
+            "image": "shopify://shop_images/dresses.png",
             "alt_text": "",
-            "overlay_text": "",
-            "link": "",
-            "link_label": ""
+            "overlay_text": "Clothing",
+            "link": "shopify://products/product-12"
           }
         },
         "image_7JqHW9": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/holly-booth-E0li_0jZaHg-unsplash.jpg",
+            "image": "shopify://shop_images/95b5510c5d72645329e98162f9d1d260_3e13da3a-357d-492f-9073-a5603d2064d9.jpg",
             "alt_text": "",
-            "overlay_text": "",
-            "link": "",
-            "link_label": ""
+            "overlay_text": "Sunglasses",
+            "link": ""
           }
         },
         "image_xqJPhr": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/bernard-hermant-5mQSUf7zCtI-unsplash.jpg",
+            "image": "shopify://shop_images/32b453f356df1b4fb7ca83857fda1a3e.jpg",
             "alt_text": "",
-            "overlay_text": "",
-            "link": "",
-            "link_label": ""
+            "overlay_text": "Shoes",
+            "link": ""
           }
         },
         "image_JJ33UF4": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/kristina-tochilko-tOCIrKLupyA-unsplash.jpg",
+            "image": "shopify://shop_images/dresses.png",
             "alt_text": "",
-            "overlay_text": "",
-            "link": "",
-            "link_label": ""
+            "overlay_text": "Clothing",
+            "link": "shopify://products/product-12"
           }
         },
         "image_7JqHW95": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/alexander-mass-dN9WDOt0pNs-unsplash.jpg",
+            "image": "shopify://shop_images/95b5510c5d72645329e98162f9d1d260_3e13da3a-357d-492f-9073-a5603d2064d9.jpg",
             "alt_text": "",
-            "overlay_text": "",
-            "link": "",
-            "link_label": ""
+            "overlay_text": "Sunglasses",
+            "link": ""
           }
         },
         "image_xqJPhr6": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/test-elek-_hq0DZ6d8bw-unsplash_05750a74-0326-4458-9538-e3b4e52ab325.jpg",
+            "image": "shopify://shop_images/32b453f356df1b4fb7ca83857fda1a3e.jpg",
             "alt_text": "",
-            "overlay_text": "",
-            "link": "",
-            "link_label": ""
+            "overlay_text": "Shoes",
+            "link": ""
           }
         }
       },
@@ -190,11 +186,7 @@
       "settings": {
         "color_scheme": "scheme-6",
         "layout_style": "text_with_grid",
-        "show_text_block": true,
-        "heading": "Magic behind our craft",
-        "subtext": "Step inside our world of craftsmanship and creativity — where every stitch tells a story.",
-        "button_text": "Discover the Process",
-        "button_link": ""
+        "show_text_block": true
       }
     },
     "static-banner-1": {
@@ -202,13 +194,25 @@
       "settings": {
         "banner_width": "default",
         "media_type": "image",
-        "image": "shopify://shop_images/filipp-romanovski-Ey0daypzVBo-unsplash-3-2-rectangle.jpg",
-        "autoplay": true,
-        "loop": true,
-        "muted": true,
+        "image": "shopify://shop_images/custom_theme_under_the_sun.png",
         "heading": "Our World",
-        "subheading": "More than a brand, Aeries is a way of seeing. Our world is shaped by nuance — by the flicker of light on silk, the poetry of restraint, the quiet confidence in a well-cut jacket. We draw inspiration from architecture, cinema, literature, and the women who live unapologetically in their truth. Rooted in craftsmanship and elevated by emotion, our collections are born from a belief that fashion should invite reflection, not just reaction. We honour the power of presence — of dressing with intention, of choosing quality over excess. Our world is one where luxury feels lived-in. Where garments are made to move, not just to be admired. Where beauty is found not in embellishment, but in balance, it’s not just what we make. It’s how we make you feel.",
-        "link": ""
+        "subheading": "Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+        "link": "/"
+      }
+    },
+    "products-slider-1": {
+      "type": "products-slider",
+      "settings": {
+        "heading": "Backstage",
+        "subheading": "Chaos before the final walk.",
+        "button_label": "",
+        "button_link": "/",
+        "quick_actions_text": "SHOP THE LOOK",
+        "collection_handle": "shop_our_looks",
+        "images_per_slide_desktop": 3,
+        "images_per_slide_mobile": 2,
+        "show_product_info": false,
+        "show_slider_bar": true
       }
     },
     "image_with_text_2": {
@@ -217,14 +221,14 @@
         "heading_MPAcj9": {
           "type": "heading",
           "settings": {
-            "heading": "The Studio",
+            "heading": "About the Designer",
             "heading_size": "h1"
           }
         },
         "text_k7np8Y": {
           "type": "text",
           "settings": {
-            "text": "<p>From early moodboards to hand-finished touches, our pieces are brought to life through an intimate studio process rooted in detail, emotion, and intent. Each garment reflects a moment — carefully considered and consciously crafted.</p><p>Our studio isn’t just a workspace — it’s a sanctuary of exploration, chaos, and calm. This is where silhouettes are sculpted, textures are chosen, and visions take tangible form. A place of ideas, ritual, and rhythm.</p>",
+            "text": "<p>Tanya Goyal, the visionary behind Alora, has always harbored a deep fascination with textiles, fabrics, and fashion. Her passion for exploring the intricacies of materials and design, combined with a creative mind, has guided her journey into the world of fashion. With a wealth of knowledge in fabric construction and a keen eye for detail, Tanya is dedicated to bringing value through each piece of clothing she designs. Her work reflects a unique blend of modern aesthetics and traditional craftsmanship, making Aeries a label that exudes elegance, innovation, and timeless style.</p>",
             "text_style": "body"
           }
         },
@@ -244,8 +248,7 @@
       ],
       "settings": {
         "section_type": "collection_banner",
-        "show_top_spacing": true,
-        "image": "shopify://shop_images/mr-great-heart-WyVi1MAAd-8-unsplash.jpg",
+        "image": "shopify://shop_images/Remove_background_project_10.png",
         "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "image_first",
@@ -259,73 +262,6 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
-    },
-    "products-slider-1": {
-      "type": "products-slider",
-      "disabled": true,
-      "settings": {
-        "color_scheme": "",
-        "heading": "Backstage",
-        "subheading": "Chaos before the final walk.",
-        "button_label": "",
-        "button_link": "",
-        "quick_actions_text": "SHOP THE LOOK",
-        "collection_handle": "behind-the-scenes",
-        "images_per_slide_desktop": 3,
-        "images_per_slide_mobile": 2,
-        "show_product_info": false,
-        "show_slider_bar": true
-      }
-    },
-    "collage_grid_PttpVm": {
-      "type": "collage-grid",
-      "blocks": {
-        "image_M36R7k": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/temitayo-olatoke-WLHcTOjoKhI-unsplash.jpg",
-            "alt_text": "",
-            "overlay_text": "",
-            "link": "",
-            "link_label": ""
-          }
-        },
-        "image_rkGa7k": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/vitor-monthay-eUI0PFWAT5M-unsplash.jpg",
-            "alt_text": "",
-            "overlay_text": "",
-            "link": "",
-            "link_label": ""
-          }
-        },
-        "image_kHkPwy": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/liza-williams-o0n4UqFpC4k-unsplash.jpg",
-            "alt_text": "",
-            "overlay_text": "",
-            "link": "",
-            "link_label": ""
-          }
-        }
-      },
-      "block_order": [
-        "image_M36R7k",
-        "image_rkGa7k",
-        "image_kHkPwy"
-      ],
-      "name": "Collage Grid",
-      "settings": {
-        "color_scheme": "",
-        "layout_style": "symmetrical",
-        "show_text_block": false,
-        "heading": "",
-        "subtext": "",
-        "button_text": "",
-        "button_link": ""
-      }
     }
   },
   "order": [
@@ -335,7 +271,6 @@
     "collage-grid",
     "static-banner-1",
     "image_with_text_2",
-    "products-slider-1",
-    "collage_grid_PttpVm"
+    "products-slider-1"
   ]
 }

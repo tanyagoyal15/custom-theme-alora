@@ -15,12 +15,12 @@
         "slide_1": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/Screenshot_2025-07-06_at_2.55.14_PM.png",
-            "heading": "Timeless. Effortless. You.",
+            "image": "shopify://shop_images/Screenshot_2025-03-07_at_4.18.19_PM.png",
+            "heading": "Image slide",
             "heading_size": "h1",
-            "subheading": "Minimal silhouettes, maximum impact. Redefine your everyday elegance.",
-            "button_label": "Discover Our Essentials",
-            "link": "shopify://collections/frere",
+            "subheading": "Tell your brand's story through images",
+            "button_label": "Button label",
+            "link": "",
             "button_style_secondary": false,
             "box_align": "middle-center",
             "show_text_box": true,
@@ -33,12 +33,12 @@
         "slide_2": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/Screenshot_2025-07-06_at_2.55.31_PM.png",
-            "heading": "Unapologetically Bold",
+            "image": "shopify://shop_images/Screenshot_2025-03-07_at_4.15.45_PM.png",
+            "heading": "Image slide",
             "heading_size": "h1",
-            "subheading": "<strong>Wrap Yourself in Confidence. </strong>Explore textures that turn heads.",
-            "button_label": "Shop New Arrivals",
-            "link": "shopify://collections/touche",
+            "subheading": "Tell your brand's story through images",
+            "button_label": "Button label",
+            "link": "",
             "button_style_secondary": false,
             "box_align": "middle-center",
             "show_text_box": true,
@@ -51,12 +51,12 @@
         "slide_3": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/nguy-n-hi-p-sc4yPXj1iT8-unsplash.jpg",
-            "heading": "Crafted by Hand, Meant to Last",
+            "image": "shopify://shop_images/Screenshot_2025-03-07_at_4.15.16_PM.png",
+            "heading": "Image slide",
             "heading_size": "h1",
-            "subheading": "Intricate couture embroidery, made with time, skill, and soul. Celebrate garments that carry meaning.",
-            "button_label": "Explore Our Atelier",
-            "link": "shopify://pages/our-world",
+            "subheading": "Tell your brand's story through images",
+            "button_label": "Button label",
+            "link": "",
             "button_style_secondary": false,
             "box_align": "middle-center",
             "show_text_box": true,
@@ -70,7 +70,7 @@
       "block_order": [
         "slide_1",
         "slide_2",
-        "slide_3"
+        "slide_3",
       ],
       "settings": {
         "layout": "full_bleed",
@@ -80,8 +80,8 @@
         "change_slides_speed": 3,
         "image_behavior": "none",
         "show_text_below": true,
-        "accessibility_info": "Slideshow about our brand",
-        "color_scheme": "scheme-9"
+        "color_scheme": "scheme-9",
+        "accessibility_info": "Slideshow about our brand"
       }
     },
     "image_with_text": {
@@ -97,7 +97,7 @@
         "text_k7np8Y": {
           "type": "text",
           "settings": {
-            "text": "<p>A tribute to refined femininity and modern edge, <strong>Touché</strong> blends structure with sensuality. This latest collection captures silhouettes that move like poetry and textures that speak in whispers — effortlessly luxurious, strikingly understated.<br/><br/>From tailored classics to fluid drapes, each piece is designed to leave a mark, subtle yet unforgettable. Touché isn’t just worn — it’s felt.</p>",
+            "text": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>",
             "text_style": "body"
           }
         },
@@ -105,7 +105,7 @@
           "type": "button",
           "settings": {
             "button_label": "View Collection",
-            "button_link": "shopify://collections/touche",
+            "button_link": "/collections/all", // add this through shopify panel
             "button_style_secondary": false
           }
         }
@@ -118,7 +118,7 @@
       "settings": {
         "section_type": "collection_banner",
         "show_top_spacing": false,
-        "image": "shopify://shop_images/victoria-priessnitz-T7Lqna9-nJI-unsplash.jpg",
+        "image": "shopify://shop_images/Acessories.png",
         "height": "medium",
         "desktop_image_width": "medium",
         "layout": "image_first",
@@ -136,94 +136,112 @@
     "products-slider-1": {
       "type": "products-slider",
       "settings": {
-        "color_scheme": "",
         "heading": "Shop our looks",
         "subheading": "",
-        "button_label": "Discover More",
-        "button_link": "shopify://collections/touche",
-        "quick_actions_text": "SHOP THE LOOK",
-        "collection_handle": "touche",
+        "collection_handle": "shop_our_looks",
         "images_per_slide_desktop": 3,
         "images_per_slide_mobile": 2,
         "show_product_info": false,
-        "show_slider_bar": true
-      }
-    },
-    "static-banner-1": {
-      "type": "static-banner",
-      "settings": {
-        "banner_width": "default",
-        "media_type": "image",
-        "image": "shopify://shop_images/Screenshot_2025-07-06_at_2.33.38_PM.png",
-        "autoplay": true,
-        "loop": true,
-        "muted": true,
-        "heading": "Midnight Muse",
-        "subheading": "A tribute to the elegance of after-dark dressing. From fluid silhouettes to statement heels, discover pieces that embrace mystery, glamour, and quiet power.",
-        "link": "shopify://collections/midnight-muse"
+        "button_label": "Discover More",
+        "button_link": "/",
+        "quick_actions_text" : "SHOP THE LOOK"
       }
     },
     "products-slider-2": {
       "type": "products-slider",
       "settings": {
-        "color_scheme": "",
         "heading": "New Arrivals",
         "subheading": "Timeless elegance",
-        "button_label": "Discover More",
-        "button_link": "shopify://collections/all",
-        "quick_actions_text": "ADD TO CART",
         "collection_handle": "all",
         "images_per_slide_desktop": 4,
         "images_per_slide_mobile": 1,
         "show_product_info": true,
-        "show_slider_bar": false
+        "show_slider_bar": false,
+        "button_label": "Discover More",
+        "button_link": "/",
+        "quick_actions_text" : "ADD TO CART"
       }
     },
-    "static-banner-2": {
+    "products-slider-3": {
+      "type": "products-slider",
+      "settings": {
+        "heading": "Desse",
+        "subheading": "",
+        "collection_handle": "all",
+        "images_per_slide_desktop": 4,
+        "images_per_slide_mobile": 1,
+        "show_product_info": false,
+        "show_slider_bar": true,
+        "button_label": "Discover More",
+        "button_link": "/",
+        "quick_actions_text" : "ADD TO CART"
+      }
+    },
+    "products-slider-4": {
+      "type": "products-slider",
+      "settings": {
+        "heading": "Runway Looks",
+        "subheading": "",
+        "collection_handle": "all",
+        "images_per_slide_desktop": 3,
+        "images_per_slide_mobile": 1,
+        "show_product_info": false,
+        "show_slider_bar": false,
+        "button_label": "Discover More",
+        "button_link": "/",
+        "quick_actions_text" : "SHOP THE LOOK"
+      }
+    },
+    "static-banner-1" : {
       "type": "static-banner",
       "settings": {
-        "banner_width": "default",
         "media_type": "image",
-        "image": "shopify://shop_images/ben-iwara-01W4Xbz3Ayk-unsplash_86deecae-5945-46d4-9914-c441053f13a9.jpg",
-        "autoplay": true,
-        "loop": true,
-        "muted": true,
-        "heading": "Dressing the Moment",
-        "subheading": "Curated drops for every season, story, and silhouette. Explore collections designed to inspire and empower your wardrobe.",
-        "link": "shopify://collections"
+        "banner_width" : "full_width",
+        "heading": "Under the Sun",
+        "subheading": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+        "image": "shopify://shop_images/custom_theme_under_the_sun.png",
+        "link": "/"
       }
     },
-    "collage-grid-1": {
+    "static-banner-2" : {
+      "type": "static-banner",
+      "settings": {
+        "media_type": "image",
+        "banner_width" : "full_width",
+        "heading": "Collections",
+        "subheading": "Discover handpicked collections crafted for every occasion.",
+        "image": "shopify://shop_images/custom_theme_collections_banner.png",
+        "link": "/"
+      }
+    },
+    "collage-grid-1" : {
       "type": "collage-grid",
       "blocks": {
         "image_JJ33UF": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/aiony-haust-K0DxxljcRv0-unsplash.jpg",
+            "image": "shopify://shop_images/dresses.png",
             "alt_text": "",
-            "overlay_text": "Modern Muse",
-            "link": "shopify://collections/modern-muse-minimal-and-tailored",
-            "link_label": "modern muse"
+            "overlay_text": "Clothing",
+            "link": "shopify://products/product-12"
           }
         },
         "image_7JqHW9": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/alison-erickson-jPDRE3C4MbY-unsplash.jpg",
+            "image": "shopify://shop_images/95b5510c5d72645329e98162f9d1d260_3e13da3a-357d-492f-9073-a5603d2064d9.jpg",
             "alt_text": "",
-            "overlay_text": "The Bridal Edit",
-            "link": "shopify://collections/the-bridal-edit-pure-whites-and-gowns",
-            "link_label": "the bridal edit"
+            "overlay_text": "Sunglasses",
+            "link": ""
           }
         },
         "image_xqJPhr": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/ivan-kazlouskij-aO5ZNYA4nwY-unsplash.jpg",
+            "image": "shopify://shop_images/32b453f356df1b4fb7ca83857fda1a3e.jpg",
             "alt_text": "",
-            "overlay_text": "Effortless Luxe",
-            "link": "shopify://collections/frere",
-            "link_label": "effortless luxe"
+            "overlay_text": "Shoes",
+            "link": ""
           }
         }
       },
@@ -233,92 +251,66 @@
         "image_xqJPhr"
       ],
       "settings": {
-        "color_scheme": "scheme-6",
         "layout_style": "symmetrical",
         "show_text_block": false,
-        "heading": "Discover your next bestseller",
-        "subtext": "See what retailers from across the globe are loving on Aeries",
-        "button_text": "Shop all bestsellers",
-        "button_link": ""
+        "color_scheme": "scheme-6",
       }
     },
-    "products-slider-3": {
-      "type": "products-slider",
-      "settings": {
-        "color_scheme": "",
-        "heading": "Desse",
-        "subheading": "The Statement Edit - Where bold lines meet subtle grace",
-        "button_label": "Discover More",
-        "button_link": "shopify://collections/deese",
-        "quick_actions_text": "ADD TO CART",
-        "collection_handle": "deese",
-        "images_per_slide_desktop": 4,
-        "images_per_slide_mobile": 1,
-        "show_product_info": false,
-        "show_slider_bar": true
-      }
-    },
-    "collage-grid-2": {
+    "collage-grid-2" : {
       "type": "collage-grid",
       "blocks": {
         "image_JJ33UF": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/gemali-martinez-TjH8K0vKjcA-unsplash.jpg",
+            "image": "shopify://shop_images/dresses.png",
             "alt_text": "",
             "overlay_text": "",
-            "link": "shopify://products/product-12",
-            "link_label": ""
+            "link": "shopify://products/product-12"
           }
         },
         "image_7JqHW9": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/adriano-goncalves-IeHLttCrsXE-unsplash.jpg",
+            "image": "shopify://shop_images/95b5510c5d72645329e98162f9d1d260_3e13da3a-357d-492f-9073-a5603d2064d9.jpg",
             "alt_text": "",
             "overlay_text": "",
-            "link": "",
-            "link_label": ""
+            "link": ""
           }
         },
         "image_xqJPhr": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/juli-kosolapova-h6e1QApgI38-unsplash.jpg",
+            "image": "shopify://shop_images/32b453f356df1b4fb7ca83857fda1a3e.jpg",
             "alt_text": "",
             "overlay_text": "",
-            "link": "",
-            "link_label": ""
+            "link": ""
           }
         },
         "image_xqJPhq": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/jay-soundo-sP9pc68QmAw-unsplash.jpg",
+            "image": "shopify://shop_images/32b453f356df1b4fb7ca83857fda1a3e.jpg",
             "alt_text": "",
             "overlay_text": "",
-            "link": "",
-            "link_label": ""
+            "link": ""
           }
         },
         "image_xqJPhw": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/filipp-romanovski-9rvUAck6lMY-unsplash.jpg",
+            "image": "shopify://shop_images/32b453f356df1b4fb7ca83857fda1a3e.jpg",
             "alt_text": "",
             "overlay_text": "",
-            "link": "",
-            "link_label": ""
+            "link": ""
           }
         },
         "image_xqJPhe": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/jay-soundo-CMfuMBPfVS8-unsplash_1.jpg",
+            "image": "shopify://shop_images/32b453f356df1b4fb7ca83857fda1a3e.jpg",
             "alt_text": "",
             "overlay_text": "",
-            "link": "",
-            "link_label": ""
+            "link": ""
           }
         }
       },
@@ -331,30 +323,60 @@
         "image_xqJPhe"
       ],
       "settings": {
-        "color_scheme": "scheme-6",
         "layout_style": "text_with_grid",
         "show_text_block": true,
-        "heading": "For the Bride, the Party & Beyond",
-        "subtext": "Elegant looks for every role in the celebration — the bride, the bridesmaids, and the afterparty muse.",
-        "button_text": "Shop the Wedding Edit",
-        "button_link": "shopify://collections/elegante"
+        "color_scheme": "scheme-6",
       }
     },
-    "products-slider-4": {
-      "type": "products-slider",
+    "testimonials" : {
+      "type": "testimonial",
       "settings": {
-        "color_scheme": "",
-        "heading": "Runway Looks",
-        "subheading": "",
-        "button_label": "Discover More",
-        "button_link": "shopify://collections/runway-looks",
-        "quick_actions_text": "SHOP THE LOOK",
-        "collection_handle": "runway-looks",
-        "images_per_slide_desktop": 3,
-        "images_per_slide_mobile": 1,
-        "show_product_info": false,
-        "show_slider_bar": false
-      }
+        "autoplay": true,
+        "slide_duration": 5,
+      },
+      "blocks": {
+        "testimonial_1": {
+          "type": "testimonial",
+          "settings": {
+            "customer_name": "First - Tanya Goyal",
+            "location": "India",
+            "testimonial": "First - Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+            "star_rating": "5",
+            "image": "shopify://shop_images/dresses.png",
+            "cta_text": "Shop the Collection - 1",
+            "cta_link": "/"
+          }
+        },
+        "testimonial_2": {
+          "type": "testimonial",
+          "settings": {
+            "customer_name": "Second - Tanya Goyal",
+            "location": "India",
+            "testimonial": "Second - Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+            "star_rating": "5",
+            "image": "shopify://shop_images/95b5510c5d72645329e98162f9d1d260_3e13da3a-357d-492f-9073-a5603d2064d9.jpg",
+            "cta_text": "Shop the Collection - 2",
+            "cta_link": "/"
+          }
+        },
+        "testimonial_3": {
+          "type": "testimonial",
+          "settings": {
+            "customer_name": "Third - Tanya Goyal",
+            "location": "India",
+            "testimonial": "Third - Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+            "star_rating": "5",
+            "image": "shopify://shop_images/32b453f356df1b4fb7ca83857fda1a3e.jpg",
+            "cta_text": "Shop the Collection - 3",
+            "cta_link": "/"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_1",
+        "testimonial_2",
+        "testimonial_3"
+      ]
     }
   },
   "order": [
@@ -367,6 +389,7 @@
     "collage-grid-1",
     "products-slider-3",
     "collage-grid-2",
-    "products-slider-4"
+    "testimonials",
+    "products-slider-4",
   ]
 }

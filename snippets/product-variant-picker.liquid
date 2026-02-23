@@ -54,54 +54,6 @@
             picker_type: picker_type
           %}
         </fieldset>
-      {%- elsif option.name == 'Size' -%}
-        <div class="product-form__input product-form__input--dropdown size-picker-wrapper">
-          <div>
-            <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
-              <label class="form__label" for="Option-{{ section.id }}-{{ forloop.index0 }}">
-                {{ option.name }}
-              </label>
-              {% assign size_popup = null %}
-              {% for block in section.blocks %}
-                {% assign block_text = block.settings.text | downcase %}
-                {% if block.type == 'popup' and block_text == 'size chart' %}
-                  {% assign size_popup = block %}
-                  {% break %}
-                {% endif %}
-              {% endfor %}
-              {%- if size_popup -%}
-                <modal-opener class="product-popup-modal__opener quick-add-hidden" data-modal="#PopupModal-{{ size_popup.id }}">
-                  <button
-                    id="ProductPopup-{{ size_popup.id }}"
-                    class="product-popup-modal__button link size-guide-trigger"
-                    type="button"
-                    aria-haspopup="dialog"
-                  >
-                    Size Guide
-                  </button>
-                </modal-opener>
-              {%- endif -%}
-            </div>
-            <div class="variant-dropdown" style="width: 100%;">
-              <select
-                id="Option-{{ section.id }}-{{ forloop.index0 }}"
-                class="select__select custom-select"
-                name="options[{{ option.name | escape }}]"
-                form="{{ product_form_id }}"
-              >
-                {% render 'product-variant-options',
-                  product: product,
-                  option: option,
-                  block: block,
-                  picker_type: picker_type
-                %}
-              </select>
-              <span class="svg-wrapper variant-dropdown-svg">
-                {{- 'icon-caret.svg' | inline_asset_content -}}
-              </span>
-            </div>
-          </div>
-        </div>
       {%- else -%}
         <div class="product-form__input product-form__input--dropdown">
           <label class="form__label" for="Option-{{ section.id }}-{{ forloop.index0 }}">

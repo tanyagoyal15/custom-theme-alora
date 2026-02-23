@@ -737,161 +737,157 @@
 
           {% comment %} Variant Metafields Info {% endcomment %}
           <script>
-            {% comment %} window.variantData = {
-              {% for variant in product.variants %}
-                "{{ variant.id }}" : {
-                  title: {{ variant.title | json }},
-                  mood: {{  variant.metafields.custom.mood_line | json }},
-                  description: {{ variant.metafields.custom.variant_description | metafield_tag | json }},
-                  fabric: {{ variant.metafields.custom.fabric.value | metafield_tag  | json }},
-                  care: {{ variant.metafields.custom.care.value | metafield_tag | json }},
-                  delivery: {{  variant.metafields.custom.delivery | json }},
-                  wear: [
-                    {% for item in variant.metafields.custom.wear_it_with.value %}
-                      {
-                        title: {{ item.title | json }},
-                        url: {{ item.url | json }},
-                        image: {{ item.featured_image | image_url: width: 600 | json }}
-                      }{% unless forloop.last %},{% endunless %}
-                    {% endfor %}
-                  ]
-                }{% unless forloop.last %}, {% endunless %}
-              {% endfor %}
-            } {% endcomment %}
-
-            {% comment %} So basically an object like this will be created. {% endcomment %}
-            {% comment %} window.variantData = {
-              "12345": { mood: "...", description: "..." },
-              "67890": { mood: "...", description: "..." }
-            } {% endcomment %}
-
-            {% comment %} Shopify uses <select name="id"> for variants. {% endcomment %}
-            {% comment %} document.addEventListener('change', function(event) {
-              if(event.target.name === 'id') {
-                const variantID = event.target.value;
-                updateVariantContent(variantID)
+              window.variantData = {
+                {% for variant in product.variants %}
+                  "{{ variant.id }}" : {
+                    title: {{ variant.title | json }},
+                    mood: {{  variant.metafields.custom.mood_line | json }},
+                    description: {{ variant.metafields.custom.variant_description | metafield_tag | json }},
+                    fabric: {{ variant.metafields.custom.fabric.value | metafield_tag  | json }},
+                    care: {{ variant.metafields.custom.care.value | metafield_tag | json }},
+                    delivery: {{  variant.metafields.custom.delivery | json }},
+                    wear: [
+                      {% for item in variant.metafields.custom.wear_it_with.value %}
+                        {
+                          title: {{ item.title | json }},
+                          url: {{ item.url | json }},
+                          image: {{ item.featured_image | image_url: width: 600 | json }}
+                        }{% unless forloop.last %},{% endunless %}
+                      {% endfor %}
+                    ]
+                  }{% unless forloop.last %}, {% endunless %}
+                {% endfor %}
               }
-            }) {% endcomment %}
-
-            {% comment %} function updateVariantContent (variantID) {
-              const data = window.variantData[variantID];
-              console.log("DATA: ", data);
-              if(!data) return;
-
-              const moodEl = document.getElementById('variant-mood-line');
-              const descEl = document.getElementById('variant-description');
-              const fabricEl = document.getElementById('variant-fabric');
-              const careEl = document.getElementById('variant-care');
-              const deliveryEl = document.getElementById('variant-delivery');
-              const wearContainer = document.getElementById('wear-it-with');
-
-              if (moodEl) moodEl.innerText = data.mood || '';
-              if (descEl) descEl.innerHTML = data.description || '';
-              if (fabricEl) fabricEl.innerHTML = data.fabric || '';
-              if (careEl) careEl.innerHTML = data.care || '';
-              if (deliveryEl) deliveryEl.innerText = data.delivery || '';
-              if (wearContainer) wearContainer.innerHTML = '';
-              const variantTitle = data.title;
-              const color = variantTitle.split('/')[1].trim();
-
-              data.wear.forEach(product => {
-                wearContainer.innerHTML += `
-                  <a href="${product.url}" class="wear-card">
-                    <img src="${product.image}" width="200" />
-                    <p>${product.title}</p>
-                  </a>
-                `;
-              });
-
-              updateGallery(color);
-            }
-
-            function updateGallery (color) {
-              console.log("COLOR RECIEVED: ", color);
-              const images = document.querySelectorAll(".product__media-item img");
-              console.log("IMAGES: ", images);
-              if(!images) return;
-
-              images.forEach(item => {
-                item.classList.remove('media-hidden');
-              });
-
-              images.forEach((mediaItem) => {
-                const alt = mediaItem.alt.toLowerCase();
-                const variantColor = color.toLowerCase();
-                console.log("ALT: ", alt);
-                console.log("CONDITION: ", alt.includes(variantColor))
-
-                const mediaWrapper = mediaItem.closest('.product__media-item');
-                {% comment %} console.log('MEDIA WRAPPER: ', mediaWrapper); {% endcomment %}
-                if(alt.includes(variantColor)) {
-                  mediaWrapper.style.dislay = 'block';
-                  {% comment %} console.log("MEDIA DISPLAYED: ", mediaWrapper) {% endcomment %}
-                } else {
-                  mediaWrapper.style.display = 'none';
-                  {% comment %} console.log("MEDIA HIDDEN: ", mediaWrapper) {% endcomment %}
+  
+              {% comment %} So basically an object like this will be created. {% endcomment %}
+              {% comment %} window.variantData = {
+                "12345": { mood: "...", description: "..." },
+                "67890": { mood: "...", description: "..." }
+              } {% endcomment %}
+  
+              {% comment %} Shopify uses <select name="id"> for variants. {% endcomment %}
+              document.addEventListener('change', function(event) {
+                if(event.target.name === 'id') {
+                  const variantID = event.target.value;
+                  updateVariantContent(variantID)
                 }
-
-                console.log("IMAGESSS: ", images);
               })
-
-            } {% endcomment %}
-
-            
-
-            {% comment %} document.addEventListener('DOMContentLoaded', function() {
-              const defaultVariant = document.querySelector('[name="id"]');
-              console.log("DEFAULTVARIANT: ", defaultVariant);
-              console.log("DEFAULTVARIANT: ", defaultVariant.value);
-              const variantId = defaultVariant.value;
-              const variantTitle = window.variantData[variantId].title;
-              const color = variantTitle.split('/')[1].trim();
-              updateVariantContent(variantId);
-              updateGallery(color);
-            }) {% endcomment %}
+  
+              function updateVariantContent (variantID) {
+                const data = window.variantData[variantID];
+                console.log("DATA: ", data);
+                if(!data) return;
+  
+                const moodEl = document.getElementById('variant-mood-line');
+                const descEl = document.getElementById('variant-description');
+                const fabricEl = document.getElementById('variant-fabric');
+                const careEl = document.getElementById('variant-care');
+                const deliveryEl = document.getElementById('variant-delivery');
+                const wearContainer = document.getElementById('wear-it-with');
+  
+                if (moodEl) moodEl.innerText = data.mood || '';
+                if (descEl) descEl.innerHTML = data.description || '';
+                if (fabricEl) fabricEl.innerHTML = data.fabric || '';
+                if (careEl) careEl.innerHTML = data.care || '';
+                if (deliveryEl) deliveryEl.innerText = data.delivery || '';
+                if (wearContainer) wearContainer.innerHTML = '';
+                const variantTitle = data.title;
+                const color = variantTitle.split('/')[1].trim();
+  
+                data.wear.forEach(product => {
+                  wearContainer.innerHTML += `
+                    <a href="${product.url}" class="wear-card">
+                      <img src="${product.image}" width="200" />
+                      <p>${product.title}</p>
+                    </a>
+                  `;
+                });
+  
+                updateGallery(color);
+              }
+  
+              function updateGallery (color) {
+                console.log("COLOR RECIEVED: ", color);
+                const images = document.querySelectorAll(".product__media-item img");
+                console.log("IMAGES: ", images);
+                if(!images) return;
+  
+                images.forEach(item => {
+                  item.classList.remove('media-hidden');
+                });
+  
+                images.forEach((mediaItem) => {
+                  const alt = mediaItem.alt.toLowerCase();
+                  const variantColor = color.toLowerCase();
+                  console.log("ALT: ", alt);
+                  console.log("CONDITION: ", alt.includes(variantColor))
+  
+                  const mediaWrapper = mediaItem.closest('.product__media-item');
+                  {% comment %} console.log('MEDIA WRAPPER: ', mediaWrapper); {% endcomment %}
+                  if(alt.includes(variantColor)) {
+                    mediaWrapper.style.dislay = 'block';
+                    {% comment %} console.log("MEDIA DISPLAYED: ", mediaWrapper) {% endcomment %}
+                  } else {
+                    mediaWrapper.style.display = 'none';
+                    {% comment %} console.log("MEDIA HIDDEN: ", mediaWrapper) {% endcomment %}
+                  }
+  
+                  console.log("IMAGESSS: ", images);
+                })
+  
+              }
+  
+              
+  
+              document.addEventListener('DOMContentLoaded', function() {
+                const defaultVariant = document.querySelector('[name="id"]');
+                console.log("DEFAULTVARIANT: ", defaultVariant);
+                console.log("DEFAULTVARIANT: ", defaultVariant.value);
+                const variantId = defaultVariant.value;
+                const variantTitle = window.variantData[variantId].title;
+                const color = variantTitle.split('/')[1].trim();
+                updateVariantContent(variantId);
+                updateGallery(color);
+              })
           </script>
 
-          {% comment %}
-            <style>
-              .wear-it-with {
-                display: flex;
-                gap: 20px;
-              }
-            </style>
-          {% endcomment %}
+          <style>
+            .wear-it-with {
+              display: flex;
+              gap: 20px;
+            }
+          </style>
 
           {% comment %} Variant Metafields UI {% endcomment %}
-          {% comment %}
-            <div class="variant-experience">
-              <div>
-                <b>Mood: </b>
-                <span id="variant-mood-line" class="mood-line"></span>
-              </div>
+          <div class="variant-experience">
+            <div>
+              <b>Mood: </b>
+              <span id="variant-mood-line" class="mood-line"></span>
+            </div>
 
-              <div>
-                <b>Description: </b>
-                <span id="variant-description" class="variant-description"></span>
-              </div>
+            <div>
+              <b>Description: </b>
+              <span id="variant-description" class="variant-description"></span>
+            </div>
 
-              <div>
-                <b>Fabric and care: </b>
-                <div class="fabric-care-block">
-                  <div id="variant-fabric"></div>
-                  <div id="variant-care"></div>
-                </div>
-              </div>
-
-              <div>
-                <b>Wear it with: </b>
-                <div id="wear-it-with" class="wear-it-with"></div>
-              </div>
-
-              <div>
-                <b>Delivery: </b>
-                <div id="variant-delivery"></div>
+            <div>
+              <b>Fabric and care: </b>
+              <div class="fabric-care-block">
+                <div id="variant-fabric"></div>
+                <div id="variant-care"></div>
               </div>
             </div>
-          {% endcomment %}
+
+            <div>
+              <b>Wear it with: </b>
+              <div id="wear-it-with" class="wear-it-with"></div>
+            </div>
+
+            <div>
+              <b>Delivery: </b>
+              <div id="variant-delivery"></div>
+            </div>
+          </div>
 
           {% comment %} Product Metafields Info  {% endcomment %}
           <div class="product-info">
