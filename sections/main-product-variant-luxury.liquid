@@ -856,37 +856,57 @@
               display: flex;
               gap: 20px;
             }
+
+            .variant-experience > div > * {
+              font-size: 14px;
+            }
+
+            .luxury-divider {
+              border-bottom: 1px solid #eee;
+              margin: 5px 0 !important;
+            }
           </style>
 
           {% comment %} Variant Metafields UI {% endcomment %}
           <div class="variant-experience">
-            <div>
-              <b>Mood: </b>
-              <span id="variant-mood-line" class="mood-line"></span>
-            </div>
+            {% comment %}
+              <div>
+                <b>Mood </b>
+                <div id="variant-mood-line" class="mood-line"></div>
+              </div>
+
+              <hr class="luxury-divider">
+            {% endcomment %}
 
             <div>
-              <b>Description: </b>
-              <span id="variant-description" class="variant-description"></span>
+              <div id="variant-description" class="variant-description"></div>
             </div>
 
+            <hr class="luxury-divider">
+
             <div>
-              <b>Fabric and care: </b>
+              <b>Fabric and care </b>
               <div class="fabric-care-block">
                 <div id="variant-fabric"></div>
                 <div id="variant-care"></div>
               </div>
             </div>
 
+            <hr class="luxury-divider">
+
             <div>
-              <b>Wear it with: </b>
+              <b>Wear it with </b>
               <div id="wear-it-with" class="wear-it-with"></div>
             </div>
 
+            <hr class="luxury-divider">
+
             <div>
-              <b>Delivery: </b>
+              <b>Delivery </b>
               <div id="variant-delivery"></div>
             </div>
+
+            <hr class="luxury-divider">
           </div>
 
           {% comment %} Product Metafields Info  {% endcomment %}
